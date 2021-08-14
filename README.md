@@ -29,13 +29,11 @@ In computer:
 
 In terminal: 
 
-4. `rails db:setup` to setup database 
-5. `rails s` to start Rails Server 
-6. `npm start` to start Webpack module bundler
+4. `npm start` to start Webpack module bundler
 
 In browser: 
 
-7. `http://localhost:3000`
+5. `http://localhost:3000`
 
 ## `Features:`
 * Demo User Sign In
