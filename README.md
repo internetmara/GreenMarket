@@ -21,7 +21,7 @@ We will need to:
    - [ ] Initial splash page of environmental infographic/motivation
    - [ ] Saving of user's products & services data to database
    - [ ] Products and services appear on an interactive map of nodes with scrolling index of items
-   - [ ] Display popup show page with information about products and services when clicking a node on the map
+   - [ ] When clicking a node on the map, display popup show page with information about a sellers's products and/or services
    - [ ] Production README
 
 #### Bonus Features
