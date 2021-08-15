@@ -140,3 +140,8 @@ The data will be visualized in an application using a library and will take the 
   - Finish testing and debugging - **All team members** 
   - Complete Production README.md - **Mara** 
   - Refine design/CSS 
+
+
+<p align="center">
+ <img src="https://user-images.githubusercontent.com/76984497/129492862-42fcf3c2-eee0-40d1-9fc9-1062f868af98.png">
+</p>
