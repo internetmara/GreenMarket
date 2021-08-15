@@ -102,10 +102,10 @@ The data will be visualized in an application using a library and will take the 
 
 ## Group Members & Work Breakdown
 
-* **Christopher Dell'Acqua**
-* **Erik Ingebretson**
-* **Mara Finkel**
-* **Veronika Pilipenko**
+* **Christopher Dell'Acqua** - Backend Lead
+* **Erik Ingebretson** - Frontend Lead
+* **Mara Finkel** - Team Lead
+* **Veronika Pilipenko** - Frontend/Backend Asst.
 
 ### Monday - Initial structure
   - Continue and complete the basic work from Sunday - **All**
