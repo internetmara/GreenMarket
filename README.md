@@ -1,6 +1,5 @@
 # GreenMarket
-![Green Market (1)](https://user-images.githubusercontent.com/76984497/129492624-7a786957-7241-4b8a-9288-ab4ebde23aeb.png)
-
+![Green Market (1)](https://user-images.githubusercontent.com/76984497/129492667-2ac379f9-d988-4174-89b4-a0cd9dcb1437.png)
 
 Green Market is a online directory that allows users to browse, purchase and locate local goods and services.
 
