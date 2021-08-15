@@ -143,5 +143,5 @@ The data will be visualized in an application using a library and will take the 
 
 
 <p align="center">
- <img width=400 src="https://user-images.githubusercontent.com/76984497/129492862-42fcf3c2-eee0-40d1-9fc9-1062f868af98.png">
+ <img width=400 src="https://user-images.githubusercontent.com/76984497/129493261-2379644a-306e-4791-9edb-d2b601f8a967.png">
 </p>
