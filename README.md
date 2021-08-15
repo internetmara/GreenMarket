@@ -43,6 +43,9 @@ Map View
 Item Pop-ups
 ![alt text]()
 
+User Show Page
+![alt text]()
+
 ## Technologies & Technical Challenges
 
 Green Market’s core application is a single page user app, with a back end designed to save user authorization and data. The data will be collected via user input and stored using AWS and Mongo DB and visualized on the frontend using Express, React, and Node JS.
