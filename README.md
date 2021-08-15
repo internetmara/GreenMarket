@@ -1,9 +1,9 @@
 <p align="center">
  <img src="https://user-images.githubusercontent.com/76984497/129492667-2ac379f9-d988-4174-89b4-a0cd9dcb1437.png">
-# </p>
+</p>
 
 
-Green Market is a online directory that allows users to browse, purchase and locate local goods and services.
+## Green Market is a online directory that allows users to browse, purchase and locate local goods and services.
 
 [Live Demo](link not yet available!)
 
