@@ -1,4 +1,6 @@
 # GreenMarket
+![Green Market (1)](https://user-images.githubusercontent.com/76984497/129492624-7a786957-7241-4b8a-9288-ab4ebde23aeb.png)
+
 
 Green Market is a online directory that allows users to browse, purchase and locate local goods and services.
 
@@ -30,6 +32,9 @@ We will need to:
    - [ ] Integrate websockets for direct messaging (double super bonus)
 
 ## WireFrames
+
+Home Page
+![Home Page](https://user-images.githubusercontent.com/76984497/129492600-67220be2-cc13-446d-80c4-0a2cacb883aa.png)
 
 Motivational Spash Page with Environmental Data
 ![alt text]()
