@@ -30,6 +30,10 @@ We will need to:
    - [ ] Integrate websockets for direct messaging (double super bonus)
 
 ## WireFrames
+
+Motivational Spash Page with Environmental Data
+![alt text]()
+
 User Auth Modal
 ![alt text]()
 
