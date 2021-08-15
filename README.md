@@ -109,11 +109,11 @@ The data will be visualized in an application using a library and will take the 
 
 ### Monday - Initial structure
   - Continue and complete the basic work from Sunday - **All**
-  - Decide which data to save in database, and how to structure it **All will discuss**
+  - Decide which data to save in database, and how to structure it - **All will discuss**
   - Implement user authorization on database backend/Build login view - **Chris** 
   - Build skeleton React site -  **Erik**
   - Investigate Google API methods and test collection of data - **Mara/Erik**
-  - AWS S3 setup **Veronika/Mara**
+  - AWS S3 setup - **Veronika/Mara**
   - Write and test methods to save browser data to database - **Erik/Chris**
   - Look at environmental data visualization libraries - **Mara**
 
