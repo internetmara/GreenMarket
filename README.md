@@ -21,10 +21,11 @@ We will need to:
 
    - [ ] Hosting on Heroku 
    - [ ] User authentication: sign up and log in
-   - [ ] Initial splash page of environmental infographic/motivation
+   - [ ] Data visualization environmental infographic/motivation using Footprint Network API
    - [ ] Saving of user's products & services data to database
-   - [ ] Products and services appear on an interactive map of nodes with scrolling index of items
-   - [ ] When clicking a node on the map, display popup show page with information about a sellers's products and/or services
+   - [ ] Products and services appear on an interactive map of nodes
+   - [ ] Index page of items
+   - [ ] Show page with information about a sellers's products and/or services
    - [ ] Production README
 
 #### Bonus Features
@@ -58,7 +59,7 @@ User Popup
 Green Market’s core application is a single page user app, with a backend designed to save user authorization and data. The data will be collected via user input and stored using AWS and Mongo DB. Data will be visualized on the frontend using Express, React, and Node JS.
 
   ##### Backend: MongoDB/Express
-  ##### Frontend: React/Node.js and D3 visualization library
+  ##### Frontend: React/Node.js
 
 Technical challenges: 
 
