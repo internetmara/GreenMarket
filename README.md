@@ -80,13 +80,11 @@ reviews
 The data will be visualized in an application using a library and will take the form of scrollable index. The app will also provide category filters and potentially search capability.
 
 ## `Framework:`
-* Ruby
 * Mongo DB
 * Express
 * React.js
 * Redux.js
 * Node
-* PostgresSQL
 * Webpack
 * Amazon AWS S3
 
