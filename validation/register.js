@@ -8,20 +8,23 @@ module.exports = function validateRegisterInput(data) {
     data.email = validText(data.email) ? data.email : '';
     data.password = validText(data.password) ? data.password : '';
     // data.password2 = validText(data.password2) ? data.password2 : '';
-
+    
     if (!Validator.isLength(data.username, { min: 8, max: 30 })) {
-        errors.username = 'Handle must be between 8 and 30 characters';
+        errors.username = 'Username must be between 8 and 30 characters';
     }
 
     if (Validator.isEmpty(data.username)) {
-        errors.username = 'Handle field is required';
+        errors.username = 'Username field is required';
     }
 
     if (Validator.isEmpty(data.email)) {
         errors.email = 'Email field is required';
     }
-
     if (!Validator.isEmail(data.email)) {
+        console.log(data)
+        console.log(data.email)
+        console.log(Validator.isEmail(data.email))
+        console.log(Validator.isEmail('foo@bar.com'))
         errors.email = 'Email is invalid';
     }
 
