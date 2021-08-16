@@ -59,7 +59,7 @@ User Popup
 Green Market’s core application is a single page user app, with a backend designed to save user authorization and data. The data will be collected via user input and stored using AWS and Mongo DB. Data will be visualized on the frontend using Express, React, and Node JS.
 
   ##### Backend: MongoDB/Express
-  ##### Frontend: React/Node.js
+  ##### Frontend: React/Node.js using D3 for data visualizations
 
 Technical challenges: 
 
