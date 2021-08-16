@@ -37,7 +37,8 @@ router.post('/register', (req, res) => {
                 const newUser = new User({
                     username: req.body.username,
                     email: req.body.email,
-                    password: req.body.password
+                    password: req.body.password,
+                    address: req.body.address
                 })
 
                 bcrypt.genSalt(10, (err, salt) => {
@@ -86,7 +87,7 @@ router.post('/login', (req, res) => {
                                 res.json({
                                     success: true,
                                     token: 'Bearer ' + token
-                                });
+                                }), console.log('success')
                             });
                     } else {
                         return res.status(400).json({ password: 'Incorrect password' });

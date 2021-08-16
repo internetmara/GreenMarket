@@ -10,6 +10,10 @@ const UserSchema = new Schema({
         type: String,
         required: true
     },
+    address: {
+        type: String,
+        required: true
+    },
     products: {
         type: Array,
         required: false
