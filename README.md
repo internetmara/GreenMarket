@@ -44,13 +44,14 @@ User Auth Modal
 ![alt text]()
 
 Map View
-![alt text]()
+![GreenMarketMapShow](https://user-images.githubusercontent.com/76984497/129601868-fed9cc63-ea7a-45d0-9681-4317581abe33.png)
 
 Item Pop-ups
-![alt text]()
+![GreenMarketItemPopup](https://user-images.githubusercontent.com/76984497/129601820-67ec15c6-33ac-4f4f-bbe9-83e0e5a1e1d1.png)
 
-User Show Page
-![alt text]()
+User Popup
+![GreenMarketUserPopup](https://user-images.githubusercontent.com/76984497/129600675-26e03829-81b4-4b8b-9c2e-e22599b8da2d.png)
+
 
 ## Technologies & Technical Challenges
 
