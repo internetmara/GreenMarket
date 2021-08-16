@@ -21,7 +21,7 @@ We will need to:
 
    - [ ] Hosting on Heroku 
    - [ ] User authentication: sign up and log in
-   - [ ] Data visualization environmental infographic/motivation using Footprint Network API
+   - [ ] Data visualization of environmental infographic/motivation using Footprint Network API
    - [ ] Saving of user's products & services data to database
    - [ ] Products and services appear on an interactive map of nodes
    - [ ] Index page of items
