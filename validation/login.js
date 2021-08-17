@@ -3,7 +3,7 @@ const validText = require('./valid-text');
 
 module.exports = function (data) {
     let errors = {};
-
+    
     data.email = validText(data.email) ? data.email : '';
     data.password = validText(data.password) ? data.password : '';
 
@@ -21,6 +21,6 @@ module.exports = function (data) {
 
     return {
         errors,
-        isValid: Object.keys(errors) === 0
+        isValid: Object.keys(errors).length === 0
     }
 };
