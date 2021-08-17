@@ -1,16 +1,15 @@
-const React = require('react')
-// import React from 'react';
+import React from 'react';
+import SignupForm from './signup_container';
+import LoginForm from './login_container';
 
 class Splash extends React.Component {
-    // constructor(props) {
-    //     super(props)
-
-    // }
 
     render() {
         return (
             <div>
-                <h1>GREENMARKET FOOLS</h1>
+                <h1>Homepage</h1>
+                <SignupForm />
+                <LoginForm />
             </div>
         )
     }
