@@ -35,6 +35,7 @@ class LoginForm extends React.Component {
                     <br />
                     <input type="submit" value='Log In'/>
                 </form>
+                { (this.props.loggedIn) ? <button onClick={() => this.props.logout()}>Log Out</button> : '' }
             </div>
         )
     }
