@@ -5,10 +5,10 @@ class LoginForm extends React.Component {
         super(props)
 
         this.state= {
-            id: '',
             email: '',
             password: ''
         }
+        this.handleSubmit = this.handleSubmit.bind(this)
     }
 
     handleSubmit(e) {
@@ -24,7 +24,7 @@ class LoginForm extends React.Component {
         return (
             <div>
                 <p>Login Form</p>
-                <form >
+                <form onSubmit={(e) => this.handleSubmit(e)}>
                     <label>Email
                         <input type="email" onChange={this.updateField('email')} value={this.state.email}/>
                     </label>
@@ -35,6 +35,7 @@ class LoginForm extends React.Component {
                     <br />
                     <input type="submit" value='Log In'/>
                 </form>
+                { (this.props.loggedIn) ? <button onClick={() => this.props.logout()}>Log Out</button> : '' }
             </div>
         )
     }
