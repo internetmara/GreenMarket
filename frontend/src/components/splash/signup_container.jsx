@@ -4,18 +4,7 @@ const { connect } = require("react-redux")
 
 
 const mSTP = (state) => ({
-    user: {
-        email: '',
-        username: '',
-        password: '',
-        address: '',
-        avatar: '',
-        products: [],
-        services: [],
-        reviews: [],
-        buyerPoints: 0,
-        sellerPoints: 0
-    }
+    
 })
 
 const mDTP = (dispatch) => ({

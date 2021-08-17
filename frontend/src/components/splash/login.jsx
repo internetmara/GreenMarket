@@ -5,7 +5,7 @@ class LoginForm extends React.Component {
         super(props)
 
         this.state= {
-            id: this.props.user.id,
+            id: '',
             email: '',
             password: ''
         }
@@ -28,9 +28,12 @@ class LoginForm extends React.Component {
                     <label>Email
                         <input type="email" onChange={this.updateField('email')} value={this.state.email}/>
                     </label>
+                    <br />
                     <label>Password
                         <input type="password" onChange={this.updateField('password')} value={this.state.password}/>
                     </label>
+                    <br />
+                    <input type="submit" value='Log In'/>
                 </form>
             </div>
         )

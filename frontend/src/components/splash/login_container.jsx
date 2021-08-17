@@ -1,10 +1,10 @@
-import LoginForm from './signup'
+import LoginForm from './login'
 import { login } from '../../actions/session_actions'
 const { connect } = require("react-redux")
 
 
 const mSTP = (state) => ({
-    user: this.state.match.params.userId
+    
     })
 
 const mDTP = (dispatch) => ({
