@@ -33,7 +33,7 @@ app.get("/", (req, res) => {
 })
 
 app.use("/api/users", users)
-app.use('/api/products', )
+app.use('/api/products', products)
 
 const port = process.env.PORT || 5000;
 
