@@ -6,8 +6,8 @@ class Splash extends React.Component {
 
     render() {
         return (
-            <div>
-                <h1>Homepage</h1>
+            <div className="header">
+                <h1>GREENMARKET</h1> 
                 <SignupForm />
                 <LoginForm />
             </div>

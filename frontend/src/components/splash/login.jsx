@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styling/splash.css'
 
 class LoginForm extends React.Component {
     constructor(props) {
@@ -28,19 +29,15 @@ class LoginForm extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="login-form">
                 <p>Login Form</p>
                 {this.props.errors ? this.readErrors() : ''}
                 <form onSubmit={(e) => this.handleSubmit(e)}>
-                    <label>Email
-                        <input type="email" onChange={this.updateField('email')} value={this.state.email}/>
-                    </label>
+                    <input type="email" className="login-input" onChange={this.updateField('email')} value={this.state.email} placeholder="Email"/>
                     <br />
-                    <label>Password
-                        <input type="password" onChange={this.updateField('password')} value={this.state.password}/>
-                    </label>
+                    <input type="password" className="login-input" onChange={this.updateField('password')} value={this.state.password} placeholder="Password"/>
                     <br />
-                    <input type="submit" value='Log In'/>
+                    <input type="submit" className="login-submit" value='Log In'/>
                 </form>
                 { (this.props.loggedIn) ? <button onClick={() => this.props.logout()}>Log Out</button> : '' }
             </div>
