@@ -56,8 +56,9 @@ router.post('/register', (req, res) => {
 
 
 router.post('/login', (req, res) => {
+    
     const { errors, isValid } = validateLoginInput(req.body);
-
+    
     console.log(errors);
 
     if (!isValid) {
@@ -69,6 +70,7 @@ router.post('/login', (req, res) => {
 
     User.findOne({ email })
         .then(user => {
+            
             if (!user) {
                 return res.status(404).json({ email: 'This user does not exist' });
             }
@@ -76,18 +78,25 @@ router.post('/login', (req, res) => {
             bcrypt.compare(password, user.password)
                 .then(isMatch => {
                     if (isMatch) {
-                        const payload = { id: user.id, name: user.name };
-
+                        const payload = { 
+                            id: user.id, 
+                            email: user.email,
+                            address: user.address,
+                            username: user.username,
+                            products: user.products,
+                            services: user.services,
+                            reviews: user.reviews
+                        }
+                        console.log(user)
                         jwt.sign(
                             payload,
                             keys.secretOrKey,
-                            // Tell the key to expire in one hour
                             { expiresIn: 3600 },
                             (err, token) => {
                                 res.json({
                                     success: true,
                                     token: 'Bearer ' + token
-                                }), console.log('success')
+                                });
                             });
                     } else {
                         return res.status(400).json({ password: 'Incorrect password' });
