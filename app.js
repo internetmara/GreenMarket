@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({
 
 app.use(bodyParser.json());
 
-app.get("/", (req, res) => {
+// app.get("/", (req, res) => {
     // const user = new User({
     //     username: 'jim',
     //     email: 'jim@jim.jim',
@@ -26,16 +26,14 @@ app.get("/", (req, res) => {
     // })
     // user.save()
     // res.send("Hello World!")
-});
-
-// app.use("/api/users", users)
-// app.use("/api/tweets", tweets)
+// });
 
 app.get("/", (req, res) => {
     res.send("Hello Word!")
 })
 
 app.use("/api/users", users)
+app.use("/api/products", products)
 
 const port = process.env.PORT || 5000;
 
