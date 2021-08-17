@@ -1,5 +1,7 @@
-import * as APIUtil from './util/session_api_util';
-import jwt_decode from 'jwt-decode';
+// import jwt_decode from 'jwt-decode';
+const { setAuthToken } = require("../util/session_api_util")
+// const * as APIUtil fro './util/session_api_util';
+// import * as APIUtil from './util/session_api_util';
 
 export const RECEIVE_USER_LOGOUT = "RECEIVE_USER_LOGOUT";
 
@@ -9,6 +11,6 @@ export const logoutUser = () => ({
 
 export const logout = () => (dispatch) => {
     localStorage.removeItem('jwToken')
-    APIUtil.setAuthToken(false)
+    setAuthToken(false)
     dispatch(logoutUser())
 }

@@ -1,6 +1,6 @@
-import { connect } from "mongodb";
-import { Connect } from "react-redux";
-import Splash from "./splash";
+import Splash from './splash'
+const { connect } = require("react-redux")
+// const Splash = require("./splash");
 
 const mSTP = (state) => ({
     

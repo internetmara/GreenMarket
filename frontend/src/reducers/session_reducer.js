@@ -1,4 +1,4 @@
-import { RECEIVE_USER_LOGOUT } from "../actions/session_actions";
+const { RECEIVE_USER_LOGOUT } = require ("../actions/session_actions");
 
 const initialState = {
     isAuthenticated: false,
