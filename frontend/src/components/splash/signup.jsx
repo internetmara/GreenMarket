@@ -30,26 +30,18 @@ class SignupForm extends React.Component {
 
     render() {
         return (
-            <div>
-                <p>Sign Up Form</p>
+            <div className="signup-form">
+                <p>Sign Up</p>
                 <form onSubmit={(e) => this.handleSubmit(e)}>
-                    <label>Email
-                        <input type="email" onChange={this.updateField('email')} value={this.state.email} />
-                    </label>
+                    <input type="email" className="login-input" onChange={this.updateField('email')} value={this.state.email} placeholder="Email" />
                     <br />
-                    <label>Username
-                        <input type="text" onChange={this.updateField('username')} value={this.state.username} />
-                    </label>
+                    <input type="text" className="login-input" onChange={this.updateField('username')} value={this.state.username} placeholder="Username" />
                     <br />
-                    <label>Password
-                        <input type="password" onChange={this.updateField('password')} value={this.state.password} />
-                    </label>
+                    <input type="password" className="login-input" onChange={this.updateField('password')} value={this.state.password} placeholder="Password" />
                     <br />
-                    <label>Address
-                        <input type="text" onChange={this.updateField('address')} value={this.state.address} />
-                    </label>
+                    <input type="text" className="login-input" onChange={this.updateField('address')} value={this.state.address} placeholder="Address"/>
                     <br />
-                    <input type="submit" value='Sign Up'/>
+                    <input type="submit" className="login-submit" value='Sign Up'/>
                 </form>
             </div>
         )
