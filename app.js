@@ -3,8 +3,8 @@ const app = express();
 const db = require('./config/keys').mongoURI;
 const mongoose = require('mongoose');
 const users = require("./routes/api/users");
-// const tweets = require("./routes/api/tweets");
-const User = require('./models/User');
+const products = require('./routes/api/products')
+// const User = require('./models/User');
 const bodyParser = require('body-parser');
 
 mongoose
@@ -18,24 +18,22 @@ app.use(bodyParser.urlencoded({
 
 app.use(bodyParser.json());
 
-app.get("/", (req, res) => {
-    const user = new User({
-        username: 'jim',
-        email: 'jim@jim.jim',
-        password: 'jimisgreat123'
-    })
-    user.save()
-    res.send("Hello World!")
-});
-
-// app.use("/api/users", users)
-// app.use("/api/tweets", tweets)
+// app.get("/", (req, res) => {
+//     const user = new User({
+//         username: 'jim',
+//         email: 'jim@jim.jim',
+//         password: 'jimisgreat123'
+//     })
+//     user.save()
+//     res.send("Hello World!")
+// });
 
 app.get("/", (req, res) => {
     res.send("Hello Word!")
 })
 
 app.use("/api/users", users)
+app.use('/api/products', )
 
 const port = process.env.PORT || 5000;
 
