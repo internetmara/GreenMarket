@@ -42,7 +42,8 @@ Motivational Spash Page with Environmental Data
 ![alt text]()
 
 User Auth Modal
-![alt text]()
+<img width="525" alt="userlogin" src="https://user-images.githubusercontent.com/76984497/129775930-50368b7a-2cc9-49ab-8e62-c6511d0f5aff.png">
+
 
 Map View
 ![GreenMarketMapShow](https://user-images.githubusercontent.com/76984497/129601868-fed9cc63-ea7a-45d0-9681-4317581abe33.png)
@@ -51,7 +52,7 @@ Item Pop-ups
 ![GreenMarketItemPopup](https://user-images.githubusercontent.com/76984497/129601820-67ec15c6-33ac-4f4f-bbe9-83e0e5a1e1d1.png)
 
 User Popup
-![GreenMarketUserPopup](https://user-images.githubusercontent.com/76984497/129600675-26e03829-81b4-4b8b-9c2e-e22599b8da2d.png)
+<img width="775" alt="usershow" src="https://user-images.githubusercontent.com/76984497/129775809-01dc9f58-2985-44d2-bc6f-4b0ca4a4f351.png">
 
 
 ## Technologies & Technical Challenges
