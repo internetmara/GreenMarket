@@ -7,9 +7,9 @@ import React from 'react';
 const App = () => (
     <div>
         <Splash />
-        <Switch>
+        {/* <Switch>
             <AuthRoute exact path="/" component={Spash} />
-        </Switch>
+        </Switch> */}
     </div>
 )
     
