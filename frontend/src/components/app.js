@@ -1,20 +1,17 @@
 import Splash from './splash/splash';
 import React from 'react';
 // import { AuthRoute, ProtectedRoute } from "../util/route_util"
-import { Switch } from 'react-router';
-import SignupForm from './splash/signup_container';
-import LoginForm from './splash/login_container';
-// import SimpleMap from './map/map';
+import { Switch, Route } from 'react-router';
+import IndexComponent from './index/index_container';
 
 const App = () => (
     <div>
-        <Splash />
-        <SignupForm />
-        <LoginForm />
-        {/* <SimpleMap/> */}
         <Switch>
+            <Route exact path="/" component={Splash} />
+            <Route exact path="/map" component={IndexComponent} />
             {/* <AuthRoute exact path="/" component={Splash} /> */}
-            {/* <ProtectedRoute exact path="/" component={Splash} /> */}
+
+            {/* <ProtectedRoute exact path="/shop" component={Index} /> */}
         </Switch>
     </div>
 )
