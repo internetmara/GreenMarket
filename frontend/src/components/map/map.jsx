@@ -18,14 +18,14 @@ class SimpleMap extends Component {
       // Important! Always set the container height explicitly
       <div style={{ height: '100vh', width: '100%' }}>
         <GoogleMapReact
-          google={this.props.google}
+          bootstrapURLKeys={{ key: window.googleAPIKey }}
           defaultCenter={this.props.center}
           defaultZoom={this.props.zoom}
         >
           <AnyReactComponent
             lat={37.783964}
             lng={-122.2446203}
-            text={<Link to="/dispensaries/1"><img alt="N/A" title="N/A" className="dispensary-icon" src="public/images/GM.png" /></Link>}
+            text={<Link to="/dispensaries/1"><img alt="N/A" title="N/A" className="GM-icon" src="images/GM.png" /></Link>}
           />
         </GoogleMapReact>
       </div>
@@ -33,6 +33,4 @@ class SimpleMap extends Component {
   }
 }
 
-export default GoogleApiWrapper({
-  apiKey: 'AIzaSyBNX1tlWgo19fKUYNBxB9JmKOtmHabd99g'
-})(MapContainer);
+export default SimpleMap;
