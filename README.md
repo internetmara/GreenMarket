@@ -38,12 +38,8 @@ We will need to:
 Home Page
 ![Home Page](https://user-images.githubusercontent.com/76984497/129492600-67220be2-cc13-446d-80c4-0a2cacb883aa.png)
 
-Motivational Spash Page with Environmental Data
-![alt text]()
-
 User Auth Modal
 <img width="525" alt="userlogin" src="https://user-images.githubusercontent.com/76984497/129775930-50368b7a-2cc9-49ab-8e62-c6511d0f5aff.png">
-
 
 Map View
 ![GreenMarketMapShow](https://user-images.githubusercontent.com/76984497/129601868-fed9cc63-ea7a-45d0-9681-4317581abe33.png)
