@@ -1,5 +1,6 @@
 const axios = require('axios');
-const setAuthToken = token => {
+
+export const setAuthToken = token => {
     if (token) {
         axios.defaults.headers.common['Authorization'] = token;
     } else {
@@ -7,4 +8,10 @@ const setAuthToken = token => {
     }
 };
 
-module.exports = { setAuthToken }
+export const signup = (userData) => {
+    return axios.post('/api/users/register', userData)
+};
+
+export const login = (userData) => {
+    return axios.post('/api/user/login', userData)
+}
