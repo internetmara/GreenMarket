@@ -5,14 +5,16 @@ import { Switch } from 'react-router';
 import SignupForm from './splash/signup_container';
 import LoginForm from './splash/login_container';
 import SimpleMap from './map/map';
+import { Route } from 'react-router';
 
 const App = () => (
     <div>
         <Splash />
         <SignupForm />
         <LoginForm />
-        <SimpleMap/>
+        
         <Switch>
+            <Route exact path="/map" component={SimpleMap} />
             {/* <AuthRoute exact path="/" component={Splash} /> */}
             {/* <ProtectedRoute exact path="/" component={Splash} /> */}
         </Switch>
