@@ -21,6 +21,10 @@ const ProductSchema = new Schema({
     address: {
         type: String,
         required: true
+    },
+    date: {
+        type: Date,
+        default: Date.now
     }
 })
 
