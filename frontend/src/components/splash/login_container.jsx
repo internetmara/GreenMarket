@@ -4,7 +4,8 @@ const { connect } = require("react-redux")
 
 
 const mSTP = (state) => ({
-    loggedIn: state.session.isAuthenticated
+    loggedIn: state.session.isAuthenticated,
+    errors: state.errors.session
     })
 
 const mDTP = (dispatch) => ({
