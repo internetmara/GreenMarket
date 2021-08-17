@@ -11,8 +11,9 @@ export const receiveCurrentUser = currentUser => ({
     currentUser
 });
 
-export const receiveUserSignIn = () => ({
-    type: RECEIVE_USER_SIGN_IN
+export const receiveUserSignIn = (user) => ({
+    type: RECEIVE_USER_SIGN_IN,
+    user
 });
 
 export const receiveErrors = errors => ({
@@ -36,6 +37,7 @@ export const login = user => (dispatch) => (
     APIUtil.login(user)
     .then( 
         (res) => {
+            console.log('hi')
             const { token } = res.data;
             APIUtil.setAuthToken(token);
             const decoded = jwt_decode(token);
