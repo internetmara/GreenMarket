@@ -12,7 +12,7 @@ const validateProductInput = require('../../validation/products')
 router.get("/test", (req, res) => res.json({ msg: "This is the product route" }));
 
 router.post('/',
-    passport.authenticate('jwt', {session: false}),
+    // passport.authenticate('jwt', {session: false}),
     (req, res) => {
         const {errors, isValid} = validateProductInput(req.body);
 
