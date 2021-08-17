@@ -83,75 +83,105 @@
     }
 ]
 
-//product seeds
+// product seeds
 
-// [
-//     {
-//         "name": "tomatos",
-//         "price": 10,
-//         "category": "vegetables",
-//         "size": "5 tomatoes"
-//     },
-//     {
-//         "name": "bread",
-//         "id": ""
-//         "price": "bread" ,
-//         "category": "food",
-//         "size": "1 loaf",
-//         "subCategory": 'baking',
-//         "rate": 'static',
-//         "description" : 'Fresh baked sourdough bread everyday! $5 a loaf!',
-//         "address": '825 Battery St, San Francisco, CA 94111',
-//         "avatar": '',
-//         "pictures": [],
-//         "reviews": []
-//     },
-//     {
-//         "name": "blueberries",
-//         "price": 5,
-//         "category": "fruit",
-//         "size": "20 blueberries"
-//     },
-//     {
-//         "name": "muffin",
-//         "price": 3,
-//         "category": "baked goods",
-//         "size": "1 muffin"
-//     },
-//     {
-//         "name": "basil",
-//         "price": 2,
-//         "category": "herbs",
-//         "size": "1 bunch of basil"
-//     },
-//     {
-//         "name": "mint",
-//         "price": 3,
-//         "category": "herbs",
-//         "size": "1 bunch of mint"
-//     },
-//     {
-//         "name": "strawberries",
-//         "price": 20,
-//         "category": "fruit",
-//         "size": "5 pounds of strawberries"
-//     },
-//     {
-//         "name": "plumbing",
-//         "price": 30,
-//         "category": "plumbing",
-//         "size": "any kind of plumbing service that is needed"
-//     },
-//     {
-//         "name": "carpenter",
-//         "price": 45,
-//         "category": "carpentry",
-//         "size": "any kind of carpentry that is needed"
-//     },
-//     {
-//         "name": "avocados",
-//         "price": 12,
-//         "category": "fruit",
-//         "size": "6 avocados"
-//     }
-// ]
+[
+    {
+        // "name": "bread",
+        "id": 200,
+        "category": "food",
+        "size": "1 loaf",
+        "subCategory": 'baking',
+        "rate": 'static',
+        "description" : 'Fresh baked sourdough bread everyday! $5 a loaf!',
+        "address": '825 Battery St, San Francisco, CA 94111',
+        "avatar": 'bread.jpg',
+        "pictures": [],
+        "reviews": []
+    },
+    {
+        // "name": "blueberries",
+        "id": 201,
+        "category": "food",
+        "subCategory": 'fruit',
+        "rate": 'static',
+        "description": 'These blueberries are deliciousa and very fresh!',
+        "address": '830 Battery St, San Francisco, CA 94111',
+        "avatar": '',
+        "pictures": [],
+        "reviews": []
+    },
+    {
+        // "name": "muffin",
+        "id": 400,
+        "category": "food",
+        "subCategory": 'baked goods',
+        "rate": 'various',
+        "description": 'These muffins are so good and baked a few hours before selling time!',
+        "address": '286 Battery St, San Francisco, CA 94111',
+        "avatar": '',
+        "pictures": [],
+        "reviews": []
+    },
+    {
+        // "name": "basil",
+        "id": 250,
+        "category": "herbs",
+        "subCategory": null,
+        "rate": 'static',
+        "description": 'These basil leaves are a perfect adding on top of any meal or to make a delicious pesto sauce!',
+        "address": '23985 Battery St, San Francisco, CA 94111',
+        "avatar": '',
+        "pictures": [],
+        "reviews": []
+    },
+    {
+        // "name": "mint",
+        "id": 44,
+        "category": "herbs",
+        "subCategory": null,
+        "rate": 'static',
+        "description": 'Use this mint to get very fresh!',
+        "address": '825102 Battery St, San Francisco, CA 94111',
+        "avatar": '',
+        "pictures": [],
+        "reviews": []
+    },
+    {
+        // "name": "strawberries",
+        "id": 123,
+        "category": "food",
+        "subCategory": 'fruit',
+        "rate": 'various',
+        "description": 'These strawberries are locally grown and so delicious!!!',
+        "address": '125 Battery St, San Francisco, CA 94111',
+        "avatar": '',
+        "pictures": [],
+        "reviews": []
+    },
+
+//services seeds 
+    // {
+    //     "id": 498,
+    //     "category": "",
+    //     "subCategory": '',
+    //     "rate": 'various',
+    //     "description": '',
+    //     "address": '825 Battery St, San Francisco, CA 94111',
+    //     "avatar": '',
+    //     "pictures": [],
+    //     "reviews": []
+    // },
+    // {
+    //     // "name": "crafts",
+    //     "id": 293,
+    //     "category": "crafts",
+    //     "subCategory": 'quilts',
+    //     "rate": 'various',
+    //     "description": 'these quilts are handmade and I can make any style you would like!!',
+    //     "address": '',
+    //     "avatar": '',
+    //     "pictures": [],
+    //     "reviews": []
+    // }
+]
