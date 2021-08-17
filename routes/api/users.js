@@ -5,11 +5,12 @@ const User = require('../../models/User');
 const jwt = require('jsonwebtoken');
 const keys = require('../../config/keys');
 const passport = require('passport');
+require('../../config/passport')(passport)
 
 const validateRegisterInput = require('../../validation/register');
 const validateLoginInput = require('../../validation/login');
 
-router.get("/test", (req, res) => res.json({ msg: "This is the users route" }));
+// router.get("/test", (req, res) => res.json({ msg: "This is the users route" }));
 
 router.get('/current', passport.authenticate('jwt', { session: false }), (req, res) => {
     res.json({
@@ -58,8 +59,6 @@ router.post('/register', (req, res) => {
 router.post('/login', (req, res) => {
     
     const { errors, isValid } = validateLoginInput(req.body);
-    
-    console.log(errors);
 
     if (!isValid) {
         return res.status(400).json(errors);
@@ -87,7 +86,7 @@ router.post('/login', (req, res) => {
                             services: user.services,
                             reviews: user.reviews
                         }
-                        console.log(user)
+                        
                         jwt.sign(
                             payload,
                             keys.secretOrKey,

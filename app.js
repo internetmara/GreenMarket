@@ -3,8 +3,8 @@ const app = express();
 const db = require('./config/keys').mongoURI;
 const mongoose = require('mongoose');
 const users = require("./routes/api/users");
-// const tweets = require("./routes/api/tweets");
-const User = require('./models/User');
+const products = require('./routes/api/products')
+// const User = require('./models/User');
 const bodyParser = require('body-parser');
 
 mongoose
@@ -34,6 +34,7 @@ app.get("/", (req, res) => {
 
 app.use("/api/users", users)
 app.use("/api/products", products)
+
 
 const port = process.env.PORT || 5000;
 
