@@ -6,6 +6,7 @@ import IndexComponent from './index/index_container';
 
 const App = () => (
     <div>
+        {/* <Header /> */}
         <Switch>
             <Route exact path="/" component={Splash} />
             <Route exact path="/map" component={IndexComponent} />
