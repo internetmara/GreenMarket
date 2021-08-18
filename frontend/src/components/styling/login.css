@@ -27,4 +27,13 @@
 .errors, p {
   font-family: 'Ovo', serif;
   padding: 3px;
+  color: red;
+}
+
+.change-form > *{
+  display: flex;
+  justify-content: center;
+  color: #395446;
+  align-items: center;
+  margin-bottom: 14px;
 }

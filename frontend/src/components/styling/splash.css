@@ -83,10 +83,6 @@ body {
   font-family: 'Ovo', serif;
 }
 
-.change-form > *{
-  color: #395446;
-}
-
 .session-header > * {
   display: flex;
   justify-content: center;

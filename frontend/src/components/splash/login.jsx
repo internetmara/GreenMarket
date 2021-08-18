@@ -43,9 +43,9 @@ class LoginForm extends React.Component {
                         <input type="password" className="login-input" onChange={this.updateField('password')} value={this.state.password} placeholder="Password"/>
                         <br />
                         <input type="submit" className="login-submit" value={this.props.formType} />
-                    </form>
                         <h3 className="change-form">{this.props.navLink}</h3>
                     { (this.props.loggedIn) ? <button className="logout-header-button" onClick={() => this.props.logout()}>Log Out</button> : '' }
+                    </form>
                 </div>
             </div>
         )
