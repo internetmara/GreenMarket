@@ -134,7 +134,7 @@ class UploadService extends React.Component {
 
                         <label>Rate Increment:
                             <input className="product-or-service-inputs" type="text" value={this.state.rateIncrement} onChange={this.update("rateIncrement")} />
-                            {this.state.tError ? <p className="errors">Rate can not be empty</p> : null}
+                            {this.state.tError ? <p className="errors">Rate Increment can not be empty</p> : null}
                         </label> <br />
 
                         <label>Address:
