@@ -12,7 +12,6 @@ class UploadProduct extends React.Component {
             address: "",
             user: this.props.user,
             product: [],
-            // service: [],
             redirect: false,
             productFile: null,
             productUrl: null,
@@ -71,7 +70,7 @@ class UploadProduct extends React.Component {
 
         if (this.state.selectForm === 0) {
             return (
-                <div className="upload-product-container">
+                <div className="upload-container">
 
                     <div className="product-or-service">
                         <h2>Are you adding a product or a service?</h2> 
@@ -103,13 +102,13 @@ class UploadProduct extends React.Component {
         if (this.state.selectForm > 1) {
             return (
 
-                <div className="uploaded-container-product">
+                <div className="uploaded-container-two">
                     <div className="upload-button-box">
                         <label id="uploading-here">
                             <h2>Upload Pictures of your product below:</h2>
                             <input type="file" onChange={this.handleFile} style={{ display: "none" }} />
                         </label>
-                        <div className="upload-form-preview-product">
+                        <div className="upload-form-preview">
                             {PreviewProduct}
                         </div>
                     </div>
@@ -117,22 +116,22 @@ class UploadProduct extends React.Component {
                     <form className="upload-form" onSubmit={this.handleSubmit}>
                         <h3> Tell us more about your product: </h3>
                             <label>Name:
-                                <input className="product-input" type="text" value={this.state.name} onChange={this.update("name")} />
+                                <input className="product-or-service-inputs" type="text" value={this.state.name} onChange={this.update("name")} />
                                 {this.state.tError ? <p className="errors">Name can not be empty</p> : null}
                             </label> <br />
 
                             <label>Category:
-                                <input className="product-input" type="text" value={this.state.category} onChange={this.update("category")} />
+                                <input className="product-or-service-inputs" type="text" value={this.state.category} onChange={this.update("category")} />
                                 {this.state.tError ? <p className="errors">Category can not be empty</p> : null}
                             </label> <br />
 
                             <label>Rate:
-                                <input className="product-input" type="text" value={this.state.rate} onChange={this.update("rate")} />
+                                <input className="product-or-service-inputs" type="text" value={this.state.rate} onChange={this.update("rate")} />
                                 {this.state.tError ? <p className="errors">Rate can not be empty</p> : null}
                             </label> <br />
 
                             <label>Address:
-                                <input className="product-input" type="text" value={this.state.address} onChange={this.update("address")} />
+                                <input className="product-or-service-inputs" type="text" value={this.state.address} onChange={this.update("address")} />
                                 {this.state.tError ? <p className="errors">Address can not be empty</p> : null}
                             </label> <br />
 
