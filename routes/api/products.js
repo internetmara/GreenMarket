@@ -1,19 +1,19 @@
 const express = require("express");
-const app = express();
+// const app = express();
 const router = express.Router();
 const Product = require('../../models/Product')
 const User = require('../../models/User')
 const jwt = require('jsonwebtoken');
 const passport = require('passport');
 const validateProductInput = require('../../validation/products')
-const path = require('path');
+// const path = require('path');
 
-if (process.env.NODE_ENV === 'production') {
-    app.use(express.static('frontend/build'));
-    app.get('/', (req, res) => {
-        res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
-    })
-}
+// if (process.env.NODE_ENV === 'production') {
+//     app.use(express.static('frontend/build'));
+//     app.get('/', (req, res) => {
+//         res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
+//     })
+// }
 // const keys = require('../../config/keys');
 
 router.get('/', (req, res) => {
