@@ -58,4 +58,41 @@ router.get('/:id', (req, res) => {
             res.status(404).json({ noproductfound: 'Could not find product'}))
 })
 
+router.patch('/:id/update',
+    passport.authenticate('jwt', { session: false }),
+    (req, res) => {
+        const { errors, isValid } = validateProductInput(req.body);
+
+        if (!isValid) {
+            return res.status(400).json(errors);
+        }
+
+        Product.findByIdAndUpdate(
+            req.params.id,
+            {
+            name: req.body.name,
+            category: req.body.category,
+            rate: req.body.rate,
+            description: req.body.description,
+            address: req.body.address,
+            user: req.user.id},
+            { new: true },
+            function (err, success) {
+                if (err) {
+                    console.log(err);
+                } else {
+                    return success;
+                }
+            }
+            ).then(updatedProduct => 
+                User.updateOne(
+                    { _id: req.user.id, 'products._id': req.params.id },
+                    { $set: {'products.$': updatedProduct}}
+                )
+                .then(complete => res.json(complete))
+        )
+    }
+)
+
+
 module.exports = router;
