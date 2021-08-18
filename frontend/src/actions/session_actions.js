@@ -5,6 +5,8 @@ export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
 export const RECEIVE_USER_LOGOUT = "RECEIVE_USER_LOGOUT";
 export const RECEIVE_USER_SIGN_IN = "RECEIVE_USER_SIGN_IN";
+// export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
+
 
 export const receiveCurrentUser = currentUser => ({
     type: RECEIVE_CURRENT_USER,
@@ -53,4 +55,9 @@ export const logout = () => (dispatch) => {
     localStorage.removeItem('jwToken')
     APIUtil.setAuthToken(false)
     dispatch(logoutUser())
+}
+
+export const getUser = (userId) => (dispatch) => {
+    APIUtil.getUser(userId)
+        .then(res => dispatch(receiveCurrentUser(res)))
 }
