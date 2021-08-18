@@ -6,7 +6,7 @@ module.exports = function validateServiceInput(data) {
 
     data.category = validText(data.category) ? data.category : '';
     data.rate = validText(data.rate) ? data.rate : '';
-    data.rateIncrement = validText(data.rate) ? data.rate : '';
+    data.rateIncrement = validText(data.rateIncrement) ? data.rateIncrement : '';
     data.description = validText(data.description) ? data.description : '';
     data.address = validText(data.address) ? data.address : '';
 
