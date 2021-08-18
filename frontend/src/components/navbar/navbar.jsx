@@ -8,8 +8,8 @@ class Navbar extends React.Component {
 
     render() {
         return (
-           <header>
-            <div className="container">
+           <header className="nav-box">
+            <div className="nav-container">
               <div className="logo">
                   <Link to="/"><img src="images/darkgreen.png" className="logo-picture"></img></Link>
               </div>

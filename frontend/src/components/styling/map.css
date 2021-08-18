@@ -6,8 +6,22 @@
 .map-header {
   font-family: 'Ovo', serif;
   display: flex;
+  position: sticky;
+  align-items: center;
   justify-content: center;
   color: #395446;
-  font-size: 60px;
+  font-size: 40px;
   align-items: center;
+  margin-top: 90px;
+  padding: 10px;
+}
+
+.map-box {
+  width: 300px;
+  height: auto;
+  max-width: 100%;
+  margin: auto;
+  padding: 30px;
+  border-radius: 5px;
+  border:3px solid #395446;
 }

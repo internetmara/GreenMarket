@@ -24,7 +24,7 @@ class IndexComponent extends React.Component {
     render() {
         return (
             <div>
-                <Link to="/"><h2 className="map-header">Index Component</h2></Link>
+                <Link to="/"><h2 className="map-header">Index/Map Component</h2></Link>
                 <SimpleMap products={this.props.products} services={this.props.services} />
             </div>
         )
