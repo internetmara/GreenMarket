@@ -51,6 +51,9 @@ router.post('/create',
     }
 );
 
-
+// router.get('/:id', (req, res) => {
+//     Product.findById(req.params.id)
+//         .then(product => )
+// })
 
 module.exports = router;
