@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const users = require("./routes/api/users");
 const products = require('./routes/api/products')
 const services = require('./routes/api/services')
+const reviews = require('./routes/api/reviews')
 const bodyParser = require('body-parser');
 const passport = require('passport');
 
@@ -30,6 +31,7 @@ app.get("/", (req, res) => {
 app.use("/api/users", users)
 app.use("/api/products", products)
 app.use("/api/services", services)
+app.use("/api/reviews", reviews)
 
 
 const port = process.env.PORT || 5000;
