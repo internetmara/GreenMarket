@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
 import { Link } from 'react-router-dom';
 import '../styling/map.css'
-
 const key = require("../../config/keys").googleMapsKey;
 
 const AnyReactComponent = ({ text }) => <div>{text}</div>;

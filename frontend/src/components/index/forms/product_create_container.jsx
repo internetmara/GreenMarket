@@ -5,14 +5,13 @@ import UploadProduct from "./upload_product";
 
 const mapStateToProps = (state = {}) => {
     return {
-        product: state.entities.product,
-        user: state.session.id
+        // currentUser: state.session.id 
     }
 }
 
 // const mapDispatchToProps = (dispatch) => {
 //     return {
-//         createProducts: picture => dispatch(createProduct(product)),
+        // need thunk action to send the item to DB
 //     };
 // };
 
