@@ -11,7 +11,6 @@ const keys = require('./config/keys');
 
 const path = require('path');
 
-
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static('frontend/build'));
     app.get('/', (req, res) => {
@@ -19,7 +18,7 @@ if (process.env.NODE_ENV === 'production') {
     })
 }
 
-const db = require("./config/keys").mongoURI;
+const db = require(keys).mongoURI;
 mongoose
     .connect(db, { useNewUrlParser: true })
     .then(() => console.log("Connected to MongoDB successfully"))
