@@ -1,11 +1,11 @@
 const axios = require('axios');
 
 export const getProducts = () => {
-    return axios.post('/api/products/' )
+    return axios.get('/api/products/' )
 };
 
 export const getServices = () => {
-    return axios.post('/api/services/')
+    return axios.get('/api/services/')
 };
 
 export const addProduct = (prodData) => {
@@ -17,11 +17,11 @@ export const addService = (servData) => {
 }
 
 export const changeProduct = (prodData) => {
-    return axios.post('/api/products/edit', prodData)
+    return axios.patch('/api/products/edit', prodData)
 }
 
 export const changeService = (servData) => {
-    return axios.post('/api/services/edit', servData)
+    return axios.patch('/api/services/edit', servData)
 }
 
 export const deleteProduct = () => {
