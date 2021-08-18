@@ -15,7 +15,6 @@ class IndexComponent extends React.Component {
         componentDidMount() {
             this.props.getServices()
             this.props.getProducts()
-            // this.setCenter()
         }
         
         // ** need to **
@@ -40,8 +39,6 @@ class IndexComponent extends React.Component {
                 this.userLng = res.results[0].geometry.location.lng
             }
         )
-        // console.log("lat" + this.userLat)
-        // console.log("lng" + this.userLng)
     }
 
 
