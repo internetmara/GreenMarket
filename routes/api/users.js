@@ -8,13 +8,13 @@ const passport = require('passport');
 const validateRegisterInput = require('../../validation/register');
 const validateLoginInput = require('../../validation/login');
 const path = require('path');
-// const keys = require("../../keys");
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static('frontend/build'));
     app.get('/', (req, res) => {
         res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
     })
 }
+// const keys = require("../../keys");
 
 // const keys = require('../../config/keys');
 // router.get("/test", (req, res) => res.json({ msg: "This is the users route" }));
