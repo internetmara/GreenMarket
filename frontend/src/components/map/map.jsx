@@ -14,15 +14,24 @@ class SimpleMap extends Component {
     zoom: 11
   };
 
+  readItems() {
+    let items = Object.values(this.props.products).concat(Object.values(this.props.services))
+    items.forEach(item => {
+      console.log(item)
+      // individual item here - will throw this into a map component item
+    })
+  }
+
   render() {
     return (
       // Important! Always set the container height explicitly
       <div style={{ height: '100vh', width: '100%' }}>
+        {this.readItems()}
         <GoogleMapReact
           bootstrapURLKeys={{ key: "" }}
           defaultCenter={this.props.center}
           defaultZoom={this.props.zoom}
-        >
+          >
           <AnyReactComponent
             lat={37.783964}
             lng={-122.2446203}
