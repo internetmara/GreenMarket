@@ -2,3 +2,12 @@
   width: 50px;
   height: auto;
 }
+
+.map-header {
+  font-family: 'Ovo', serif;
+  display: flex;
+  justify-content: center;
+  color: #395446;
+  font-size: 60px;
+  align-items: center;
+}
