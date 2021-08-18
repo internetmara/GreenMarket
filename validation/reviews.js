@@ -3,7 +3,7 @@ const validText = require('./valid-text');
 
 module.exports = function validateReviewInput(data) {
     let errors = {}
-
+    
     data.type = validText(data.type) ? data.type : '';
     data.rating = validText(data.rating) ? data.rating : '';
     data.description = validText(data.description) ? data.description : '';
