@@ -5,10 +5,10 @@ import UploadProduct from "./product_create_form";
 import { Link } from "react-router-dom";
 
 
-const mapStateToProps = (state = {}) => {
+const mapStateToProps = (state) => {
     return {
         product: state.entities.product,
-        user: state.session.currentUser,
+        user: state.session.user,
         formType: 'Add a Product',
         navLink: <Link to="/products/new">Add a Product</Link>,
     }

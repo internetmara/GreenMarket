@@ -5,10 +5,10 @@ import UploadService from "./service_create_form";
 import { Link } from "react-router-dom";
 
 
-const mapStateToProps = (state = {}) => {
+const mapStateToProps = (state) => {
     return {
         service: state.entities.service,
-        user: state.session.currentUser,
+        user: state.session.user,
         formType: 'Add a Service',
         navLink: <Link to="/services/new">Add a Service</Link>,
     }

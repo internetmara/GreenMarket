@@ -25,7 +25,6 @@ const App = () => (
             {/* <ProtectedRoute exact path="/shop" component={Index} /> */}
             <ProtectedRoute exact path="/products/new" component={UploadProduct} />
             <ProtectedRoute exact path="/services/new" component={UploadService} />
-
         </Switch>
     </div>
 )

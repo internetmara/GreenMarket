@@ -11,7 +11,7 @@ class UploadProduct extends React.Component {
             description: "",
             address: "",
             user: this.props.user,
-            products: [],
+            product: [],
             redirect: false,
             productFile: null,
             productUrl: null,
