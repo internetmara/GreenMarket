@@ -37,22 +37,24 @@ class SignupForm extends React.Component {
 
     render() {
         return (
-            <div className="signup-form">
+            <div>
                 <h1 className="session-header"><Link to="/">green market</Link></h1>
-                <h1 className="form-text">{this.props.formType}</h1> 
-                {this.props.errors ? this.readErrors() : ''}
-                <form onSubmit={(e) => this.handleSubmit(e)}>
-                    <input type="email" className="login-input" onChange={this.updateField('email')} value={this.state.email} placeholder="Email" />
-                    <br />
-                    <input type="text" className="login-input" onChange={this.updateField('username')} value={this.state.username} placeholder="Username" />
-                    <br />
-                    <input type="password" className="login-input" onChange={this.updateField('password')} value={this.state.password} placeholder="Password" />
-                    <br />
-                    <input type="text" className="login-input" onChange={this.updateField('address')} value={this.state.address} placeholder="Address"/>
-                    <br />
-                    <input type="submit" className="login-submit" value={this.props.formType} />
-                </form>
-                    <h3 className="change-form">{this.props.navLink}</h3>
+                <div className="signup-form">
+                    <h1 className="form-text">{this.props.formType}</h1> 
+                    {this.props.errors ? this.readErrors() : ''}
+                    <form onSubmit={(e) => this.handleSubmit(e)}>
+                        <input type="email" className="login-input" onChange={this.updateField('email')} value={this.state.email} placeholder="Email" />
+                        <br />
+                        <input type="text" className="login-input" onChange={this.updateField('username')} value={this.state.username} placeholder="Username" />
+                        <br />
+                        <input type="password" className="login-input" onChange={this.updateField('password')} value={this.state.password} placeholder="Password" />
+                        <br />
+                        <input type="text" className="login-input" onChange={this.updateField('address')} value={this.state.address} placeholder="Address"/>
+                        <br />
+                        <input type="submit" className="login-submit" value={this.props.formType} />
+                    </form>
+                        <h3 className="change-form">{this.props.navLink}</h3>
+                </div>
             </div>
         )
     }

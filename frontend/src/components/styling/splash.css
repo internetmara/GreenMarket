@@ -16,7 +16,6 @@ body {
   justify-content: center;
   flex-direction: column;
   margin: auto;
-  margin-top: 10%;
 }
 
 .header {
@@ -113,6 +112,10 @@ body {
 }
 
 .session-header > * {
+  display: flex;
+  justify-content: center;
+  margin-top: 150px;
+  align-items: center;
   color: #395446;
   font-size: 75px;
   /* padding: -10px; */
