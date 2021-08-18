@@ -17,9 +17,9 @@ class SimpleMap extends Component {
     super(props)
   };
 
-  static defaultProps = {
-    zoom: 11,
-  }
+  // static defaultProps = {
+  //   zoom: 11,
+  // }
   
   populateItems() {
     let items = Object.values(this.props.products).concat(Object.values(this.props.services))
@@ -53,7 +53,7 @@ class SimpleMap extends Component {
         <GoogleMapReact
           bootstrapURLKeys={{ key: key }}
           center={{lat: this.props.userLat, lng: this.props.userLng}}
-          defaultZoom={this.props.zoom}
+          zoom={11}
           >
             {this.populateItems()}
         </GoogleMapReact>
