@@ -1,26 +1,32 @@
 body {
   font-family: 'Ovo', serif;
   color:#395446;
+  background-image: url('./images/gold-hoop.png');
+  background-size: cover;
 }
 
 .login-form, .signup-form {
-  border: 1px solid #ccc;
-  border-radius: 3px;
+  /* border: 1px solid #ccc; */
+  /* border-radius: 10px; */
   padding: 24px;
-  display: flex;
+  display: flex;  
   box-sizing: border-box;
   max-width: 512px;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   margin: auto;
+  margin-top: 10%;
 }
 
 .header {
   display: flex;
+  font-size: 60px;
+  color: #7ABB6F;
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  margin-top: 12%;
 }
 
 .login-input {
@@ -45,4 +51,73 @@ body {
   width: 100%;
   background-color: #395446;
   color: white;
+}
+
+.home-page-button {
+  font-family: 'Ovo', serif;
+  color: whitesmoke;
+  background-color: #395446;
+  border-radius: 30px;
+  box-shadow: none;
+  outline-style: none;
+  text-decoration: none;
+  height: 50px;
+  padding: 15px;
+  width: 170px;
+  text-decoration: none;
+  align-items: stretch;
+  border: none;
+}
+
+.home-page-button::after {
+  color: whitesmoke;
+  background-color: #395446;
+  border-radius: 30px;
+  box-shadow: none;
+  outline-style: none;
+  text-decoration: none;
+  height: 50px;
+  padding: 15px;
+  width: 170px;
+  text-decoration: none;
+  align-items: stretch;
+  border: none;
+}
+
+.session-box {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 600px;
+  max-width: 100%;
+}
+
+.home-page-button:hover {
+  cursor: pointer;
+}
+
+
+:any-link {
+  color: whitesmoke;
+  /* background-color: #395446; */
+  border-radius: 10px;
+  box-shadow: none;
+  outline-style: none;
+  text-decoration: none;
+  font-family: 'Ovo', serif;
+}
+
+.change-form > *{
+  color: #395446;
+}
+
+.session-header > * {
+  color: #395446;
+  font-size: 75px;
+  /* padding: -10px; */
+}
+
+.form-text {
+  margin: 10px;
 }

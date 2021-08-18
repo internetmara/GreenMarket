@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../styling/splash.css'
 
 class LoginForm extends React.Component {
@@ -30,6 +31,7 @@ class LoginForm extends React.Component {
     render() {
         return (
             <div className="login-form">
+                <h1 className="session-header"><Link to="/">green market</Link></h1>
                 <h1 className="form-text">{this.props.formType}</h1> 
                 {this.props.errors ? this.readErrors() : ''}
                 <form onSubmit={(e) => this.handleSubmit(e)}>
