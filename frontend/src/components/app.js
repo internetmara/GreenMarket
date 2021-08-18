@@ -5,14 +5,7 @@ import { Switch, Route } from 'react-router';
 import IndexComponent from './index/index_container';import SignupForm from './splash/signup';
 import SignupContainer from './splash/signup_container';
 import LoginContainer from './splash/login_container';
-const path = require('path');
 
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static('frontend/build'));
-  app.get('/', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
-  })
-}
 
 const App = () => (
     <div>
