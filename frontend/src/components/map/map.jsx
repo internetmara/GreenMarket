@@ -1,12 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component} from 'react';
 import GoogleMapReact from 'google-map-react';
 import Geocode from "react-geocode";
 import { Link } from 'react-router-dom';
 import '../styling/map.css'
 const key = require("../../config/keys").googleMapsKey;
-
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
-
 Geocode.setApiKey(key);
 Geocode.setLanguage("en");
 Geocode.setRegion("us");
@@ -17,29 +15,10 @@ Geocode.setLocationType("APPROXIMATE");
 class SimpleMap extends Component {
   constructor(props) {
     super(props)
-    this.state = {
-      userLat: '',
-      userLng: '',
-      zoom: 11
-    }
-  }
-  // static defaultProps = {
-  //   center: {
-  //     lat: userLat,
-  //     lng: userLng
-  //   },
-  //   zoom: 11
-  // };
-  
-  setCenter() {
-    let { latitude, longitude } = ''
-    Geocode.fromAddress(this.props.user.address).then(
-      res => {
-        let { latitude, longitude } = res.results[0].geometry.location
-        console.log(lat, lng)
-      }
-    )
-      this.setState({ userLat: latitude, userLng: longitude })
+  };
+
+  static defaultProps = {
+    zoom: 11,
   }
   
   populateItems() {
@@ -50,7 +29,7 @@ class SimpleMap extends Component {
       Geocode.fromAddress(item.address).then( 
         res => {
           let { lat, lng } = res.results[0].geometry.location
-          console.log(lat, lng)
+          
         }
       )
       return <div>
@@ -68,9 +47,12 @@ class SimpleMap extends Component {
     return (
       // Important! Always set the container height explicitly
       <div style={{ height: '100vh', width: '100%' }}>
+        {/* {console.log(this.props)} */}
+        {console.log({ lat: this.props.userLat, lng: this.props.userLng })}
+        {console.log('props' + this.props)}
         <GoogleMapReact
           bootstrapURLKeys={{ key: key }}
-          defaultCenter={this.props.center}
+          center={{lat: this.props.userLat, lng: this.props.userLng}}
           defaultZoom={this.props.zoom}
           >
             {this.populateItems()}
