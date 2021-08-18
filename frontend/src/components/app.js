@@ -6,11 +6,12 @@ import IndexComponent from './index/index_container';
 import SignupContainer from './splash/signup_container';
 import LoginContainer from './splash/login_container';
 import ItemShow from './item_show/item_show_container';
+import Navbar from './navbar/navbar';
 // import { ProtectedRoute } from '../util/route_util';
 
 const App = () => (
     <div>
-        {/* <Header /> */}
+        <Navbar/>
         <Switch>
             {/* <AuthRoute exact path="/" component={Splash} /> */}
             <Route exact path="/signup" component={SignupContainer} />

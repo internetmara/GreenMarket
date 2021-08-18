@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import SimpleMap from '../map/map'
 import Geocode from "react-geocode";
 const key = require("../../config/keys").googleMapsKey;
@@ -48,7 +49,7 @@ class IndexComponent extends React.Component {
         this.setCenter()
         return (
             <div>
-                <h2>Index Component</h2>
+                <Link to="/"><h2 className="map-header">Index/Map Component</h2></Link>
                 <SimpleMap products={this.props.products} services={this.props.services} user={this.props.user} userLat={this.userLat} userLng={this.userLng} />
             </div>
         )
