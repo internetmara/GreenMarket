@@ -12,7 +12,7 @@ import { ProtectedRoute } from '../util/route_util';
 
 const App = () => (
     <div>
-        {/* <Header /> */}
+        <Header />
         <Switch>
             <AuthRoute exact path="/" component={Splash} />
             <Route exact path="/signup" component={SignupContainer} />

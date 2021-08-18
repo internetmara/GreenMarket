@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const mapStateToProps = (state = {}) => {
     return {
-        product: state.entities.product,
+        products: state.entities.products,
         user: state.session.id,
         formType: 'Add a Product',
         navLink: <Link to="/product/new">Add a Product</Link>,
