@@ -1,20 +1,11 @@
 const express = require("express");
 const router = express.Router();
-// const app = express();
 const Service = require('../../models/Service')
 const User = require('../../models/User')
 const jwt = require('jsonwebtoken');
 const passport = require('passport');
 const validateServiceInput = require('../../validation/services')
-// const path = require('path');
 
-// if (process.env.NODE_ENV === 'production') {
-//     app.use(express.static('frontend/build'));
-//     app.get('/', (req, res) => {
-//         res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
-//     })
-// }
-// const keys = require('../../config/keys');
 router.get('/', (req, res) => {
     Service.find()
         .sort({ date: -1 })
@@ -33,6 +24,7 @@ router.post('/create',
         }
 
         const newService = new Service({
+            name: req.body.name,
             category: req.body.category,
             rate: req.body.rate,
             rateIncrement: req.body.rateIncrement,
@@ -55,9 +47,11 @@ router.post('/create',
                             return success;
                         }
                     }
-                ).then(creation => res.json(creation)));
-
-    });
+                ).then(creation => res.json(creation)
+            )
+        );
+    }
+);
 
 
 module.exports = router;
