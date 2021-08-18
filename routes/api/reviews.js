@@ -1,13 +1,21 @@
 const express = require("express");
 const router = express.Router();
 const Review = require('../../models/Review')
+// const app = express();
 const User = require('../../models/User')
 const jwt = require('jsonwebtoken');
-const keys = require('../../config/keys');
 const passport = require('passport');
 const validateReviewInput = require('../../validation/reviews')
+// const path = require('path');
 
-// 
+// if (process.env.NODE_ENV === 'production') {
+//     app.use(express.static('frontend/build'));
+//     app.get('/', (req, res) => {
+//         res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
+//     })
+// }
+// const keys = require('../../config/keys');
+
 router.post('/create',
     passport.authenticate('jwt', { session: false }),
     (req, res) => {

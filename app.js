@@ -1,6 +1,5 @@
 const express = require("express");
 const app = express();
-const db = require('./config/keys').mongoURI;
 const mongoose = require('mongoose');
 const users = require("./routes/api/users");
 const products = require('./routes/api/products')
@@ -8,9 +7,17 @@ const services = require('./routes/api/services')
 const reviews = require('./routes/api/reviews')
 const bodyParser = require('body-parser');
 const passport = require('passport');
+const path = require('path');
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static('frontend/build'));
+    app.get('/', (req, res) => {
+        res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
+    })
+}
 
+const keys = require("./config/keys").mongoURI;
 mongoose
-    .connect(db, { useNewUrlParser: true })
+    .connect(keys, { useNewUrlParser: true })
     .then(() => console.log("Connected to MongoDB successfully"))
     .catch(err => console.log(err));
 

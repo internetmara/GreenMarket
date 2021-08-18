@@ -1,15 +1,22 @@
 const express = require("express");
+// const app = express();
 const router = express.Router();
 const bcrypt = require('bcryptjs');
 const User = require('../../models/User');
 const jwt = require('jsonwebtoken');
-const keys = require('../../config/keys');
 const passport = require('passport');
-
-
 const validateRegisterInput = require('../../validation/register');
 const validateLoginInput = require('../../validation/login');
+// const path = require('path');
+// if (process.env.NODE_ENV === 'production') {
+//     app.use(express.static('frontend/build'));
+//     app.get('/', (req, res) => {
+//         res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
+//     })
+// }
+// const keys = require("../../keys");
 
+// const keys = require('../../config/keys');
 // router.get("/test", (req, res) => res.json({ msg: "This is the users route" }));
 
 router.get('/current', passport.authenticate('jwt', { session: false }), (req, res) => {

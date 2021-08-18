@@ -5,7 +5,7 @@
 
 ## Green Market is a online directory that allows users to browse, purchase and locate local goods and services.
 
-[Live Demo](link not yet available!)
+[Live Demo](https://the-greenmarket.herokuapp.com/)
 
 ## Background and Overview
 

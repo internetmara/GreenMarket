@@ -5,24 +5,34 @@ import { Route, Switch } from 'react-router';
 import { Link } from 'react-router-dom';
 // import '../styling/reset.css'
 import '../styling/splash.css'
+import '../styling/navbar.css'
 
 class Splash extends React.Component {
 
     render() {
         return (
-            <div className="header">
-                <h1>green market</h1> 
-                <Switch>
-                    <Route exact path="/signup" component={SignupForm} />
-                    <Route exact path="/login" component={LoginForm} />
-                </Switch>
-                <div className="session-box">
-                    <Link to="/signup"><button className="home-page-button">Sign Up</button></Link>
-                    <Link to="/login"><button className="home-page-button">Log In</button></Link>
-                </div>
-            </div>
+            <header>
+                <div className="container">
+                    <div className="logo">
+                        <h1> Green Market </h1>
+                        </div>
+                        <nav className="links">
+                            <ul>
+                                {/* <input type="text" placeholder="Search GreenMarket..." className="search-bar" /> */}
+                                <Link to="/signup"><button className="home-page-button">Sign Up</button></Link>
+                                <Link to="/login"><button className="home-page-button">Log In</button></Link>
+                            </ul>
+                        </nav>
+
+                    </div>
+            </header>
         )
     }
 }
+
+
+
+
+
 
 export default Splash;

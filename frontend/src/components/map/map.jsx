@@ -3,6 +3,8 @@ import GoogleMapReact from 'google-map-react';
 import { Link } from 'react-router-dom';
 import '../styling/map.css'
 
+const key = require("../../config/keys").googleMapsKey;
+
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
 class SimpleMap extends Component {
@@ -28,7 +30,7 @@ class SimpleMap extends Component {
       <div style={{ height: '100vh', width: '100%' }}>
         {this.readItems()}
         <GoogleMapReact
-          bootstrapURLKeys={{ key: "" }}
+          bootstrapURLKeys={{ key: key }}
           defaultCenter={this.props.center}
           defaultZoom={this.props.zoom}
           >
