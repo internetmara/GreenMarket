@@ -53,11 +53,14 @@ router.post('/create',
     }
 );
 
+<<<<<<< HEAD
+=======
 router.get('/:id', (req, res) => {
     Service.findById(req.params.id)
         .then(service => res.json(service))
         .catch(err =>
             res.status(404).json({ noservicefound: 'Could not find service' }))
 })
+>>>>>>> main
 
 module.exports = router;

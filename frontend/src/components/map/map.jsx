@@ -1,44 +1,63 @@
-import React, { Component } from 'react';
+import React, { Component} from 'react';
 import GoogleMapReact from 'google-map-react';
+import Geocode from "react-geocode";
 import { Link } from 'react-router-dom';
 import '../styling/map.css'
-
 const key = require("../../config/keys").googleMapsKey;
-
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
+Geocode.setApiKey(key);
+Geocode.setLanguage("en");
+Geocode.setRegion("us");
+// Geocode.enableDebug();
+Geocode.setLocationType("APPROXIMATE");
+
 
 class SimpleMap extends Component {
-  static defaultProps = {
-    center: {
-      lat: 37.783964,
-      lng: -122.2446203
-    },
-    zoom: 11
+  constructor(props) {
+    super(props)
   };
 
-  readItems() {
+  // static defaultProps = {
+  //   zoom: 11,
+  // }
+  
+  populateItems() {
     let items = Object.values(this.props.products).concat(Object.values(this.props.services))
-    items.forEach(item => {
-      console.log(item)
-      // individual item here - will throw this into a map component item
+
+    return items.map(item => {
+      let {lat, lng} = ''
+      Geocode.fromAddress(item.address).then( 
+        res => {
+          let { lat, lng } = res.results[0].geometry.location
+          
+        }
+      )
+      return <div>
+          < AnyReactComponent
+            lat = {lat}
+            lng = {lng}
+            text = {< Link to = "/" > <img alt="N/A" title="N/A" className="GM-icon" src="/logo192.png" /></Link >}
+            />
+      </div>
+
     })
   }
 
   render() {
     return (
       // Important! Always set the container height explicitly
+
       <div className="map-box" style={{ height: '80vh', width: '80%' }}>
-        {this.readItems()}
+        {/* {console.log(this.props)} */}
+        {console.log({ lat: this.props.userLat, lng: this.props.userLng })}
+        {console.log('props' + this.props)}
+
         <GoogleMapReact
           bootstrapURLKeys={{ key: key }}
-          defaultCenter={this.props.center}
-          defaultZoom={this.props.zoom}
+          center={{lat: this.props.userLat, lng: this.props.userLng}}
+          zoom={11}
           >
-          <AnyReactComponent
-            lat={37.783964}
-            lng={-122.2446203}
-            text={<Link to="/"><img alt="N/A" title="N/A" className="GM-icon" src="/GMfavicon.png" /></Link>}
-          />
+            {this.populateItems()}
         </GoogleMapReact>
       </div>
     );

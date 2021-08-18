@@ -50,6 +50,14 @@ router.post('/create',
         );
     }
 );
+<<<<<<< HEAD
+
+// router.get('/:id', (req, res) => {
+//     Product.findById(req.params.id)
+//         .then(product => )
+// })
+=======
+>>>>>>> main
 
 router.get('/:id', (req, res) => {
     Product.findById(req.params.id)

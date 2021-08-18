@@ -5,7 +5,8 @@ import IndexComponent from "./index"
 
 const mSTP = (state) => ({
     products: state.entities.products,
-    services: state.entities.services
+    services: state.entities.services,
+    user: state.session.user
 })
 
 const mDTP = (dispatch) => ({
