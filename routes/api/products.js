@@ -54,9 +54,11 @@ router.post('/create',
                             return success;
                         }
                     }
-                ).then(creation => res.json(creation)));
-        
-    });
+                ).then(creation => res.json(creation)
+            )
+        );
+    }
+);
 
 
 module.exports = router;
