@@ -7,8 +7,8 @@ import SignupContainer from './splash/signup_container';
 import LoginContainer from './splash/login_container';
 import ItemShow from './item_show/item_show_container';
 import UploadProduct from './index/forms/product_create_container';
-import UploadService from './index/forms/service_create_container';
-// import { ProtectedRoute } from '../util/route_util';
+import UploadService from './index/forms/service_container';
+import { ProtectedRoute } from '../util/route_util';
 
 const App = () => (
     <div>
