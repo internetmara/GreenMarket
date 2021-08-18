@@ -9,3 +9,22 @@
   width: 400px;
   font-family: 'Ovo', serif;
 }
+
+
+.login-submit, .logout-header-button {
+  font-family: 'Ovo', serif;
+  border: none;
+  border-radius: 3px;
+  font-size: 14px;
+  height: 48px;
+  margin: 0px 0px 14px 0px;
+  padding: 0;
+  width: 100%;
+  background-color: #395446;
+  color: white;
+}
+
+.errors, p {
+  font-family: 'Ovo', serif;
+  padding: 3px;
+}

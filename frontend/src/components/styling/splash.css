@@ -28,19 +28,6 @@ body {
   margin-top: 12%;
 }
 
-.login-submit {
-  font-family: 'Ovo', serif;
-  border: none;
-  border-radius: 3px;
-  font-size: 14px;
-  height: 48px;
-  margin: 0px 0px 14px 0px;
-  padding: 0;
-  width: 100%;
-  background-color: #395446;
-  color: white;
-}
-
 .home-page-button {
   font-family: 'Ovo', serif;
   color: #395446;

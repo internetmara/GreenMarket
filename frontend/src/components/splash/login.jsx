@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import '../styling/reset.css'
 import '../styling/splash.css'
+import '../styling/login.css'
 
 class LoginForm extends React.Component {
     constructor(props) {
@@ -43,7 +45,7 @@ class LoginForm extends React.Component {
                         <input type="submit" className="login-submit" value={this.props.formType} />
                     </form>
                         <h3 className="change-form">{this.props.navLink}</h3>
-                    { (this.props.loggedIn) ? <button onClick={() => this.props.logout()}>Log Out</button> : '' }
+                    { (this.props.loggedIn) ? <button className="logout-header-button" onClick={() => this.props.logout()}>Log Out</button> : '' }
                 </div>
             </div>
         )
