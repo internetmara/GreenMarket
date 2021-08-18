@@ -24,7 +24,7 @@ router.post('/create',
             address: req.body.address,
             user: req.user.id
         })
-        console.log(req.user.id)
+        
 
         newProduct.save()
             .then(product => 
