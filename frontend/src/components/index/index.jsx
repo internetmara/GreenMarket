@@ -24,7 +24,7 @@ class IndexComponent extends React.Component {
         return (
             <div>
                 <h2>Index Component</h2>
-                <SimpleMap products={this.props.products} services={this.props.services} />
+                <SimpleMap products={this.props.products} services={this.props.services} user={this.props.user} />
             </div>
         )
     }
