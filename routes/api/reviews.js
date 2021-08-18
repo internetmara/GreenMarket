@@ -1,36 +1,35 @@
 const express = require("express");
 const router = express.Router();
-const Product = require('../../models/Review')
+const Review = require('../../models/Review')
 const User = require('../../models/User')
 const jwt = require('jsonwebtoken');
 const keys = require('../../config/keys');
 const passport = require('passport');
-const validateProductInput = require('../../validation/reviews')
+const validateReviewInput = require('../../validation/reviews')
 
 // 
 router.post('/create',
     passport.authenticate('jwt', { session: false }),
     (req, res) => {
-        const { errors, isValid } = validateProductInput(req.body);
+        const { errors, isValid } = validateReviewInput(req.body);
 
         if (!isValid) {
             return res.status(400).json(errors);
         }
-        console.log(req.user)
-        const newProduct = new Product({
-            category: req.body.category,
-            rate: req.body.rate,
+        
+        const newReview = new Review({
+            type: req.body.type,
+            rating: req.body.rating,
             description: req.body.description,
-            address: req.body.address,
             user: req.user.id
         })
 
 
-        newProduct.save()
-            .then(product =>
+        newReview.save()
+            .then(review =>
                 User.findByIdAndUpdate(
                     req.user.id,
-                    { $addToSet: { products: product } },
+                    { $addToSet: { reviewss: review } },
                     { new: true },
                     function (err, success) {
                         if (err) {
