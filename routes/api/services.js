@@ -7,6 +7,14 @@ const keys = require('../../config/keys');
 const passport = require('passport');
 const validateServiceInput = require('../../validation/services')
 
+router.get('/', (req, res) => {
+    Service.find()
+        .sort({ date: -1 })
+        .then(services => res.json(services))
+        .catch(err => res.status(404).json({ noservicesfound: 'No services found' }))
+})
+
+
 router.post('/create',
     passport.authenticate('jwt', { session: false }),
     (req, res) => {

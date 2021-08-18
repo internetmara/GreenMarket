@@ -7,6 +7,12 @@ const keys = require('../../config/keys');
 const passport = require('passport');
 const validateProductInput = require('../../validation/products')
 
+router.get('/', (req, res) => {
+    Product.find()
+        .sort({ date: -1 })
+        .then(products => res.json(products))
+        .catch(err => res.status(404).json({noproductsfound: 'No products found'}))
+})
 
 router.post('/create',
     passport.authenticate('jwt', {session: false}),
