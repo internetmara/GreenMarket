@@ -67,7 +67,7 @@ class UploadService extends React.Component {
 
     render() {
 
-        const PreviewService = this.state.serviceUrl ? <img className="upload-form-preview" src={this.state.serviceUrl} /> : null;
+        const PreviewService = this.state.serviceUrl ? <img className="upload-form-preview" alt="upload-preview" src={this.state.serviceUrl} /> : null;
 
 
         if (this.state.selectForm === 0) {

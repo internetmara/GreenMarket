@@ -11,7 +11,7 @@ class UploadProduct extends React.Component {
             description: "",
             address: "",
             user: this.props.user,
-            product: [],
+            products: [],
             redirect: false,
             productFile: null,
             productUrl: null,
@@ -22,6 +22,11 @@ class UploadProduct extends React.Component {
         this.handleFile = this.handleFile.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleCancel = this.handleCancel.bind(this);
+    }
+
+    componentDidMount() {
+        this.props.getProducts();
+        this.props.getServices();
     }
 
     update(field) {
@@ -65,7 +70,7 @@ class UploadProduct extends React.Component {
 
     render() {
 
-        const PreviewProduct = this.state.productUrl ? <img className="upload-form-preview" src={this.state.productUrl} /> : null;
+        const PreviewProduct = this.state.productUrl ? <img className="upload-form-preview" alt="upload-preview" src={this.state.productUrl} /> : null;
 
 
         if (this.state.selectForm === 0) {

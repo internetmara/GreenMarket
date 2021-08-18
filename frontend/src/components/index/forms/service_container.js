@@ -1,17 +1,16 @@
 import React from "react";
 import { connect } from "react-redux";
-import { addProduct, addService } from "../../../util/items_api_util";
-import UploadProduct from "./product_create_form";
+import { addService } from "../../../util/items_api_util";
 import UploadService from "./service_create_form";
 import { Link } from "react-router-dom";
 
 
 const mapStateToProps = (state = {}) => {
     return {
-        services: state.entities.services,
-        user: state.session.id,
+        service: state.entities.service,
+        user: state.session.currentUser,
         formType: 'Add a Service',
-        navLink: <Link to="/service/new">Add a Service</Link>,
+        navLink: <Link to="/services/new">Add a Service</Link>,
     }
 }
 

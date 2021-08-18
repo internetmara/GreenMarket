@@ -6,12 +6,11 @@ export default () => (
     <header>
         <div className="container">
             <div className="logo">
-                <h1><img src="images/darkgreen.png" className="logo-picture"></img></h1>
+                <h1><img src="images/darkgreen.png" className="logo-picture" alt="logo-picture"></img></h1>
             </div>
             <nav className="links">
                 <ul>
-                    {/* <input type="text" placeholder="Search GreenMarket..." className="search-bar" /> */}
-                    <Link to="/signup"><button className="home-page-button">Sign Up</button></Link>
+                    <Link to="/signup"><button className="home-page-button" >Sign Up</button></Link>
                     <Link to="/login"><button className="home-page-button">Log In</button></Link>
                 </ul>
             </nav>
