@@ -8,6 +8,14 @@ export const getServices = () => {
     return axios.get('/api/services/')
 };
 
+export const getProduct = (id) => {
+    return axios.get(`/api/products/${id}`)
+};
+
+export const getService = (id) => {
+    return axios.get(`/api/services/${id}`)
+};
+
 export const addProduct = (prodData) => {
     return axios.post('/api/products/new', prodData )
 }

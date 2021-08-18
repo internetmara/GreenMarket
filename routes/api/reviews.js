@@ -36,9 +36,17 @@ router.post('/create',
                             return success;
                         }
                     }
-                ).then(creation => res.json(creation)));
+                ).then(creation => res.json(creation)
+            )
+        );
+    }
+);
 
-    });
-
+router.get('/:id', (req, res) => {
+    Review.findById(req.params.id)
+        .then(review => res.json(review))
+        .catch(err =>
+            res.status(404).json({ noreviewfound: 'Could not find review' }))
+})
 
 module.exports = router;

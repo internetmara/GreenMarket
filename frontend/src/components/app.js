@@ -10,11 +10,14 @@ import UploadProduct from './index/forms/product_create_container';
 import UploadService from './index/forms/service_container';
 import { ProtectedRoute } from '../util/route_util';
 
+import Navbar from './navbar/navbar';
+// import { ProtectedRoute } from '../util/route_util';
+
 const App = () => (
     <div>
-        <Header />
+        <Navbar/>
         <Switch>
-            <AuthRoute exact path="/" component={Splash} />
+            {/* <AuthRoute exact path="/" component={Splash} /> */}
             <Route exact path="/signup" component={SignupContainer} />
             <Route exact path="/login" component={LoginContainer} />
             <Route exact path="/map" component={IndexComponent} />

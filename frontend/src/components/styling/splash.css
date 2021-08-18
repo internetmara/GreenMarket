@@ -28,30 +28,6 @@ body {
   margin-top: 12%;
 }
 
-.login-input {
-  border: 1px solid #898989;
-  border-radius: 3px;
-  font-size: 14px;
-  height: 48px;
-  margin: 0px 0px 14px 0px;
-  text-indent: 8px;
-  padding: 0px;
-  width: 400px;
-}
-
-.login-submit {
-  font-family: 'Ovo', serif;
-  border: none;
-  border-radius: 3px;
-  font-size: 14px;
-  height: 48px;
-  margin: 0px 0px 14px 0px;
-  padding: 0;
-  width: 100%;
-  background-color: #395446;
-  color: white;
-}
-
 .home-page-button {
   font-family: 'Ovo', serif;
   color: #395446;
@@ -107,10 +83,6 @@ body {
   font-family: 'Ovo', serif;
 }
 
-.change-form > *{
-  color: #395446;
-}
-
 .session-header > * {
   display: flex;
   justify-content: center;
@@ -123,4 +95,19 @@ body {
 
 .form-text {
   margin: 10px;
+  font-family: 'Ovo', serif;
+  font-size: 30px;
+}
+
+.home-container {
+  height: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+.go-to-the-map {
+  font-family: 'Ovo', serif;
+  color:#395446;
+  font-size: 60px;
+  margin-top: 25%;
 }

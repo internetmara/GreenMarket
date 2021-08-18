@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import '../styling/reset.css'
+import '../styling/login.css'
 
 class SignupForm extends React.Component {
     constructor(props) {
