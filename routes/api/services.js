@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const Service = require('../../models/Service')
 const User = require('../../models/User')
+const app = express();
 const jwt = require('jsonwebtoken');
 const passport = require('passport');
 const validateServiceInput = require('../../validation/services')
