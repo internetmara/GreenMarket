@@ -5,7 +5,11 @@ const ProductsReducer = (oldState={}, action) => {
     // let newState = Object.assign({}, oldState);
     switch(action.type) {
         case RECEIVE_ALL_PRODUCTS:
-            return action.allProducts;
+            action.allProducts.data.forEach( ele => {
+                newState[ele._id] = ele
+            })
+
+            return newState
         default:
             return oldState;
     }

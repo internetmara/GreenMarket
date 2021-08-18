@@ -6,6 +6,11 @@ class IndexComponent extends React.Component {
     //     super(props)
     // }
 
+    componentDidMount() {
+        this.props.getServices()
+        this.props.getProducts()
+    }
+
 // ** need to **
 // index all products and services
     // do this through simple get axios calls
@@ -15,16 +20,11 @@ class IndexComponent extends React.Component {
     // send a axios get request for product owner info - send product owner's id
 
 
-
     render() {
         return (
             <div>
                 <h2>Index Component</h2>
-                <button onClick={() => this.props.getServices()} >Services</button>
-                <button onClick={() => this.props.getProducts()} >Products</button>
-                <SimpleMap />
-                {/* {need to nest individual items underneath the logged in user} */}
-                
+                <SimpleMap products={this.props.products} services={this.props.services} />
             </div>
         )
     }

@@ -4,8 +4,8 @@ import { getProducts, getServices } from '../../actions/item_actions';
 import IndexComponent from "./index"
 
 const mSTP = (state) => ({
-    products: state.products,
-    services: state.services
+    products: state.entities.products,
+    services: state.entities.services
 })
 
 const mDTP = (dispatch) => ({

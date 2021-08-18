@@ -5,7 +5,10 @@ const ServicesReducer = (oldState={}, action) => {
     // let newState = Object.assign({}, oldState);
     switch(action.type) {
         case RECEIVE_ALL_SERVICES:
-            return action.allServices;
+            action.allServices.data.forEach(ele => {
+                newState[ele._id] = ele
+            })
+            return newState;
         default:
             return oldState;
     }
