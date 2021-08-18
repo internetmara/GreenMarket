@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import SimpleMap from '../map/map'
 
 class IndexComponent extends React.Component {
@@ -23,7 +24,7 @@ class IndexComponent extends React.Component {
     render() {
         return (
             <div>
-                <h2>Index Component</h2>
+                <Link to="/"><h2>Map Component</h2></Link>
                 <SimpleMap products={this.props.products} services={this.props.services} />
             </div>
         )
