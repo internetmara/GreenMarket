@@ -11,7 +11,7 @@ class Navbar extends React.Component {
            <header>
             <div className="container">
               <div className="logo">
-                  <h1><img src="images/darkgreen.png" className="logo-picture"></img></h1>
+                  <Link to="/"><img src="images/darkgreen.png" className="logo-picture"></img></Link>
               </div>
               <nav className="links">
                 <ul>

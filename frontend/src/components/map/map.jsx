@@ -37,7 +37,7 @@ class SimpleMap extends Component {
           <AnyReactComponent
             lat={37.783964}
             lng={-122.2446203}
-            text={<Link to="/"><img alt="N/A" title="N/A" className="GM-icon" src="images/GM.png" /></Link>}
+            text={<Link to="/"><img alt="N/A" title="N/A" className="GM-icon" src="/GMfavicon.png" /></Link>}
           />
         </GoogleMapReact>
       </div>
