@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const Review = require('../../models/Review')
+const app = express();
 const User = require('../../models/User')
 const jwt = require('jsonwebtoken');
 const passport = require('passport');
@@ -13,7 +14,7 @@ if (process.env.NODE_ENV === 'production') {
         res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
     })
 }
-const keys = require('../../config/keys');
+// const keys = require('../../config/keys');
 // 
 router.post('/create',
     passport.authenticate('jwt', { session: false }),
