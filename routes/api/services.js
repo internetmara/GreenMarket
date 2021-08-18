@@ -32,7 +32,6 @@ router.post('/create',
             return res.status(400).json(errors);
         }
 
-        console.log(req.user)
         const newService = new Service({
             category: req.body.category,
             rate: req.body.rate,

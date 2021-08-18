@@ -31,7 +31,7 @@ router.post('/create',
         if (!isValid) {
             return res.status(400).json(errors);
         }
-        console.log(req.user)
+        
         const newProduct = new Product({
             category: req.body.category,
             rate: req.body.rate,
