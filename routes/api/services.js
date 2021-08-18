@@ -27,11 +27,11 @@ router.post('/create',
         })
         
 
-        newProduct.save()
-            .then(product =>
+        newService.save()
+            .then(service =>
                 User.findByIdAndUpdate(
                     req.user.id,
-                    { $addToSet: { products: product } },
+                    { $addToSet: { services: service } },
                     { new: true },
                     function (err, success) {
                         if (err) {
