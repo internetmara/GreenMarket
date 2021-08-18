@@ -29,7 +29,7 @@ router.post('/create',
             .then(review =>
                 User.findByIdAndUpdate(
                     req.user.id,
-                    { $addToSet: { reviewss: review } },
+                    { $addToSet: { reviews: review } },
                     { new: true },
                     function (err, success) {
                         if (err) {
