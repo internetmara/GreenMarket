@@ -39,8 +39,8 @@ class LoginForm extends React.Component {
                     <br />
                     <input type="submit" className="login-submit" value={this.props.formType} />
                 </form>
-                { (this.props.loggedIn) ? <button onClick={() => this.props.logout()}>Log Out</button> : '' }
                     <h3 className="change-form">{this.props.navLink}</h3>
+                { (this.props.loggedIn) ? <button onClick={() => this.props.logout()}>Log Out</button> : '' }
             </div>
         )
     }

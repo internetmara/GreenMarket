@@ -49,8 +49,8 @@ class SignupForm extends React.Component {
                     <input type="text" className="login-input" onChange={this.updateField('address')} value={this.state.address} placeholder="Address"/>
                     <br />
                     <input type="submit" className="login-submit" value={this.props.formType} />
-                    <h3 className="change-form">{this.props.navLink}</h3>
                 </form>
+                    <h3 className="change-form">{this.props.navLink}</h3>
             </div>
         )
     }
