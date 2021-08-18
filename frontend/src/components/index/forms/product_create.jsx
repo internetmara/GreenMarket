@@ -6,13 +6,13 @@ class UploadProduct extends React.Component {
         super(props);
         this.state = {
             id: "",
+            name: "",
             username: "",
             address: "",
             email: "",
             avatar: "",
             products: [],
             services: [],
-            // user: this.props.currentUser ??
             redirect: false,
             productFile: null,
             productUrl: null,
@@ -47,6 +47,7 @@ class UploadProduct extends React.Component {
         e.preventDefault();
         if (this.state.tError === false) {
             const formData = new FormData();
+            formData.append('product[name]', this.state.name)
             formData.append('product[category]', this.state.category)
             formData.append('product[subCategory]', this.state.subCategory)
             formData.append('product[rate]', this.state.rate)
@@ -71,14 +72,26 @@ class UploadProduct extends React.Component {
         if (this.state.selectForm === 0) {
             return (
                 <div className="upload-product-container">
-                    <h1>Up</h1>
+
+                    <div className="product-or-service">
+                        <h2>Are you adding a product or a service?</h2> 
+
+                        <button>Product</button>
+                        <button>Service</button>
+
+                        </div> 
+
+                    <h1>Upload your product here</h1>
                     <div className="upload-form">
                         <h3>Upload your product here</h3>
                         <input type="file" onChange={this.handleFile} id="file" />
                         <div className="requirements">
                             <h2>Product Requirements</h2>
                             <p>
-                                ~product requirements will go here~
+                              Thank you for uploading your product!
+                              <br/>
+                              Please tell us a little bit about your product: 
+                              <br/> 
                             </p>
                         </div>
                     </div>
@@ -103,14 +116,30 @@ class UploadProduct extends React.Component {
 
                     <form className="upload-form" onSubmit={this.handleSubmit}>
                         <h3> Tell us more about your product: </h3>
-                        <label>Category:
-                            <input className="category" type="text" value={this.state.category} onChange={this.update("category")} />
-                            {this.state.tError ? <p className="errors">Category can not be empty</p> : null}
-                        </label> <br />
-                        <label>Description:
-                            <textarea cols="40" rows="6" className="description" type="text" value={this.state.description} onChange={this.update("description")} />
-                        </label> <br />
-                        <div>
+                            <label>Name:
+                                <input className="product-input" type="text" value={this.state.name} onChange={this.update("name")} />
+                                {this.state.tError ? <p className="errors">Name can not be empty</p> : null}
+                            </label> <br />
+
+                            <label>Category:
+                                <input className="product-input" type="text" value={this.state.category} onChange={this.update("category")} />
+                                {this.state.tError ? <p className="errors">Category can not be empty</p> : null}
+                            </label> <br />
+
+                            <label>Rate:
+                                <input className="product-input" type="text" value={this.state.rate} onChange={this.update("rate")} />
+                                {this.state.tError ? <p className="errors">Rate can not be empty</p> : null}
+                            </label> <br />
+
+                            <label>Address:
+                                <input className="product-input" type="text" value={this.state.address} onChange={this.update("address")} />
+                                {this.state.tError ? <p className="errors">Address can not be empty</p> : null}
+                            </label> <br />
+
+                            <label>Description:
+                                <textarea cols="40" rows="6" className="product-input" type="text" value={this.state.description} onChange={this.update("description")} />
+                            </label> <br />
+                            <div>
                             <button className="cancel-button" onClick={this.handleCancel}>Cancel</button>
                             <button className="upload-button" type="submit">Upload</button>
                         </div>
@@ -118,7 +147,6 @@ class UploadProduct extends React.Component {
                 </div>
             )
         }
-
     }
 
 }

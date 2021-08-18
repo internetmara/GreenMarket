@@ -14,7 +14,7 @@ class Splash extends React.Component {
             <header>
                 <div className="container">
                     <div className="logo">
-                        <h1> Green Market </h1>
+                        <h1><img src="images/darkgreen.png" className="logo-picture"></img></h1>
                         </div>
                         <nav className="links">
                             <ul>

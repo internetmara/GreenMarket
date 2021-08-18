@@ -10,13 +10,14 @@
   display: flex; 
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
+  padding: 2px;
 }
 
 header {
   /* background-color:white; */
   justify-content: center;
   align-items: center;
+  background-color: #395446;
 }
 /* 
 header::after {
@@ -67,4 +68,12 @@ nav ul {
   display: inline-block;
   margin: 0 5px;
   flex-direction: row;
+}
+
+.logo-picture {
+  height: 60px;
+  width: 100%;
+  margin-bottom: 5px;
+  margin-top: 10px;
+  /* padding: 10px; */
 }
