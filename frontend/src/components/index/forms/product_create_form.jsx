@@ -75,8 +75,8 @@ class UploadProduct extends React.Component {
                     <div className="product-or-service">
                         <h2>Are you adding a product or a service?</h2> 
 
-                        <button>Product</button>
-                        <button>Service</button>
+                        <Link className="link-to" to="/api/products/new">Product</Link> or 
+                        <Link className="link-to" to="/api/services/new">Service</Link>
 
                         </div> 
 

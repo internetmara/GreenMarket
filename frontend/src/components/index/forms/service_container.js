@@ -1,0 +1,23 @@
+import React from "react";
+import { connect } from "react-redux";
+import { addProduct, addService } from "../../../util/items_api_util";
+import UploadProduct from "./product_create_form";
+import UploadService from "./service_create_form";
+
+
+const mapStateToProps = (state = {}) => {
+    return {
+        product: state.entities.product,
+        user: state.session.id,
+        formType: 'Add a Service',
+        navLink: <Link to="/api/service/new">Add a Service</Link>,
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        addService: service => dispatch(addService(service)),
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(UploadService)
