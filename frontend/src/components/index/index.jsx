@@ -1,10 +1,10 @@
 import React from 'react'
-import SimpleMap from '../map/map'
+// import SimpleMap from '../map/map'
 
 class IndexComponent extends React.Component {
-    constructor(props) {
-        super(props)
-    }
+    // constructor(props) {
+    //     super(props)
+    // }
 
 // ** need to **
 // index all products and services

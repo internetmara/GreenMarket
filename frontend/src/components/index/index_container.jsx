@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import { connect } from 'react-redux';
 import { getProducts, getServices } from '../../actions/item_actions';
 import IndexComponent from "./index"
