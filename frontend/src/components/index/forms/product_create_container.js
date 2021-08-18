@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import UploadProduct from "./upload_product";
+import UploadProduct from "./product_create_form";
 
 
 const mapStateToProps = (state = {}) => {
@@ -16,4 +16,4 @@ const mapStateToProps = (state = {}) => {
 //     };
 // };
 
-export default connect(mapStateToProps, mapDispatchToProps)(UploadPicture)
+export default connect(mapStateToProps, mapDispatchToProps)(UploadProduct)
