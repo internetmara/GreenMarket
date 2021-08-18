@@ -51,9 +51,11 @@ router.post('/create',
     }
 );
 
-// router.get('/:id', (req, res) => {
-//     Product.findById(req.params.id)
-//         .then(product => )
-// })
+router.get('/:id', (req, res) => {
+    Product.findById(req.params.id)
+        .then(product => res.json(product))
+        .catch(err => 
+            res.status(404).json({ noproductfound: 'Could not find product'}))
+})
 
 module.exports = router;
