@@ -1,5 +1,5 @@
 import React from 'react'
-// import SimpleMap from '../map/map'
+import SimpleMap from '../map/map'
 
 class IndexComponent extends React.Component {
     // constructor(props) {
@@ -22,7 +22,7 @@ class IndexComponent extends React.Component {
                 <h2>Index Component</h2>
                 <button onClick={() => this.props.getServices()} >Services</button>
                 <button onClick={() => this.props.getProducts()} >Products</button>
-                {/* <SimpleMap /> */}
+                <SimpleMap />
                 {/* {need to nest individual items underneath the logged in user} */}
                 
             </div>
