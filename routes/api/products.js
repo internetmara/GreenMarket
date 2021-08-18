@@ -23,6 +23,7 @@ router.post('/create',
         }
         
         const newProduct = new Product({
+            name: req.body.name,
             category: req.body.category,
             rate: req.body.rate,
             description: req.body.description,
