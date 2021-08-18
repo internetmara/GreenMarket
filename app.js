@@ -17,7 +17,7 @@ if (process.env.NODE_ENV === 'production') {
     })
 }
 
-const db = require('./config/keys_prod').mongoURI;
+const db = require("./config/keys").mongoURI;
 mongoose
     .connect(db, { useNewUrlParser: true })
     .then(() => console.log("Connected to MongoDB successfully"))
