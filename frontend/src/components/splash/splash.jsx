@@ -1,6 +1,7 @@
 import React from 'react';
 import SignupForm from './signup_container';
 import LoginForm from './login_container';
+import { Route, Switch } from 'react-router';
 
 class Splash extends React.Component {
 
@@ -8,8 +9,10 @@ class Splash extends React.Component {
         return (
             <div className="header">
                 <h1>GREENMARKET</h1> 
-                <SignupForm />
-                <LoginForm />
+                <Switch>
+                    <Route exact path="/signup" component={SignupForm} />
+                    <Route exact path="/login" component={LoginForm} />
+                </Switch>
             </div>
         )
     }

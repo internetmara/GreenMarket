@@ -37,7 +37,7 @@ class SignupForm extends React.Component {
     render() {
         return (
             <div className="signup-form">
-                <p>Sign Up</p>
+                <h1 className="form-text">{this.props.formType}</h1> 
                 {this.props.errors ? this.readErrors() : ''}
                 <form onSubmit={(e) => this.handleSubmit(e)}>
                     <input type="email" className="login-input" onChange={this.updateField('email')} value={this.state.email} placeholder="Email" />
@@ -48,7 +48,8 @@ class SignupForm extends React.Component {
                     <br />
                     <input type="text" className="login-input" onChange={this.updateField('address')} value={this.state.address} placeholder="Address"/>
                     <br />
-                    <input type="submit" className="login-submit" value='Sign Up'/>
+                    <input type="submit" className="login-submit" value={this.props.formType} />
+                    <h3 className="change-form">{this.props.navLink}</h3>
                 </form>
             </div>
         )

@@ -30,16 +30,17 @@ class LoginForm extends React.Component {
     render() {
         return (
             <div className="login-form">
-                <p>Login Form</p>
+                <h1 className="form-text">{this.props.formType}</h1> 
                 {this.props.errors ? this.readErrors() : ''}
                 <form onSubmit={(e) => this.handleSubmit(e)}>
                     <input type="email" className="login-input" onChange={this.updateField('email')} value={this.state.email} placeholder="Email"/>
                     <br />
                     <input type="password" className="login-input" onChange={this.updateField('password')} value={this.state.password} placeholder="Password"/>
                     <br />
-                    <input type="submit" className="login-submit" value='Log In'/>
+                    <input type="submit" className="login-submit" value={this.props.formType} />
                 </form>
                 { (this.props.loggedIn) ? <button onClick={() => this.props.logout()}>Log Out</button> : '' }
+                    <h3 className="change-form">{this.props.navLink}</h3>
             </div>
         )
     }

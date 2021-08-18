@@ -1,11 +1,14 @@
 import LoginForm from './login'
 import { login, logout } from '../../actions/session_actions'
+import { Link } from 'react-router-dom'
 const { connect } = require("react-redux")
 
 
 const mSTP = (state) => ({
     loggedIn: state.session.isAuthenticated,
-    errors: state.errors.session
+    formType: 'Log in',
+    errors: state.errors.session,
+    navLink: <Link to="/signup">Sign up</Link>,
     })
 
 const mDTP = (dispatch) => ({
