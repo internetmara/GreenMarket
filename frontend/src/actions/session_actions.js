@@ -37,7 +37,6 @@ export const login = user => (dispatch) => (
     APIUtil.login(user)
     .then( 
         (res) => {
-            console.log('hi')
             const { token } = res.data;
             APIUtil.setAuthToken(token);
             const decoded = jwt_decode(token);

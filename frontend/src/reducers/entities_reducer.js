@@ -2,9 +2,7 @@ import { combineReducers } from "redux";
 import ProductsReducer from "./products_reducer";
 import ServicesReducer from "./services_reducer";
 
-const entitiesReducer = ({
+export default combineReducers({
     products: ProductsReducer,
     services: ServicesReducer
 })
-
-export default entitiesReducer;
