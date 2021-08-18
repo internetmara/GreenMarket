@@ -14,7 +14,7 @@ if (process.env.NODE_ENV === 'production') {
         res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
     })
 }
-const keys = require('../../config/keys');
+// const keys = require('../../config/keys');
 router.get('/', (req, res) => {
     Service.find()
         .sort({ date: -1 })
