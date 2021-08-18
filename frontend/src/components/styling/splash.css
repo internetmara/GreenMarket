@@ -1,8 +1,8 @@
 body {
   font-family: 'Ovo', serif;
   color:#395446;
-  background-image: url('./images/gold-hoop.png');
-  background-size: cover;
+  /* background-image: url('./images/gold-hoop.png'); */
+  /* background-size: auto; */
 }
 
 .login-form, .signup-form {
@@ -54,8 +54,8 @@ body {
 
 .home-page-button {
   font-family: 'Ovo', serif;
-  color: whitesmoke;
-  background-color: #395446;
+  color: #395446;
+  background-color: white;
   border-radius: 30px;
   box-shadow: none;
   outline-style: none;
@@ -69,8 +69,8 @@ body {
 }
 
 .home-page-button::after {
-  color: whitesmoke;
-  background-color: #395446;
+  color: #395446;
+  background-color: white;
   border-radius: 30px;
   box-shadow: none;
   outline-style: none;

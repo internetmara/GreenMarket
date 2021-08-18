@@ -6,13 +6,13 @@ class UploadProduct extends React.Component {
         super(props);
         this.state = {
             id: "",
+            name: "",
             username: "",
             address: "",
             email: "",
             avatar: "",
             products: [],
             services: [],
-            // user: this.props.currentUser ??
             redirect: false,
             productFile: null,
             productUrl: null,
@@ -47,6 +47,7 @@ class UploadProduct extends React.Component {
         e.preventDefault();
         if (this.state.tError === false) {
             const formData = new FormData();
+            formData.append('product[category]', this.state.category)
             formData.append('product[category]', this.state.category)
             formData.append('product[subCategory]', this.state.subCategory)
             formData.append('product[rate]', this.state.rate)
