@@ -8,8 +8,7 @@ const reviews = require('./routes/api/reviews')
 const bodyParser = require('body-parser');
 const passport = require('passport');
 const path = require('path');
-
-
+const keys = require("./config/keys").mongoURI;
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static('frontend/build'));
     app.get('/', (req, res) => {
@@ -17,9 +16,8 @@ if (process.env.NODE_ENV === 'production') {
     })
 }
 
-const db = require("./keys").mongoURI;
 mongoose
-    .connect(db, { useNewUrlParser: true })
+    .connect(keys, { useNewUrlParser: true })
     .then(() => console.log("Connected to MongoDB successfully"))
     .catch(err => console.log(err));
 
