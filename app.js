@@ -7,6 +7,8 @@ const services = require('./routes/api/services')
 const reviews = require('./routes/api/reviews')
 const bodyParser = require('body-parser');
 const passport = require('passport');
+const keys = require('./config/keys');
+
 const path = require('path');
 
 
