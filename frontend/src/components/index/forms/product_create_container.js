@@ -1,18 +1,24 @@
 import React from "react";
 import { connect } from "react-redux";
-import UploadProduct from "./upload_product";
+import { addProduct } from "../../../util/items_api_util";
+import UploadProduct from "./product_create_form";
+import { Link } from "react-router-dom";
 
 
-const mapStateToProps = (state = {}) => {
+const mapStateToProps = (state) => {
     return {
-        // currentUser: state.session.id 
+        product: state.entities.product,
+        user: state.session.user,
+        formType: 'Add a Product',
+        navLink: <Link to="/products/new">Add a Product</Link>,
     }
 }
 
-// const mapDispatchToProps = (dispatch) => {
-//     return {
-        // need thunk action to send the item to DB
-//     };
-// };
+const mapDispatchToProps = (dispatch) => {
+    return {
+        addProduct: product => dispatch(addProduct(product)),
+    };
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(UploadPicture)
+
+export default connect(mapStateToProps, mapDispatchToProps)(UploadProduct)

@@ -1,5 +1,5 @@
 import React from "react";
-import { Redirect } from "react-router";
+import { Link } from "react-router-dom";
 
 class UploadService extends React.Component {
     constructor(props) {
@@ -24,6 +24,11 @@ class UploadService extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleCancel = this.handleCancel.bind(this);
     }
+
+    // componentDidMount() {
+    //     this.props.getProducts();
+    //     this.props.getServices();
+    // }
 
     update(field) {
         return e => this.setState({ [field]: e.currentTarget.value })
@@ -55,7 +60,7 @@ class UploadService extends React.Component {
             formData.append('service[address]', this.state.address)
             formData.append('service[user]', this.state.user)
             formData.append('service[service]', this.state.serviceFile)
-            this.props.createService(formData).then(res => this.props.history.push(`/service/${res.id}`));
+            this.props.getService(formData).then(res => this.props.history.push(`/service/${res.id}`));
         }
     }
 
@@ -67,7 +72,7 @@ class UploadService extends React.Component {
 
     render() {
 
-        const PreviewService = this.state.serviceUrl ? <img className="upload-form-preview" src={this.state.serviceUrl} /> : null;
+        const PreviewService = this.state.serviceUrl ? <img className="upload-form-preview" alt="upload-preview" src={this.state.serviceUrl} /> : null;
 
 
         if (this.state.selectForm === 0) {
@@ -77,8 +82,8 @@ class UploadService extends React.Component {
                     <div className="product-or-service">
                         <h2>Are you adding a service or a service?</h2>
 
-                        <button>Product</button>
-                        <button>Service</button>
+                        <Link className="link-to" to="/products/new">Product</Link> or 
+                        <Link className="link-to" to="/services/new">Service</Link>
 
                     </div>
 
@@ -134,7 +139,7 @@ class UploadService extends React.Component {
 
                         <label>Rate Increment:
                             <input className="product-or-service-inputs" type="text" value={this.state.rateIncrement} onChange={this.update("rateIncrement")} />
-                            {this.state.tError ? <p className="errors">Rate can not be empty</p> : null}
+                            {this.state.tError ? <p className="errors">Rate Increment can not be empty</p> : null}
                         </label> <br />
 
                         <label>Address:
