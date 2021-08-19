@@ -12,7 +12,9 @@ class LoginForm extends React.Component {
             email: '',
             password: ''
         }
+        
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.guestLogin = this.guestLogin.bind(this)
     }
 
     handleSubmit(e) {
@@ -54,7 +56,7 @@ class LoginForm extends React.Component {
                         <input type="password" className="login-input" onChange={this.updateField('password')} value={this.state.password} placeholder="Password"/>
                         <br />
                         <input type="submit" className="login-submit" value={this.props.formType} />
-                        <button onClick={this.guestLogin}>Guest Login</button>
+                        <button onClick={this.guestLogin} className="login-submit">Guest Login</button>
                         <h3 className="login-change-form">{this.props.navLink}</h3>
                     { (this.props.loggedIn) ? <button className="logout-header-button" onClick={() => this.props.logout()}>Log Out</button> : '' }
                     </form>
