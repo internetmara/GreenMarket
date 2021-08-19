@@ -8,6 +8,7 @@ import LoginContainer from './splash/login_container';
 import ItemShow from './item_show/item_show_container';
 import UploadProduct from './index/forms/product_create_container';
 import UploadService from './index/forms/service_container';
+import "./styling/reset.css"
 
 import Navbar from './navbar/navbar';
 // import { ProtectedRoute } from '../util/route_util';

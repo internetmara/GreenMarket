@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-
+import '../styling/reset.css';
 import { logout } from '../../actions/session_actions';
 import Greeting from './greeting';
 

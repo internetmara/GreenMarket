@@ -3,14 +3,15 @@ import { connect } from "react-redux";
 import { addService } from "../../../util/items_api_util";
 import UploadService from "./service_create_form";
 import { Link } from "react-router-dom";
+import '../../styling/reset.css';
 
 
 const mapStateToProps = (state) => {
     return {
         service: state.entities.service,
         user: state.session.user,
-        formType: 'Add a Service',
-        navLink: <Link to="/services/new">Add a Service</Link>,
+        formType: 'Service',
+        navLink: <Link to="/products/new">product</Link>,
     }
 }
 

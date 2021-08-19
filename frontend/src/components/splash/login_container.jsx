@@ -1,6 +1,7 @@
 import LoginForm from './login'
 import { login, logout } from '../../actions/session_actions'
 import { Link } from 'react-router-dom'
+import '../styling/reset.css'
 const { connect } = require("react-redux")
 
 

@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import SimpleMap from '../map/map'
 import Geocode from "react-geocode";
+import '../styling/reset.css';
 const key = require("../../config/keys").googleMapsKey;
 // const AnyReactComponent = ({ text }) => <div>{text}</div>;
 

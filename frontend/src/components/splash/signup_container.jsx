@@ -1,8 +1,8 @@
 import SignupForm from './signup'
 import { signup } from '../../actions/session_actions'
 import { Link } from 'react-router-dom'
+import '../styling/reset.css'
 const { connect } = require("react-redux")
-
 
 const mSTP = (state) => ({
     errors: state.errors.session,

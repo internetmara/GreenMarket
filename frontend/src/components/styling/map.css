@@ -1,3 +1,5 @@
+
+
 .GM-icon {
   width: 50px;
   height: auto;
@@ -22,6 +24,6 @@
   max-width: 100%;
   margin: auto;
   padding: 30px;
-  border-radius: 5px;
-  border:3px solid #395446;
+  border-radius: 10px;
+  border: 10px double #395446;
 }

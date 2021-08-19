@@ -1,5 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+import '../../styling/forms.css'
+import '../../styling/reset.css'
 
 class UploadService extends React.Component {
     constructor(props) {
@@ -79,27 +81,15 @@ class UploadService extends React.Component {
         if (this.state.selectForm === 0) {
             return (
                 <div className="upload-container">
-
-                    <div className="product-or-service">
-                        <h2>Are you adding a service or a service?</h2>
-
-                        <Link className="link-to" to="/products/new">Product</Link> or 
-                        <Link className="link-to" to="/services/new">Service</Link>
-
-                    </div>
-
-                    <h1>Upload your service here</h1>
+                    <h1 className="upload-header">Upload a {this.props.formType}</h1>
+                    
                     <div className="upload-form">
-                        <h3>Upload your service here</h3>
-                        <input type="file" onChange={this.handleFile} id="file" />
-                        <div className="requirements">
-                            <h2>Service Requirements</h2>
-                            <p>
-                                Thank you for uploading your service!
-                                <br />
-                                Please tell us a little bit about your service:
-                                <br />
-                            </p>
+                        <div className="photo-submit">
+                            <input className="photo-input" type="file" onChange={this.handleFile} id="file" />
+                        </div>
+
+                        <div className="product-or-service-links">
+                            <h3 className="change-form">...or upload a&nbsp;<u className="navlink">{this.props.navLink}</u>&nbsp;instead!</h3>
                         </div>
                     </div>
                 </div>
@@ -113,7 +103,6 @@ class UploadService extends React.Component {
                 <div className="uploaded-container-two">
                     <div className="upload-button-box">
                         <label id="uploading-here">
-                            <h2>Upload Pictures of your service/ work below:</h2>
                             <input type="file" onChange={this.handleFile} style={{ display: "none" }} />
                         </label>
                         <div className="upload-form-preview">
@@ -123,34 +112,17 @@ class UploadService extends React.Component {
 
                     <form className="upload-form" onSubmit={this.handleSubmit}>
                         <h3> Tell us more about your service: </h3>
-                        <label>Name:
-                            <input className="product-or-service-inputs" type="text" value={this.state.name} onChange={this.update("name")} />
-                            {this.state.tError ? <p className="errors">Name can not be empty</p> : null}
-                        </label> <br />
-
-                        <label>Category:
-                            <input className="product-or-service-inputs" type="text" value={this.state.category} onChange={this.update("category")} />
-                            {this.state.tError ? <p className="errors">Category can not be empty</p> : null}
-                        </label> <br />
-
-                        <label>Rate:
-                            <input className="product-or-service-inputs" type="text" value={this.state.rate} onChange={this.update("rate")} />
-                            {this.state.tError ? <p className="errors">Rate can not be empty</p> : null}
-                        </label> <br />
-
-                        <label>Rate Increment:
-                            <input className="product-or-service-inputs" type="text" value={this.state.rateIncrement} onChange={this.update("rateIncrement")} />
-                            {this.state.tError ? <p className="errors">Rate Increment can not be empty</p> : null}
-                        </label> <br />
-
-                        <label>Address:
-                            <input className="product-or-service-inputs" type="text" value={this.state.address} onChange={this.update("address")} />
-                            {this.state.tError ? <p className="errors">Address can not be empty</p> : null}
-                        </label> <br />
-
-                        <label>Description:
-                            <textarea cols="40" rows="6" className="product-or-service-inputs" type="text" value={this.state.description} onChange={this.update("description")} />
-                        </label> <br />
+                        <input className="product-or-service-inputs" type="text" placeholder="Name" value={this.state.name} onChange={this.update("name")} />
+                        {this.state.tError ? <p className="errors">Name can not be empty</p> : null}
+                        <input className="product-or-service-inputs" placeholder="Category:" type="text" value={this.state.category} onChange={this.update("category")} />
+                        {this.state.tError ? <p className="errors">Category can not be empty</p> : null}
+                        <input className="product-or-service-inputs" placeholder="Rate:" type="text" value={this.state.rate} onChange={this.update("rate")} />
+                        {this.state.tError ? <p className="errors">Rate can not be empty</p> : null}
+                        <input className="product-or-service-inputs" placeholder="Rate Increment:" type="text" value={this.state.rateIncrement} onChange={this.update("rateIncrement")} />
+                        {this.state.tError ? <p className="errors">Rate Increment can not be empty</p> : null}
+                        <input placeholder="Address:" className="product-or-service-inputs" type="text" value={this.state.address} onChange={this.update("address")} />
+                        {this.state.tError ? <p className="errors">Address can not be empty</p> : null}
+                        <textarea placeholder="Address:" cols="40" rows="6" className="product-or-service-inputs" type="text" value={this.state.description} onChange={this.update("description")} />
                         <div>
                             <button className="cancel-button" onClick={this.handleCancel}>Cancel</button>
                             <button className="upload-button" type="submit">Upload</button>
