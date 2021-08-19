@@ -4,8 +4,17 @@ body {
 }
 =======
 
+<<<<<<< HEAD
 >>>>>>> 5663f402887be6dd96858094d181ef10edfa8b38
 
+=======
+body {
+  font-family: 'Ovo', serif;
+  color:#395446;
+  background-image: url('./images/gold-hoop.png');
+  background-size: cover;
+}
+>>>>>>> 8084d5ce8b5fc99ade49d8bfb7f2029ff1407da9
 .upload-container {
     height: 300px;
     width: 300px;
@@ -16,9 +25,11 @@ body {
     border: 1px solid black;
     margin: auto;
     width: 600px;
+    height: auto;
     max-width: 100%;
-    margin-top: 25%;
+    margin-top: 15%;
     flex-direction: column;
+    border-radius: 10px;
 }
 
 .upload-container > *, .upload-form > *, .upload-container, .upload-form, .requirements > * {
@@ -30,6 +41,7 @@ body {
     color: #395446;
     font-size: 50px;
     padding: 10px;
+    font-family: 'Ovo', serif;
 }
 
 .product-or-service {
@@ -44,10 +56,57 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center;  
+    font-family: 'Ovo', serif;
+    /* margin: 10px; */
+    font-size: 30px;
 }
 
-
-.product-or-service-header {
-    font-size: 20px;
+.product-or-service-links > a {
+    color: #7ABB6F;
+    font-family: 'Ovo', serif;
+    font-size: 40px;
     margin: 20px;
+}
+
+.product-or-service-header > * {
+    font-size: 20px;
+    /* margin: 20px; */
+    align-items: center;
+    text-align: center;
+    font-family: 'Ovo', serif;
+}
+
+.uploading-thanks {
+    color: #395446;
+    align-items: center;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.upload-form, .product-requirements {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.photo-submit {
+    padding: 20px;
+    margin: 20px;
+    border: 2px solid #395446;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.photo-submit > * {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    background-color: #395446;
+    color: whitesmoke;
+    padding: 30px;
+    border-radius: 30px;
 }
