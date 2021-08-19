@@ -60,7 +60,8 @@ class UploadService extends React.Component {
             formData.append('service[address]', this.state.address)
             formData.append('service[user]', this.state.user)
             formData.append('service[service]', this.state.serviceFile)
-            this.props.getService(formData).then(res => this.props.history.push(`/service/${res.id}`));
+            this.props.addService(formData)
+            // this.props.addService(formData).then(res => this.props.history.push(`/service/${res.id}`));
         }
     }
 
