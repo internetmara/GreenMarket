@@ -53,16 +53,18 @@ class UploadProduct extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         if (this.state.tError === false) {
-            const formData = new FormData();
-            formData.append('product[name]', this.state.name)
-            formData.append('product[category]', this.state.category)
-            formData.append('product[rate]', this.state.rate)
-            formData.append('product[description]', this.state.description)
-            formData.append('product[address]', this.state.address)
-            formData.append('product[user]', this.state.user)
-            formData.append('product[product]', this.state.productFile)
-            console.log(formData)
-            this.props.addProduct(formData).then(res => this.props.history.push(`/products/${res.id}`));
+
+            const formData = {};
+            formData.name = this.state.name
+            formData.category = this.state.category
+            formData.rate = this.state.rate
+            formData.description = this.state.description
+            formData.address = this.state.address
+            formData.user = this.state.user
+            formData.product = this.state.product
+            this.props.addProduct(formData)
+            // console.log(this.state.user)
+            this.props.history.push(`/users/${this.state.user.id}`)
         }
     }
 
@@ -128,13 +130,10 @@ class UploadProduct extends React.Component {
                     </form>
                 </div>
             )
-        } else {
-            // console.log('hay')
-            return null;
-        }
-    
+        } 
     }
-        
+    
 }
+        
 
 export default UploadProduct;
