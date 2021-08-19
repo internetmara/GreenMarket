@@ -123,7 +123,7 @@ class UploadService extends React.Component {
                         {this.state.tError ? <p className="errors">Rate Increment can not be empty</p> : null}
                         <input placeholder="Address:" className="product-or-service-inputs" type="text" value={this.state.address} onChange={this.update("address")} />
                         {this.state.tError ? <p className="errors">Address can not be empty</p> : null}
-                        <textarea placeholder="Address:" cols="40" rows="6" className="product-or-service-inputs" type="text" value={this.state.description} onChange={this.update("description")} />
+                        <textarea placeholder="Description:" cols="40" rows="6" className="product-or-service-inputs" type="text" value={this.state.description} onChange={this.update("description")} />
                         <div className="form-buttons-box">
                             <button className="cancel-button" onClick={this.handleCancel}>Cancel</button>
                             <button className="upload-button" type="submit">Upload</button>
