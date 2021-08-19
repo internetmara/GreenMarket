@@ -103,7 +103,6 @@ class UploadService extends React.Component {
                 <div className="uploaded-container-two">
                     <div className="upload-button-box">
                         <label id="uploading-here">
-                            <h2>Upload Pictures of your service/ work below:</h2>
                             <input type="file" onChange={this.handleFile} style={{ display: "none" }} />
                         </label>
                         <div className="upload-form-preview">
@@ -113,34 +112,17 @@ class UploadService extends React.Component {
 
                     <form className="upload-form" onSubmit={this.handleSubmit}>
                         <h3> Tell us more about your service: </h3>
-                        <label>Name:
-                            <input className="product-or-service-inputs" type="text" value={this.state.name} onChange={this.update("name")} />
-                            {this.state.tError ? <p className="errors">Name can not be empty</p> : null}
-                        </label> <br />
-
-                        <label>Category:
-                            <input className="product-or-service-inputs" type="text" value={this.state.category} onChange={this.update("category")} />
-                            {this.state.tError ? <p className="errors">Category can not be empty</p> : null}
-                        </label> <br />
-
-                        <label>Rate:
-                            <input className="product-or-service-inputs" type="text" value={this.state.rate} onChange={this.update("rate")} />
-                            {this.state.tError ? <p className="errors">Rate can not be empty</p> : null}
-                        </label> <br />
-
-                        <label>Rate Increment:
-                            <input className="product-or-service-inputs" type="text" value={this.state.rateIncrement} onChange={this.update("rateIncrement")} />
-                            {this.state.tError ? <p className="errors">Rate Increment can not be empty</p> : null}
-                        </label> <br />
-
-                        <label>Address:
-                            <input className="product-or-service-inputs" type="text" value={this.state.address} onChange={this.update("address")} />
-                            {this.state.tError ? <p className="errors">Address can not be empty</p> : null}
-                        </label> <br />
-
-                        <label>Description:
-                            <textarea cols="40" rows="6" className="product-or-service-inputs" type="text" value={this.state.description} onChange={this.update("description")} />
-                        </label> <br />
+                        <input className="product-or-service-inputs" type="text" placeholder="Name" value={this.state.name} onChange={this.update("name")} />
+                        {this.state.tError ? <p className="errors">Name can not be empty</p> : null}
+                        <input className="product-or-service-inputs" placeholder="Category:" type="text" value={this.state.category} onChange={this.update("category")} />
+                        {this.state.tError ? <p className="errors">Category can not be empty</p> : null}
+                        <input className="product-or-service-inputs" placeholder="Rate:" type="text" value={this.state.rate} onChange={this.update("rate")} />
+                        {this.state.tError ? <p className="errors">Rate can not be empty</p> : null}
+                        <input className="product-or-service-inputs" placeholder="Rate Increment:" type="text" value={this.state.rateIncrement} onChange={this.update("rateIncrement")} />
+                        {this.state.tError ? <p className="errors">Rate Increment can not be empty</p> : null}
+                        <input placeholder="Address:" className="product-or-service-inputs" type="text" value={this.state.address} onChange={this.update("address")} />
+                        {this.state.tError ? <p className="errors">Address can not be empty</p> : null}
+                        <textarea placeholder="Address:" cols="40" rows="6" className="product-or-service-inputs" type="text" value={this.state.description} onChange={this.update("description")} />
                         <div>
                             <button className="cancel-button" onClick={this.handleCancel}>Cancel</button>
                             <button className="upload-button" type="submit">Upload</button>

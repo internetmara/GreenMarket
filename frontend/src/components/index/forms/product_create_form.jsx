@@ -102,7 +102,6 @@ class UploadProduct extends React.Component {
                 <div className="uploaded-container-two">
                     <div className="upload-button-box">
                         <label id="uploading-here">
-                            <h2>Upload Pictures of your product below:</h2>
                             <input type="file" onChange={this.handleFile} style={{ display: "none" }} />
                         </label>
                         <div className="upload-form-preview">
@@ -112,29 +111,15 @@ class UploadProduct extends React.Component {
 
                     <form className="upload-form" onSubmit={this.handleSubmit}>
                         <h3> Tell us more about your product: </h3>
-                            <label>Name:
-                                <input className="product-or-service-inputs" type="text" value={this.state.name} onChange={this.update("name")} />
-                                {this.state.tError ? <p className="errors">Name can not be empty</p> : null}
-                            </label> <br />
-
-                            <label>Category:
-                                <input className="product-or-service-inputs" type="text" value={this.state.category} onChange={this.update("category")} />
-                                {this.state.tError ? <p className="errors">Category can not be empty</p> : null}
-                            </label> <br />
-
-                            <label>Rate:
-                                <input className="product-or-service-inputs" type="text" value={this.state.rate} onChange={this.update("rate")} />
-                                {this.state.tError ? <p className="errors">Rate can not be empty</p> : null}
-                            </label> <br />
-
-                            <label>Address:
-                                <input className="product-or-service-inputs" type="text" value={this.state.address} onChange={this.update("address")} />
-                                {this.state.tError ? <p className="errors">Address can not be empty</p> : null}
-                            </label> <br />
-
-                            <label>Description:
-                                <textarea cols="40" rows="6" className="product-input" type="text" value={this.state.description} onChange={this.update("description")} />
-                            </label> <br />
+                            <input className="product-or-service-inputs" placeholder="Name" type="text" value={this.state.name} onChange={this.update("name")} />
+                            {this.state.tError ? <p className="errors">Name can not be empty</p> : null}
+                            <input className="product-or-service-inputs" placeholder="Category:" type="text" value={this.state.category} onChange={this.update("category")} />
+                            {this.state.tError ? <p className="errors">Category can not be empty</p> : null}
+                            <input className="product-or-service-inputs" placeholder="Rate:" type="text" value={this.state.rate} onChange={this.update("rate")} />
+                            {this.state.tError ? <p className="errors">Rate can not be empty</p> : null}
+                            <input className="product-or-service-inputs" type="text" placeholder="Address:" value={this.state.address} onChange={this.update("address")} />
+                            {this.state.tError ? <p className="errors">Address can not be empty</p> : null}
+                            <textarea cols="40" rows="6" className="product-input" placeholder="Description:" type="text" value={this.state.description} onChange={this.update("description")} />
                             <div>
                             <button className="cancel-button" onClick={this.handleCancel}>Cancel</button>
                             <button className="upload-button" type="submit">Upload</button>

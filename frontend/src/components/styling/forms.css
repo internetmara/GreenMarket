@@ -118,5 +118,28 @@ body {
     padding: 20px;
     align-items: center;
     background-color: #395446;
-    font-family: 'Ovo', serif;
+    font-family: 'Ovo' serif;
+}
+
+.upload-form-preview {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px double #395446;
+    border-radius: 10px;
+    width: 200px;
+    height: auto;
+}
+
+.uploaded-container-two {
+    display: flex;
+    flex-direction: column;
+}
+
+.upload-button-box {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 20%;
+    margin-bottom: 40px;
 }
