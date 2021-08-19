@@ -53,20 +53,21 @@ class UploadService extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         if (this.state.tError === false) {
-            const formData = new FormData();
-            formData.append('service[name]', this.state.name)
-            formData.append('service[category]', this.state.category)
-            formData.append('service[rate]', this.state.rate)
-            formData.append('service[rateIncrement]', this.state.rateIncrement)
-            formData.append('service[description]', this.state.description)
-            formData.append('service[address]', this.state.address)
-            formData.append('service[user]', this.state.user)
-            formData.append('service[service]', this.state.serviceFile)
+
+            const formData = {};
+            formData.name = this.state.name
+            formData.category = this.state.category
+            formData.rate = this.state.rate
+            formData.rateIncrement = this.state.rateIncrement
+            formData.description = this.state.description
+            formData.address = this.state.address
+            formData.user = this.state.user
+            formData.service = this.state.service
             this.props.addService(formData)
-            // this.props.addService(formData).then(res => this.props.history.push(`/service/${res.id}`));
+            // console.log(this.state.user)
+            this.props.history.push(`/users/${this.state.user.id}`)
         }
     }
-
 
     handleCancel(e) {
         this.setState({ selectForm: 0 })
@@ -97,7 +98,7 @@ class UploadService extends React.Component {
         }
 
 
-        if (this.state.selectForm > 1) {
+        if (this.state.selectForm === 1) {
             return (
 
                 <div className="uploaded-container-two">
@@ -105,7 +106,7 @@ class UploadService extends React.Component {
                         <label id="uploading-here">
                             <input type="file" onChange={this.handleFile} style={{ display: "none" }} />
                         </label>
-                        <div className="upload-form-preview">
+                        <div className="upload-form-preview-img">
                             {PreviewService}
                         </div>
                     </div>
@@ -123,7 +124,7 @@ class UploadService extends React.Component {
                         <input placeholder="Address:" className="product-or-service-inputs" type="text" value={this.state.address} onChange={this.update("address")} />
                         {this.state.tError ? <p className="errors">Address can not be empty</p> : null}
                         <textarea placeholder="Address:" cols="40" rows="6" className="product-or-service-inputs" type="text" value={this.state.description} onChange={this.update("description")} />
-                        <div>
+                        <div className="form-buttons-box">
                             <button className="cancel-button" onClick={this.handleCancel}>Cancel</button>
                             <button className="upload-button" type="submit">Upload</button>
                         </div>

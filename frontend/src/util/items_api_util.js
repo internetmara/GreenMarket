@@ -17,11 +17,11 @@ export const getService = (id) => {
 };
 
 export const addProduct = (prodData) => {
-    return axios.post('/api/products/new', prodData )
+    return axios.post('/api/products/create', prodData )
 }
 
 export const addService = (servData) => {
-    return axios.post('/api/services/new', servData)
+    return axios.post('/api/services/create', servData)
 }
 
 export const changeProduct = (prodData) => {

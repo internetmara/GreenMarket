@@ -53,16 +53,18 @@ class UploadProduct extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         if (this.state.tError === false) {
-            const formData = new FormData();
-            formData.append('product[name]', this.state.name)
-            formData.append('product[category]', this.state.category)
-            formData.append('product[rate]', this.state.rate)
-            formData.append('product[description]', this.state.description)
-            formData.append('product[address]', this.state.address)
-            formData.append('product[user]', this.state.user)
-            formData.append('product[product]', this.state.productFile)
-            console.log(formData)
-            this.props.addProduct(formData).then(res => this.props.history.push(`/products/${res.id}`));
+
+            const formData = {};
+            formData.name = this.state.name
+            formData.category = this.state.category
+            formData.rate = this.state.rate
+            formData.description = this.state.description
+            formData.address = this.state.address
+            formData.user = this.state.user
+            formData.product = this.state.product
+            this.props.addProduct(formData)
+            // console.log(this.state.user)
+            this.props.history.push(`/users/${this.state.user.id}`)
         }
     }
 
@@ -104,7 +106,7 @@ class UploadProduct extends React.Component {
                         <label id="uploading-here">
                             <input type="file" onChange={this.handleFile} style={{ display: "none" }} />
                         </label>
-                        <div className="upload-form-preview">
+                        <div className="upload-form-preview-img">
                             {PreviewProduct}
                         </div>
                     </div>
@@ -120,20 +122,18 @@ class UploadProduct extends React.Component {
                             <input className="product-or-service-inputs" type="text" placeholder="Address:" value={this.state.address} onChange={this.update("address")} />
                             {this.state.tError ? <p className="errors">Address can not be empty</p> : null}
                             <textarea cols="40" rows="6" className="product-input" placeholder="Description:" type="text" value={this.state.description} onChange={this.update("description")} />
-                            <div>
+                        
+                        <div className="form-buttons-box">
                             <button className="cancel-button" onClick={this.handleCancel}>Cancel</button>
                             <button className="upload-button" type="submit">Upload</button>
                         </div>
                     </form>
                 </div>
             )
-        } else {
-            // console.log('hay')
-            return null;
-        }
-    
+        } 
     }
-        
+    
 }
+        
 
 export default UploadProduct;
