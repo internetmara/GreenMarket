@@ -1,10 +1,20 @@
+<<<<<<< HEAD
+body {
+    background-color: white;
+}
+=======
 
+<<<<<<< HEAD
+>>>>>>> 5663f402887be6dd96858094d181ef10edfa8b38
+
+=======
 body {
   font-family: 'Ovo', serif;
   color:#395446;
   background-image: url('./images/gold-hoop.png');
   background-size: cover;
 }
+>>>>>>> 8084d5ce8b5fc99ade49d8bfb7f2029ff1407da9
 .upload-container {
     height: 300px;
     width: 300px;
