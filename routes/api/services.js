@@ -60,4 +60,53 @@ router.get('/:id', (req, res) => {
             res.status(404).json({ noservicefound: 'Could not find service' }))
 })
 
+router.patch('/:id/update',
+    passport.authenticate('jwt', { session: false }),
+    (req, res) => {
+        const { errors, isValid } = validateServiceInput(req.body);
+
+        if (!isValid) {
+            return res.status(400).json(errors);
+        }
+
+        Service.findByIdAndUpdate(
+            req.params.id,
+            {
+                name: req.body.name,
+                category: req.body.category,
+                rate: req.body.rate,
+                rateIncrement: req.body.rateIncrement,
+                description: req.body.description,
+                address: req.body.address
+            },
+            { new: true },
+            function (err, success) {
+                if (err) {
+                    console.log(err);
+                } else {
+                    return success;
+                }
+            }
+        ).then(updatedService => {
+            User.findOneAndUpdate(
+                { _id: req.user.id },
+                {
+                    $set: {
+                        'services.$[el].name': updatedService.name,
+                        'services.$[el].category': updatedService.category,
+                        'services.$[el].rate': updatedService.rate,
+                        'services.$[el].rateIncrement': updatedService.rateIncrement,
+                        'services.$[el].description': updatedService.description,
+                        'services.$[el].address': updatedService.address
+                    }
+                },
+                { arrayFilters: [{ "el._id": updatedService._id }], new: true }
+            )
+                .then(complete => res.json(complete))
+        }
+        )
+    }
+)
+
+
 module.exports = router;
