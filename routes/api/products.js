@@ -84,7 +84,6 @@ router.patch('/:id/update',
                 }
             }
             ).then(updatedProduct => 
-                {console.log(req.params.id)
                 User.findOneAndUpdate(
                     { _id: req.user.id},
                     { $set: {'products.$[el].name': updatedProduct.name,
@@ -95,7 +94,6 @@ router.patch('/:id/update',
                     { arrayFilters: [{ "el._id": updatedProduct._id }], new: true }
                 )
                 .then(complete => res.json(complete))
-                }
             )
     }
 )
