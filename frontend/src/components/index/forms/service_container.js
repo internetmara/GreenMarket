@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { addService } from "../../../util/items_api_util";
+import { addService } from "../../../actions/item_actions";
 import UploadService from "./service_create_form";
 import { Link } from "react-router-dom";
 import '../../styling/reset.css';
