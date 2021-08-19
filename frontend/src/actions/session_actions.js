@@ -53,7 +53,7 @@ export const login = user => (dispatch) => (
 )
 
 export const logout = () => (dispatch) => {
-    localStorage.removeItem('jwToken')
+    localStorage.removeItem('jwtToken')
     APIUtil.setAuthToken(false)
     dispatch(logoutUser())
 }

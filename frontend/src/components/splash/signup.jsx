@@ -27,6 +27,12 @@ class SignupForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault()
         this.props.signup(this.state)
+        this.setState({
+            email: '',
+            username: '',
+            password: '',
+            address: ''
+        })
     }
 
     updateField(field) {
