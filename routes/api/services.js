@@ -108,5 +108,30 @@ router.patch('/:id/update',
     }
 )
 
+router.delete('/delete/:id',
+    passport.authenticate('jwt', { session: false }),
+    (req, res) => {
+        const serviceId = req.params.id
+
+        Service.findById(serviceId)
+            .then(service => User.updateOne(
+                { _id: req.user.id },
+                {
+                    $pull: {
+                        'services': { _id: service._id }
+                    }
+                }
+            ).then(() => Service.findByIdAndDelete(
+                serviceId,
+                (err, service) => {
+                    if (err) {
+                        return res.json(err)
+                    }
+                }
+            ).then(() => res.json({ msg: 'Service deleted' }))
+                .catch(err => console.log(err))
+            ))
+    }
+)
 
 module.exports = router;
