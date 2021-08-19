@@ -64,7 +64,7 @@ class UploadProduct extends React.Component {
             formData.product = this.state.product
             this.props.addProduct(formData)
             // console.log(this.state.user)
-            this.props.history.push(`/users/${this.state.user.id}`)
+            this.props.history.push("/user")
         }
     }
 

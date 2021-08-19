@@ -5,7 +5,7 @@ import { Switch, Route } from 'react-router';
 import IndexComponent from './index/index_container';
 import SignupContainer from './splash/signup_container';
 import LoginContainer from './splash/login_container';
-import ItemShow from './item_show/item_show_container';
+import userShow from './user_show/user_show_container';
 import UploadProduct from './index/forms/product_create_container';
 import UploadService from './index/forms/service_container';
 import "./styling/reset.css"
@@ -21,8 +21,9 @@ const App = () => (
             <AuthRoute exact path="/signup" component={SignupContainer} />
             <AuthRoute exact path="/login" component={LoginContainer} />
             <ProtectedRoute exact path="/map" component={IndexComponent} />
-            <Route exact path="/service/:itemId" component={ItemShow} />
-            <Route exact path="/product/:itemId" component={ItemShow} />
+            <Route exact path="/user" component={userShow} />
+            {/* <Route exact path="/service/:itemId" component={serviceShow} /> */}
+            {/* <Route exact path="/product/:itemId" component={productShow} /> */}
             {/* <ProtectedRoute exact path="/shop" component={Index} /> */}
             <ProtectedRoute exact path="/products/new" component={UploadProduct} />
             <ProtectedRoute exact path="/services/new" component={UploadService} />

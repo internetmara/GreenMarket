@@ -65,7 +65,7 @@ class UploadService extends React.Component {
             formData.service = this.state.service
             this.props.addService(formData)
             // console.log(this.state.user)
-            this.props.history.push(`/users/${this.state.user.id}`)
+            this.props.history.push("/user")
         }
     }
 

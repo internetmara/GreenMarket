@@ -1,0 +1,19 @@
+.users-show-container {
+    display: flex;
+    justify-content: center;
+    border: 1px solid black;
+    align-items: center;
+    margin-top: 25%;
+    width: 500px;
+    max-width: 100%;
+    /* margin: auto; */
+    margin-left: 25%;
+    padding: 20px; 
+    text-align: center;
+}
+
+.users-show-header {
+    color: #395446;
+    font-size: 50px;
+    font-family: "ovo", serif;
+}
