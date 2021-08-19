@@ -19,7 +19,9 @@ class LoginForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault()
+        const user = Object.assign({}, this.state);
         this.props.login(this.state)
+        this.props.processForm(user);
         this.setState({
             email: '',
             username: '',
@@ -28,10 +30,43 @@ class LoginForm extends React.Component {
         })
     }
 
-    guestLogin(e) {
-        e.preventDefault();
-        this.props.login({ email: 'guest@email.com', password: 'password'});
-    }
+    // guestLogin(e) {
+    //     e.preventDefault();
+    //     this.props.login({ email: 'guest@email.com', password: 'password'});
+    // }
+
+      guestLogin(e) {
+    e.preventDefault();
+    const guest = { email: "guest@email.com", password: "password" };
+    let { email, password } = guest;
+    let interval = 100;
+    let login = () => {
+      this.props.processForm(this.state);
+      this.props.history.push("/")
+    };
+    if (this.state.email !== email) {
+          let inputEmail = setInterval(() => {
+            if (this.state.email !== email) {
+              let tempEmail = email.slice(0, this.state.email.length + 1);
+              this.setState({ email: tempEmail });
+            } else {
+              clearInterval(inputEmail);
+              fillPassword();
+            }
+          }, interval);
+      };
+    let fillPassword = () => {
+      let inputPassword = setInterval(() => {
+        if (this.state.password !== password) {
+          let tempPassword = password.slice(0, this.state.password.length + 1);
+          this.setState({ password: tempPassword });
+        } else {
+          clearInterval(inputPassword);
+          login();
+        }
+      }, interval);
+    };
+}
 
     updateField(field) {
         return (e) => this.setState({ [field]: e.target.value })
