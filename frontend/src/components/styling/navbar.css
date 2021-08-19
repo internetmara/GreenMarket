@@ -24,6 +24,7 @@ header {
   justify-content: center;
   align-items: center;
   background-color: #395446;
+  opacity: 0.8;
 }
 /* 
 header::after {

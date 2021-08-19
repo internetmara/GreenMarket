@@ -81,21 +81,18 @@ class UploadProduct extends React.Component {
                     <h1 className="upload-header">Upload a Photo!!</h1>
                     <div className="product-or-service">
                         <div className="product-or-service-header"><h2>Are you adding a product or a service?</h2></div>
-                        <br/>
                         <div className="product-or-service-links">
                             <Link className="link-to" to="/api/products/new">Product</Link>
                             &nbsp;or&nbsp; 
                             <Link className="link-to" to="/api/services/new">Service</Link>
                         </div>
                     </div> 
-
-                    <h1>Upload your product here</h1>
                     <div className="upload-form">
                         <h3>Upload your product here</h3>
-                        <input type="file" onChange={this.handleFile} id="file" />
+                        <div className="photo-submit"><input className="photo-input" type="file" onChange={this.handleFile} id="file" /></div>
                         <div className="requirements">
-                            <h2>Product Requirements</h2>
-                            <p>
+                            <h2 className="product-requirements">Product Requirements</h2>
+                            <p className="uploading-thanks">
                               Thank you for uploading your product!
                               <br/>
                               Please tell us a little bit about your product: 
