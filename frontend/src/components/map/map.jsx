@@ -33,7 +33,7 @@ class SimpleMap extends Component {
     // ATTEMPT
     console.log(allCoords)
     return items.map( (ele, idx) => {
-      return this.createItem(allItems[idx][0], allItems[idx][1], ele)
+      return this.createItem(items[idx][0], items[idx][1], ele)
     })
     // ATTEMPT
   }

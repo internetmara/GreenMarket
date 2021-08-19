@@ -62,7 +62,8 @@ class UploadProduct extends React.Component {
             formData.append('product[user]', this.state.user)
             formData.append('product[product]', this.state.productFile)
             console.log(formData)
-            this.props.addProduct(formData).then(res => this.props.history.push(`/products/${res.id}`));
+            console.log(this.props.addProduct(formData))
+            // this.props.addProduct(formData).then(res => this.props.history.push(`/products/${res.id}`));
         }
     }
 

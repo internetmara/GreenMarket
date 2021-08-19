@@ -62,11 +62,19 @@ class UploadService extends React.Component {
             formData.append('service[address]', this.state.address)
             formData.append('service[user]', this.state.user)
             formData.append('service[service]', this.state.serviceFile)
+            console.log(formData)
+            // this.props.addService(formData)
             this.props.addService(formData)
-            // this.props.addService(formData).then(res => this.props.history.push(`/service/${res.id}`));
+            // .then(res => this.props.history.push(`/service/${res.id}`));
         }
     }
-
+    
+//     axios
+//             .post("/users/add", users)
+//             .then(res => console.log(res.data))
+//             .catch (err => {
+//     console.log(err);
+// });
 
     handleCancel(e) {
         this.setState({ selectForm: 0 })
@@ -97,7 +105,7 @@ class UploadService extends React.Component {
         }
 
 
-        if (this.state.selectForm > 1) {
+        if (this.state.selectForm === 1) {
             return (
 
                 <div className="uploaded-container-two">
