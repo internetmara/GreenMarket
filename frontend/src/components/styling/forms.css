@@ -145,6 +145,10 @@ body {
     font-size: 25px;
 }
 
+.navlink {
+    text-decoration: underline;
+}
+
 .product-or-service-inputs, .product-input {
     width: 300px;
     height: auto;
