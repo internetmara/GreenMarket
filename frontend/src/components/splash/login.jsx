@@ -26,6 +26,11 @@ class LoginForm extends React.Component {
         })
     }
 
+    guestLogin(e) {
+        e.preventDefault();
+        this.props.login({ email: 'guest@email.com', password: 'password'});
+    }
+
     updateField(field) {
         return (e) => this.setState({ [field]: e.target.value })
     }
@@ -49,6 +54,7 @@ class LoginForm extends React.Component {
                         <input type="password" className="login-input" onChange={this.updateField('password')} value={this.state.password} placeholder="Password"/>
                         <br />
                         <input type="submit" className="login-submit" value={this.props.formType} />
+                        <button onClick={this.guestLogin}>Guest Login</button>
                         <h3 className="login-change-form">{this.props.navLink}</h3>
                     { (this.props.loggedIn) ? <button className="logout-header-button" onClick={() => this.props.logout()}>Log Out</button> : '' }
                     </form>
