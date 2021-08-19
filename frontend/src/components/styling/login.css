@@ -11,7 +11,7 @@
 }
 
 
-.login-submit, .logout-header-button {
+.login-submit {
   font-family: 'Ovo', serif;
   border: none;
   border-radius: 3px;
@@ -39,5 +39,27 @@
 }
 
 .personal-welcome {
+  margin: auto;
   color: whitesmoke;
+  font-family: 'Ovo', serif;
+  text-align: center;
+}
+
+.header-group {
+  display: flex;
+  margin: auto;
+}
+
+.logout-header-button {
+  font-family: 'Ovo', serif;
+  border: none;
+  border-radius: 30px;
+  font-size: 14px;
+  height: 48px;
+  padding: 15px;
+  width: 100%;
+  margin: 10px;
+  margin-left: 20px;;
+  background-color: whitesmoke;
+  color: #395446;
 }
