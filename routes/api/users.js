@@ -7,6 +7,7 @@ const jwt = require('jsonwebtoken');
 const passport = require('passport');
 const validateRegisterInput = require('../../validation/register');
 const validateLoginInput = require('../../validation/login');
+const validateUserInput = require('../../validation/users')
 
 const path = require('path');
 if (process.env.NODE_ENV === 'production') {
@@ -117,5 +118,33 @@ router.get('/:id', (req, res) => {
         .catch(err =>
             res.status(404).json({ nouserfound: 'Could not find user' }))
 })
+
+router.patch('/:id/update',
+    passport.authenticate('jwt', { session: false }),
+    (req, res) => {
+        const { errors, isValid } = validateUserInput(req.body);
+
+        if (!isValid) {
+            return res.status(400).json(errors);
+        }
+
+        User.findByIdAndUpdate(
+            req.params.id,
+            {
+                username: req.body.username,
+                email: req.body.email,
+                address: req.body.address
+            },
+            { new: true },
+            function (err, success) {
+                if (err) {
+                    console.log(err);
+                } else {
+                    return success;
+                }
+            }
+        ).then(updatedUser => res.json(updatedUser))
+    }
+)
 
 module.exports = router;

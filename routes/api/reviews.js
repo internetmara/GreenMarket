@@ -21,8 +21,6 @@ router.post('/create',
             description: req.body.description,
             user: req.user.id
         })
-
-
         newReview.save()
             .then(review =>
                 User.findByIdAndUpdate(
@@ -48,5 +46,47 @@ router.get('/:id', (req, res) => {
         .catch(err =>
             res.status(404).json({ noreviewfound: 'Could not find review' }))
 })
+
+router.patch('/:id/update',
+    passport.authenticate('jwt', { session: false }),
+    (req, res) => {
+        const { errors, isValid } = validateReviewInput(req.body);
+
+        if (!isValid) {
+            return res.status(400).json(errors);
+        }
+
+        Review.findByIdAndUpdate(
+            req.params.id,
+            {
+                type: req.body.type,
+                rating: req.body.rating,
+                description: req.body.description
+            },
+            { new: true },
+            function (err, success) {
+                if (err) {
+                    console.log(err);
+                } else {
+                    return success;
+                }
+            }
+        ).then(updatedReview => {
+            User.findOneAndUpdate(
+                { _id: req.user.id },
+                {
+                    $set: {
+                        'reviews.$[el].type': updatedReview.type,
+                        'reviews.$[el].rating': updatedReview.rating,
+                        'reviews.$[el].description': updatedReview.description
+                    }
+                },
+                { arrayFilters: [{ "el._id": updatedReview._id }], new: true }
+            )
+                .then(complete => res.json(complete))
+        }
+        )
+    }
+)
 
 module.exports = router;
