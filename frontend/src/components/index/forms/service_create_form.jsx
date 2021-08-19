@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import '../../styling/forms.css'
 import '../../styling/reset.css'
 
@@ -80,23 +80,15 @@ class UploadService extends React.Component {
         if (this.state.selectForm === 0) {
             return (
                 <div className="upload-container">
-                    <h1 className="upload-header">Upload Form</h1>
-                    <div className="product-or-service-links">
-                        <Link className="link-to" to="/products/new">Product</Link>
-                        &nbsp;or&nbsp; 
-                        <Link className="link-to" to="/services/new">Service</Link>
-                    </div>
+                    <h1 className="upload-header">Upload a {this.props.formType}</h1>
+                    
                     <div className="upload-form">
-                        <h3>Upload your service here</h3>
-                        <div className="photo-submit"><input className="photo-input" type="file" onChange={this.handleFile} id="file" /></div>
-                        <div className="requirements">
-                            <h2 className="product-requirements">Service Requirements</h2>
-                            <p className="uploading-thanks">
-                                Thank you for uploading your service!
-                                <br />
-                                Please tell us a little bit about your service:
-                                <br />
-                            </p>
+                        <div className="photo-submit">
+                            <input className="photo-input" type="file" onChange={this.handleFile} id="file" />
+                        </div>
+
+                        <div className="product-or-service-links">
+                            <h3 className="change-form">...or upload a&nbsp;<u className="navlink">{this.props.navLink}</u>&nbsp;instead!</h3>
                         </div>
                     </div>
                 </div>
