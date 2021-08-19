@@ -10,8 +10,8 @@ const mapStateToProps = (state) => {
     return {
         product: state.entities.product,
         user: state.session.user,
-        formType: 'Add a Product',
-        navLink: <Link to="/products/new">Add a Product</Link>,
+        formType: 'Product',
+        navLink: <Link to="/services/new">service</Link>,
     }
 }
 

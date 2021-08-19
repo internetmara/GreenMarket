@@ -4,21 +4,21 @@ body {
   background-image: url('./images/gold-hoop.png');
   background-size: cover;
 }
+
 .upload-container {
     height: 300px;
     width: 300px;
-    border: black;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid black;
+    border: 10px double #395446;
     margin: auto;
     width: 600px;
     height: auto;
     max-width: 100%;
-    margin-top: 15%;
+    margin-top: 20%;
     flex-direction: column;
-    border-radius: 10px;
+    border-radius: 50px;
 }
 
 .upload-container > *, .upload-form > *, .upload-container, .upload-form, .requirements > * {
@@ -29,7 +29,7 @@ body {
 .upload-header {
     color: #395446;
     font-size: 50px;
-    padding: 10px;
+    padding: 15px;
     font-family: 'Ovo', serif;
 }
 
@@ -79,11 +79,15 @@ body {
     align-items: center;
 }
 
+.upload-form {
+    margin-top: -20px;
+}
+
 .photo-submit {
-    padding: 20px;
+    padding: 5px;
     margin: 20px;
-    border: 2px solid #395446;
-    border-radius: 10px;
+    border: 5px double #395446;
+    border-radius: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -96,6 +100,46 @@ body {
     margin: auto;
     background-color: #395446;
     color: whitesmoke;
-    padding: 30px;
+    padding: 50px;
     border-radius: 30px;
+    text-align: center;
+}
+
+.change-form, a:visited, a {
+    font-family: 'Ovo', serif;
+    display: flex;
+    color: #395446;
+    font-size: 25px;
+}
+
+.photo-input {
+    width: 180px;
+    border-radius: 25px;
+    padding: 20px;
+    align-items: center;
+    background-color: #395446;
+    font-family: 'Ovo' serif;
+}
+
+.upload-form-preview {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px double #395446;
+    border-radius: 10px;
+    width: 200px;
+    height: auto;
+}
+
+.uploaded-container-two {
+    display: flex;
+    flex-direction: column;
+}
+
+.upload-button-box {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 20%;
+    margin-bottom: 40px;
 }
