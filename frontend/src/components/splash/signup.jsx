@@ -26,6 +26,11 @@ class SignupForm extends React.Component {
     }
 
     handleSubmit(e) {
+        if (this.state.email === '') {
+            console.log('weird log in attempt >:(')
+            return null;
+        }
+
         e.preventDefault()
         this.props.signup(this.state)
         this.setState({

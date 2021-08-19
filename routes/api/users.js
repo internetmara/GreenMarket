@@ -147,4 +147,29 @@ router.patch('/:id/update',
     }
 )
 
+router.delete('/delete/:id',
+    passport.authenticate('jwt', { session: false }),
+    (req, res) => {
+        const userId = req.params.id
+
+        User.findById(userId)
+            .then(user => {
+                if ((user.products.length !== 0) || (user.services.length !== 0) || (user.products.length !== 0)) {
+                    return res.json({msg: 'Please delete all products, services, & reviews'})
+                } else {
+                    User.findByIdAndDelete(
+                        userId,
+                        (err, user) => {
+                            if (err) {
+                                return res.json(err)
+                            }
+                        }
+                    ).then(() => res.json({msg: 'User deleted'}))
+                    .catch(err => console.log(err))
+                }
+            }
+        )
+    }
+)
+
 module.exports = router;
