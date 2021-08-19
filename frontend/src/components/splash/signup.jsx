@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styling/reset.css'
 import '../styling/login.css'
+// import { withRouter } from "react-router-dom";
+
 
 class SignupForm extends React.Component {
     constructor(props) {
@@ -37,6 +39,10 @@ class SignupForm extends React.Component {
         })
     }
 
+    handleRoute() {
+        this.props.history.push("/login");
+    }
+
     render() {
         return (
             <div>
@@ -53,13 +59,15 @@ class SignupForm extends React.Component {
                         <br />
                         <input type="text" className="login-input" onChange={this.updateField('address')} value={this.state.address} placeholder="Address"/>
                         <br />
-                        <input type="submit" className="login-submit" value={this.props.formType} />
+                        {/* <input type="submit" className="login-submit" value={this.props.formType} /> */}
+                        <button type="submit"  className="login-submit"><Link to="/login">{this.props.formType}</Link></button>
                     </form>
-                        <h3 className="change-form">{this.props.navLink}</h3>
+                    <h3 className="change-form">{this.props.navLink}</h3>
                 </div>
             </div>
         )
     }
 }
 
+// export default withRouter(SignupForm);
 export default SignupForm;
