@@ -74,8 +74,7 @@ router.patch('/:id/update',
             category: req.body.category,
             rate: req.body.rate,
             description: req.body.description,
-            address: req.body.address,
-            user: req.user.id},
+            address: req.body.address},
             { new: true },
             function (err, success) {
                 if (err) {
@@ -85,12 +84,19 @@ router.patch('/:id/update',
                 }
             }
             ).then(updatedProduct => 
-                User.updateOne(
-                    { _id: req.user.id, 'products._id': req.params.id },
-                    { $set: {'products.$': updatedProduct}}
+                {console.log(req.params.id)
+                User.findOneAndUpdate(
+                    { _id: req.user.id},
+                    { $set: {'products.$[el].name': updatedProduct.name,
+                            'products.$[el].category': updatedProduct.category,
+                            'products.$[el].rate': updatedProduct.rate,
+                            'products.$[el].description': updatedProduct.description,
+                            'products.$[el].address': updatedProduct.address}},
+                    { arrayFilters: [{ "el._id": updatedProduct._id }], new: true }
                 )
                 .then(complete => res.json(complete))
-        )
+                }
+            )
     }
 )
 
