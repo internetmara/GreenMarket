@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import '../../styling/forms.css'
+import '../../styling/reset.css'
 
 class UploadService extends React.Component {
     constructor(props) {
@@ -78,22 +80,18 @@ class UploadService extends React.Component {
         if (this.state.selectForm === 0) {
             return (
                 <div className="upload-container">
-
-                    <div className="product-or-service">
-                        <h2>Are you adding a service or a service?</h2>
-
-                        <Link className="link-to" to="/products/new">Product</Link> or 
+                    <h1 className="upload-header">Upload Form</h1>
+                    <div className="product-or-service-links">
+                        <Link className="link-to" to="/products/new">Product</Link>
+                        &nbsp;or&nbsp; 
                         <Link className="link-to" to="/services/new">Service</Link>
-
                     </div>
-
-                    <h1>Upload your service here</h1>
                     <div className="upload-form">
                         <h3>Upload your service here</h3>
-                        <input type="file" onChange={this.handleFile} id="file" />
+                        <div className="photo-submit"><input className="photo-input" type="file" onChange={this.handleFile} id="file" /></div>
                         <div className="requirements">
-                            <h2>Service Requirements</h2>
-                            <p>
+                            <h2 className="product-requirements">Service Requirements</h2>
+                            <p className="uploading-thanks">
                                 Thank you for uploading your service!
                                 <br />
                                 Please tell us a little bit about your service:

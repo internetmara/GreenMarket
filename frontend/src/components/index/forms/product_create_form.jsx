@@ -78,13 +78,12 @@ class UploadProduct extends React.Component {
         if (this.state.selectForm === 0) {
             return (
                 <div className="upload-container">
-                    <h1 className="upload-header">Upload a Photo!!</h1>
+                    <h1 className="upload-header">Upload Form</h1>
                     <div className="product-or-service">
-                        <div className="product-or-service-header"><h2>Are you adding a product or a service?</h2></div>
                         <div className="product-or-service-links">
-                            <Link className="link-to" to="/api/products/new">Product</Link>
+                            <Link className="link-to" to="/products/new">Product</Link>
                             &nbsp;or&nbsp; 
-                            <Link className="link-to" to="/api/services/new">Service</Link>
+                            <Link className="link-to" to="/services/new">Service</Link>
                         </div>
                     </div> 
                     <div className="upload-form">
