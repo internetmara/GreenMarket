@@ -89,4 +89,31 @@ router.patch('/:id/update',
     }
 )
 
+router.delete('/delete/:id',
+    passport.authenticate('jwt', { session: false }),
+    (req, res) => {
+        const reviewId = req.params.id
+
+        Review.findById(reviewId)
+            .then(review => User.updateOne(
+                { _id: req.user.id },
+                {
+                    $pull: {
+                        'reviews': { _id: review._id }
+                    }
+                }
+            ).then(() => Review.findByIdAndDelete(
+                reviewId,
+                (err, review) => {
+                    if (err) {
+                        return res.json(err)
+                    }
+                }
+            ).then(() => res.json({ msg: 'Review deleted' }))
+                .catch(err => console.log(err))
+            ))
+    }
+)
+
+
 module.exports = router;
