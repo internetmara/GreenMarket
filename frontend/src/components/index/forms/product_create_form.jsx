@@ -63,7 +63,7 @@ class UploadProduct extends React.Component {
             formData.user = this.state.user
             formData.product = this.state.product
             this.props.addProduct(formData)
-            console.log(this.state.user)
+            // console.log(this.state.user)
             this.props.history.push(`/users/${this.state.user.id}`)
         }
     }
@@ -129,13 +129,10 @@ class UploadProduct extends React.Component {
                     </form>
                 </div>
             )
-        } else {
-            // console.log('hay')
-            return null;
-        }
-    
+        } 
     }
-        
+    
 }
+        
 
 export default UploadProduct;
