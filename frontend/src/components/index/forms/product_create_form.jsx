@@ -61,7 +61,8 @@ class UploadProduct extends React.Component {
             formData.append('product[address]', this.state.address)
             formData.append('product[user]', this.state.user)
             formData.append('product[product]', this.state.productFile)
-            this.props.getProduct(formData).then(res => this.props.history.push(`/products/${res.id}`));
+            {console.log(formData)}
+            this.props.addProduct(formData).then(res => this.props.history.push(`/products/${res.id}`));
         }
     }
 
@@ -72,6 +73,7 @@ class UploadProduct extends React.Component {
 
 
     render() {
+        
         const PreviewProduct = this.state.productUrl ? <img className="upload-form-preview" alt="upload-preview" src={this.state.productUrl} /> : null;
 
 
@@ -91,7 +93,7 @@ class UploadProduct extends React.Component {
                     </div>
                 </div>
             )
-        }
+        } 
 
 
         if (this.state.selectForm === 1) {
@@ -140,9 +142,13 @@ class UploadProduct extends React.Component {
                     </form>
                 </div>
             )
+        } else {
+            console.log('hay')
+            return null;
         }
+    
     }
-
+        
 }
 
 export default UploadProduct;

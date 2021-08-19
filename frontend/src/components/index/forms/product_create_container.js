@@ -1,7 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
-import { addProduct } from "../../../util/items_api_util";
+import { addProduct } from "../../../actions/item_actions";
 import UploadProduct from "./product_create_form";
+
 import { Link } from "react-router-dom";
 
 
