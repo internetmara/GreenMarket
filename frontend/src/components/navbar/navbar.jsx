@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import '../styling/splash.css'
 import '../styling/navbar.css'
 import '../styling/reset.css'
+import GreetingContainer from '../greeting/greeting_container';
 
 class Navbar extends React.Component {
 
@@ -16,8 +17,7 @@ class Navbar extends React.Component {
               <nav className="links">
                 <ul>
                     {/* <input type="text" placeholder="Search GreenMarket..." className="search-bar" /> */}
-                    <Link to="/signup"><button className="home-page-button">Sign Up</button></Link>
-                    <Link to="/login"><button className="home-page-button">Log In</button></Link>
+                    <GreetingContainer/>
                 </ul>
               </nav>
             </div>
