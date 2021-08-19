@@ -10,51 +10,53 @@ const AnyReactComponent = ({ text }) => <div>{text}</div>;
 class SimpleMap extends Component {
   constructor(props) {
     super(props)
-    this.state = {
-      lat: 0,
-      lng: 0
-    };
-    this.lat = 0;
-    this.lng = 0;
   };
     
-    populateItems() {
-      let items = Object.values(this.props.products).concat(Object.values(this.props.services))
-      let latit = 0;
-      let lngit = 0;
-      Geocode.setApiKey(key);
-      Geocode.setLanguage("en");
-      Geocode.setRegion("us");
-      // Geocode.enableDebug();
-      Geocode.setLocationType("APPROXIMATE");
-      // return items.map(item => {
-        for (let i=0; i < items.length; i++) {
-         await Geocode.fromAddress(items[i].address).then( 
-          res => {
-            this.lat = res.results[0].geometry.location.lat
-            this.lng = res.results[0].geometry.location.lng
-            console.log(this.lat, this.lng)
-          }
-          ).catch(err => {console.log(err)})
-        console.log(this.lat, this.lng)
-        this.createItem(this.lat, this.lng)
-        }
-        
-    // })
+  populateItems() {
+    Geocode.setApiKey(key);
+    Geocode.setLanguage("en");
+    Geocode.setRegion("us");
+    // Geocode.enableDebug();
+    Geocode.setLocationType("APPROXIMATE");
+
+    let allCoords = [];
+    let items = Object.values(this.props.products).concat(Object.values(this.props.services))
+    items.forEach( async (ele, idx) => {
+      const res = await Geocode.fromAddress(ele.address)
+      const { lat, lng } = res.results[0].geometry.location;
+      // ATTEMPT
+      allCoords.push([lat, lng])
+      // ATTEMPT
+    })
+    
+    // ATTEMPT
+    console.log(allCoords)
+    return items.map( (ele, idx) => {
+      return this.createItem(allItems[idx][0], allItems[idx][1], ele)
+    })
+    // ATTEMPT
   }
 
-  createItem(lat, lng, item) {
-    return <div>
-         < AnyReactComponent
-        lat={39.782267}
-        lng={-104.8919341}
-           text={< Link to="/" > <img alt="N/A" title="N/A" className="GM-icon" src="/logo192.png" /></Link >}
-         />
-       </div>
+  createItem = (lat, lng, item) => {
+    console.log(lat, lng)
+    return (
+      <div>
+        <AnyReactComponent
+            lat={lat}
+            lng={lng}
+            // lat = { 39.9264719 }
+            // lng = { -105.0424311 }
+              //  text={< Link to={`/${item.category}/${item.id}`} > <img alt="N/A" title="N/A" className="GM-icon" src="/logo192.png" /></Link >}
+            text={< Link to="/" > <img alt="N/A" title="N/A" className="GM-icon" src="/logo192.png" /></Link >}
+        />
+      </div>
+    )
   }
-// 39.782267, -104.8919341
+  // lat = { 39.9264719 }
+  // lng = { -105.0424311 }
+
   render() {
-    console.log(this.props)
+    // console.log(this.props)
     return (
       // Important! Always set the container height explicitly
 

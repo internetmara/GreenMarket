@@ -59,32 +59,58 @@ export const getServices = () => (dispatch) => {
         .then(res => dispatch(receiveAllServices(res)))
 }
 
+export const getProduct = (itemId) => (dispatch) => {
+    APIUtil.getProduct(itemId)
+        .then(res => dispatch(receiveAllProduct(res))).catch(
+            err => console.log(err)
+        )
+}
+
+export const getService = (itemId) => (dispatch) => {
+    APIUtil.getService(itemId)
+        .then(res => dispatch(receiveAllServices(res))).catch(
+            err => console.log(err)
+        )
+}
+
 export const addProduct = (product) => (dispatch) => {
     APIUtil.addProduct(product)
-    .then(res => dispatch(addUserProduct(res)))
+        .then(res => dispatch(addUserProduct(res))).catch(
+            err => console.log(err)
+        )
 }
 
 export const addService = (service) => (dispatch) => {
     APIUtil.addProduct(service)
-        .then(res => dispatch(addUserService(res)))
+        .then(res => dispatch(addUserService(res))).catch(
+            err => console.log(err)
+        )
 }
 
 export const updateProduct = (product) => (dispatch) => {
     APIUtil.changeProduct(product)
-    .then( res => dispatch(updateUserProduct(res)))
+        .then(res => dispatch(updateUserProduct(res))).catch(
+            err => console.log(err)
+        )
 }
 
 export const updateService = (service) => (dispatch) => {
     APIUtil.changeService(service)
-        .then(res => dispatch(updateUserService(res)))
+        .then(res => dispatch(updateUserService(res))).catch(
+            err => console.log(err)
+        )
 }
 
 export const deleteProduct = (product) => (dispatch) => {
     APIUtil.deleteProduct(product)
-    .then(res => dispatch(deleteUserProduct(res)))
+        .then(res => dispatch(deleteUserProduct(res))).catch(
+            err => console.log(err)
+        )
 }
 
 export const deleteService = (service) => (dispatch) => {
     APIUtil.deleteService(service)
-    .then(res => dispatch(deleteUserService(res)))
+        .then(res => dispatch(deleteUserService(res))).catch(
+            err => console.log(err)
+        )
 }

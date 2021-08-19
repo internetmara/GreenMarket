@@ -5,10 +5,19 @@ class ItemShow extends React.Component {
         super(props)
     }
 
+    componentDidMount() {
+        console.log(this.props.history)
+        // if ( logic to trigger correct thunk action ) {
+        //     this.props.getProduct(this.props.itemId)
+        // } else {
+        //     this.props.getService(this.props.itemId)
+        // }
+    }
+
     render() {
         return (
             <div>
-                <p>Item</p>
+                {/* <p>{this.props.item.id}</p> */}
             </div>
         )
     }
