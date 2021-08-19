@@ -126,26 +126,67 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px double #395446;
-    border-radius: 10px;
+    border: 10px double #395446;
+    padding: 20px;
+    border-radius: 20px;
     width: 200px;
     height: auto;
-}
-
-.uploaded-container-two {
-    display: flex;
-    flex-direction: column;
 }
 
 .upload-button-box {
     align-items: center;
     display: flex;
     justify-content: center;
-    margin-top: 20%;
     margin-bottom: 40px;
 }
 
 .navlink > * {
     color: #395446;
     font-size: 25px;
+}
+
+.product-or-service-inputs, .product-input {
+    width: 300px;
+    height: auto;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 5px;
+    border: 2px double #395446;
+    text-decoration: none;
+}
+
+.uploaded-container-two {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 10px double #395446;
+    margin: auto;
+    width: 600px;
+    height: auto;
+    max-width: 100%;
+    margin-top: 10%;
+    border-radius: 50px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.upload-button, .cancel-button {
+    font-family: 'Ovo', serif;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    height: auto;
+    padding: 10px;
+    width: 140px;
+    max-width: 100%;
+    background-color: #395446;
+    color: white;
+    margin: 20px;
+    text-align: center;
+}
+
+.form-buttons-box {
+    display: flex;
+    flex-direction: row;
 }

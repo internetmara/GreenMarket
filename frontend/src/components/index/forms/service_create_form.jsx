@@ -105,7 +105,7 @@ class UploadService extends React.Component {
                         <label id="uploading-here">
                             <input type="file" onChange={this.handleFile} style={{ display: "none" }} />
                         </label>
-                        <div className="upload-form-preview">
+                        <div className="upload-form-preview-img">
                             {PreviewService}
                         </div>
                     </div>
@@ -123,7 +123,7 @@ class UploadService extends React.Component {
                         <input placeholder="Address:" className="product-or-service-inputs" type="text" value={this.state.address} onChange={this.update("address")} />
                         {this.state.tError ? <p className="errors">Address can not be empty</p> : null}
                         <textarea placeholder="Address:" cols="40" rows="6" className="product-or-service-inputs" type="text" value={this.state.description} onChange={this.update("description")} />
-                        <div>
+                        <div className="form-buttons-box">
                             <button className="cancel-button" onClick={this.handleCancel}>Cancel</button>
                             <button className="upload-button" type="submit">Upload</button>
                         </div>
