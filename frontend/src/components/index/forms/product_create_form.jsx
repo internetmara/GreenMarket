@@ -154,7 +154,7 @@ class UploadProduct extends React.Component {
                 </div>
             )
         } else {
-            console.log('hay')
+            // console.log('hay')
             return null;
         }
     
