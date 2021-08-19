@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { signup } from '../../actions/session_actions';
 import SessionForm from './session_form';
 import { login } from '../../actions/session_actions';
+import '../styling/reset.css'
 
 const mapStateToProps = ({ errors }) => {
     return {

@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { addProduct } from "../../../actions/item_actions";
 import UploadProduct from "./product_create_form";
-
+import '../../styling/reset.css';
 import { Link } from "react-router-dom";
 
 

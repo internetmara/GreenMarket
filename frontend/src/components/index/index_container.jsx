@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { getProducts, getServices } from '../../actions/item_actions';
 import { getUser } from '../../actions/session_actions';
 import IndexComponent from "./index"
+import '../styling/reset.css'
 
 const mSTP = (state) => ({
     products: state.entities.products,

@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { addService } from "../../../util/items_api_util";
 import UploadService from "./service_create_form";
 import { Link } from "react-router-dom";
+import '../../styling/reset.css';
 
 
 const mapStateToProps = (state) => {

@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styling/reset.css'
 
 class ItemShow extends React.Component {
     // constructor(props) {
