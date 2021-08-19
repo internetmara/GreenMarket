@@ -44,7 +44,9 @@ body {
   border: none;
 }
 
-.home-page-button::after {
+
+.home-page-button > * {
+  font-family: 'Ovo', serif;
   color: #395446;
   background-color: white;
   border-radius: 30px;
@@ -74,7 +76,7 @@ body {
 
 
 :any-link {
-  color: whitesmoke;
+  /* color: whitesmoke; */
   /* background-color: #395446; */
   border-radius: 10px;
   box-shadow: none;

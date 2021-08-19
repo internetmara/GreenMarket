@@ -1,4 +1,4 @@
-const axios = require('axios');
+import axios from 'axios';
 
 export const setAuthToken = token => {
     if (token) {
@@ -14,4 +14,8 @@ export const signup = (userData) => {
 
 export const login = (userData) => {
     return axios.post('/api/users/login', userData)
+}
+
+export const getUser = (userId) => {
+    return axios.post(`/api/users/${userId}` )
 }

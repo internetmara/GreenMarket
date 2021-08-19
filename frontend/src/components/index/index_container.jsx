@@ -1,6 +1,7 @@
 // import React from 'react';
 import { connect } from 'react-redux';
 import { getProducts, getServices } from '../../actions/item_actions';
+import { getUser } from '../../actions/session_actions';
 import IndexComponent from "./index"
 
 const mSTP = (state) => ({
@@ -11,7 +12,8 @@ const mSTP = (state) => ({
 
 const mDTP = (dispatch) => ({
     getProducts: () => dispatch(getProducts()),
-    getServices: () => dispatch(getServices())
+    getServices: () => dispatch(getServices()),
+    getUser: (userId) => dispatch(getUser(userId))
 })
 
 export default connect(mSTP,mDTP)(IndexComponent)

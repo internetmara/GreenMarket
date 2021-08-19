@@ -5,41 +5,41 @@ import { Link } from 'react-router-dom';
 import '../styling/map.css'
 const key = require("../../config/keys").googleMapsKey;
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
-Geocode.setApiKey(key);
-Geocode.setLanguage("en");
-Geocode.setRegion("us");
-// Geocode.enableDebug();
-Geocode.setLocationType("APPROXIMATE");
 
 
 class SimpleMap extends Component {
   constructor(props) {
     super(props)
+    this.lat = 0;
+    this.lng = 0;
   };
-
-  // static defaultProps = {
-  //   zoom: 11,
-  // }
-  
-  populateItems() {
-    let items = Object.values(this.props.products).concat(Object.values(this.props.services))
-
-    return items.map(item => {
-      let {lat, lng} = ''
-      Geocode.fromAddress(item.address).then( 
+    
+    populateItems() {
+      
+      let items = Object.values(this.props.products).concat(Object.values(this.props.services))
+      return items.map(item => {
+        Geocode.setApiKey(key);
+        Geocode.setLanguage("en");
+        Geocode.setRegion("us");
+        // Geocode.enableDebug();
+        Geocode.setLocationType("APPROXIMATE");
+        
+        Geocode.fromAddress(item.address).then( 
         res => {
-          let { lat, lng } = res.results[0].geometry.location
-          
-        }
-      )
+          console.log(res)
+          // console.log(res.results[0].geometry.location.lat)
+          // ({ lat, lng } = res.results[0].geometry.location)
+          this.lat = res.results[0].geometry.location.lat
+          this.lng = res.results[0].geometry.location.lng
+        })
+        console.log(`item${item.name}` + this.lat, this.lng)
       return <div>
-          < AnyReactComponent
-            lat = {lat}
-            lng = {lng}
-            text = {< Link to = "/" > <img alt="N/A" title="N/A" className="GM-icon" src="/logo192.png" /></Link >}
-            />
+        < AnyReactComponent
+          lat={this.lat}
+          lng={this.lng}
+          text={< Link to="/" > <img alt="N/A" title="N/A" className="GM-icon" src="/logo192.png" /></Link >}
+        />
       </div>
-
     })
   }
 
@@ -48,10 +48,6 @@ class SimpleMap extends Component {
       // Important! Always set the container height explicitly
 
       <div className="map-box" style={{ height: '80vh', width: '80%' }}>
-        {/* {console.log(this.props)} */}
-        {console.log({ lat: this.props.userLat, lng: this.props.userLng })}
-        {console.log('props' + this.props)}
-
         <GoogleMapReact
           bootstrapURLKeys={{ key: key }}
           center={{lat: this.props.userLat, lng: this.props.userLng}}
