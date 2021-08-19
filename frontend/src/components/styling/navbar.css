@@ -41,26 +41,13 @@ header::after {
 }
 
 nav {
-    float: right; 
+  float: right; 
 }
 
 nav ul {
-    margin: 0; 
-    padding: 0; 
-    list-style: none;
-}
-
-.search-bar {
-  border: none;
-  border-radius: 25px;
-  width: 210px;
-  height: 40px;
-  text-indent: 48px;
-  font-size: 100%;
-  font-family: 'Ovo', serif;
-  color: #ffffff;
-  background-color: #395446;
-  text-align: center;
+  margin: 0; 
+  padding: 0; 
+  list-style: none;
 }
 
 .home-page-button {
