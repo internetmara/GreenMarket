@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import '../../styling/forms.css'
+import '../../styling/reset.css'
 
 class UploadProduct extends React.Component {
     constructor(props) {
@@ -24,10 +26,11 @@ class UploadProduct extends React.Component {
         this.handleCancel = this.handleCancel.bind(this);
     }
 
-    componentDidMount() {
-        this.props.getProducts();
-        this.props.getServices();
-    }
+    // componentDidMount() {
+    //     this.props.getProducts();
+    //     this.props.getServices();
+    // }
+
 
     update(field) {
         return e => this.setState({ [field]: e.currentTarget.value })
@@ -58,7 +61,7 @@ class UploadProduct extends React.Component {
             formData.append('product[address]', this.state.address)
             formData.append('product[user]', this.state.user)
             formData.append('product[product]', this.state.productFile)
-            this.props.createProduct(formData).then(res => this.props.history.push(`/products/${res.id}`));
+            this.props.getProduct(formData).then(res => this.props.history.push(`/products/${res.id}`));
         }
     }
 
@@ -69,7 +72,6 @@ class UploadProduct extends React.Component {
 
 
     render() {
-
         const PreviewProduct = this.state.productUrl ? <img className="upload-form-preview" alt="upload-preview" src={this.state.productUrl} /> : null;
 
 

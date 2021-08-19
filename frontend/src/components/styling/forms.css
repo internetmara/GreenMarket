@@ -1,0 +1,9 @@
+body {
+    background-color: lightcyan;
+}
+
+.upload-container {
+    height: 300px;
+    width: 300px;
+    border: black;
+}
