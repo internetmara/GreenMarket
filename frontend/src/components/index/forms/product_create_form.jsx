@@ -61,7 +61,8 @@ class UploadProduct extends React.Component {
             formData.append('product[address]', this.state.address)
             formData.append('product[user]', this.state.user)
             formData.append('product[product]', this.state.productFile)
-            this.props.getProduct(formData).then(res => this.props.history.push(`/products/${res.id}`));
+            {console.log(formData)}
+            this.props.addProduct(formData).then(res => this.props.history.push(`/products/${res.id}`));
         }
     }
 
@@ -72,6 +73,7 @@ class UploadProduct extends React.Component {
 
 
     render() {
+        
         const PreviewProduct = this.state.productUrl ? <img className="upload-form-preview" alt="upload-preview" src={this.state.productUrl} /> : null;
 
 
@@ -82,9 +84,9 @@ class UploadProduct extends React.Component {
                     <div className="product-or-service">
                         <div className="product-or-service-header"><h2>Are you adding a product or a service?</h2></div>
                         <div className="product-or-service-links">
-                            <Link className="link-to" to="/api/products/new">Product</Link>
+                            <Link className="link-to" to="/">Product</Link>
                             &nbsp;or&nbsp; 
-                            <Link className="link-to" to="/api/services/new">Service</Link>
+                            <Link className="link-to" to="/services/new">Service</Link>
                         </div>
                     </div> 
                     <div className="upload-form">
@@ -102,10 +104,10 @@ class UploadProduct extends React.Component {
                     </div>
                 </div>
             )
-        }
+        } 
 
 
-        if (this.state.selectForm > 1) {
+        if (this.state.selectForm === 1) {
             return (
 
                 <div className="uploaded-container-two">
@@ -151,9 +153,13 @@ class UploadProduct extends React.Component {
                     </form>
                 </div>
             )
+        } else {
+            console.log('hay')
+            return null;
         }
+    
     }
-
+        
 }
 
 export default UploadProduct;

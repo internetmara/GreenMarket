@@ -45,9 +45,9 @@ class SignupForm extends React.Component {
         })
     }
 
-    handleRoute() {
-        this.props.history.push("/login");
-    }
+    // handleRoute() {
+    //     // this.props.history.push("/login");
+    // }
 
     render() {
         return (
