@@ -105,12 +105,12 @@ body {
     text-align: center;
 }
 
-.change-form, a:visited, a {
+/* .change-form {
     font-family: 'Ovo', serif;
     display: flex;
     color: #395446;
     font-size: 25px;
-}
+} */
 
 .photo-input {
     width: 180px;
