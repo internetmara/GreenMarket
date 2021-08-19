@@ -47,7 +47,7 @@ class IndexComponent extends React.Component {
         this.setCenter()
         return (
             <div>
-                <Link to="/"><h2 className="map-header">Index/Map Component</h2></Link>
+                <Link to="/"><h2 className="map-header">Local Goods & Services</h2></Link>
                 <SimpleMap products={this.props.products} services={this.props.services} user={this.props.user} userLat={this.userLat} userLng={this.userLng} />
             </div>
         )
