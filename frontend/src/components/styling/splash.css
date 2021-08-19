@@ -107,14 +107,14 @@ body {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  margin-top: 25%;
+  margin-top: 20%;
   padding: 10px;
 }
 
 .go-to-the-map {
   font-family: 'Ovo', serif;
   color:#395446;
-  font-size: 50px;
+  font-size: 35px;
   margin: auto;
   padding: 10px;
 }
