@@ -107,14 +107,36 @@ body {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  margin-top: 20%;
-  padding: 10px;
+  margin-top: 10%;
+  /* padding: 10px; */
 }
 
 .go-to-the-map {
   font-family: 'Ovo', serif;
   color:#395446;
-  font-size: 35px;
-  margin: auto;
-  padding: 10px;
+  font-size: 20px;
+  /* margin: auto; */
+  padding: 5px;
+}
+
+.home-logo {
+  width: 400px;
+}
+
+.home-page-button2, .home-page-button2 > *:visited  {
+  font-family: 'Ovo', serif;
+  color: white;
+  background-color: #395446;
+  border-radius: 30px;
+  box-shadow: none;
+  outline-style: none;
+  text-decoration: none;
+  height: 50px;
+  padding: 15px;
+  width: 170px;
+  text-decoration: none;
+  align-items: stretch;
+  border: none;
+  margin-top: -30px;
+  margin-bottom: 20px;
 }
