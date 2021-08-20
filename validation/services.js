@@ -10,6 +10,7 @@ module.exports = function validateServiceInput(data) {
     data.rateIncrement = validText(data.rateIncrement) ? data.rateIncrement : '';
     data.description = validText(data.description) ? data.description : '';
     data.address = validText(data.address) ? data.address : '';
+    data.picture = validText(data.picture) ? data.picture : '';
 
     if (Validator.isEmpty(data.name)) {
         errors.text = 'Name is required'
@@ -33,6 +34,10 @@ module.exports = function validateServiceInput(data) {
 
     if (Validator.isEmpty(data.address)) {
         errors.text = 'Address is required'
+    }
+
+    if (Validator.isEmpty(data.picture)) {
+        errors.text = 'Picture is required'
     }
 
     return {

@@ -28,6 +28,7 @@ router.post('/create',
             rate: req.body.rate,
             description: req.body.description,
             address: req.body.address,
+            picture: req.body.picture,
             user: req.user.id
         })
         
@@ -74,6 +75,7 @@ router.patch('/:id/update',
             category: req.body.category,
             rate: req.body.rate,
             description: req.body.description,
+            picture: req.body.picture,
             address: req.body.address},
             { new: true },
             function (err, success) {
@@ -90,7 +92,8 @@ router.patch('/:id/update',
                             'products.$[el].category': updatedProduct.category,
                             'products.$[el].rate': updatedProduct.rate,
                             'products.$[el].description': updatedProduct.description,
-                            'products.$[el].address': updatedProduct.address}},
+                            'products.$[el].address': updatedProduct.address,
+                            'products.$[el].picture': updatedProduct.picture}},
                     { arrayFilters: [{ "el._id": updatedProduct._id }], new: true }
                 )
                 .then(complete => res.json(complete))

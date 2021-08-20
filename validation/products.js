@@ -9,6 +9,7 @@ module.exports = function validateProductInput(data) {
     data.rate = validText(data.rate) ? data.rate : '';
     data.description = validText(data.description) ? data.description : '';
     data.address = validText(data.address) ? data.address : '';
+    data.picture = validText(data.picture) ? data.picture : '';
 
     if (Validator.isEmpty(data.name)) {
         errors.text = 'Name is required'
@@ -28,6 +29,10 @@ module.exports = function validateProductInput(data) {
 
     if (Validator.isEmpty(data.address)) {
         errors.text = 'Address is required'
+    }
+    
+    if (Validator.isEmpty(data.picture)) {
+        errors.text = 'Picture is required'
     }
 
     return {
