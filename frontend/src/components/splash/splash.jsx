@@ -16,6 +16,7 @@ class Splash extends React.Component {
                 <Link to="/map"><h2 className="go-to-the-map">Go To The Map!</h2></Link>
                 <Link to="/products/new"><h2 className="go-to-the-map">Go To The Product Uploader!</h2></Link>
                 <Link to="/services/new"><h2 className="go-to-the-map">Go To The Service Uploader!</h2></Link>
+                <Link to="/user"><h2 className="go-to-the-map">Go To Your Show Page!</h2></Link>
             </div>
         )
     }
