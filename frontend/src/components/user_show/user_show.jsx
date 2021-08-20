@@ -17,10 +17,13 @@ class userShow extends React.Component {
 
         if (!this.props.user.services) {
             return null; 
-        } 
+        }
+        
+        if (!this.props.user.products) {
+            return null; 
+        }
+
         let { services, products } = this.props.user;
-        console.log('hello');
-        console.log(services)
 
         return (
             <div className="users-show-container">
