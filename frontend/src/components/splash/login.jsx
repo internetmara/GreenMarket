@@ -12,12 +12,16 @@ class LoginForm extends React.Component {
             email: '',
             password: ''
         }
+        
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.guestLogin = this.guestLogin.bind(this)
     }
 
     handleSubmit(e) {
         e.preventDefault()
+        const user = Object.assign({}, this.state);
         this.props.login(this.state)
+        this.props.processForm(user);
         this.setState({
             email: '',
             username: '',
@@ -25,6 +29,44 @@ class LoginForm extends React.Component {
             address: ''
         })
     }
+
+    // guestLogin(e) {
+    //     e.preventDefault();
+    //     this.props.login({ email: 'guest@email.com', password: 'password'});
+    // }
+
+      guestLogin(e) {
+    e.preventDefault();
+    const guest = { email: "guest@email.com", password: "password" };
+    let { email, password } = guest;
+    let interval = 100;
+    let login = () => {
+      this.props.processForm(this.state);
+      this.props.history.push("/")
+    };
+    if (this.state.email !== email) {
+          let inputEmail = setInterval(() => {
+            if (this.state.email !== email) {
+              let tempEmail = email.slice(0, this.state.email.length + 1);
+              this.setState({ email: tempEmail });
+            } else {
+              clearInterval(inputEmail);
+              fillPassword();
+            }
+          }, interval);
+      };
+    let fillPassword = () => {
+      let inputPassword = setInterval(() => {
+        if (this.state.password !== password) {
+          let tempPassword = password.slice(0, this.state.password.length + 1);
+          this.setState({ password: tempPassword });
+        } else {
+          clearInterval(inputPassword);
+          login();
+        }
+      }, interval);
+    };
+}
 
     updateField(field) {
         return (e) => this.setState({ [field]: e.target.value })
@@ -49,6 +91,7 @@ class LoginForm extends React.Component {
                         <input type="password" className="login-input" onChange={this.updateField('password')} value={this.state.password} placeholder="Password"/>
                         <br />
                         <input type="submit" className="login-submit" value={this.props.formType} />
+                        <button onClick={this.guestLogin} className="login-submit">Guest Login</button>
                         <h3 className="login-change-form">{this.props.navLink}</h3>
                     { (this.props.loggedIn) ? <button className="logout-header-button" onClick={() => this.props.logout()}>Log Out</button> : '' }
                     </form>

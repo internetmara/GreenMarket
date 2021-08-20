@@ -30,6 +30,7 @@ router.post('/create',
             rateIncrement: req.body.rateIncrement,
             description: req.body.description,
             address: req.body.address,
+            picture: req.body.picture,
             user: req.user.id
         })
         
@@ -77,7 +78,8 @@ router.patch('/:id/update',
                 rate: req.body.rate,
                 rateIncrement: req.body.rateIncrement,
                 description: req.body.description,
-                address: req.body.address
+                address: req.body.address,
+                picture: req.body.picture
             },
             { new: true },
             function (err, success) {
@@ -97,7 +99,8 @@ router.patch('/:id/update',
                         'services.$[el].rate': updatedService.rate,
                         'services.$[el].rateIncrement': updatedService.rateIncrement,
                         'services.$[el].description': updatedService.description,
-                        'services.$[el].address': updatedService.address
+                        'services.$[el].address': updatedService.address,
+                        'services.$[el].picture': updatedService.picture
                     }
                 },
                 { arrayFilters: [{ "el._id": updatedService._id }], new: true }
