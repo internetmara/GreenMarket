@@ -115,7 +115,8 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 80%;
+  width: 1200px;
+  max-width: 100%;
   margin-bottom: 20px;
   /* background-color: whitesmoke; */
   /* opacity: 80%; */
@@ -131,7 +132,7 @@ body {
   border-radius: 30px;
   text-align: center;
   opacity: 80%;
-  
+  max-width: 100%;
 }
 
 .home-logo {
