@@ -13,15 +13,14 @@ class userShow extends React.Component {
     }
 
     render() {
-        console.log(this.props)
 
-        if (!this.props.user.services) {
-            return null; 
-        }
+        // if (!this.props.user.services) {
+        //     return null; 
+        // }
         
-        if (!this.props.user.products) {
-            return null; 
-        }
+        // if (!this.props.user.products) {
+        //     return null; 
+        // }
 
         let { services, products } = this.props.user;
 
