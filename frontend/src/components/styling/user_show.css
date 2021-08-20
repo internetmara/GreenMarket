@@ -1,19 +1,66 @@
 .users-show-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    border: 1px solid black;
     align-items: center;
-    margin-top: 25%;
-    width: 500px;
     max-width: 100%;
-    /* margin: auto; */
-    margin-left: 25%;
     padding: 20px; 
     text-align: center;
+    margin-top: 10%;
+    /* border: 10px double #395446; */
+    border-radius: 10px;
+    /* height: 90vh; */
 }
 
 .users-show-header {
+    margin-top: 10px;
     color: #395446;
-    font-size: 50px;
+    font-size: 40px;
     font-family: "ovo", serif;
+}
+
+.services-and-products {
+    display: flex;
+    flex-direction: row;
+}
+
+.user-services-container, .user-products-container{
+    border: 10px double #395446;
+    border-radius: 10px;
+    margin: 30px;
+    width: 300px;
+    height: 500px;
+    flex-wrap: wrap;
+    max-width: 100%;
+    text-align: left;
+}
+
+.user-products-header, .user-services-header {
+    font-family: "Ovo", serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    font-size: 30px;
+    margin-top: 15px;
+    text-align: center;
+}
+
+.service-index-item > * {
+    color: #395446;
+    align-items: left;
+    display: flex;
+    justify-content: left;
+}
+
+
+.service-index-item {
+    border: 2px solid #395446;
+    border-radius: 10px;
+    margin: 15px;
+}
+
+.product-map, .service-map {
+    height: 400px;
+    overflow: scroll;
 }
