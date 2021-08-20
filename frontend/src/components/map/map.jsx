@@ -17,11 +17,9 @@ class SimpleMap extends Component {
   };
 
 componentDidUpdate() {
-  
   Geocode.setApiKey(key);
   Geocode.setLanguage("en");
   Geocode.setRegion("us");
-  // Geocode.enableDebug();
   Geocode.setLocationType("APPROXIMATE");
 
   let allCoords = [];
@@ -46,13 +44,10 @@ componentDidUpdate() {
 
   createItem = (lat, lng, item) => {
     return <AnyReactComponent
-                lat={lat}
-                lng={lng}
-                // lat = { 39.9264719 }
-                // lng = { -105.0424311 }
-                  //  text={< Link to={`/${item.category}/${item.id}`} > <img alt="N/A" title="N/A" className="GM-icon" src="/logo192.png" /></Link >}
-                text={< Link to="/" > <img alt="N/A" title="N/A" className="GM-icon" src="/logo192.png" /></Link >}
-              /> 
+        lat={lat}
+        lng={lng}
+        text={< Link to="/" > <img alt="N/A" title="N/A" className="GM-icon" src="/logo192.png" /></Link >}
+      /> 
   }
 
   render() {
@@ -66,6 +61,7 @@ componentDidUpdate() {
           bootstrapURLKeys={{ key: key }}
           center={{lat: this.props.userLat, lng: this.props.userLng}}
           zoom={11}
+          // pinsDropped={true}
           >
             {nodes}
             {/* {this.createItem()} */}
