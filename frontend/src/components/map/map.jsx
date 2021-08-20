@@ -11,63 +11,63 @@ const AnyReactComponent = ({ text }) => <div>{text}</div>;
 class SimpleMap extends Component {
   constructor(props) {
     super(props)
+    this.state = {
+      coords: []
+    };
   };
-    
-  populateItems() {
-    Geocode.setApiKey(key);
-    Geocode.setLanguage("en");
-    Geocode.setRegion("us");
-    // Geocode.enableDebug();
-    Geocode.setLocationType("APPROXIMATE");
 
-    let allCoords = [];
+componentDidUpdate() {
+  
+  Geocode.setApiKey(key);
+  Geocode.setLanguage("en");
+  Geocode.setRegion("us");
+  // Geocode.enableDebug();
+  Geocode.setLocationType("APPROXIMATE");
+
+  let allCoords = [];
+  let items = Object.values(this.props.products).concat(Object.values(this.props.services))
+  for (let i = 0; i < items.length; i++) {
+    const res = Geocode.fromAddress(items[i].address)
+    allCoords.push(res)
+  }
+  Promise.allSettled(allCoords).then(res => {
+    this.setState({ coords: res })
+  })
+
+}
+
+  populateItems() {
     let items = Object.values(this.props.products).concat(Object.values(this.props.services))
-    items.forEach( async (ele, idx) => {
-      const res = await Geocode.fromAddress(ele.address)
-      const { lat, lng } = res.results[0].geometry.location;
-      // ATTEMPT
-      allCoords.push([lat, lng])
-      // ATTEMPT
-    })
-    
-    // ATTEMPT
-    console.log(allCoords)
     return items.map( (ele, idx) => {
-      return this.createItem(items[idx][0], items[idx][1], ele)
+      if (this.state.coords[idx] === undefined) return null; 
+       return this.createItem( this.state.coords[idx][0], this.state.coords[idx][1], ele)
     })
-    // ATTEMPT
   }
 
   createItem = (lat, lng, item) => {
-    console.log(lat, lng)
-    return (
-      <div>
-        <AnyReactComponent
-            lat={lat}
-            lng={lng}
-            // lat = { 39.9264719 }
-            // lng = { -105.0424311 }
-              //  text={< Link to={`/${item.category}/${item.id}`} > <img alt="N/A" title="N/A" className="GM-icon" src="/logo192.png" /></Link >}
-            text={< Link to="/" > <img alt="N/A" title="N/A" className="GM-icon" src="/logo192.png" /></Link >}
-        />
-      </div>
-    )
+    return <AnyReactComponent
+                lat={lat}
+                lng={lng}
+                // lat = { 39.9264719 }
+                // lng = { -105.0424311 }
+                  //  text={< Link to={`/${item.category}/${item.id}`} > <img alt="N/A" title="N/A" className="GM-icon" src="/logo192.png" /></Link >}
+                text={< Link to="/" > <img alt="N/A" title="N/A" className="GM-icon" src="/logo192.png" /></Link >}
+              /> 
   }
-  // lat = { 39.9264719 }
-  // lng = { -105.0424311 }
 
   render() {
-    // console.log(this.props)
+    if (this.props.services instanceof Object && Object.values(this.props.services).length === 0 || this.props.products instanceof Object && Object.values(this.props.products).length === 0) return null;
+    // debugger 
+    let nodes = this.populateItems()
     return (
       // Important! Always set the container height explicitly
-
       <div className="map-box" style={{ height: '80vh', width: '80%' }}>
         <GoogleMapReact
           bootstrapURLKeys={{ key: key }}
           center={{lat: this.props.userLat, lng: this.props.userLng}}
           zoom={11}
           >
-            {this.populateItems()}
+            {nodes}
             {/* {this.createItem()} */}
         </GoogleMapReact>
       </div>
