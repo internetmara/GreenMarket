@@ -52,16 +52,14 @@ componentDidUpdate() {
 
   render() {
     if (this.props.services instanceof Object && Object.values(this.props.services).length === 0 || this.props.products instanceof Object && Object.values(this.props.products).length === 0) return null;
-    // debugger 
     let nodes = this.populateItems()
     return (
       // Important! Always set the container height explicitly
-      <div className="map-box" style={{ height: '80vh', width: '80%' }}>
+      <div className="map-box" style={{ height: '80vh', width: '80%' }} >
         <GoogleMapReact
           bootstrapURLKeys={{ key: key }}
           center={{lat: this.props.userLat, lng: this.props.userLng}}
           zoom={11}
-          // pinsDropped={true}
           >
             {nodes}
             {/* {this.createItem()} */}

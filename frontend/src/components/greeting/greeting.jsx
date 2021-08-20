@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import '../styling/reset.css';
 
 
-const Greeting = ({ currentUser, logout }) => {
+const Greeting = ({ currentUser, logout, isAuthenticated }) => {
   const sessionLinks = () => (
     <nav className="login-signup">
       <button className="home-page-button"><Link to="/login">Log in</Link></button>
@@ -18,7 +18,7 @@ const Greeting = ({ currentUser, logout }) => {
     </hgroup>
   );
 
-  return currentUser ? personalGreeting() : sessionLinks();
+  return isAuthenticated ? personalGreeting() : sessionLinks();
 };
 
 export default Greeting;
