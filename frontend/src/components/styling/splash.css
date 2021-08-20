@@ -111,17 +111,33 @@ body {
   /* padding: 10px; */
 }
 
+.home-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 80%;
+  margin-bottom: 20px;
+  /* background-color: whitesmoke; */
+  /* opacity: 80%; */
+}
 .go-to-the-map {
   font-family: 'Ovo', serif;
   color:#395446;
-  font-size: 20px;
+  font-size: 25px;
   /* margin: auto; */
-  padding: 5px;
+  padding: 25px;
+  width: 200px;
+  background-color: whitesmoke;
+  border-radius: 30px;
+  text-align: center;
+  opacity: 80%;
+  
 }
 
 .home-logo {
-  width: 350px;
+  width: 500px;
   max-width: 100%;
+  margin-bottom: 20px;
 }
 
 .home-page-button2, .home-page-button2 > *:visited  {
