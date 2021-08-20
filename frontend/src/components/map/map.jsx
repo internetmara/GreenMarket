@@ -17,11 +17,9 @@ class SimpleMap extends Component {
   };
 
 componentDidUpdate() {
-  
   Geocode.setApiKey(key);
   Geocode.setLanguage("en");
   Geocode.setRegion("us");
-  // Geocode.enableDebug();
   Geocode.setLocationType("APPROXIMATE");
 
   let allCoords = [];
@@ -46,22 +44,18 @@ componentDidUpdate() {
 
   createItem = (lat, lng, item) => {
     return <AnyReactComponent
-                lat={lat}
-                lng={lng}
-                // lat = { 39.9264719 }
-                // lng = { -105.0424311 }
-                  //  text={< Link to={`/${item.category}/${item.id}`} > <img alt="N/A" title="N/A" className="GM-icon" src="/logo192.png" /></Link >}
-                text={< Link to="/" > <img alt="N/A" title="N/A" className="GM-icon" src="/logo192.png" /></Link >}
-              /> 
+        lat={lat}
+        lng={lng}
+        text={< Link to="/" > <img alt="N/A" title="N/A" className="GM-icon" src="/logo192.png" /></Link >}
+      /> 
   }
 
   render() {
     if (this.props.services instanceof Object && Object.values(this.props.services).length === 0 || this.props.products instanceof Object && Object.values(this.props.products).length === 0) return null;
-    // debugger 
     let nodes = this.populateItems()
     return (
       // Important! Always set the container height explicitly
-      <div className="map-box" style={{ height: '80vh', width: '80%' }}>
+      <div className="map-box" style={{ height: '80vh', width: '80%' }} >
         <GoogleMapReact
           bootstrapURLKeys={{ key: key }}
           center={{lat: this.props.userLat, lng: this.props.userLng}}
