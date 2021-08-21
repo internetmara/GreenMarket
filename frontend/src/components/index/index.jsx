@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import ItemList  from './item_list';
 import SimpleMap from '../map/map'
 import Geocode from "react-geocode";
 import '../styling/reset.css';
@@ -23,28 +24,29 @@ class IndexComponent extends React.Component {
         }
 
         componentDidUpdate() {
-            Geocode.setApiKey(key);
-            Geocode.setLanguage("en");
-            Geocode.setRegion("us");
-            // Geocode.enableDebug();
-            Geocode.setLocationType("APPROXIMATE");
+            // Geocode.setApiKey(key);
+            // Geocode.setLanguage("en");
+            // Geocode.setRegion("us");
+            // // Geocode.enableDebug();
+            // Geocode.setLocationType("APPROXIMATE");
 
-            if (Object.values(this.props.user).length === 0) return null;
-            Geocode.fromAddress(this.props.user.address).then(
-                res => {
-                    this.setState({
-                    userLat: res.results[0].geometry.location.lat,
-                    userLng: res.results[0].geometry.location.lng
-                    })
-                }
-            )
+            // if (Object.values(this.props.user).length === 0) return null;
+            // Geocode.fromAddress(this.props.user.address).then(
+            //     res => {
+            //         this.setState({
+            //         userLat: res.results[0].geometry.location.lat,
+            //         userLng: res.results[0].geometry.location.lng
+            //         })
+            //     }
+            // )
         }
         
     render() {
         return (
             <div>
                 <Link to="/"><h2 className="map-header">Local Goods & Services</h2></Link>
-                <SimpleMap products={this.props.products} services={this.props.services} user={this.props.user} userLat={this.state.userLat} userLng={this.state.userLng} />
+                <ItemList products={this.props.products} services={this.props.services} />
+                {/* <SimpleMap products={this.props.products} services={this.props.services} user={this.props.user} userLat={this.state.userLat} userLng={this.state.userLng} /> */}
             </div>
         )
     }
