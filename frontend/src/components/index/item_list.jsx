@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 
 class ItemList extends React.Component {
     constructor(props) {
@@ -10,10 +11,11 @@ class ItemList extends React.Component {
         // console.log(items.length)
         if (items.length === 0) return null;
         return items.map( item => {
-            return <div>
-                <p>{item.name}</p>
-                <p>{item.price}</p>
-            </div>
+         return <div key={item._id} className="item">
+                    <Link><p to="" >{item.name}</p></Link>
+                    <p>{item.category}</p>
+                    <p>{item.rate}</p>
+                </div>
         })
 
     }
@@ -23,7 +25,9 @@ class ItemList extends React.Component {
         return (
             <div>
                 <h2>ITEMSLZT</h2>
-                {this.listAllItems()}
+                <div className="items-index">
+                    {this.listAllItems()}
+                </div>
             </div>
         )
     }
