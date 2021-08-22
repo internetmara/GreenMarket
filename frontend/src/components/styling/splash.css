@@ -120,7 +120,7 @@ body {
   margin-bottom: 20px;
 }
 .go-to-the-map {
-  opacity: 80%;
+  /* opacity: 80%; */
   font-family: 'Ovo', serif;
   color:#395446;
   font-size: 22px;
