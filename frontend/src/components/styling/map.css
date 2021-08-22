@@ -27,3 +27,29 @@
   border-radius: 10px;
   border: 10px double #395446;
 }
+
+.items-index {
+  /* margin: auto; */
+  width: 20vw;
+  height: 60vh;
+  /* padding: 30px; */
+  border-radius: 10px;
+  border: 10px double #395446;
+  overflow: scroll;
+}
+
+.item {
+  border-top: 2px double #395446;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(245, 245, 245, .8);
+}
+
+.item p {
+  color: #395446;
+}
+
+.item p:nth-child(1) {
+  font-size: 24px;
+  text-decoration: underline;
+}
