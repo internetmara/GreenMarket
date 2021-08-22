@@ -2,13 +2,17 @@ import React from "react";
 
 class ProductIndexItem extends React.Component {
 
+    componentDidMount() {
+        this.props.getProducts()
+    }
 
 
     render() {
-        const {name, category, rate, description, address} = this.props; 
+        if (this.props.product === undefined) return null
+        const { name, category, rate, description, address } = this.props.product;
 
         return (
-            <div className="service-index-item">
+            <div className="item-show-root">
                 <h3>I'm a Product</h3>
                 {/* <img src="{}"></img> */}
                 <p>Name: {name}</p>
@@ -16,10 +20,10 @@ class ProductIndexItem extends React.Component {
                 <p>Rate: {rate}</p>
                 <p>Description: {description}</p>
                 <p>Address: {address}</p>
-            </div> 
+            </div>
         )
 
     }
 }
 
-export default ProductIndexItem; 
+export default ProductIndexItem;

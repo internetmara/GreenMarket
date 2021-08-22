@@ -9,8 +9,8 @@ import userShow from './user_show/user_show_container';
 import UploadProduct from './index/forms/product_create_container';
 import UploadService from './index/forms/service_container';
 import IndexComponent from './index/index_container';
-import serviceShow from './user_show/service_item_container'
-import productShow from './user_show/product_item_container'
+import serviceShow from './item_show/service_item_container'
+import productShow from './item_show/product_item_container'
 import "./styling/reset.css"
 
 const App = () => (

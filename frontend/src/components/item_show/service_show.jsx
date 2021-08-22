@@ -1,14 +1,20 @@
 import React from "react";
+import '../styling/itemshow.css'
 
 class ServiceIndexItem extends React.Component {
 
 
+    componentDidMount() {
+        this.props.getServices()
+    }
+
     render() {
-        const {name, category, rate, rateIncrement, description, address} = this.props; 
-        
+        if (this.props.service === undefined) return null
+        const { name, category, rate, rateIncrement, description, address } = this.props.service;
+
         return (
-            <div className="service-index-item">
-                {/* <h3>I'm a Service</h3> */}
+            <div className="item-show-root">
+                <h3>I'm a Service</h3>
                 {/* <img src="{}"></img> */}
                 <p>Name: {name}</p>
                 <p>Category: {category}</p>
@@ -16,10 +22,10 @@ class ServiceIndexItem extends React.Component {
                 <p>Per: {rateIncrement}</p>
                 <p>Description: {description}</p>
                 <p>Address: {address}</p>
-            </div> 
+            </div>
         )
 
     }
 }
 
-export default ServiceIndexItem; 
+export default ServiceIndexItem;
