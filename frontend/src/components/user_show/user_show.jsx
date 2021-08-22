@@ -2,6 +2,8 @@ import React from 'react';
 import '../styling/reset.css'
 import '../styling/user_show.css'
 import ServiceIndexItem from './service_index_item';
+import ProductIndexItem from './service_index_item';
+
 
 class userShow extends React.Component {
     constructor(props) {
@@ -10,6 +12,7 @@ class userShow extends React.Component {
 
     componentDidMount() {
         this.props.getServices();
+        this.props.getProducts();
     }
 
     render() {
@@ -23,7 +26,7 @@ class userShow extends React.Component {
         // }
 
         let { services, products } = this.props.user;
-
+        console.log(services)
         return (
             <div className="users-show-container">
                 <marquee className="users-show-header" scrollamount="20">Look at all your items!!</marquee>
@@ -32,8 +35,8 @@ class userShow extends React.Component {
                     <div className="user-services-container">
                         <h1 className="user-services-header">Services</h1>
                         <div className="service-map">
-                            { services.map (service => (
-                             < ServiceIndexItem
+                        { services.map (service => (
+                            < ServiceIndexItem 
                             name = { service.name }
                             category = { service.category }
                             rate = { service.rate }
@@ -49,7 +52,7 @@ class userShow extends React.Component {
                         <h1 className="user-products-header">Products</h1>
                         <div className="product-map">
                         { products.map (product => (
-                             < ServiceIndexItem
+                             < ProductIndexItem
                             name = { product.name }
                             category = { product.category }
                             rate = { product.rate }

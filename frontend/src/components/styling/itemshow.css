@@ -1,0 +1,18 @@
+.item-show-root {
+
+}
+
+.item-show-root > * {
+    color: #395446;
+    align-items: left;
+    display: flex;
+    justify-content: left;
+}
+
+
+.item-show-root {
+    border: 2px solid #395446;
+    border-radius: 10px;
+    margin: 15px;
+    margin-top: 100px;
+}
