@@ -2,11 +2,18 @@ import React from "react";
 
 class ServiceIndexItem extends React.Component {
 
+
+    componentDidMount() {
+        this.props.getServices()
+    }
+
     render() {
-        const {name, category, rate, rateIncrement, description, address} = this.props; 
+        if (this.props.service === undefined) return null
+        const {name, category, rate, rateIncrement, description, address} = this.props.service; 
         
         return (
             <div className="service-index-item">
+                <h3>I'm a Service</h3>
                 {/* <img src="{}"></img> */}
                 <p>Name: {name}</p>
                 <p>Category: {category}</p>

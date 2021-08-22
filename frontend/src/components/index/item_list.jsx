@@ -12,7 +12,12 @@ class ItemList extends React.Component {
         if (items.length === 0) return null;
         return items.map( item => {
          return <div key={item._id} className="item">
-                    <Link><p to="" >{item.name}</p></Link>
+                    {/* {console.log(this.props.products[item._id])} */}
+                    {
+                        this.props.products[item._id] !== undefined ? 
+                        <Link to={`/product/${item._id}`} ><p>{item.name}</p></Link> :
+                        <Link to={`/service/${item._id}`} ><p>{item.name}</p></Link>
+                    }
                     <p>{item.category}</p>
                     <p>{item.rate}</p>
                 </div>

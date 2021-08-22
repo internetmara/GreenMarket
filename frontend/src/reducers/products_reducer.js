@@ -8,7 +8,6 @@ const ProductsReducer = (oldState={}, action) => {
             action.allProducts.data.forEach( ele => {
                 newState[ele._id] = ele
             })
-
             return newState
         default:
             return oldState;
