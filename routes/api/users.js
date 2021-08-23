@@ -23,6 +23,8 @@ router.get('/current', passport.authenticate('jwt', { session: false }), (req, r
     res.json({
         id: req.user.id,
         username: req.user.username,
+        coordsLat: req.body.coordsLat,
+        coordsLng: req.body.coordsLng,
         email: req.user.email
     });
 })
@@ -45,6 +47,8 @@ router.post('/register', (req, res) => {
                 const newUser = new User({
                     username: req.body.username,
                     email: req.body.email,
+                    coordsLat: req.body.coordsLat,
+                    coordsLng: req.body.coordsLng,
                     password: req.body.password,
                     address: req.body.address
                 })
@@ -88,6 +92,8 @@ router.post('/login', (req, res) => {
                             id: user.id, 
                             email: user.email,
                             address: user.address,
+                            coordsLat: req.body.coordsLat,
+                            coordsLng: req.body.coordsLng,
                             username: user.username,
                             products: user.products,
                             services: user.services,
@@ -133,6 +139,8 @@ router.patch('/:id/update',
             {
                 username: req.body.username,
                 email: req.body.email,
+                coordsLat: req.body.coordsLat,
+                coordsLng: req.body.coordsLng,
                 address: req.body.address
             },
             { new: true },
