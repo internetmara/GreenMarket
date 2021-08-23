@@ -25,7 +25,7 @@ We will need to:
    - [ ] Saving of user's products & services data to database
    - [ ] Products and services appear on an interactive map of nodes
    - [ ] Index page of items
-   - [ ] Show page with information about a sellers's products and/or services
+   - [ ] Show page with information about a sellers' products and/or services
    - [ ] Production README
 
 #### Bonus Features
