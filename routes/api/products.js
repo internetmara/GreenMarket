@@ -5,6 +5,7 @@ const User = require('../../models/User')
 const jwt = require('jsonwebtoken');
 const passport = require('passport');
 const validateProductInput = require('../../validation/products')
+import Geocode from "react-geocode";
 
 router.get('/', (req, res) => {
     Product.find()
@@ -21,34 +22,40 @@ router.post('/create',
         if (!isValid) {
             return res.status(400).json(errors);
         }
-        
-        const newProduct = new Product({
-            name: req.body.name,
-            category: req.body.category,
-            rate: req.body.rate,
-            description: req.body.description,
-            address: req.body.address,
-            picture: req.body.picture,
-            user: req.user.id
-        })
-        
 
-        newProduct.save()
-            .then(product => 
-                User.findByIdAndUpdate(
-                    req.user.id,
-                    { $addToSet: {products: product}},
-                    { new: true },
-                    function(err, success) {
-                        if(err) {
-                            console.log(err);
-                        } else {
-                            return success;
-                        }
-                    }
-                ).then(creation => res.json(creation)
-            )
-        );
+        Geocode.fromAddress(req.body.address)
+            .then( res => {
+                new Product({
+                    name: req.body.name,
+                    category: req.body.category,
+                    rate: req.body.rate,
+                    description: req.body.description,
+                    address: req.body.address,
+                    coordsLat: res.results[0].geometry.location.lat,
+                    coordsLng: res.results[0].geometry.location.lng,
+                    picture: req.body.picture,
+                    user: req.user.id
+                })
+            })
+            .then( newProduct => {
+                newProduct.save()
+                    .then(product => 
+                        User.findByIdAndUpdate(
+                            req.user.id,
+                            { $addToSet: {products: product}},
+                            { new: true },
+                            function(err, success) {
+                                if(err) {
+                                    console.log(err);
+                                } else {
+                                    return success;
+                                }
+                            }
+                        ).then(creation => res.json(creation)
+                    )
+                );
+            }
+        )
     }
 );
 

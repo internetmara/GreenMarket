@@ -22,16 +22,16 @@ componentDidUpdate() {
   Geocode.setRegion("us");
   Geocode.setLocationType("APPROXIMATE");
 
-  let allCoords = [];
-  let items = Object.values(this.props.products).concat(Object.values(this.props.services))
-  for (let i = 0; i < items.length; i++) {
+  // let allCoords = [];
+  // let items = Object.values(this.props.products).concat(Object.values(this.props.services))
+  // for (let i = 0; i < items.length; i++) {
     const res = Geocode.fromAddress(items[i].address)
-    allCoords.push(res)
-  }
-  Promise.allSettled(allCoords).then(res => {
-    this.setState({ coords: res })
-  })
-
+    const { lat, lng } = res.results[0].geometry.location
+    // allCoords.push(res)
+  // }
+  // Promise.allSettled(allCoords).then(res => {
+  //   this.setState({ coords: res })
+  // })
 }
 
   populateItems() {
