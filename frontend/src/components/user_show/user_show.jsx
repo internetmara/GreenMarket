@@ -2,7 +2,7 @@ import React from 'react';
 import '../styling/reset.css'
 import '../styling/user_show.css'
 import ServiceIndexItem from './service_index_item';
-import ProductIndexItem from './service_index_item';
+import ProductIndexItem from './product_index_item';
 
 
 class userShow extends React.Component {
@@ -13,10 +13,11 @@ class userShow extends React.Component {
     componentDidMount() {
         this.props.getServices();
         this.props.getProducts();
+        this.props.getUser(this.props.user.id)
     }
 
     render() {
-
+        console.log(this.props)
         // if (!this.props.user.services) {
         //     return null; 
         // }
@@ -24,9 +25,7 @@ class userShow extends React.Component {
         // if (!this.props.user.products) {
         //     return null; 
         // }
-
         let { services, products } = this.props.user;
-        console.log(services)
         return (
             <div className="users-show-container">
                 <marquee className="users-show-header" scrollamount="20">Look at all your items!!</marquee>

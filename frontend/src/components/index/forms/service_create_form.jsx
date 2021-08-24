@@ -66,7 +66,6 @@ class UploadService extends React.Component {
         await Geocode.fromAddress(address).then(res => {
             lat = res.results[0].geometry.location.lat
             lng = res.results[0].geometry.location.lng
-            // console.log(lat, lng)
             this.setState({ coordsLat: lat, coordsLng: lng })
         })
     }
@@ -87,9 +86,8 @@ class UploadService extends React.Component {
             formData.coordsLng = this.state.coordsLng
             formData.user = this.state.user
             formData.service = this.state.service
-            console.log(formData)
+            // console.log(formData)
             this.props.addService(formData)
-            // console.log(this.state.user)
             this.props.history.push("/user")
         }
     }

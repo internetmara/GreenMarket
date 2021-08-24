@@ -1,5 +1,6 @@
 import { connect } from "react-redux";
 import { getProduct, getProducts, getService, getServices } from "../../actions/item_actions";
+import { getUser } from "../../actions/session_actions";
 
 import userShow from "./user_show";
 import '../styling/reset.css'
@@ -13,7 +14,7 @@ const mSTP = (state) => ({
 const mDTP = (dispatch) => ({
     getProducts: () => dispatch(getProducts()),
     getServices: () => dispatch(getServices()),
-    // getUser: (userId) => dispatch(getUser(userId))
+    getUser: (userId) => dispatch(getUser(userId))
     // getProduct: itemId => dispatch(getProduct(itemId)),
     // getService: itemId => dispatch(getService(itemId))
 })
