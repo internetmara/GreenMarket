@@ -17,5 +17,5 @@ export const login = (userData) => {
 }
 
 export const getUser = (userId) => {
-    return axios.post(`/api/users/${userId}` )
+    return axios.get(`/api/users/${userId}` )
 }

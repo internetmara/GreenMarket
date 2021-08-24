@@ -52,9 +52,11 @@ class UploadProduct extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        console.log(this.state.productUrl)
         if (this.state.tError === false) {
 
             const formData = {};
+            formData.picture = this.state.productUrl
             formData.name = this.state.name
             formData.category = this.state.category
             formData.rate = this.state.rate

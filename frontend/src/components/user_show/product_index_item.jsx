@@ -5,12 +5,11 @@ class ProductIndexItem extends React.Component {
 
 
     render() {
-        const {name, category, rate, description, address} = this.props; 
+        const {name, category, rate, description, address, picture} = this.props; 
 
         return (
             <div className="service-index-item">
-                <h3>I'm a Product</h3>
-                {/* <img src="{}"></img> */}
+                <img className="upload-form-preview" src={picture}></img>
                 <p>Name: {name}</p>
                 <p>Category: {category}</p>
                 <p>Rate: {rate}</p>
