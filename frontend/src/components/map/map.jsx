@@ -17,8 +17,9 @@ class SimpleMap extends Component {
   populateItems() {
     let items = Object.values(this.props.products).concat(Object.values(this.props.services))
     return items.map( ele => {
-
-      return this.createItem(ele.coordsLat, ele.coordsLng, ele)
+      if (ele.coordsLat !== undefined ) {
+        return this.createItem(ele.coordsLat, ele.coordsLng, ele)
+      } 
     })
   }
 
