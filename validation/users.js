@@ -25,6 +25,14 @@ module.exports = function validateUserInput(data) {
         errors.address = 'Address is required';
     }
 
+    if (Validator.isEmpty(data.coordsLat)) {
+        errors.address = 'Invalid Address';
+    }
+
+    if (Validator.isEmpty(data.coordsLng)) {
+        errors.address = 'Invalid Address';
+    }
+
     if (!Validator.isEmail(data.email)) {
         errors.email = 'Email is invalid';
     }

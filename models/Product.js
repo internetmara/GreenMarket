@@ -23,11 +23,11 @@ const ProductSchema = new Schema({
         required: true
     },
     coordsLat: {
-        type: String,
+        type: Number,
         required: true
     },
     coordsLng: {
-        type: String,
+        type: Number,
         required: true
     },
     address: {
