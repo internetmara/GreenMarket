@@ -87,7 +87,7 @@ class UploadService extends React.Component {
             formData.coordsLng = this.state.coordsLng
             formData.user = this.state.user
             formData.service = this.state.service
-            // console.log(formData)
+            console.log(formData)
             this.props.addService(formData)
             this.props.history.push("/user")
         }

@@ -43,6 +43,7 @@ class UploadProduct extends React.Component {
     handleFile(e) {
         const file = e.target.files[0];
         const fileReader = new FileReader();
+        console.log(fileReader)
         fileReader.onloadend = () => {
             this.setState({ productFile: file, productUrl: fileReader.result, selectForm: 1 });
         }
@@ -88,7 +89,7 @@ class UploadProduct extends React.Component {
             formData.coordsLng = this.state.coordsLng
             formData.user = this.state.user
             formData.product = this.state.product
-            console.log(formData)
+            // console.log(formData)
             this.props.addProduct(formData)
             // console.log(this.state.user)
             this.props.history.push("/user")

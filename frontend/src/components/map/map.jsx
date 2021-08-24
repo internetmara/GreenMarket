@@ -14,26 +14,46 @@ class SimpleMap extends Component {
   };
 
 
-  populateItems() {
-    let items = Object.values(this.props.products).concat(Object.values(this.props.services))
-    return items.map( ele => {
+  populateProducts() {
+    let products = Object.values(this.props.products)
+    return products.map( ele => {
       if (ele.coordsLat !== undefined ) {
-        return this.createItem(ele.coordsLat, ele.coordsLng, ele)
+        return this.createProduct(ele.coordsLat, ele.coordsLng, ele)
       } 
     })
   }
 
-  createItem = (lat, lng, item) => {
+  populateServices() {
+    let services = Object.values(this.props.services)
+    return services.map(ele => {
+      if (ele.coordsLat !== undefined) {
+        return this.createItem(ele.coordsLat, ele.coordsLng, ele)
+      }
+    })
+  }
+
+  createProduct(lat, lng, item) {
+    console.log(item)
     return <AnyReactComponent
         lat={lat}
         lng={lng}
-        text={< Link to="/" > <img alt="N/A" title="N/A" className="GM-icon" src="/logo192.png" /></Link >}
+        text={< Link to={`/product/${item._id}`} > <img alt="N/A" title="N/A" className="GM-icon" src={item.picture} /></Link >}
       /> 
+  }
+
+  createService(lat, lng, item) {
+    console.log(item)
+    return <AnyReactComponent
+      lat={lat}
+      lng={lng}
+      text={< Link to={`/service/${item._id}`} > <img alt="N/A" title="N/A" className="GM-icon" src={item.picture} /></Link >}
+    />
   }
 
   render() {
     if (this.props.services instanceof Object && Object.values(this.props.services).length === 0 || this.props.products instanceof Object && Object.values(this.props.products).length === 0) return null;
-    let nodes = this.populateItems()
+    let products = this.populateProducts()
+    let services = this.populateServices()
     
     return (
       // Important! Always set the container height explicitly
@@ -43,7 +63,8 @@ class SimpleMap extends Component {
           center={{ lat: this.props.coordsLat, lng: this.props.coordsLng}}
           zoom={11}
           >
-            {nodes}
+            {products}
+            {services}
         </GoogleMapReact>
       </div>
     );
