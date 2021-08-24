@@ -55,6 +55,7 @@ class UploadService extends React.Component {
         if (this.state.tError === false) {
 
             const formData = {};
+            formData.picture = this.state.serviceUrl
             formData.name = this.state.name
             formData.category = this.state.category
             formData.rate = this.state.rate
@@ -113,13 +114,21 @@ class UploadService extends React.Component {
 
                     <form className="upload-form" onSubmit={this.handleSubmit}>
                         <h3> Tell us more about your service: </h3>
-                        <input className="product-or-service-inputs" type="text" placeholder="Name" value={this.state.name} onChange={this.update("name")} />
+                        <input className="product-or-service-inputs" type="text" placeholder="Name:" value={this.state.name} onChange={this.update("name")} />
                         {this.state.tError ? <p className="errors">Name can not be empty</p> : null}
                         <input className="product-or-service-inputs" placeholder="Category:" type="text" value={this.state.category} onChange={this.update("category")} />
                         {this.state.tError ? <p className="errors">Category can not be empty</p> : null}
                         <input className="product-or-service-inputs" placeholder="Rate:" type="text" value={this.state.rate} onChange={this.update("rate")} />
                         {this.state.tError ? <p className="errors">Rate can not be empty</p> : null}
-                        <input className="product-or-service-inputs" placeholder="Rate Increment:" type="text" value={this.state.rateIncrement} onChange={this.update("rateIncrement")} />
+                        <label className="product-or-service-inputs">Per:&nbsp;
+                        <select>
+                            <option value={this.state.rateIncrement} onChange={this.update("rateIncrement")}>Minute</option>
+                            <option value={this.state.rateIncrement} onChange={this.update("rateIncrement")}>Hour</option>
+                            <option value={this.state.rateIncrement} onChange={this.update("rateIncrement")}>Day</option>
+                            <option value={this.state.rateIncrement} onChange={this.update("rateIncrement")}>Month</option>
+                            <option value={this.state.rateIncrement} onChange={this.update("rateIncrement")}>Unit</option>
+                        </select>
+                        </label>
                         {this.state.tError ? <p className="errors">Rate Increment can not be empty</p> : null}
                         <input placeholder="Address:" className="product-or-service-inputs" type="text" value={this.state.address} onChange={this.update("address")} />
                         {this.state.tError ? <p className="errors">Address can not be empty</p> : null}

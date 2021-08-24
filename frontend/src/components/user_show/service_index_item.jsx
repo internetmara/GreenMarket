@@ -8,8 +8,7 @@ class ServiceIndexItem extends React.Component {
         
         return (
             <div className="service-index-item">
-                {/* <h3>I'm a Service</h3> */}
-                {/* <img src="{}"></img> */}
+                {/* <img className="upload-form-preview" src={picture}></img> */}
                 <p>Name: {name}</p>
                 <p>Category: {category}</p>
                 <p>Rate: {rate}</p>
