@@ -157,6 +157,7 @@ body {
     margin: 5px;
     border: 2px double #395446;
     text-decoration: none;
+    color: #395446;
 }
 
 .uploaded-container-two {
@@ -193,4 +194,10 @@ body {
 .form-buttons-box {
     display: flex;
     flex-direction: row;
+}
+
+.per {
+    font-size: 15px;
+    font-family: 'Ovo', serif;
+    color: none;
 }

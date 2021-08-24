@@ -74,11 +74,11 @@ class UploadProduct extends React.Component {
     async handleSubmit(e) {
         e.preventDefault();
         await this.getGeo(this.state.address)
-        // console.log(this.state.coordsLat, this.state.coordsLng)
 
         if (this.state.tError === false) {
 
             const formData = {};
+            formData.picture = this.state.productUrl
             formData.name = this.state.name
             formData.category = this.state.category
             formData.rate = this.state.rate

@@ -16,16 +16,14 @@ class userShow extends React.Component {
         this.props.getUser(this.props.user.id)
     }
 
+
+
     render() {
-        console.log(this.props)
-        // if (!this.props.user.services) {
-        //     return null; 
-        // }
-        
-        // if (!this.props.user.products) {
-        //     return null; 
-        // }
+        if (!this.props.user) {
+            return null
+        };
         let { services, products } = this.props.user;
+      
         return (
             <div className="users-show-container">
                 <marquee className="users-show-header" scrollamount="20">Look at all your items!!</marquee>
@@ -35,7 +33,8 @@ class userShow extends React.Component {
                         <h1 className="user-services-header">Services</h1>
                         <div className="service-map">
                         { services.map (service => (
-                            < ServiceIndexItem 
+                            < ServiceIndexItem
+                            picture = { service.picture } 
                             name = { service.name }
                             category = { service.category }
                             rate = { service.rate }
@@ -50,8 +49,10 @@ class userShow extends React.Component {
                     <div className="user-products-container">
                         <h1 className="user-products-header">Products</h1>
                         <div className="product-map">
+                            {/* {console.log(products)} */}
                         { products.map (product => (
-                             < ProductIndexItem
+                            < ProductIndexItem
+                            picture = { product.picture }
                             name = { product.name }
                             category = { product.category }
                             rate = { product.rate }

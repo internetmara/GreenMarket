@@ -118,20 +118,17 @@ body {
   width: 1200px;
   max-width: 100%;
   margin-bottom: 20px;
-  /* background-color: whitesmoke; */
-  /* opacity: 80%; */
 }
 .go-to-the-map {
+  /* opacity: 80%; */
   font-family: 'Ovo', serif;
   color:#395446;
   font-size: 22px;
-  /* margin: auto; */
   padding: 15px;
   width: 180px;
   background-color: whitesmoke;
   border-radius: 30px;
   text-align: center;
-  opacity: 80%;
   max-width: 100%;
 }
 
