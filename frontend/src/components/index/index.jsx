@@ -20,7 +20,7 @@ class IndexComponent extends React.Component {
 
         
     render() {
-        console.log(this.props.user)
+        // console.log(this.props.user)
         return (
             <div>
                 <Link to="/"><h2 className="map-header">Local Goods & Services</h2></Link>
