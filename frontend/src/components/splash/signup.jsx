@@ -2,8 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styling/reset.css'
 import '../styling/login.css'
-
-// import { withRouter } from "react-router-dom";
+import Geocode from "react-geocode";
+const key = require("../../config/keys").googleMapsKey;
 
 
 class SignupForm extends React.Component {
@@ -14,7 +14,9 @@ class SignupForm extends React.Component {
                 email: '',
                 username: '',
                 password: '',
-                address: ''
+                address: '',
+                coordsLat: 0,
+                coordsLng: 0
                 // avatar: '',
                 // products: [],
                 // services: [],
@@ -25,13 +27,31 @@ class SignupForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this)
     }
 
-    handleSubmit(e) {
+    async getGeo(address) {
+        Geocode.setApiKey(key);
+        Geocode.setLanguage("en");
+        Geocode.setRegion("us");
+        Geocode.setLocationType("APPROXIMATE");
+
+        let lat = 0;
+        let lng = 0;
+
+        await Geocode.fromAddress(address).then(res => {
+            lat = res.results[0].geometry.location.lat
+            lng = res.results[0].geometry.location.lng
+            this.setState({ coordsLat: lat, coordsLng: lng })
+        })
+    }
+
+    async handleSubmit(e) {
         if (this.state.email === '') {
             console.log('weird log in attempt >:(')
             return null;
         }
 
         e.preventDefault()
+        await this.getGeo(this.state.address)
+        console.log(this.state)
         this.props.signup(this.state)
         this.setState({
             email: '',

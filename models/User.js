@@ -14,6 +14,14 @@ const UserSchema = new Schema({
         type: String,
         required: true
     },
+    coordsLat: {
+        type: Number,
+        required: true
+    },
+    coordsLng: {
+        type: Number,
+        required: true
+    },
     products: {
         type: Array,
         required: false

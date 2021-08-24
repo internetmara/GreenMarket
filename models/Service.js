@@ -30,6 +30,14 @@ const ServiceSchema = new Schema({
         type: String,
         required: true
     },
+    coordsLat: {
+        type: Number,
+        required: true
+    },
+    coordsLng: {
+        type: Number,
+        required: true
+    },
     picture: {
         type: String,
         required: true

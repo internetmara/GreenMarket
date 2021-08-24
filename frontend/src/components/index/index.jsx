@@ -10,12 +10,6 @@ const key = require("../../config/keys").googleMapsKey;
 class IndexComponent extends React.Component {
     constructor(props) {
             super(props)
-        this.state = {
-            userLat: 0,
-            userLng: 0
-        }
-        this.userLat = 0;
-        this.userLng = 0;
     }
         
         componentDidMount() {
@@ -23,30 +17,15 @@ class IndexComponent extends React.Component {
             this.props.getProducts()
         }
 
-        componentDidUpdate() {
-            // Geocode.setApiKey(key);
-            // Geocode.setLanguage("en");
-            // Geocode.setRegion("us");
-            // // Geocode.enableDebug();
-            // Geocode.setLocationType("APPROXIMATE");
 
-            // if (Object.values(this.props.user).length === 0) return null;
-            // Geocode.fromAddress(this.props.user.address).then(
-            //     res => {
-            //         this.setState({
-            //         userLat: res.results[0].geometry.location.lat,
-            //         userLng: res.results[0].geometry.location.lng
-            //         })
-            //     }
-            // )
-        }
         
     render() {
+        console.log(this.props.user)
         return (
             <div>
                 <Link to="/"><h2 className="map-header">Local Goods & Services</h2></Link>
                 <ItemList products={this.props.products} services={this.props.services} />
-                {/* <SimpleMap products={this.props.products} services={this.props.services} user={this.props.user} userLat={this.state.userLat} userLng={this.state.userLng} /> */}
+                <SimpleMap products={this.props.products} services={this.props.services} user={this.props.user} coordsLat={this.props.user.coordsLat} coordsLng={this.props.user.coordsLng} />
             </div>
         )
     }

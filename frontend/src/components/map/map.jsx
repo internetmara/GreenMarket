@@ -10,34 +10,16 @@ const AnyReactComponent = ({ text }) => <div>{text}</div>;
 class SimpleMap extends Component {
   constructor(props) {
     super(props)
-    this.state = {
-      coords: []
-    };
+    
   };
 
-componentDidUpdate() {
-  // Geocode.setApiKey(key);
-  // Geocode.setLanguage("en");
-  // Geocode.setRegion("us");
-  // Geocode.setLocationType("APPROXIMATE");
-
-  // let allCoords = [];
-  // let items = Object.values(this.props.products).concat(Object.values(this.props.services))
-  // for (let i = 0; i < items.length; i++) {
-    // const res = Geocode.fromAddress(items[i].address)
-    // const { lat, lng } = res.results[0].geometry.location
-    // allCoords.push(res)
-  // }
-  // Promise.allSettled(allCoords).then(res => {
-  //   this.setState({ coords: res })
-  // })
-}
 
   populateItems() {
     let items = Object.values(this.props.products).concat(Object.values(this.props.services))
-    return items.map( (ele, idx) => {
-      if (this.state.coords[idx] === undefined) return null; 
-       return this.createItem( this.state.coords[idx][0], this.state.coords[idx][1], ele)
+    return items.map( ele => {
+      if (ele.coordsLat !== undefined ) {
+        return this.createItem(ele.coordsLat, ele.coordsLng, ele)
+      } 
     })
   }
 
@@ -52,16 +34,16 @@ componentDidUpdate() {
   render() {
     if (this.props.services instanceof Object && Object.values(this.props.services).length === 0 || this.props.products instanceof Object && Object.values(this.props.products).length === 0) return null;
     let nodes = this.populateItems()
+    
     return (
       // Important! Always set the container height explicitly
       <div className="map-box" style={{ height: '80vh', width: '80%' }} >
         <GoogleMapReact
           bootstrapURLKeys={{ key: key }}
-          center={{lat: this.props.userLat, lng: this.props.userLng}}
+          center={{ lat: this.props.coordsLat, lng: this.props.coordsLng}}
           zoom={11}
           >
             {nodes}
-            {/* {this.createItem()} */}
         </GoogleMapReact>
       </div>
     );

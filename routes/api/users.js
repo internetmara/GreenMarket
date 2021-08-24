@@ -23,8 +23,8 @@ router.get('/current', passport.authenticate('jwt', { session: false }), (req, r
     res.json({
         id: req.user.id,
         username: req.user.username,
-        coordsLat: req.body.coordsLat,
-        coordsLng: req.body.coordsLng,
+        coordsLat: req.user.coordsLat,
+        coordsLng: req.user.coordsLng,
         email: req.user.email
     });
 })
@@ -92,8 +92,8 @@ router.post('/login', (req, res) => {
                             id: user.id, 
                             email: user.email,
                             address: user.address,
-                            coordsLat: req.body.coordsLat,
-                            coordsLng: req.body.coordsLng,
+                            coordsLat: user.coordsLat,
+                            coordsLng: user.coordsLng,
                             username: user.username,
                             products: user.products,
                             services: user.services,

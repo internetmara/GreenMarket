@@ -8,6 +8,7 @@ const initialState = {
 export default function(state=initialState, action) {
   switch (action.type) {
     case RECEIVE_CURRENT_USER:
+      console.log(action)
       return {
         ...state,
         isAuthenticated: !!action.currentUser,
