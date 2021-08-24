@@ -2,6 +2,8 @@ import React from "react";
 // import { Link } from "react-router-dom";
 import '../../styling/forms.css'
 import '../../styling/reset.css'
+import Geocode from "react-geocode";
+const key = require("../../../config/keys").googleMapsKey;
 
 class UploadProduct extends React.Component {
     constructor(props) {
@@ -12,6 +14,8 @@ class UploadProduct extends React.Component {
             rate: "",
             description: "",
             address: "",
+            coordsLat: 0,
+            coordsLng: 0,
             user: this.props.user,
             product: [],
             redirect: false,
@@ -50,8 +54,28 @@ class UploadProduct extends React.Component {
         }
     }
 
-    handleSubmit(e) {
+    async getGeo(address) {
+        Geocode.setApiKey(key);
+        Geocode.setLanguage("en");
+        Geocode.setRegion("us");
+        Geocode.setLocationType("APPROXIMATE");
+
+        let lat = 0;
+        let lng = 0;
+
+        await Geocode.fromAddress(address).then( res => {
+            lat = res.results[0].geometry.location.lat
+            lng = res.results[0].geometry.location.lng
+            // console.log(lat, lng)
+            this.setState({ coordsLat: lat, coordsLng: lng})
+        })
+    }
+
+    async handleSubmit(e) {
         e.preventDefault();
+        await this.getGeo(this.state.address)
+        // console.log(this.state.coordsLat, this.state.coordsLng)
+
         if (this.state.tError === false) {
 
             const formData = {};
@@ -60,14 +84,16 @@ class UploadProduct extends React.Component {
             formData.rate = this.state.rate
             formData.description = this.state.description
             formData.address = this.state.address
+            formData.coordsLat = this.state.coordsLat
+            formData.coordsLng = this.state.coordsLng
             formData.user = this.state.user
             formData.product = this.state.product
+            console.log(formData)
             this.props.addProduct(formData)
             // console.log(this.state.user)
             this.props.history.push("/user")
         }
     }
-
 
     handleCancel(e) {
         this.setState({ selectForm: 0 })
