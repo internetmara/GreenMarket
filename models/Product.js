@@ -22,6 +22,14 @@ const ProductSchema = new Schema({
         type: String,
         required: true
     },
+    coordsLat: {
+        type: String,
+        required: true
+    },
+    coordsLng: {
+        type: String,
+        required: true
+    },
     address: {
         type: String,
         required: true

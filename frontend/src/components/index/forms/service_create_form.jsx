@@ -2,6 +2,8 @@ import React from "react";
 // import { Link } from "react-router-dom";
 import '../../styling/forms.css'
 import '../../styling/reset.css'
+import Geocode from "react-geocode";
+const key = require("../../../config/keys").googleMapsKey;
 
 class UploadService extends React.Component {
     constructor(props) {
@@ -13,6 +15,8 @@ class UploadService extends React.Component {
             rateIncrement: "",
             description: "",
             address: "",
+            coordsLat: 0,
+            coordsLng: 0,
             user: this.props.user,
             service: [],
             redirect: false,
@@ -50,8 +54,25 @@ class UploadService extends React.Component {
         }
     }
 
-    handleSubmit(e) {
+    async getGeo(address) {
+        Geocode.setApiKey(key);
+        Geocode.setLanguage("en");
+        Geocode.setRegion("us");
+        Geocode.setLocationType("APPROXIMATE");
+
+        let lat = 0;
+        let lng = 0;
+
+        await Geocode.fromAddress(address).then(res => {
+            lat = res.results[0].geometry.location.lat
+            lng = res.results[0].geometry.location.lng
+            this.setState({ coordsLat: lat, coordsLng: lng })
+        })
+    }
+
+    async handleSubmit(e) {
         e.preventDefault();
+        await this.getGeo(this.state.address)
         if (this.state.tError === false) {
 
             const formData = {};
@@ -62,10 +83,12 @@ class UploadService extends React.Component {
             formData.rateIncrement = this.state.rateIncrement
             formData.description = this.state.description
             formData.address = this.state.address
+            formData.coordsLat = this.state.coordsLat
+            formData.coordsLng = this.state.coordsLng
             formData.user = this.state.user
             formData.service = this.state.service
+            // console.log(formData)
             this.props.addService(formData)
-            // console.log(this.state.user)
             this.props.history.push("/user")
         }
     }

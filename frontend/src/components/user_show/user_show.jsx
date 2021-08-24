@@ -13,16 +13,17 @@ class userShow extends React.Component {
     componentDidMount() {
         this.props.getServices();
         this.props.getProducts();
-        this.props.getUser(this.props.user.id);
+        this.props.getUser(this.props.user.id)
     }
 
+
+
     render() {
-        if (!this.props.user.data) {
+        if (!this.props.user) {
             return null
         };
-        // console.log(this.props.user.data)
-        let { services, products } = this.props.user.data;
-        console.log(products)
+        let { services, products } = this.props.user;
+      
         return (
             <div className="users-show-container">
                 <marquee className="users-show-header" scrollamount="20">Look at all your items!!</marquee>

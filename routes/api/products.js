@@ -6,6 +6,8 @@ const jwt = require('jsonwebtoken');
 const passport = require('passport');
 const validateProductInput = require('../../validation/products')
 
+const keys = require('../../config/keys');
+
 router.get('/', (req, res) => {
     Product.find()
         .sort({ date: -1 })
@@ -21,18 +23,19 @@ router.post('/create',
         if (!isValid) {
             return res.status(400).json(errors);
         }
-        
-        const newProduct = new Product({
-            name: req.body.name,
-            category: req.body.category,
-            rate: req.body.rate,
-            description: req.body.description,
-            address: req.body.address,
-            picture: req.body.picture,
-            user: req.user.id
-        })
-        
 
+        const newProduct = new Product({
+                name: req.body.name,
+                category: req.body.category,
+                rate: req.body.rate,
+                description: req.body.description,
+                address: req.body.address,
+                coordsLat: req.body.coordsLat,
+                coordsLng: req.body.coordsLng,
+                picture: req.body.picture,
+                user: req.user.id
+            })
+        
         newProduct.save()
             .then(product => 
                 User.findByIdAndUpdate(
@@ -47,8 +50,8 @@ router.post('/create',
                         }
                     }
                 ).then(creation => res.json(creation)
-            )
-        );
+                )
+            );
     }
 );
 
@@ -75,6 +78,8 @@ router.patch('/:id/update',
             category: req.body.category,
             rate: req.body.rate,
             description: req.body.description,
+            coordsLat: req.body.coordsLat,
+            coordsLng: req.body.coordsLng,
             picture: req.body.picture,
             address: req.body.address},
             { new: true },
@@ -92,6 +97,8 @@ router.patch('/:id/update',
                             'products.$[el].category': updatedProduct.category,
                             'products.$[el].rate': updatedProduct.rate,
                             'products.$[el].description': updatedProduct.description,
+                            'products.$[el].coordsLat': updatedProduct.coordsLat,
+                            'products.$[el].coordsLng': updatedProduct.coordsLng,
                             'products.$[el].address': updatedProduct.address,
                             'products.$[el].picture': updatedProduct.picture}},
                     { arrayFilters: [{ "el._id": updatedProduct._id }], new: true }
@@ -126,5 +133,6 @@ router.delete('/delete/:id',
         ))
     }
 )
+
 
 module.exports = router;

@@ -59,5 +59,5 @@ export const logout = () => (dispatch) => {
 
 export const getUser = (userId) => (dispatch) => {
     APIUtil.getUser(userId)
-        .then(res => dispatch(receiveCurrentUser(res)))
+        .then(res => dispatch(receiveCurrentUser(res.data)))
 }
