@@ -24,7 +24,6 @@ const App = () => (
             <Route exact path="/user" component={userShow} />
             <Route exact path="/service/:itemId" component={serviceShow} />
             <Route exact path="/product/:itemId" component={productShow} />
-            {/* <ProtectedRoute exact path="/shop" component={Index} /> */}
             <ProtectedRoute exact path="/products/new" component={UploadProduct} />
             <ProtectedRoute exact path="/services/new" component={UploadService} />
         </Switch>

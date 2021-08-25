@@ -33,21 +33,26 @@ class SimpleMap extends Component {
   }
 
   createProduct(lat, lng, item) {
-    console.log(item)
-    return <AnyReactComponent
-        lat={lat}
-        lng={lng}
-        text={< Link to={`/product/${item._id}`} > <img alt="N/A" title="N/A" className="GM-icon" src={item.picture} /></Link >}
-      /> 
+    // console.log(lat, lng)
+    return <div key={item._id}>
+      <AnyReactComponent
+          lat={lat}
+          lng={lng}
+          text={< Link to={`/product/${item._id}`} > <img alt="N/A" title="N/A" className="GM-icon" src={item.picture} /></Link >}
+        /> 
+    </div>
+
   }
 
   createService(lat, lng, item) {
-    console.log(item)
-    return <AnyReactComponent
-      lat={lat}
-      lng={lng}
-      text={< Link to={`/service/${item._id}`} > <img alt="N/A" title="N/A" className="GM-icon" src={item.picture} /></Link >}
-    />
+    // console.log(lat, lng)
+    return <div key={item._id}>
+      <AnyReactComponent
+        lat={lat}
+        lng={lng}
+        text={< Link to={`/service/${item._id}`} > <img alt="N/A" title="N/A" className="GM-icon" src={item.picture} /></Link >}
+      />
+    </div>
   }
 
   render() {

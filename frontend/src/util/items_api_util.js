@@ -1,7 +1,7 @@
 const axios = require('axios');
 
 export const getProducts = () => {
-    return axios.get('/api/products/' )
+    return axios.get('api/products/' )
 };
 
 export const getServices = () => {
