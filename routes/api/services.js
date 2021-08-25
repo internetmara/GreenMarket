@@ -41,7 +41,7 @@ router.post('/create',
             .then(service =>
                 User.findByIdAndUpdate(
                     req.user.id,
-                    { $addToSet: { services: service } },
+                    { $addToSet: { services: service._id } },
                     { new: true },
                     function (err, success) {
                         if (err) {
@@ -50,8 +50,10 @@ router.post('/create',
                             return success;
                         }
                     }
-                ).then(creation => res.json(creation)
-            )
+                ).then(userUpdated =>
+                    Service.findById(userUpdated.services[userUpdated.services.length - 1]._id))
+                    .then(newService => res.json(newService))
+            
         );
     }
 );
