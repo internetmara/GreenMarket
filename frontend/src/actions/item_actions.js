@@ -1,13 +1,13 @@
 import * as APIUtil from '../util/items_api_util';
 
+export const ADD_PRODUCT = "ADD_PRODUCT";
+export const ADD_SERVICE = "ADD_SERVICE";
 export const RECEIVE_ALL_PRODUCTS = "RECEIVE_ALL_PRODUCTS";
 export const RECEIVE_ALL_SERVICES = "RECEIVE_ALL_SERVICES";
-export const ADD_USER_PRODUCT = "ADD_USER_PRODUCT";
-export const ADD_USER_SERVICE = "ADD_USER_SERVICE";
-export const UPDATE_USER_PRODUCT = "UPDATE_USER_PRODUCT"
-export const UPDATE_USER_SERVICE = "UPDATE_USER_SERVICE"
-export const DELETE_USER_PRODUCT = "DELETE_USER_PRODUCT"
-export const DELETE_USER_SERVICE = "DELETE_USER_SERVICE"
+export const UPDATE_PRODUCT = "UPDATE_USER_PRODUCT"
+export const UPDATE_SERVICE = "UPDATE_SERVICE"
+export const DELETE_PRODUCT = "DELETE_PRODUCT"
+export const DELETE_SERVICE = "DELETE_SERVICE"
 
 export const receiveAllProduct = (allProducts) => ({
     type: RECEIVE_ALL_PRODUCTS,
@@ -19,33 +19,33 @@ export const receiveAllServices = (allServices) => ({
     allServices
 })
 
-export const addUserProduct = (product) => ({
-    type: ADD_USER_PRODUCT,
+export const addProduct = (product) => ({
+    type: ADD_PRODUCT,
     product
 })
 
-export const addUserService = (service) => ({
-    type: ADD_USER_SERVICE,
+export const addService = (service) => ({
+    type: ADD_SERVICE,
     service
 })
 
-export const updateUserProduct = (product) => ({
-    type: UPDATE_USER_PRODUCT,
+export const updateProduct = (product) => ({
+    type: UPDATE_PRODUCT,
     product
 })
 
-export const updateUserService = (service) => ({
-    type: UPDATE_USER_SERVICE,
+export const updateService = (service) => ({
+    type: UPDATE_SERVICE,
     service
 })
 
-export const deleteUserProduct = (product) => ({
-    type: DELETE_USER_PRODUCT,
+export const deleteProduct = (product) => ({
+    type: DELETE_PRODUCT,
     product
 })
 
-export const deleteUserService = (service) => ({
-    type: DELETE_USER_SERVICE,
+export const deleteService = (service) => ({
+    type: DELETE_SERVICE,
     service
 })
 
@@ -76,7 +76,7 @@ export const getService = (itemId) => (dispatch) => {
 export const addProduct = (product) => (dispatch) => {
     
     APIUtil.addProduct(product)
-        .then(res => dispatch(addUserProduct(res))).catch(
+        .then(res => dispatch(addProduct(res))).catch(
             err => console.log(err)
         )
 }
@@ -84,35 +84,35 @@ export const addProduct = (product) => (dispatch) => {
 export const addService = (service) => (dispatch) => {
     
     APIUtil.addService(service)
-        .then(res => dispatch(addUserService(res))).catch(
+        .then(res => dispatch(addService(res))).catch(
             err => console.log(err)
         )
 }
 
 export const updateProduct = (product) => (dispatch) => {
     APIUtil.changeProduct(product)
-        .then(res => dispatch(updateUserProduct(res))).catch(
+        .then(res => dispatch(updateProduct(res))).catch(
             err => console.log(err)
         )
 }
 
 export const updateService = (service) => (dispatch) => {
     APIUtil.changeService(service)
-        .then(res => dispatch(updateUserService(res))).catch(
+        .then(res => dispatch(updateService(res))).catch(
             err => console.log(err)
         )
 }
 
 export const deleteProduct = (product) => (dispatch) => {
     APIUtil.deleteProduct(product)
-        .then(res => dispatch(deleteUserProduct(res))).catch(
+        .then(res => dispatch(deleteProduct(res))).catch(
             err => console.log(err)
         )
 }
 
 export const deleteService = (service) => (dispatch) => {
     APIUtil.deleteService(service)
-        .then(res => dispatch(deleteUserService(res))).catch(
+        .then(res => dispatch(deleteService(res))).catch(
             err => console.log(err)
         )
 }

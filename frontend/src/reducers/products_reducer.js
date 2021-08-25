@@ -1,4 +1,4 @@
-import { RECEIVE_ALL_PRODUCTS } from "../actions/item_actions"
+import { ADD_PRODUCT, DELETE_PRODUCT, RECEIVE_ALL_PRODUCTS, UPDATE_PRODUCT } from "../actions/item_actions"
 
 const ProductsReducer = (oldState={}, action) => {
     Object.freeze(oldState);
@@ -8,7 +8,16 @@ const ProductsReducer = (oldState={}, action) => {
             action.allProducts.data.forEach( ele => {
                 newState[ele._id] = ele
             })
-            return newState
+            return newState;
+        case ADD_PRODUCT:
+            newState[action.product._id] = action.product
+            return newState;
+        case UPDATE_PRODUCT:
+            newState[action.product._id] = action.product
+            return newState;
+        case DELETE_PRODUCT:
+            delete newState[action.product._id]
+            return newState;
         default:
             return oldState;
     }

@@ -33,7 +33,7 @@ class SimpleMap extends Component {
   }
 
   createProduct(lat, lng, item) {
-    
+    // console.log(lat, lng)
     return <div key={item._id}>
       <AnyReactComponent
           lat={lat}
@@ -45,7 +45,7 @@ class SimpleMap extends Component {
   }
 
   createService(lat, lng, item) {
-    console.log(item)
+    // console.log(lat, lng)
     return <div key={item._id}>
       <AnyReactComponent
         lat={lat}

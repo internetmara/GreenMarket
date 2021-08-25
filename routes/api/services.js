@@ -7,6 +7,7 @@ const passport = require('passport');
 const validateServiceInput = require('../../validation/services')
 
 router.get('/', (req, res) => {
+    console.log("i am a big ol string!!!!!!!")
     Service.find()
         .sort({ date: -1 })
         .then(services => res.json(services))
