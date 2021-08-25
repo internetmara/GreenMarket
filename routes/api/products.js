@@ -40,7 +40,7 @@ router.post('/create',
             .then(product => 
                 User.findByIdAndUpdate(
                     req.user.id,
-                    { $addToSet: {products: product}},
+                    { $addToSet: {products: product._id}},
                     { new: true },
                     function(err, success) {
                         if(err) {
@@ -49,8 +49,9 @@ router.post('/create',
                             return success;
                         }
                     }
-                ).then(creation => res.json(creation)
-                )
+                ).then(userUpdated => 
+                    Product.findById(userUpdated.products[userUpdated.products.length - 1]._id))
+                    .then(newProduct => res.json(newProduct))
             );
     }
 );
