@@ -95,27 +95,7 @@ router.patch('/:id/update',
                     return success;
                 }
             }
-        ).then(updatedService => {
-            User.findOneAndUpdate(
-                { _id: req.user.id },
-                {
-                    $set: {
-                        'services.$[el].name': updatedService.name,
-                        'services.$[el].category': updatedService.category,
-                        'services.$[el].rate': updatedService.rate,
-                        'services.$[el].rateIncrement': updatedService.rateIncrement,
-                        'services.$[el].description': updatedService.description,
-                        'products.$[el].coordsLat': updatedProduct.coordsLat,
-                        'products.$[el].coordsLng': updatedProduct.coordsLng,
-                        'services.$[el].address': updatedService.address,
-                        'services.$[el].picture': updatedService.picture
-                    }
-                },
-                { arrayFilters: [{ "el._id": updatedService._id }], new: true }
-            )
-                .then(complete => res.json(complete))
-        }
-        )
+            ).then(complete => res.json(complete))
     }
 )
 

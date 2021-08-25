@@ -91,21 +91,7 @@ router.patch('/:id/update',
                     return success;
                 }
             }
-            ).then(updatedProduct => 
-                User.findOneAndUpdate(
-                    { _id: req.user.id},
-                    { $set: {'products.$[el].name': updatedProduct.name,
-                            'products.$[el].category': updatedProduct.category,
-                            'products.$[el].rate': updatedProduct.rate,
-                            'products.$[el].description': updatedProduct.description,
-                            'products.$[el].coordsLat': updatedProduct.coordsLat,
-                            'products.$[el].coordsLng': updatedProduct.coordsLng,
-                            'products.$[el].address': updatedProduct.address,
-                            'products.$[el].picture': updatedProduct.picture}},
-                    { arrayFilters: [{ "el._id": updatedProduct._id }], new: true }
-                )
-                .then(complete => res.json(complete))
-            )
+            ).then(complete => res.json(complete))
     }
 )
 
