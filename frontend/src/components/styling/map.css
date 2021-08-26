@@ -2,6 +2,42 @@
   padding-bottom: 100px;
 }
 
+.filters {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.filters h4 {
+  font-size: 22px;
+}
+
+.filters p {
+  font-family: 'Ovo', serif;
+  margin-left: 20px;
+  padding: 5px;
+  color: #395446;
+  font-size: 32px;
+  border-radius: 10px;
+  border: 2px solid #395446;
+  vertical-align: center;
+  transition: .1s ease;
+}
+
+.filters p:hover {
+  font-family: 'Ovo', serif;
+  margin-left: 20px;
+  padding: 5px;
+  color: #395446;
+  font-size: 32px;
+  border-radius: 10px;
+  border: 2px solid #395446;
+  background-color: #395446;
+  color: #FFF;
+  vertical-align: center;
+}
+
 .GM-icon {
   width: 50px;
   height: auto;
@@ -17,7 +53,7 @@
   font-size: 40px;
   align-items: center;
   padding-top: 90px;
-  margin-top: 90px;
+  margin-top: 80px;
   padding: 10px;
 }
 
