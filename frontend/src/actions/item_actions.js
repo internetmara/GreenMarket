@@ -19,32 +19,32 @@ export const receiveAllServices = (allServices) => ({
     allServices
 })
 
-export const addProduct = (product) => ({
+export const receiveProduct = (product) => ({
     type: ADD_PRODUCT,
     product
 })
 
-export const addService = (service) => ({
+export const receiveService = (service) => ({
     type: ADD_SERVICE,
     service
 })
 
-export const updateProduct = (product) => ({
+export const patchProduct = (product) => ({
     type: UPDATE_PRODUCT,
     product
 })
 
-export const updateService = (service) => ({
+export const patchService = (service) => ({
     type: UPDATE_SERVICE,
     service
 })
 
-export const deleteProduct = (product) => ({
+export const removeProduct = (product) => ({
     type: DELETE_PRODUCT,
     product
 })
 
-export const deleteService = (service) => ({
+export const removeService = (service) => ({
     type: DELETE_SERVICE,
     service
 })
@@ -76,7 +76,7 @@ export const getService = (itemId) => (dispatch) => {
 export const addProduct = (product) => (dispatch) => {
     
     APIUtil.addProduct(product)
-        .then(res => dispatch(addProduct(res))).catch(
+        .then(res => dispatch(receiveProduct(res))).catch(
             err => console.log(err)
         )
 }
@@ -84,35 +84,35 @@ export const addProduct = (product) => (dispatch) => {
 export const addService = (service) => (dispatch) => {
     
     APIUtil.addService(service)
-        .then(res => dispatch(addService(res))).catch(
+        .then(res => dispatch(receiveService(res))).catch(
             err => console.log(err)
         )
 }
 
 export const updateProduct = (product) => (dispatch) => {
     APIUtil.changeProduct(product)
-        .then(res => dispatch(updateProduct(res))).catch(
+        .then(res => dispatch(patchProduct(res))).catch(
             err => console.log(err)
         )
 }
 
 export const updateService = (service) => (dispatch) => {
     APIUtil.changeService(service)
-        .then(res => dispatch(updateService(res))).catch(
+        .then(res => dispatch(patchService(res))).catch(
             err => console.log(err)
         )
 }
 
 export const deleteProduct = (product) => (dispatch) => {
     APIUtil.deleteProduct(product)
-        .then(res => dispatch(deleteProduct(res))).catch(
+        .then(res => dispatch(removeProduct(res))).catch(
             err => console.log(err)
         )
 }
 
 export const deleteService = (service) => (dispatch) => {
     APIUtil.deleteService(service)
-        .then(res => dispatch(deleteService(res))).catch(
+        .then(res => dispatch(removeService(res))).catch(
             err => console.log(err)
         )
 }
