@@ -37,21 +37,29 @@ class SimpleMap extends Component {
     })
   }
 
+  showItem(id) {
+    let el = document.getElementsByClassName(id)
+    Object.values(el)[0].style.display = 'flex'
+  }
+
   createProduct(item) {
     return <AnyReactComponent
+        
         key={item._id}
         lat={item.coordsLat}
         lng={item.coordsLng}
-        text={< Link to={`/product/${item._id}`} > <img alt="N/A" title="N/A" className="GM-icon" src={item.picture} /></Link >}
-      /> 
+        text={<img alt="N/A" title="N/A" className="GM-icon" src={item.picture} onClick={() => this.showItem(`item-show-${item._id}`)}/>}
+        /> 
   }
 
   createService(item) {
     return <AnyReactComponent
+        onClick={() => this.showItem(item._id)}
         key={item._id}
         lat={item.coordsLat}
         lng={item.coordsLng}
-        text={< Link to={`/service/${item._id}`} > <img alt="N/A" title="N/A" className="GM-icon" src={item.picture} /></Link >}
+        text={<img alt="N/A" title="N/A" className="GM-icon" src={item.picture} onClick={() => this.showItem(`item-show-${item._id}`)} />}
+        // text={< Link to={`/service/${item._id}`} > <img alt="N/A" title="N/A" className="GM-icon" src={item.picture} /></Link >}
       />
   }
 
