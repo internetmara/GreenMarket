@@ -44,14 +44,9 @@ class SignupForm extends React.Component {
     }
 
     async handleSubmit(e) {
-        if (this.state.email === '') {
-            console.log('weird log in attempt >:(')
-            return null;
-        }
 
         e.preventDefault()
         await this.getGeo(this.state.address)
-        console.log(this.state)
         this.props.signup(this.state)
         this.setState({
             email: '',
@@ -59,6 +54,7 @@ class SignupForm extends React.Component {
             password: '',
             address: ''
         })
+        this.props.history.push("/login")
     }
 
     updateField(field) {
@@ -92,7 +88,8 @@ class SignupForm extends React.Component {
                         <input type="text" className="login-input" onChange={this.updateField('address')} value={this.state.address} placeholder="Address"/>
                         <br />
                         {/* <input type="submit" className="login-submit" value={this.props.formType} /> */}
-                        <button type="submit"  className="login-submit"><Link to="/login">{this.props.formType}</Link></button>
+                        {/* <button type="submit"  className="login-submit"><Link to="/login">{this.props.formType}</Link></button> */}
+                        <button type="submit"  className="login-submit">{this.props.formType}</button>
                     </form>
                     <h3 className="change-form">{this.props.navLink}</h3>
                 </div>

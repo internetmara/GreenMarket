@@ -22,6 +22,7 @@ export default function(state=initialState, action) {
       return {
         ...state,
         isSignedIn: true
+        // user: action.currentUser
       }
     default:
       return state;
