@@ -13,7 +13,7 @@
   font-size: 22px;
 }
 
-.filters p {
+.filters p{
   font-family: 'Ovo', serif;
   margin-left: 20px;
   padding: 5px;
@@ -23,19 +23,43 @@
   border: 2px solid #395446;
   vertical-align: center;
   transition: .1s ease;
+  background-color: transparent;
 }
 
 .filters p:hover {
+  background-color: #395446;
+  color: #FFF;
+}
+
+.geo-filter {
+  padding-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.geo-filter p { 
+  color: #395446;
+  font-size: 18px;
+}
+
+.geo-filter button {
   font-family: 'Ovo', serif;
   margin-left: 20px;
   padding: 5px;
   color: #395446;
-  font-size: 32px;
+  font-size: 24px;
   border-radius: 10px;
   border: 2px solid #395446;
+  vertical-align: center;
+  transition: .1s ease;
+  background-color: transparent;
+}
+
+.geo-filter button:hover {
   background-color: #395446;
   color: #FFF;
-  vertical-align: center;
 }
 
 .GM-icon {
