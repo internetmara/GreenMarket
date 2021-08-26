@@ -62,11 +62,11 @@ class SimpleMap extends Component {
 
     return (
       // Important! Always set the container height explicitly
-      <div className="map-box" style={{ height: '80vh', width: '80%' }} >
+      <div className="map-box" style={{ height: '70vh', width: '60vw' }} >
         <GoogleMapReact
           bootstrapURLKeys={{ key: key }}
           center={{ lat: this.props.coordsLat, lng: this.props.coordsLng}}
-          zoom={11}
+          zoom={13}
           >
             {products}
             {services}
