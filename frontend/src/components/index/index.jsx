@@ -12,13 +12,11 @@ class IndexComponent extends React.Component {
             super(props)
     }
         
-        componentDidMount() {
-            this.props.getServices()
-            this.props.getProducts()
-        }
+    componentDidMount() {
+        this.props.getServices()
+        this.props.getProducts()
+    }
 
-
-        
     render() {
         // console.log(this.props.user)
         return (
