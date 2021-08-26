@@ -67,6 +67,7 @@
   height: auto;
 }
 
+
 .map-header {
   font-family: 'Ovo', serif;
   display: flex;
@@ -94,6 +95,20 @@
   border-radius: 10px;
   border: 10px double #395446;
   margin-left: 20px;
+}
+
+.map-img {
+  width: 4vw;
+  height: auto;
+  transition: .2s ease;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+.map-img:hover {
+  width: 5vw;
+  height: auto;
+  transition: .2s ease;
 }
 
 .items-index {

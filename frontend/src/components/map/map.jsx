@@ -46,7 +46,7 @@ class SimpleMap extends Component {
         key={item._id}
         lat={item.coordsLat}
         lng={item.coordsLng}
-        text={<img alt="N/A" title="N/A" className="GM-icon" src={item.picture} onClick={() => this.showItem(`item-show-${item._id}`)}/>}
+        text={<img className="map-img" alt="N/A" title="N/A" src={item.picture} onClick={() => this.showItem(`item-show-${item._id}`)}/>}
         /> 
   }
 
@@ -55,7 +55,7 @@ class SimpleMap extends Component {
         key={item._id}
         lat={item.coordsLat}
         lng={item.coordsLng}
-        text={<img alt="N/A" title="N/A" className="GM-icon" src={item.picture} onClick={() => this.showItem(`item-show-${item._id}`)} />}
+        text={<img className="map-img" alt="N/A" title="N/A" src={item.picture} onClick={() => this.showItem(`item-show-${item._id}`)} />}
       />
   }
 
