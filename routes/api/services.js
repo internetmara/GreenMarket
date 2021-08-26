@@ -109,10 +109,11 @@ router.delete('/delete/:id',
                 { _id: req.user.id },
                 {
                     $pull: {
-                        'services': { _id: service._id }
+                        'services': service._id 
                     }
                 }
-            ).then(() => Service.findByIdAndDelete(
+            ))
+            .then(() => Service.findByIdAndDelete(
                 serviceId,
                 (err, service) => {
                     if (err) {
@@ -121,7 +122,7 @@ router.delete('/delete/:id',
                 }
             ).then(() => res.json({ msg: 'Service deleted' }))
                 .catch(err => console.log(err))
-            ))
+            )
     }
 )
 

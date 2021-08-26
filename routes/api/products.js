@@ -105,7 +105,7 @@ router.delete('/delete/:id',
                 { _id: req.user.id },
                 {
                     $pull: {
-                        'products': {_id: product._id}
+                        'products': product._id
                     }
                 }
             ).then(() => Product.findByIdAndDelete(
