@@ -14,6 +14,14 @@ class IndexComponent extends React.Component {
         this.props.getProducts()
     }
 
+    filterByGeo() {
+
+    }
+
+    filterByTag(tag) {
+
+    }
+
     render() {
         return (
             <div className="index-root">
