@@ -42,13 +42,8 @@ class IndexComponent extends React.Component {
                 if (distLat < 1 && distLat > -1 && distLng < 1 && distLng > -1) {
                     localItems.push(item)
                 }
-                // const pieNum = 0.017453292519943295;
-                // const cos = Mash.cos
-
-                // let t = .5 - cos((userLat-itemLat) * pieNum) / 2 + cos(userLat * pieNum) 
             }
         })
-        console.log(localItems)
         return localItems
     }
 
