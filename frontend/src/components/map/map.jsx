@@ -11,7 +11,7 @@ class SimpleMap extends Component {
   }
 
   populateProducts() {
-    let products = Object.values(this.props.products)
+    let products = this.props.products
     if (products.length > 0) {
       return products.map( ele => {
         if (ele.coordsLat !== undefined ) {
@@ -24,7 +24,7 @@ class SimpleMap extends Component {
   }
 
   populateServices() {
-    let services = Object.values(this.props.services)
+    let services = this.props.services
     if (services.length > 0) {
       return services.map(ele => {
         if (ele.coordsLat !== undefined) {

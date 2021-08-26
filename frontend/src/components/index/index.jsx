@@ -10,9 +10,10 @@ class IndexComponent extends React.Component {
         this.state = {
             products: {},
             services: {},
-            user: this.props.user
+            user: this.props.user,
+            allGeoItems: 'no'
         }
-        this.i=0
+        this.i=0;
     }
         
     componentDidMount() {
@@ -21,8 +22,38 @@ class IndexComponent extends React.Component {
         // this.forceUpdate()
     }
 
-    filterByGeo() {
+    filterByGeo(items) {
+        let itemArray = Object.values(items)
+        let localItems = []
+        let userLat = this.props.user.coordsLat
+        let userLng = this.props.user.coordsLng
+        let itemLat = 0;
+        let itemLng = 0;
+        let distLat = 0
+        let distLng = 0
 
+        itemArray.forEach( item => {
+            if (item.coordsLat !== undefined) {
+                itemLat = item.coordsLat
+                itemLng = item.coordsLng
+                distLat = userLat - itemLat
+                distLng = userLng - itemLng
+                
+                if (distLat < 1 && distLat > -1 && distLng < 1 && distLng > -1) {
+                    localItems.push(item)
+                }
+                // const pieNum = 0.017453292519943295;
+                // const cos = Mash.cos
+
+                // let t = .5 - cos((userLat-itemLat) * pieNum) / 2 + cos(userLat * pieNum) 
+            }
+        })
+        console.log(localItems)
+        return localItems
+    }
+
+    setGlobalView(arg) {
+        this.setState({ allGeoItems: arg })
     }
 
     filterByCategory(tag) {
@@ -36,7 +67,14 @@ class IndexComponent extends React.Component {
         }
     }
 
+    
     render() {
+        let prods = this.i > 0 ? Object.values(this.state.products) : Object.values(this.props.products)
+        let servs = this.i > 0 ? Object.values(this.state.services) : Object.values(this.props.services)
+
+        let localProds = this.filterByGeo(prods)
+        let localServs = this.filterByGeo(servs)
+
         return (
             <div className="index-root">
                 <Link to="/"><h2 className="map-header">Local Goods & Services</h2></Link>
@@ -48,17 +86,21 @@ class IndexComponent extends React.Component {
                 </div>
                 <div className="index-items">
                     <ItemList 
-                        products={this.i > 0 ? this.state.products : this.props.products} 
-                        services={this.i > 0 ? this.state.services : this.props.services}
+                        products={ this.state.allGeoItems === 'yes' ? prods : localProds } 
+                        services={ this.state.allGeoItems === 'yes' ? servs : localServs }
                     />
-                    {console.log('re-render!!')}
                     <SimpleMap 
-                        products={this.i > 0 ? this.state.products : this.props.products}
-                        services={this.i > 0 ? this.state.services : this.props.services}
+                        products={ this.state.allGeoItems === 'yes' ? prods : localProds }
+                        services={ this.state.allGeoItems === 'yes' ? servs : localServs }
                         user={this.state.user} 
                         coordsLat={this.state.user.coordsLat} 
                         coordsLng={this.state.user.coordsLng} 
                     />
+                </div>
+                <div className="geo-filter">
+                    <p>Want to see products and services outside of your area listed?</p>
+                    <button onClick={() => this.setGlobalView('yes')}>Yes</button>
+                    <button onClick={() => this.setGlobalView('no')}>No</button>
                 </div>
             </div>
         )
