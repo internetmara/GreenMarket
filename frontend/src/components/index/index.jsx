@@ -11,7 +11,10 @@ class IndexComponent extends React.Component {
             products: {},
             services: {},
             user: this.props.user,
-            allGeoItems: 'no'
+            allGeoItems: 'no',
+            productFilters: 'no',
+            serviceFilters: 'no',
+            filterValue: ''
         }
         this.i=0;
     }
@@ -19,7 +22,6 @@ class IndexComponent extends React.Component {
     componentDidMount() {
         this.props.getServices()
         this.props.getProducts()
-        // this.forceUpdate()
     }
 
     filterByGeo(items) {
@@ -48,20 +50,127 @@ class IndexComponent extends React.Component {
     }
 
     setGlobalView(arg) {
-        this.setState({ allGeoItems: arg })
+       this.setState({ allGeoItems: arg })
     }
 
     filterByCategory(tag) {
         this.i ++ 
         if (tag === 'Products') {
-            this.setState({ services: {}, products: this.props.products })
+            this.setState({ services: {}, products: this.props.products, productFilters: 'yes' })
         } else if (tag === 'Services') {
-            this.setState({ products: {}, services: this.props.services })
+            this.setState({ products: {}, services: this.props.services, serviceFilters: 'yes' })
         } else {
-            this.setState({ products: this.props.products, services: this.props.services })
+            this.setState({
+                products: this.props.products, services: this.props.services, productFilters: 'no', serviceFilters: 'no' })
         }
     }
 
+    productsFilter(cat) {
+        let filtered = {};
+        if (cat === 'Food') {
+            Object.values(this.props.products).forEach( prod => {
+                if (prod.category === 'Food') {
+                    filtered[prod._id] = prod
+                }
+            })
+            this.setState({ products: filtered })
+        } else if (cat === 'Clothing') {
+            Object.values(this.props.products).forEach(prod => {
+                if (prod.category === 'Clothing') {
+                    filtered.push(prod)
+                }
+            })
+            this.setState({ products: filtered })
+        } else if (cat === 'Housing') {
+            Object.values(this.props.products).forEach(prod => {
+                if (prod.category === 'Housing') {
+                    filtered.push(prod)
+                }
+            })
+            this.setState({ products: filtered })
+        } else if (cat === 'Misc') {
+            Object.values(this.props.products).forEach(prod => {
+                if (prod.category === 'Misc') {
+                    filtered.push(prod)
+                }
+            })
+            this.setState({ products: filtered })
+        }
+    }
+
+    servicesFilter(cat) {
+        let filtered = {};
+        if (cat === 'Crafts') {
+            Object.values(this.props.services).forEach(prod => {
+                if (prod.category === 'Crafts') {
+                    filtered[prod._id] = prod
+                }
+            })
+            this.setState({ services: filtered })
+        } else if (cat === 'Tech Support') {
+            Object.values(this.props.services).forEach(prod => {
+                if (prod.category === 'Tech Support') {
+                    filtered[prod._id] = prod
+                }
+            })
+            this.setState({ services: filtered })
+        } else if (cat === 'Tech Support') {
+            Object.values(this.props.services).forEach(prod => {
+                if (prod.category === 'Tech Support') {
+                    filtered[prod._id] = prod
+                }
+            })
+            this.setState({ services: filtered })
+        } else if (cat === 'Caregiving') {
+            Object.values(this.props.services).forEach(prod => {
+                if (prod.category === 'Caregiving') {
+                    filtered[prod._id] = prod
+                }
+            })
+            this.setState({ services: filtered })
+        } else if (cat === 'Home Improvement') {
+            Object.values(this.props.services).forEach(prod => {
+                if (prod.category === 'Home Improvement') {
+                    filtered[prod._id] = prod
+                }
+            })
+            this.setState({ services: filtered })
+        } else if (cat === 'Misc') {
+            Object.values(this.props.services).forEach(prod => {
+                if (prod.category === 'Misc') {
+                    filtered[prod._id] = prod
+                }
+            })
+            this.setState({ services: filtered })
+        }
+    }
+
+    masterFilter() {
+        if (this.state.productFilters === 'no' && this.state.serviceFilters === 'no') {
+            return <div>
+                <p onClick={() => this.filterByCategory('All')}>All</p>
+                <p onClick={() => this.filterByCategory('Products')}>Products</p>
+                <p onClick={() => this.filterByCategory('Services')}>Services</p>
+            </div>
+        } else if (this.state.productFilters === 'yes') {
+            return <div>
+                <p onClick={() => this.productsFilter('Food')}>Food</p>
+                <p onClick={() => this.productsFilter('Clothing')}>Clothing</p>
+                <p onClick={() => this.productsFilter('Housing')}>Housing</p>
+                <p onClick={() => this.productsFilter('Misc')}>Misc</p>
+                <p onClick={() => this.filterByCategory('All')}>All</p>
+            </div>
+        } else if (this.state.serviceFilters === 'yes') {
+            return <div>
+                <p onClick={() => this.servicesFilter('Crafts')}>Crafts</p>
+                <p onClick={() => this.servicesFilter('Tech Support')}>Tech Support</p>
+                <p onClick={() => this.servicesFilter('Caregiving')}>Caregiving</p>
+                <p onClick={() => this.servicesFilter('Home Improvement')}>Home Improvement</p>
+                <p onClick={() => this.servicesFilter('Misc')}>Misc</p>
+                <p onClick={() => this.filterByCategory('All')}>All</p>
+            </div>
+        }
+    }
     
     render() {
         let prods = this.i > 0 ? Object.values(this.state.products) : Object.values(this.props.products)
@@ -75,9 +184,10 @@ class IndexComponent extends React.Component {
                 <Link to="/"><h2 className="map-header">Local Goods & Services</h2></Link>
                 <div className="filters">
                     <h4>Filter By:</h4>
-                    <p onClick={() => this.filterByCategory('All')}>All</p>
+                    {this.masterFilter()}
+                    {/* <p onClick={() => this.filterByCategory('All')}>All</p>
                     <p onClick={() => this.filterByCategory('Products')}>Products</p>
-                    <p onClick={() => this.filterByCategory('Services')}>Services</p>
+                    <p onClick={() => this.filterByCategory('Services')}>Services</p> */}
                 </div>
                 <div className="index-items">
                     <ItemList 
