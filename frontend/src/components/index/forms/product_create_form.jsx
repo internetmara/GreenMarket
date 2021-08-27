@@ -77,7 +77,6 @@ class UploadProduct extends React.Component {
         await this.getGeo(this.state.address)
 
         if (this.state.tError === false) {
-            debugger
             const formData = {};
             formData.picture = this.state.productUrl
             formData.name = this.state.name

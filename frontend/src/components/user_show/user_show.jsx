@@ -25,6 +25,7 @@ class userShow extends React.Component {
             if (services.length > 0) {
               servicesMap = services.map (serviceId => (
                 < ServiceIndexItem
+                key = { services.serviceId } 
                 picture = { this.props.services[serviceId].picture } 
                 name = { this.props.services[serviceId].name }
                 category = { this.props.services[serviceId].category }
@@ -38,6 +39,7 @@ class userShow extends React.Component {
             if (products.length > 0) {
                  productsMap = products.map (productId => (
                 < ProductIndexItem
+                key = {products.productId}
                 picture = { this.props.products[productId].picture }
                 name = { this.props.products[productId].name }
                 category = { this.props.products[productId].category }
