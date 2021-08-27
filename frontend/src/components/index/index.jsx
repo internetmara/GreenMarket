@@ -77,21 +77,21 @@ class IndexComponent extends React.Component {
         } else if (cat === 'Clothing') {
             Object.values(this.props.products).forEach(prod => {
                 if (prod.category === 'Clothing') {
-                    filtered.push(prod)
+                    filtered[prod._id] = prod
                 }
             })
             this.setState({ products: filtered })
         } else if (cat === 'Housing') {
             Object.values(this.props.products).forEach(prod => {
                 if (prod.category === 'Housing') {
-                    filtered.push(prod)
+                    filtered[prod._id] = prod
                 }
             })
             this.setState({ products: filtered })
         } else if (cat === 'Misc') {
             Object.values(this.props.products).forEach(prod => {
                 if (prod.category === 'Misc') {
-                    filtered.push(prod)
+                    filtered[prod._id] = prod
                 }
             })
             this.setState({ products: filtered })
