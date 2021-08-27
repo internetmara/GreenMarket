@@ -37,7 +37,7 @@ class UploadService extends React.Component {
     // }
 
     update(field) {
-        return e => this.setState({ [field]: e.currentTarget.value })
+        return e => this.setState({ [field]: e.target.value })
     }
 
     handleFile(e) {
@@ -142,13 +142,14 @@ class UploadService extends React.Component {
                         {this.state.tError ? <p className="errors">Category can not be empty</p> : null}
                         <input className="product-or-service-inputs" placeholder="Rate:" type="text" value={this.state.rate} onChange={this.update("rate")} />
                         {this.state.tError ? <p className="errors">Rate can not be empty</p> : null}
-                        <label className="product-or-service-inputs">Per:&nbsp;
+                        <label className="product-or-service-inputs" onChange={this.update("rateIncrement")}>Per:&nbsp;
                         <select>
-                            <option value={this.state.rateIncrement} onChange={this.update("rateIncrement")}>Minute</option>
-                            <option value={this.state.rateIncrement} onChange={this.update("rateIncrement")}>Hour</option>
-                            <option value={this.state.rateIncrement} onChange={this.update("rateIncrement")}>Day</option>
-                            <option value={this.state.rateIncrement} onChange={this.update("rateIncrement")}>Month</option>
-                            <option value={this.state.rateIncrement} onChange={this.update("rateIncrement")}>Unit</option>
+                            <option></option>
+                            <option>Minute</option>
+                            <option>Hour</option>
+                            <option>Day</option>
+                            <option>Month</option>
+                            <option>Unit</option>
                         </select>
                         </label>
                         {this.state.tError ? <p className="errors">Rate Increment can not be empty</p> : null}

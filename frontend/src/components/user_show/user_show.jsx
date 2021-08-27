@@ -17,13 +17,10 @@ class userShow extends React.Component {
     }
 
     render() {
-        console.log(this.props.products)
         if (!this.props.user || Object.values(this.props.products).length === 0 || Object.values(this.props.services).length === 0) {
             return null
         };
         let { services, products } = this.props.user;
-        console.log(this.props.products[products[0]])
-        console.log(this.props.products)
         let servicesMap = []
             if (services.length > 0) {
               servicesMap = services.map (serviceId => (
