@@ -138,3 +138,25 @@
   font-size: 24px;
   text-decoration: underline;
 }
+
+.modalbutton {
+  color:#395446;
+  text-align: center;
+  text-decoration: none;
+  background-color:whitesmoke;
+  /* width: 100px; */
+  padding: 10px;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.item-show-root {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 200px;
+  margin-top: 100px;
+}

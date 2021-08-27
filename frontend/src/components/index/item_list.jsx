@@ -34,7 +34,7 @@ class ItemList extends React.Component {
                                 <p>Description: {item.description}</p>
                                 <p>Address: {item.address}</p>
                                 <br />
-                                <p onClick={() => this.hideItem(`item-show-${item._id}`)} >XclosemodalbuttonX</p>
+                                <button className="modalbutton" onClick={() => this.hideItem(`item-show-${item._id}`)}>Close</button>
                             </div>
                         </div>
                     
