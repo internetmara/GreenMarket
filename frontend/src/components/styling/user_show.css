@@ -64,3 +64,12 @@
     height: 400px;
     overflow: scroll;
 }
+
+.upload-form-preview {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}

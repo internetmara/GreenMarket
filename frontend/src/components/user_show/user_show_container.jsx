@@ -6,7 +6,8 @@ import { getUser } from '../../actions/session_actions';
 
 const mSTP = (state) => ({
     user: state.session.user,
-    // products: state.entities.products
+    products: state.entities.products,
+    services: state.entities.services
 })
 
 const mDTP = (dispatch) => ({
