@@ -16,7 +16,8 @@ class SignupForm extends React.Component {
                 password: '',
                 address: '',
                 coordsLat: 0,
-                coordsLng: 0
+                coordsLng: 0,
+                badAddress: 'n'
                 // avatar: '',
                 // products: [],
                 // services: [],
@@ -44,9 +45,15 @@ class SignupForm extends React.Component {
     }
 
     async handleSubmit(e) {
-
         e.preventDefault()
-        await this.getGeo(this.state.address)
+
+        this.setState({ badAddress: 'n' })
+        await this.getGeo(this.state.address).catch(res => { 
+            this.setState({ badAddress: 'y' }) 
+        })
+        if (this.state.badAddress === 'y') return null;
+
+        delete this.state.badAddress
         this.props.signup(this.state)
         this.setState({
             email: '',
@@ -78,6 +85,7 @@ class SignupForm extends React.Component {
                 <div className="signup-form">
                     <h1 className="form-text">{this.props.formType}</h1> 
                     {this.props.errors ? this.readErrors() : ''}
+                    {this.state.badAddress === 'y' ? <p>Invalid Address Input</p> : '' }
                     <form onSubmit={(e) => this.handleSubmit(e)}>
                         <input type="email" className="login-input" onChange={this.updateField('email')} value={this.state.email} placeholder="Email" />
                         <br />
