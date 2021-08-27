@@ -138,6 +138,7 @@ class UploadService extends React.Component {
                         <h3> Tell us more about your service: </h3>
                         <input className="product-or-service-inputs" type="text" placeholder="Name:" value={this.state.name} onChange={this.update("name")} />
                         {this.state.tError ? <p className="errors">Name can not be empty</p> : null}
+                        {/* <input className="product-or-service-inputs" placeholder="Category:" type="text" value={this.state.category} onChange={this.update("category")} /> */}
                         <label className="product-or-service-inputs" onChange={this.update("category")}>Category:&nbsp;
                         <select>
                             <option></option>
@@ -147,8 +148,8 @@ class UploadService extends React.Component {
                             <option>Home Improvement</option>
                             <option>Misc</option>
                         </select>
-                        {this.state.tError ? <p className="errors">Category can not be empty</p> : null}
                         </label>
+                        {this.state.tError ? <p className="errors">Category can not be empty</p> : null}
                         <input className="product-or-service-inputs" placeholder="Rate:" type="text" value={this.state.rate} onChange={this.update("rate")} />
                         {this.state.tError ? <p className="errors">Rate can not be empty</p> : null}
                         <label className="product-or-service-inputs" onChange={this.update("rateIncrement")}>Per:&nbsp;

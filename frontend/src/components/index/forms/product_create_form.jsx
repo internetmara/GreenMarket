@@ -141,6 +141,7 @@ class UploadProduct extends React.Component {
                         <h3> Tell us more about your product: </h3>
                             <input className="product-or-service-inputs" placeholder="Name" type="text" value={this.state.name} onChange={this.update("name")} />
                             {this.state.tError ? <p className="errors">Name can not be empty</p> : null}
+                            {/* <input className="product-or-service-inputs" placeholder="Category:" type="text" value={this.state.category} onChange={this.update("category")} /> */}
                                 <label className="product-or-service-inputs" onChange={this.update("category")}>Category:&nbsp;
                                     <select>
                                         <option></option>
