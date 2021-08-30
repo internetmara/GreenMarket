@@ -14,6 +14,7 @@ class Splash extends React.Component {
                     <Link to="/user"><h2 className="go-to-the-map">Profile</h2></Link>
                 </div>
                  <img className="home-logo" src="/images/Green-Market.png" alt="Logo"></img>
+                 hello i am splash page ~wave~
             </div>
         )
     }

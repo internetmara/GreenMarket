@@ -192,6 +192,7 @@ class IndexComponent extends React.Component {
                         services={ this.state.allGeoItems === 'yes' ? servs : localServs }
                         getItemOwner={this.props.getItemOwner}
                     />
+    
                     <SimpleMap 
                         products={ this.state.allGeoItems === 'yes' ? prods : localProds }
                         services={ this.state.allGeoItems === 'yes' ? servs : localServs }
@@ -203,7 +204,8 @@ class IndexComponent extends React.Component {
                 <div className="geo-filter">
                     <p>Want to see products and services outside of your area listed?</p>
                     <button onClick={() => this.setGlobalView('yes')}>Yes</button>
-                    <button onClick={() => this.setGlobalView('no')}>No</button>
+                    <button onClick={() => this.setGlobalView('no')}>No</button> 
+                    <button><a href="/"> Back to Home</a></button>
                 </div>
             </div>
         )
