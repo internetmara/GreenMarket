@@ -10,7 +10,6 @@ class userShow extends React.Component {
     componentDidMount() {
         this.props.getServices();
         this.props.getProducts();
-        console.log
         this.props.getUser(this.props.user.id);
         console.log("hi!")
     }
