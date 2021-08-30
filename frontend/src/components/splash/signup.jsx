@@ -57,6 +57,7 @@ class SignupForm extends React.Component {
         this.props.signup(this.state)
         .then( res => {
             if (res.type !== "RECEIVE_SESSION_ERRORS" ) {
+                this.props.login(this.state)
                 this.setState({
                     email: '',
                     username: '',
@@ -64,7 +65,7 @@ class SignupForm extends React.Component {
                     address: ''
                 })
                 this.props.clearSessionErrors()
-                this.props.history.push("/login")
+                // this.props.history.push("/login")
             }
         })
     }
