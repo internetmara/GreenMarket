@@ -9,7 +9,6 @@ class ItemList extends React.Component {
             showOwner: 'n'
         }
     }
-
     showItem(id) {
         let el = document.getElementsByClassName(id)
         Object.values(el)[0].style.display = 'flex'

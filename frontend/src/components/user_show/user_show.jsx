@@ -6,14 +6,12 @@ import ProductIndexItem from './product_index_item';
 
 
 class userShow extends React.Component {
-    constructor(props) {
-        super(props)
-        }
 
     componentDidMount() {
         this.props.getServices();
         this.props.getProducts();
-        // this.props.getUser(this.props.user.id);
+        this.props.getUser(this.props.user.id);
+        console.log("hi!")
     }
 
     render() {
@@ -50,7 +48,7 @@ class userShow extends React.Component {
                 ))}
         return (
             <div className="users-show-container">
-                <marquee className="users-show-header" scrollamount="20">Look at all your items!!</marquee>
+                <div className="users-show-header">All listings</div>
                 <div className="services-and-products">
                     <div className="user-services-container">
                         <h1 className="user-services-header">Services</h1>
