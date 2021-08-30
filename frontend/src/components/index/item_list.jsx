@@ -42,7 +42,7 @@ class ItemList extends React.Component {
                     <div className="item-show-root">
                             { this.state.showOwner === item.user ? 
                                 <div className="item-show-modal" >
-                                    <ItemOwnerShow ownerId={item.user} hideOwner={this.hideOwner}/> 
+                                    <center><ItemOwnerShow ownerId={item.user} hideOwner={this.hideOwner}/></center>
                                     <button className="modalbutton" onClick={() => this.hideOwner()}>Close</button>
                                 </div>
                             :
