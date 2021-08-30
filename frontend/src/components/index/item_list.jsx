@@ -1,9 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
+import ItemOwnerShow from './item_owner_show_container';
 
 class ItemList extends React.Component {
     constructor(props) {
         super(props)
+        this.state = {
+            showOwner: 'n'
+        }
     }
 
     showItem(id) {
@@ -14,6 +18,16 @@ class ItemList extends React.Component {
     hideItem(id) {
         let el = document.getElementsByClassName(id)
         Object.values(el)[0].style.display = 'none'
+        this.setState({ showOwner: 'n' })
+    }
+
+    showOwner(ownerId) {
+        this.props.getItemOwner(ownerId)
+        this.setState({ showOwner: ownerId })
+    }
+
+    hideOwner() {
+        this.setState({ showOwner: 'n' })
     }
 
     listAllItems() {
@@ -21,12 +35,18 @@ class ItemList extends React.Component {
         
         if (items.length === 0) return null;
         return items.map( item => {
-                return <div key={item._id} className="item">
-                    <p onClick={() => this.showItem(`item-show-${item._id}`)} >{item.name}</p>
-                    <p>{item.category}</p>
-                    <p>{item.rate}</p>
-                        <div className={`item-show-${item._id}`} style={{ display: "none" }}>
-                            <div className="item-show-root">
+            return <div key={item._id} className="item">
+                <p onClick={() => this.showItem(`item-show-${item._id}`)} >{item.name}</p>
+                <p>{item.category}</p>
+                <p>{item.rate}</p>
+                <div className={`item-show-${item._id}`} style={{ display: "none" }}>
+                    <div className="item-show-root">
+                            { this.state.showOwner === item.user ? 
+                                <div className="item-show-modal" >
+                                    <ItemOwnerShow ownerId={item.user} hideOwner={this.hideOwner}/> 
+                                    <button className="modalbutton" onClick={() => this.hideOwner()}>Close</button>
+                                </div>
+                            :
                                 <div className="item-show-modal">
                                     <img src="{}"></img>
                                     <p>Name: {item.name}</p>
@@ -34,13 +54,14 @@ class ItemList extends React.Component {
                                     <p>Rate: {item.rate}</p>
                                     <p>Description: {item.description}</p>
                                     <p>Address: {item.address}</p>
+                                    <button onClick={() => this.showOwner(item.user)}>See seller's products</button>
                                     <br />
                                     <button className="modalbutton" onClick={() => this.hideItem(`item-show-${item._id}`)}>Close</button>
                                 </div>
-                            </div>
-                        </div>
-                    
+                            }   
+                    </div>
                 </div>
+            </div>
         })
     }
 
