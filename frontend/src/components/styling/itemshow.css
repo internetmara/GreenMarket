@@ -20,6 +20,12 @@
     overflow: scroll;
 }
 
+.item-show-modal-img {
+    width: 5vw;
+    height: auto;
+    padding-bottom: 20px;
+}
+
 .show-owners-items {
     height: 200%;
     display: flex;

@@ -48,7 +48,7 @@ class ItemList extends React.Component {
                                 </div>
                             :
                                 <div className="item-show-modal">
-                                    <img src="{}"></img>
+                                <img className="item-show-modal-img" src={item.picture}></img>
                                     <p>Name: {item.name}</p>
                                     <p>Category: {item.category}</p>
                                     <p>Rate: {item.rate}</p>
