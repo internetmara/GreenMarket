@@ -27,14 +27,16 @@ class ItemList extends React.Component {
                     <p>{item.rate}</p>
                         <div className={`item-show-${item._id}`} style={{ display: "none" }}>
                             <div className="item-show-root">
-                                {/* <img src="{}"></img> */}
-                                <p>Name: {item.name}</p>
-                                <p>Category: {item.category}</p>
-                                <p>Rate: {item.rate}</p>
-                                <p>Description: {item.description}</p>
-                                <p>Address: {item.address}</p>
-                                <br />
-                                <button className="modalbutton" onClick={() => this.hideItem(`item-show-${item._id}`)}>Close</button>
+                                <div className="item-show-modal">
+                                    <img src="{}"></img>
+                                    <p>Name: {item.name}</p>
+                                    <p>Category: {item.category}</p>
+                                    <p>Rate: {item.rate}</p>
+                                    <p>Description: {item.description}</p>
+                                    <p>Address: {item.address}</p>
+                                    <br />
+                                    <button className="modalbutton" onClick={() => this.hideItem(`item-show-${item._id}`)}>Close</button>
+                                </div>
                             </div>
                         </div>
                     
