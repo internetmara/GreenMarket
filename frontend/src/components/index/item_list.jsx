@@ -9,7 +9,6 @@ class ItemList extends React.Component {
             showOwner: 'n'
         }
     }
-
     showItem(id) {
         let el = document.getElementsByClassName(id)
         Object.values(el)[0].style.display = 'flex'
@@ -48,7 +47,7 @@ class ItemList extends React.Component {
                                 </div>
                             :
                                 <div className="item-show-modal">
-                                    <img src="{}"></img>
+                                    <img src="{}" alt="item show"></img>
                                     <p>Name: {item.name}</p>
                                     <p>Category: {item.category}</p>
                                     <p>Rate: {item.rate}</p>

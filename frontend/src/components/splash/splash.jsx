@@ -13,12 +13,7 @@ class Splash extends React.Component {
                     <Link to="/map"><h2 className="go-to-the-map">Map</h2></Link>
                     <Link to="/user"><h2 className="go-to-the-map">Profile</h2></Link>
                 </div>
-                 <img className="home-logo" src="/images/Green-Market.png"></img>
-                 {/* <div className="login-signup2">
-                    <button className="home-page-button2"><Link to="/login">Log in</Link></button>
-                    &nbsp;
-                    <button className="home-page-button2"><Link to="/signup">Sign up</Link></button>
-                </div> */}
+                 <img className="home-logo" src="/images/Green-Market.png" alt="Logo"></img>
             </div>
         )
     }
