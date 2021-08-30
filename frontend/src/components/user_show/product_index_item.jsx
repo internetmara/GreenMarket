@@ -9,7 +9,7 @@ class ProductIndexItem extends React.Component {
 
         return (
             <div className="service-index-item">
-                <img className="upload-form-preview" src={picture}></img>
+                <img className="upload-form-preview" src={picture} alt="Product preview"></img>
                 <p>Name: {name}</p>
                 <p>Category: {category}</p>
                 <p>Rate: {rate}</p>

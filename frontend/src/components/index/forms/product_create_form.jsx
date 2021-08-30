@@ -30,12 +30,6 @@ class UploadProduct extends React.Component {
         this.handleCancel = this.handleCancel.bind(this);
     }
 
-    // componentDidMount() {
-    //     this.props.getProducts();
-    //     this.props.getServices();
-    // }
-
-
     update(field) {
         return e => this.setState({ [field]: e.target.value })
     }
@@ -51,7 +45,6 @@ class UploadProduct extends React.Component {
     handleFile(e) {
         const file = e.target.files[0];
         const fileReader = new FileReader();
-        console.log(fileReader)
         fileReader.onloadend = () => {
             this.setState({ productFile: file, productUrl: fileReader.result, selectForm: 1 });
         }
@@ -75,7 +68,6 @@ class UploadProduct extends React.Component {
         await Geocode.fromAddress(address).then( res => {
             lat = res.results[0].geometry.location.lat
             lng = res.results[0].geometry.location.lng
-            // console.log(lat, lng)
             this.setState({ coordsLat: lat, coordsLng: lng})
         })
     }
@@ -125,7 +117,6 @@ class UploadProduct extends React.Component {
         this.setState({ selectForm: 0 })
     }
 
-
     render() {
         
         const PreviewProduct = this.state.productUrl ? <img className="upload-form-preview" alt="upload-preview" src={this.state.productUrl} /> : null;
@@ -147,7 +138,6 @@ class UploadProduct extends React.Component {
                 </div>
             )
         } 
-
 
         if (this.state.selectForm === 1) {
             return (

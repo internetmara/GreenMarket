@@ -1,10 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
 
 class ItemList extends React.Component {
-    constructor(props) {
-        super(props)
-    }
 
     showItem(id) {
         let el = document.getElementsByClassName(id)
@@ -28,7 +24,7 @@ class ItemList extends React.Component {
                         <div className={`item-show-${item._id}`} style={{ display: "none" }}>
                             <div className="item-show-root">
                                 <div className="item-show-modal">
-                                    <img src="{}"></img>
+                                    <img src="{}" alt="item show"></img>
                                     <p>Name: {item.name}</p>
                                     <p>Category: {item.category}</p>
                                     <p>Rate: {item.rate}</p>

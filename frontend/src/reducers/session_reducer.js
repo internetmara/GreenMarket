@@ -5,7 +5,7 @@ const initialState = {
     user: {}
 };
 
-export default function(state=initialState, action) {
+export default function foo(state=initialState, action) {
   switch (action.type) {
     case RECEIVE_CURRENT_USER:
       return {
@@ -22,7 +22,6 @@ export default function(state=initialState, action) {
       return {
         ...state,
         isSignedIn: true
-        // user: action.currentUser
       }
     default:
       return state;

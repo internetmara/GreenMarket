@@ -1,6 +1,5 @@
 import { connect } from "react-redux";
 import { getServices } from "../../actions/item_actions";
-import { getUser } from "../../actions/session_actions";
 import ServiceIndexItem from "./service_show";
 
 const mSTP = (state, ownProps) => ({

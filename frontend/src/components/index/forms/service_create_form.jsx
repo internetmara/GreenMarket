@@ -31,11 +31,6 @@ class UploadService extends React.Component {
         this.handleCancel = this.handleCancel.bind(this);
     }
 
-    // componentDidMount() {
-    //     this.props.getProducts();
-    //     this.props.getServices();
-    // }
-
     update(field) {
         return e => this.setState({ [field]: e.target.value })
     }
@@ -81,7 +76,7 @@ class UploadService extends React.Component {
     async handleSubmit(e) {
         e.preventDefault();
         if (!this.state.address) {
-            return (this.setState({["submissionErr"]: "Not a valid address, bestie"}))
+            return (this.setState({["submissionErr"]: "Please fill out the entire form!"}))
         }
         await this.getGeo(this.state.address)
         if (this.state.tError === false) {
@@ -97,8 +92,24 @@ class UploadService extends React.Component {
             formData.coordsLng = this.state.coordsLng
             formData.user = this.state.user
             formData.service = this.state.service
-            if (!formData.picture || !formData.name || !formData.category || !formData.rate || !formData.rateIncrement || !formData.description || !formData.address || !formData.coordsLat || !formData.coordsLng || !formData.user || !formData.service ) {
-                this.setState({["submissionErr"]: "Please fill out all fields"})
+            if (!formData.picture) {
+                this.setState({["submissionErr"]: "Please add a picture!"})
+            } else if (!formData.name) {
+                this.setState({["submissionErr"]: "Name cannot be blank!"})
+            } else if (!formData.category) {
+                this.setState({["submissionErr"]: "Please select a category!"})
+            } else if (!formData.rate) {
+                this.setState({["submissionErr"]: "Please add a rate!"})
+            } else if (!formData.rate) {
+                this.setState({["submissionErr"]: "Please add a rate increment!"})
+            } else if (!formData.description) {
+                this.setState({["submissionErr"]: "Description cannot be blank!"})
+            } else if (!formData.address || !formData.coordsLat || !formData.coordsLng) {
+                this.setState({["submissionErr"]: "Address is invalid!"})
+            } else if (!formData.user) {
+                this.setState({["submissionErr"]: "User is invalid!"})
+            } else if (!formData.service) {
+                this.setState({["submissionErr"]: "Service is invalid!"})
             } else {
                 this.props.addService(formData)
                 this.props.history.push("/user")
@@ -131,7 +142,6 @@ class UploadService extends React.Component {
                 </div>
             )
         }
-
 
         if (this.state.selectForm === 1) {
             return (
