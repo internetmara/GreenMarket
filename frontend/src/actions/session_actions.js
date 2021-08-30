@@ -4,7 +4,9 @@ import * as APIUtil from '../util/session_api_util';
 export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const RECEIVE_USER_LOGOUT = "RECEIVE_USER_LOGOUT";
 export const RECEIVE_USER_SIGN_IN = "RECEIVE_USER_SIGN_IN";
+export const RECEIVE_USER_RECORD = "RECEIVE_USER_RECORD";
 export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
+export const CLEAR_SESSION_ERRORS = "CLEAR_SESSION_ERRORS";
 
 export const receiveCurrentUser = currentUser => ({
     type: RECEIVE_CURRENT_USER,
@@ -16,14 +18,25 @@ export const receiveUserSignIn = (currentUser) => ({
     currentUser
 });
 
+export const logoutUser = () => ({
+    type: RECEIVE_USER_LOGOUT
+});
+
+export const receiveUserRecord = (user) => ({
+    type: RECEIVE_USER_RECORD,
+    user
+});
+
 export const receiveErrors = errors => ({
     type: RECEIVE_SESSION_ERRORS,
     errors
 });
 
-export const logoutUser = () => ({
-    type: RECEIVE_USER_LOGOUT
+export const clearSessionErrors = errors => ({
+    type: CLEAR_SESSION_ERRORS,
+    errors
 });
+
 
 export const signup = user => (dispatch) => (
     APIUtil.signup(user)
@@ -59,4 +72,10 @@ export const logout = () => (dispatch) => {
 export const getUser = (userId) => (dispatch) => {
     APIUtil.getUser(userId)
         .then(res => dispatch(receiveCurrentUser(res.data)))
+}
+
+
+export const getItemOwner = (userId) => (dispatch) => {
+    APIUtil.getUser(userId)
+        .then(res => dispatch(receiveUserRecord(res.data)))
 }

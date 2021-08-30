@@ -185,14 +185,12 @@ class IndexComponent extends React.Component {
                 <div className="filters">
                     <h4>Filter By:</h4>
                     {this.masterFilter()}
-                    {/* <p onClick={() => this.filterByCategory('All')}>All</p>
-                    <p onClick={() => this.filterByCategory('Products')}>Products</p>
-                    <p onClick={() => this.filterByCategory('Services')}>Services</p> */}
                 </div>
                 <div className="index-items">
                     <ItemList 
                         products={ this.state.allGeoItems === 'yes' ? prods : localProds } 
                         services={ this.state.allGeoItems === 'yes' ? servs : localServs }
+                        getItemOwner={this.props.getItemOwner}
                     />
                     <SimpleMap 
                         products={ this.state.allGeoItems === 'yes' ? prods : localProds }
