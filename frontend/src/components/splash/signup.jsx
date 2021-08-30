@@ -55,13 +55,18 @@ class SignupForm extends React.Component {
 
         delete this.state.badAddress
         this.props.signup(this.state)
-        this.setState({
-            email: '',
-            username: '',
-            password: '',
-            address: ''
+        .then( res => {
+            if (res.type !== "RECEIVE_SESSION_ERRORS" ) {
+                this.setState({
+                    email: '',
+                    username: '',
+                    password: '',
+                    address: ''
+                })
+                this.props.clearSessionErrors()
+                this.props.history.push("/login")
+            }
         })
-        this.props.history.push("/login")
     }
 
     updateField(field) {
@@ -73,10 +78,6 @@ class SignupForm extends React.Component {
             return <p key={idx} >{err}</p>
         })
     }
-
-    // handleRoute() {
-    //     // this.props.history.push("/login");
-    // }
 
     render() {
         return (

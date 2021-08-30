@@ -1,5 +1,5 @@
 import SignupForm from './signup'
-import { signup } from '../../actions/session_actions'
+import { signup, clearSessionErrors } from '../../actions/session_actions'
 import { Link } from 'react-router-dom'
 import '../styling/reset.css'
 const { connect } = require("react-redux")
@@ -11,7 +11,8 @@ const mSTP = (state) => ({
 })
 
 const mDTP = (dispatch) => ({
-    signup: user => dispatch(signup(user))
+    signup: user => dispatch(signup(user)),
+    clearSessionErrors: () => dispatch(clearSessionErrors())
 })
 
 export default connect(mSTP,mDTP)(SignupForm)
