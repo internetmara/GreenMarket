@@ -40,6 +40,14 @@ class UploadProduct extends React.Component {
         return e => this.setState({ [field]: e.target.value })
     }
 
+    checkErrors() {
+        if (this.state && this.state.submissionErr) {
+            return (<h1 className="submission-err">{this.state.submissionErr}</h1>)
+        } else {
+            return null
+        };
+    }   
+
     handleFile(e) {
         const file = e.target.files[0];
         const fileReader = new FileReader();
@@ -74,8 +82,10 @@ class UploadProduct extends React.Component {
 
     async handleSubmit(e) {
         e.preventDefault();
+        if (!this.state.address) {
+            return (this.setState({["submissionErr"]: "Please fill out the entire form!"}))
+        }
         await this.getGeo(this.state.address)
-
         if (this.state.tError === false) {
             const formData = {};
             formData.picture = this.state.productUrl
@@ -88,10 +98,26 @@ class UploadProduct extends React.Component {
             formData.coordsLng = this.state.coordsLng
             formData.user = this.state.user
             formData.product = this.state.product
-            // console.log(formData)
-            this.props.addProduct(formData)
-            // console.log(this.state.user)
-            this.props.history.push("/user")
+            if (!formData.picture) {
+                this.setState({["submissionErr"]: "Please add a picture!"})
+            } else if (!formData.name) {
+                this.setState({["submissionErr"]: "Name cannot be blank!"})
+            } else if (!formData.category) {
+                this.setState({["submissionErr"]: "Please select a category!"})
+            } else if (!formData.rate) {
+                this.setState({["submissionErr"]: "Please add a rate!"})
+            } else if (!formData.description) {
+                this.setState({["submissionErr"]: "Description cannot be blank!"})
+            } else if (!formData.address || !formData.coordsLat || !formData.coordsLng) {
+                this.setState({["submissionErr"]: "Address is invalid!"})
+            } else if (!formData.user) {
+                this.setState({["submissionErr"]: "User is invalid!"})
+            } else if (!formData.product) {
+                this.setState({["submissionErr"]: "Product is invalid!"})
+            } else {
+                this.props.addProduct(formData)
+                this.props.history.push("/user")
+            }
         }
     }
 
@@ -103,7 +129,6 @@ class UploadProduct extends React.Component {
     render() {
         
         const PreviewProduct = this.state.productUrl ? <img className="upload-form-preview" alt="upload-preview" src={this.state.productUrl} /> : null;
-
 
         if (this.state.selectForm === 0) {
             return (
@@ -128,6 +153,7 @@ class UploadProduct extends React.Component {
             return (
 
                 <div className="uploaded-container-two">
+                    <div>{this.checkErrors()}</div>
                     <div className="upload-button-box">
                         <label id="uploading-here">
                             <input type="file" onChange={this.handleFile} style={{ display: "none" }} />

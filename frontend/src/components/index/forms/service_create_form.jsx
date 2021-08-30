@@ -40,6 +40,14 @@ class UploadService extends React.Component {
         return e => this.setState({ [field]: e.target.value })
     }
 
+    checkErrors() {
+        if (this.state && this.state.submissionErr) {
+            return (<h1 className="submission-err">{this.state.submissionErr}</h1>)
+        } else {
+            return null
+        };
+    };
+
     handleFile(e) {
         const file = e.target.files[0];
         const fileReader = new FileReader();
@@ -72,9 +80,11 @@ class UploadService extends React.Component {
 
     async handleSubmit(e) {
         e.preventDefault();
+        if (!this.state.address) {
+            return (this.setState({["submissionErr"]: "Not a valid address, bestie"}))
+        }
         await this.getGeo(this.state.address)
         if (this.state.tError === false) {
-
             const formData = {};
             formData.picture = this.state.serviceUrl
             formData.name = this.state.name
@@ -87,9 +97,12 @@ class UploadService extends React.Component {
             formData.coordsLng = this.state.coordsLng
             formData.user = this.state.user
             formData.service = this.state.service
-            console.log(formData)
-            this.props.addService(formData)
-            this.props.history.push("/user")
+            if (!formData.picture || !formData.name || !formData.category || !formData.rate || !formData.rateIncrement || !formData.description || !formData.address || !formData.coordsLat || !formData.coordsLng || !formData.user || !formData.service ) {
+                this.setState({["submissionErr"]: "Please fill out all fields"})
+            } else {
+                this.props.addService(formData)
+                this.props.history.push("/user")
+            }
         }
     }
 
@@ -100,7 +113,6 @@ class UploadService extends React.Component {
     render() {
 
         const PreviewService = this.state.serviceUrl ? <img className="upload-form-preview" alt="upload-preview" src={this.state.serviceUrl} /> : null;
-
 
         if (this.state.selectForm === 0) {
             return (
@@ -125,6 +137,7 @@ class UploadService extends React.Component {
             return (
 
                 <div className="uploaded-container-two">
+                    <div>{this.checkErrors()}</div>
                     <div className="upload-button-box">
                         <label id="uploading-here">
                             <input type="file" onChange={this.handleFile} style={{ display: "none" }} />
