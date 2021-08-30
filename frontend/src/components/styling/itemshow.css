@@ -13,6 +13,7 @@
     left: 37vw;
     bottom: 10vh;
     border: 2px solid #395446;
+    padding: 5px;
     border-radius: 10px;
     background-color: rgba(245, 245, 245, .95);
     box-shadow: -10px 0px 10000vw 10000vw  rgba(0, 0, 0, 0.5);

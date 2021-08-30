@@ -140,17 +140,15 @@
 }
 
 .modalbutton {
-  color:#395446;
-  text-align: center;
-  text-decoration: none;
-  background-color:whitesmoke;
-  /* width: 100px; */
-  padding: 10px;
+  font-family: 'Ovo', serif;
+  color:whitesmoke;
+  font-size: 22px;
+  padding: 15px;
+  width: 180px;
   border-radius: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
+  text-align: center;
+  max-width: 100%;
+  background-color: #395446;
 }
 
 .item-show-modal {
