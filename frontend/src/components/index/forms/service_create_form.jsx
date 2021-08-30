@@ -31,14 +31,17 @@ class UploadService extends React.Component {
         this.handleCancel = this.handleCancel.bind(this);
     }
 
-    // componentDidMount() {
-    //     this.props.getProducts();
-    //     this.props.getServices();
-    // }
-
     update(field) {
         return e => this.setState({ [field]: e.target.value })
     }
+
+    checkErrors() {
+        if (this.state && this.state.submissionErr) {
+            return (<h1 className="submission-err">{this.state.submissionErr}</h1>)
+        } else {
+            return null
+        };
+    };
 
     handleFile(e) {
         const file = e.target.files[0];
@@ -72,9 +75,11 @@ class UploadService extends React.Component {
 
     async handleSubmit(e) {
         e.preventDefault();
+        if (!this.state.address) {
+            return (this.setState({["submissionErr"]: "Please fill out the entire form!"}))
+        }
         await this.getGeo(this.state.address)
         if (this.state.tError === false) {
-
             const formData = {};
             formData.picture = this.state.serviceUrl
             formData.name = this.state.name
@@ -87,9 +92,28 @@ class UploadService extends React.Component {
             formData.coordsLng = this.state.coordsLng
             formData.user = this.state.user
             formData.service = this.state.service
-            console.log(formData)
-            this.props.addService(formData)
-            this.props.history.push("/user")
+            if (!formData.picture) {
+                this.setState({["submissionErr"]: "Please add a picture!"})
+            } else if (!formData.name) {
+                this.setState({["submissionErr"]: "Name cannot be blank!"})
+            } else if (!formData.category) {
+                this.setState({["submissionErr"]: "Please select a category!"})
+            } else if (!formData.rate) {
+                this.setState({["submissionErr"]: "Please add a rate!"})
+            } else if (!formData.rate) {
+                this.setState({["submissionErr"]: "Please add a rate increment!"})
+            } else if (!formData.description) {
+                this.setState({["submissionErr"]: "Description cannot be blank!"})
+            } else if (!formData.address || !formData.coordsLat || !formData.coordsLng) {
+                this.setState({["submissionErr"]: "Address is invalid!"})
+            } else if (!formData.user) {
+                this.setState({["submissionErr"]: "User is invalid!"})
+            } else if (!formData.service) {
+                this.setState({["submissionErr"]: "Service is invalid!"})
+            } else {
+                this.props.addService(formData)
+                this.props.history.push("/user")
+            }
         }
     }
 
@@ -100,7 +124,6 @@ class UploadService extends React.Component {
     render() {
 
         const PreviewService = this.state.serviceUrl ? <img className="upload-form-preview" alt="upload-preview" src={this.state.serviceUrl} /> : null;
-
 
         if (this.state.selectForm === 0) {
             return (
@@ -120,11 +143,11 @@ class UploadService extends React.Component {
             )
         }
 
-
         if (this.state.selectForm === 1) {
             return (
 
                 <div className="uploaded-container-two">
+                    <div>{this.checkErrors()}</div>
                     <div className="upload-button-box">
                         <label id="uploading-here">
                             <input type="file" onChange={this.handleFile} style={{ display: "none" }} />

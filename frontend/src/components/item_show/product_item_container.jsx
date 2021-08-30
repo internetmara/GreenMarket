@@ -1,6 +1,5 @@
 import { connect } from "react-redux";
-import { getProduct, getProducts } from "../../actions/item_actions";
-import { getUser } from "../../actions/session_actions";
+import { getProducts } from "../../actions/item_actions";
 import ProductIndexItem from "./product_show";
 
 const mSTP = (state, ownProps) => ({
@@ -9,7 +8,6 @@ const mSTP = (state, ownProps) => ({
 
 const mDTP = (dispatch) => ({
     getProducts: () => dispatch(getProducts()),
-    // getProduct: (id) => dispatch(getProduct(id))
 })
 
 export default connect(mSTP, mDTP)(ProductIndexItem)
