@@ -42,6 +42,7 @@
 .geo-filter p { 
   color: #395446;
   font-size: 18px;
+  text-decoration: none;
 }
 
 .geo-filter button {
@@ -55,11 +56,13 @@
   vertical-align: center;
   transition: .1s ease;
   background-color: transparent;
+  text-decoration: none;
 }
 
 .geo-filter button:hover {
   background-color: #395446;
   color: #FFF;
+  text-decoration: none;
 }
 
 .GM-icon {
