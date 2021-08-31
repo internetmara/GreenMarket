@@ -9,14 +9,37 @@ class userShow extends React.Component {
     constructor(props) {
         super(props) 
         this.state = {
+            user: { 
+            email: this.props.user.email,
+            username: this.props.user.username,
+            address: this.props.user.address,
+            coordsLat: this.props.user.coordsLat,
+            coordsLng: this.props.user.coordsLng
+            // email: '',
+            // username: '',
+            // address: '',
+            // coordsLat: 0,
+            // coordsLng: 0
+            
+        },
             userShow: 'show'
         }
+        this.handleUserSubmit = this.handleUserSubmit.bind(this)
     }
 
     componentDidMount() {
         this.props.getServices();
         this.props.getProducts();
         this.props.getUser(this.props.user.id);
+    }
+
+    updateField(field) {
+        return (e) => this.setState({ [field]: e.target.value })
+    }
+
+    handleUserSubmit(e) {
+        e.preventDefault()
+        this.props.updateUser(this.state)
     }
 
     render() {
@@ -85,18 +108,18 @@ class userShow extends React.Component {
                             <div>
                                 <h3>Profile: {this.props.user.username}</h3>
                                 <label >Username:
-                                    <input type="text" value={this.props.user.username}/>
+                                    <input type="text" onChange={() => this.updateField('username')} value={this.state.user.username}/>
                                 </label>
                                 <br />
                                 <label >Email:
-                                    <input type="text" value={this.props.user.email}/>
+                                    <input type="text" onChange={() => this.updateField('email')} value={this.state.user.email}/>
                                 </label>
                                 <br />
                                 <label >Address:
-                                    <input type="text" value={this.props.user.address}/>
+                                    <input type="text" onChange={() => this.updateField('address')} value={this.state.user.address}/>
                                 </label>
                                 <br />
-                                <button>Update Profile</button>
+                                <button onClick={()=> this.handleUserSubmit()}>Update Profile</button>
                                 <br />
                                 <button onClick={() => this.setState({ userShow: 'show' })} >Discard Changes</button>
                             </div>
