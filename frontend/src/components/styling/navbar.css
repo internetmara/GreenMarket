@@ -78,7 +78,7 @@ nav ul {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 600px;
+  width: 800px;
   max-width: 100%;
   align-items: flex-start;
   color: #FFF;
