@@ -1,7 +1,8 @@
 body {
   font-family: 'Ovo', serif;
   color:#395446;
-  background-image: url('./images/gold-hoop.png');
+  /* background-image: url('./images/gold-hoop.png'); */
+  background-color: white;
   background-size: auto;
 }
 
