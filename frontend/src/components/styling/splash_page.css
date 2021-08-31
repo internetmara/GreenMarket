@@ -1,0 +1,16 @@
+.splash-first-container{
+    height: 100px;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 10px double #395446;
+    margin: auto;
+    width: 600px;
+    /* height: auto; */
+    /* max-width: 100%; */
+    /* margin-top: 20%; */
+    /* flex-direction: column; */
+    border-radius: 50px;
+    padding: 20px;
+}

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styling/splash.css'
 import '../styling/reset.css'
+import '../styling/splash_page.css'
 
 class Splash extends React.Component {
     render() {
@@ -14,7 +15,9 @@ class Splash extends React.Component {
                     <Link to="/user"><h2 className="go-to-the-map">Profile</h2></Link>
                 </div>
                  <img className="home-logo" src="/images/Green-Market.png" alt="Logo"></img>
-                 hello i am splash page ~wave~
+                <div className="splash-first-container">
+                    hello I am splash page ~wave~
+                </div>
             </div>
         )
     }

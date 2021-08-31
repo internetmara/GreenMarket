@@ -133,9 +133,9 @@ body {
 }
 
 .home-logo {
-  width: 500px;
+  width: 300px;
   max-width: 100%;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
 }
 
 .home-page-button2, .home-page-button2 > *:visited  {
