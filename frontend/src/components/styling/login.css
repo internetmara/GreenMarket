@@ -77,3 +77,8 @@
   background-color: whitesmoke;
   color: #395446;
 }
+
+.logout-header-button:hover {
+  font-size: 120%;
+  background-color:#dbba42
+}

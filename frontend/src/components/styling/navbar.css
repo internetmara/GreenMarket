@@ -71,7 +71,8 @@ nav ul {
 
 .go-to-the-map:hover {
   background-color: #395446;
-  color: #FFF;
+  color: rgb(236, 197, 55);
+  font-size: 150%;
 }
 
 .home-links {
