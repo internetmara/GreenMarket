@@ -7,6 +7,7 @@ const UsersReducer = (oldState = {}, action) => {
         case RECEIVE_USER_RECORD:
             newState[action.user._id] = action.user
             return newState;
+        
         default:
             return oldState;
     }

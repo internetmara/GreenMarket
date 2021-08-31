@@ -6,9 +6,14 @@ import ProductIndexItem from './product_index_item';
 
 
 class userShow extends React.Component {
+    constructor(props) {
+        super(props) 
+        this.state = {
+            userShow: 'show'
+        }
+    }
 
     componentDidMount() {
-        console.log(this.props.user.id)
         this.props.getServices();
         this.props.getProducts();
         this.props.getUser(this.props.user.id);
@@ -64,6 +69,38 @@ class userShow extends React.Component {
                         <div className="product-map">
                             {productsMap}
                         </div>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        { this.state.userShow === 'show' ?
+                            <div>
+                                <h3>Profile: {this.props.user.username}</h3>
+                                <p>Username: {this.props.user.username}</p>
+                                <p>Email: {this.props.user.email}</p>
+                                <p>Address: {this.props.user.address}</p>
+                                <button onClick={() => this.setState({ userShow: 'edit' })}>Edit Profile</button>
+                            </div>
+                        :
+                            <div>
+                                <h3>Profile: {this.props.user.username}</h3>
+                                <label >Username:
+                                    <input type="text" value={this.props.user.username}/>
+                                </label>
+                                <br />
+                                <label >Email:
+                                    <input type="text" value={this.props.user.email}/>
+                                </label>
+                                <br />
+                                <label >Address:
+                                    <input type="text" value={this.props.user.address}/>
+                                </label>
+                                <br />
+                                <button>Update Profile</button>
+                                <br />
+                                <button onClick={() => this.setState({ userShow: 'show' })} >Discard Changes</button>
+                            </div>
+                        }
                     </div>
                 </div>
             </div>
