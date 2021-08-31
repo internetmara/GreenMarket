@@ -13,15 +13,10 @@ We live in an increasingly disconnected society despite having more access to co
 
 Green Market is an app where users can connect with their local community to find goods and services. Users can find and list items in their local community to trade with their neighbors.
 
-We will need to: 
-  * Build a database to store user and item data
-  * Construct a Web application for visualization of and interaction with the user's location data and market items
-
 ## Functionality & MVP
 
    - [ ] Hosting on Heroku 
    - [ ] User authentication: sign up and log in
-   - [ ] Data visualization of environmental infographic/motivation using Footprint Network API
    - [ ] Saving of user's products & services data to database
    - [ ] Products and services appear on an interactive map of nodes
    - [ ] Index page of items
@@ -29,9 +24,7 @@ We will need to:
    - [ ] Production README
 
 #### Bonus Features
-   - [ ] Ranking system to promote user interaction
-   - [ ] Search functionality with pre-set categories
-   - [ ] Integrate websockets for direct messaging (double super bonus)
+   - [ ] Sort functionality with pre-set categories
 
 ## WireFrames
 
