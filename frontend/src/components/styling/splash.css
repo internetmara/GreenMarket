@@ -1,7 +1,8 @@
 body {
   font-family: 'Ovo', serif;
   color:#395446;
-  background-image: url('./images/gold-hoop.png');
+  /* background-image: url('./images/gold-hoop.png'); */
+  background-color: white;
   background-size: auto;
 }
 
@@ -48,18 +49,15 @@ body {
 .home-page-button > * {
   font-family: 'Ovo', serif;
   color: #395446;
-  background-color: white;
   border-radius: 30px;
   box-shadow: none;
   outline-style: none;
   text-decoration: none;
-  height: 50px;
-  padding: 15px;
-  width: 170px;
   text-decoration: none;
   align-items: stretch;
   border: none;
 }
+
 
 .session-box {
   display: flex;
@@ -72,12 +70,11 @@ body {
 
 .home-page-button:hover {
   cursor: pointer;
+  /* background-color: rgb(182, 240, 202); */
 }
 
 
 :any-link {
-  /* color: whitesmoke; */
-  /* background-color: #395446; */
   border-radius: 10px;
   box-shadow: none;
   outline-style: none;
@@ -92,7 +89,6 @@ body {
   align-items: center;
   color: #395446;
   font-size: 75px;
-  /* padding: -10px; */
 }
 
 .form-text {
@@ -108,7 +104,6 @@ body {
   flex-direction: column;
   align-items: center;
   margin-top: 10%;
-  /* padding: 10px; */
 }
 
 .home-links {
@@ -119,18 +114,20 @@ body {
   max-width: 100%;
   margin-bottom: 20px;
 }
+
 .go-to-the-map {
-  /* opacity: 80%; */
+  opacity: 80%;
   font-family: 'Ovo', serif;
   color:#395446;
   font-size: 22px;
   padding: 15px;
   width: 180px;
-  background-color: whitesmoke;
+  background-color: white;
   border-radius: 30px;
   text-align: center;
   max-width: 100%;
   border: 1px solid #395446;
+  /* position:fixed; */
 }
 
 .go-to-the-map:hover {
@@ -139,9 +136,9 @@ body {
 }
 
 .home-logo {
-  width: 500px;
+  width: 300px;
   max-width: 100%;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
 }
 
 .home-page-button2, .home-page-button2 > *:visited  {
