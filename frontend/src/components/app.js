@@ -19,13 +19,13 @@ const App = () => (
         <Navbar/>
         <Switch>
             <Route exact path="/" component={Splash} />
+            <Route exact path="/about" component={About} />
             <AuthRoute exact path="/signup" component={SignupContainer} />
             <AuthRoute exact path="/login" component={LoginContainer} />
             <ProtectedRoute exact path="/map" component={IndexComponent} />
-            <Route exact path="/user" component={userShow} />
-            <Route exact path="/service/:itemId" component={serviceShow} />
-            <Route exact path="/product/:itemId" component={productShow} />
-            <Route exact path="/about" component={About} />
+            <ProtectedRoute exact path="/user" component={userShow} />
+            <ProtectedRoute exact path="/service/:itemId" component={serviceShow} />
+            <ProtectedRoute exact path="/product/:itemId" component={productShow} />
             <ProtectedRoute exact path="/products/new" component={UploadProduct} />
             <ProtectedRoute exact path="/services/new" component={UploadService} />
         </Switch>
