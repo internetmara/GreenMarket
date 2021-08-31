@@ -57,7 +57,7 @@ class userShow extends React.Component {
             })
         }
         if (this.state.badAddress === 'y') return null;
-
+        console.log(this.state)
         this.props.updateUser({
             id: this.props.user._id,
             username: this.state.username,
