@@ -23,18 +23,6 @@
   color: #395446;
 }
 
-.environment-container1 > * {
-    height: 130px;
-    width: 130px;
-}
-.environment-container2 > * {
-    height: 130px;
-    width: 130px;
-}
-.environment-container3 > * {
-    height: 130px;
-    width: 130px;
-}
 
 .splash-first-container2 {
     display: flex;
@@ -70,6 +58,7 @@ h2 {
     font-family: 'Ovo', serif;
     padding: 3px;
     color: #395446;
+    align-items: center;
 }
 
 .environment-container2 {
@@ -79,6 +68,7 @@ h2 {
     font-family: 'Ovo', serif;
     padding: 3px;
     color: #395446;
+    align-items: center;
 }
 
 .environment-container3 {
@@ -88,4 +78,10 @@ h2 {
     font-family: 'Ovo', serif;
     padding: 3px;
     color: #395446;
+    align-items: center;
+}
+
+.environment-container2-image {
+    height: 130px;
+    width: 130px;
 }

@@ -26,17 +26,18 @@ class Splash extends React.Component {
 
                          <div className="splash-first-container2"> 
                                 <div className="environment-container1">
-                                    <img src="/images/1.png"/>
+                                    <img src="/images/1.png" className="environment-container2-image"/>
                                         <h2>Our Mission</h2>
-                                            hello
+                                    hello my name is veronika hi 
                                 </div>
 
-                                <div className="environment-container2"><img src="/images/2.png"/> 
+                        <div className="environment-container2"><img src="/images/2.png" className="environment-container2-image"/>
                                         <h2>It's Important!</h2>
-                                            hi
+                                        hi
+        
                                 </div>
 
-                                <div className="environment-container3"><img src="/images/3.png"/> 
+                        <div className="environment-container3"><img src="/images/3.png" className="environment-container2-image"/>
                                         <h2>The Future</h2>
                                         hallo
                                 </div>
