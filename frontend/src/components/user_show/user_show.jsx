@@ -16,7 +16,8 @@ class userShow extends React.Component {
             address: this.props.user.address,
             coordsLat: this.props.user.coordsLat,
             coordsLng: this.props.user.coordsLng,
-            userShow: 'show'
+            userShow: 'show',
+            badAddress: 'n'
         }
         this.handleUserSubmit = this.handleUserSubmit.bind(this)
     }
@@ -48,10 +49,15 @@ class userShow extends React.Component {
     }
 
     async handleUserSubmit(e) {
+        this.setState({ badAddress: 'n' })
         e.preventDefault()
         if (this.props.address !== this.state.address) {
-            await this.getGeo(this.state.address)
+            await this.getGeo(this.state.address).catch(res => {
+                this.setState({ badAddress: 'y' })
+            })
         }
+        if (this.state.badAddress === 'y') return null;
+
         this.props.updateUser({
             id: this.props.user._id,
             username: this.state.username,
@@ -131,6 +137,7 @@ class userShow extends React.Component {
                             :
                             <div>
                                 <h3>Edit Profile: {this.props.user.username}</h3>
+                                {this.state.badAddress === 'y' ? <p>Invalid Address</p> : ''}
                                 <form onSubmit={(e) => this.handleUserSubmit(e)}>
                                     <label >Username:
                                         <input type="text" onChange={this.updateField('username')} value={this.state.username} />
@@ -146,7 +153,7 @@ class userShow extends React.Component {
                                     <br />
                                     <button type="submit" >Update Profile</button>
                                     <br />
-                                    <button onClick={() => this.setState({ userShow: 'show' })} >Discard Changes</button>
+                                    <button onClick={() => this.setState({ userShow: 'show' })} >Cancel</button>
                                 </form>
                             </div>
                         }

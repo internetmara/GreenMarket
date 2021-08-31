@@ -86,7 +86,7 @@ class SignupForm extends React.Component {
                 <div className="signup-form">
                     <h1 className="form-text">{this.props.formType}</h1> 
                     {this.props.errors ? this.readErrors() : ''}
-                    {this.state.badAddress === 'y' ? <p>Invalid Address Input</p> : '' }
+                    {this.state.badAddress === 'y' ? <p>Invalid Address</p> : '' }
                     <form onSubmit={(e) => this.handleSubmit(e)}>
                         <input type="email" className="login-input" onChange={this.updateField('email')} value={this.state.email} placeholder="Email" />
                         <br />
