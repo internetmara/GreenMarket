@@ -10,10 +10,10 @@ const ServicesReducer = (oldState={}, action) => {
             })
             return newState;
         case ADD_SERVICE:
-            newState[action.service._id] = newState.service
+            newState[action.data.service._id] = newState.service.data
             return newState;
         case UPDATE_SERVICE:
-            newState[action.service._id] = newState.service
+            newState[action.data.service._id] = newState.service.data
             return newState;
         case DELETE_SERVICE:
             delete newState[action.service._id]

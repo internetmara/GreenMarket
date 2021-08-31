@@ -10,10 +10,11 @@ const ProductsReducer = (oldState={}, action) => {
             })
             return newState;
         case ADD_PRODUCT:
-            newState[action.product._id] = action.product
+            newState[action.product.data._id] = action.product.data
+            // debugger
             return newState;
         case UPDATE_PRODUCT:
-            newState[action.product._id] = action.product
+            newState[action.product.data._id] = action.product.data
             return newState;
         case DELETE_PRODUCT:
             delete newState[action.product._id]

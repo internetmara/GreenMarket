@@ -8,6 +8,7 @@ import ProductIndexItem from './product_index_item';
 class userShow extends React.Component {
 
     componentDidMount() {
+        console.log(this.props.user.id)
         this.props.getServices();
         this.props.getProducts();
         this.props.getUser(this.props.user.id);
@@ -20,8 +21,8 @@ class userShow extends React.Component {
         let { services, products } = this.props.user;
         let servicesMap = []
             if (services.length > 0) {
-              servicesMap = services.map (serviceId => (
-                < ServiceIndexItem
+              servicesMap = services.map (serviceId => {
+                return < ServiceIndexItem
                 key = { services.serviceId } 
                 picture = { this.props.services[serviceId].picture } 
                 name = { this.props.services[serviceId].name }
@@ -31,20 +32,24 @@ class userShow extends React.Component {
                 description = { this.props.services[serviceId].description }
                 address = { this.props.services[serviceId].address }
                 /> 
-                ))};
+              })};
             let productsMap = []
             if (products.length > 0) {
-                 productsMap = products.map (productId => (
-                < ProductIndexItem
-                key = {products.productId}
-                picture = { this.props.products[productId].picture }
-                name = { this.props.products[productId].name }
-                category = { this.props.products[productId].category }
-                rate = { this.props.products[productId].rate }
-                description = { this.props.products[productId].description }
-                address = { this.props.products[productId].address }
-                /> 
-                ))}
+                productsMap = products.map (productId => {
+                    console.log(productId)
+                    console.log(products)
+                    console.log(this.props.products)
+                if (this.props.products[productId]) {
+                    return < ProductIndexItem
+                    key = {products.productId}
+                    picture = { this.props.products[productId].picture }
+                    name = { this.props.products[productId].name }
+                    category = { this.props.products[productId].category }
+                    rate = { this.props.products[productId].rate }
+                    description = { this.props.products[productId].description }
+                    address = { this.props.products[productId].address }
+                />  }
+                })}
         return (
             <div className="users-show-container">
                 <div className="users-show-header">All listings</div>
