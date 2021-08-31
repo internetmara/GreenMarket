@@ -9,7 +9,7 @@ const key = require("../../config/keys").googleMapsKey;
 
 class userShow extends React.Component {
     constructor(props) {
-        super(props) 
+        super(props)
         this.state = {
             email: this.props.user.email,
             username: this.props.user.username,
@@ -44,7 +44,7 @@ class userShow extends React.Component {
     }
 
     updateField(field) {
-        return (e) => this.setState({ [field] : e.target.value })
+        return (e) => this.setState({ [field]: e.target.value })
     }
 
     async handleUserSubmit(e) {
@@ -68,34 +68,38 @@ class userShow extends React.Component {
         };
         let { services, products } = this.props.user;
         let servicesMap = []
-            if (services.length > 0) {
-              servicesMap = services.map (serviceId => {
-                  if (this.props.services[serviceId]) {
+        if (services.length > 0) {
+            servicesMap = services.map(serviceId => {
+                if (this.props.services[serviceId]) {
                     return < ServiceIndexItem
-                    key = { services.serviceId } 
-                    picture = { this.props.services[serviceId].picture } 
-                    name = { this.props.services[serviceId].name }
-                    category = { this.props.services[serviceId].category }
-                    rate = { this.props.services[serviceId].rate }
-                    rateIncrement = { this.props.services[serviceId].rateIncrement }
-                    description = { this.props.services[serviceId].description }
-                    address = { this.props.services[serviceId].address }
-                /> }
-              })};
-            let productsMap = []
-            if (products.length > 0) {
-                productsMap = products.map (productId => {
+                        key={services.serviceId}
+                        picture={this.props.services[serviceId].picture}
+                        name={this.props.services[serviceId].name}
+                        category={this.props.services[serviceId].category}
+                        rate={this.props.services[serviceId].rate}
+                        rateIncrement={this.props.services[serviceId].rateIncrement}
+                        description={this.props.services[serviceId].description}
+                        address={this.props.services[serviceId].address}
+                    />
+                }
+            })
+        };
+        let productsMap = []
+        if (products.length > 0) {
+            productsMap = products.map(productId => {
                 if (this.props.products[productId]) {
                     return < ProductIndexItem
-                    key = {products.productId}
-                    picture = { this.props.products[productId].picture }
-                    name = { this.props.products[productId].name }
-                    category = { this.props.products[productId].category }
-                    rate = { this.props.products[productId].rate }
-                    description = { this.props.products[productId].description }
-                    address = { this.props.products[productId].address }
-                />  }
-                })}
+                        key={products.productId}
+                        picture={this.props.products[productId].picture}
+                        name={this.props.products[productId].name}
+                        category={this.props.products[productId].category}
+                        rate={this.props.products[productId].rate}
+                        description={this.props.products[productId].description}
+                        address={this.props.products[productId].address}
+                    />
+                }
+            })
+        }
         return (
             <div className="users-show-container">
                 <div className="users-show-header">All listings</div>
@@ -116,7 +120,7 @@ class userShow extends React.Component {
                 </div>
                 <div>
                     <div>
-                        { this.state.userShow === 'show' ?
+                        {this.state.userShow === 'show' ?
                             <div>
                                 <h3>View Profile: {this.props.user.username}</h3>
                                 <p>Username: {this.props.user.username}</p>
@@ -124,20 +128,20 @@ class userShow extends React.Component {
                                 <p>Address: {this.props.user.address}</p>
                                 <button onClick={() => this.setState({ userShow: 'edit' })}>Edit Profile</button>
                             </div>
-                        :
+                            :
                             <div>
                                 <h3>Edit Profile: {this.props.user.username}</h3>
                                 <form onSubmit={(e) => this.handleUserSubmit(e)}>
                                     <label >Username:
-                                        <input type="text" onChange={this.updateField('username')} value={this.state.username}/>
+                                        <input type="text" onChange={this.updateField('username')} value={this.state.username} />
                                     </label>
                                     <br />
                                     <label >Email:
-                                        <input type="text" onChange={this.updateField('email')} value={this.state.email}/>
+                                        <input type="text" onChange={this.updateField('email')} value={this.state.email} />
                                     </label>
                                     <br />
                                     <label >Address:
-                                        <input type="text" onChange={this.updateField('address')} value={this.state.address}/>
+                                        <input type="text" onChange={this.updateField('address')} value={this.state.address} />
                                     </label>
                                     <br />
                                     <button type="submit" >Update Profile</button>
