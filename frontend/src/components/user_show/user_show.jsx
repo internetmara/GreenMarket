@@ -3,25 +3,19 @@ import '../styling/reset.css'
 import '../styling/user_show.css'
 import ServiceIndexItem from './service_index_item';
 import ProductIndexItem from './product_index_item';
+import Geocode from "react-geocode";
+const key = require("../../config/keys").googleMapsKey;
 
 
 class userShow extends React.Component {
     constructor(props) {
         super(props) 
         this.state = {
-            user: { 
             email: this.props.user.email,
             username: this.props.user.username,
             address: this.props.user.address,
             coordsLat: this.props.user.coordsLat,
-            coordsLng: this.props.user.coordsLng
-            // email: '',
-            // username: '',
-            // address: '',
-            // coordsLat: 0,
-            // coordsLng: 0
-            
-        },
+            coordsLng: this.props.user.coordsLng,
             userShow: 'show'
         }
         this.handleUserSubmit = this.handleUserSubmit.bind(this)
@@ -33,13 +27,39 @@ class userShow extends React.Component {
         this.props.getUser(this.props.user.id);
     }
 
-    updateField(field) {
-        return (e) => this.setState({ [field]: e.target.value })
+    async getGeo(address) {
+        Geocode.setApiKey(key);
+        Geocode.setLanguage("en");
+        Geocode.setRegion("us");
+        Geocode.setLocationType("APPROXIMATE");
+
+        let lat = 0;
+        let lng = 0;
+
+        await Geocode.fromAddress(address).then(res => {
+            lat = res.results[0].geometry.location.lat
+            lng = res.results[0].geometry.location.lng
+            this.setState({ coordsLat: lat, coordsLng: lng })
+        })
     }
 
-    handleUserSubmit(e) {
+    updateField(field) {
+        return (e) => this.setState({ [field] : e.target.value })
+    }
+
+    async handleUserSubmit(e) {
         e.preventDefault()
-        this.props.updateUser(this.state)
+        if (this.props.address !== this.state.address) {
+            await this.getGeo(this.state.address)
+        }
+        this.props.updateUser({
+            id: this.props.user._id,
+            username: this.state.username,
+            email: this.state.email,
+            coordsLat: this.state.coordsLat,
+            coordsLng: this.state.coordsLng,
+            address: this.state.address
+        })
     }
 
     render() {
@@ -98,7 +118,7 @@ class userShow extends React.Component {
                     <div>
                         { this.state.userShow === 'show' ?
                             <div>
-                                <h3>Profile: {this.props.user.username}</h3>
+                                <h3>View Profile: {this.props.user.username}</h3>
                                 <p>Username: {this.props.user.username}</p>
                                 <p>Email: {this.props.user.email}</p>
                                 <p>Address: {this.props.user.address}</p>
@@ -106,22 +126,24 @@ class userShow extends React.Component {
                             </div>
                         :
                             <div>
-                                <h3>Profile: {this.props.user.username}</h3>
-                                <label >Username:
-                                    <input type="text" onChange={() => this.updateField('username')} value={this.state.user.username}/>
-                                </label>
-                                <br />
-                                <label >Email:
-                                    <input type="text" onChange={() => this.updateField('email')} value={this.state.user.email}/>
-                                </label>
-                                <br />
-                                <label >Address:
-                                    <input type="text" onChange={() => this.updateField('address')} value={this.state.user.address}/>
-                                </label>
-                                <br />
-                                <button onClick={()=> this.handleUserSubmit()}>Update Profile</button>
-                                <br />
-                                <button onClick={() => this.setState({ userShow: 'show' })} >Discard Changes</button>
+                                <h3>Edit Profile: {this.props.user.username}</h3>
+                                <form onSubmit={(e) => this.handleUserSubmit(e)}>
+                                    <label >Username:
+                                        <input type="text" onChange={this.updateField('username')} value={this.state.username}/>
+                                    </label>
+                                    <br />
+                                    <label >Email:
+                                        <input type="text" onChange={this.updateField('email')} value={this.state.email}/>
+                                    </label>
+                                    <br />
+                                    <label >Address:
+                                        <input type="text" onChange={this.updateField('address')} value={this.state.address}/>
+                                    </label>
+                                    <br />
+                                    <button type="submit" >Update Profile</button>
+                                    <br />
+                                    <button onClick={() => this.setState({ userShow: 'show' })} >Discard Changes</button>
+                                </form>
                             </div>
                         }
                     </div>

@@ -26,9 +26,10 @@ export default function foo(state=initialState, action) {
         isSignedIn: true
       }
     case UPDATE_USER:
-      console.log(action)
-      newState.action.userData._id = action.userData
-      return newState
+      return {
+        ...state,
+        user: action.userData.data
+      } 
     default:
       return state;
   }

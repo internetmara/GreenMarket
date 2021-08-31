@@ -65,7 +65,6 @@ class SignupForm extends React.Component {
                     address: ''
                 })
                 this.props.clearSessionErrors()
-                // this.props.history.push("/login")
             }
         })
     }
@@ -97,8 +96,6 @@ class SignupForm extends React.Component {
                         <br />
                         <input type="text" className="login-input" onChange={this.updateField('address')} value={this.state.address} placeholder="Address"/>
                         <br />
-                        {/* <input type="submit" className="login-submit" value={this.props.formType} /> */}
-                        {/* <button type="submit"  className="login-submit"><Link to="/login">{this.props.formType}</Link></button> */}
                         <button type="submit"  className="login-submit">{this.props.formType}</button>
                     </form>
                     <h3 className="change-form">{this.props.navLink}</h3>

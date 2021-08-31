@@ -128,11 +128,12 @@ router.get('/:id', (req, res) => {
 router.patch('/:id/update',
     passport.authenticate('jwt', { session: false }),
     (req, res) => {
-        const { errors, isValid } = validateUserInput(req.body);
+        // console.log(req)
+        // const { errors, isValid } = validateUserInput(req.body);
 
-        if (!isValid) {
-            return res.status(400).json(errors);
-        }
+        // if (!isValid) {
+        //     return res.status(400).json(errors);
+        // }
 
         User.findByIdAndUpdate(
             req.params.id,
