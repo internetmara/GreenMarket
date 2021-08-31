@@ -14,6 +14,13 @@ class Navbar extends React.Component {
               <div className="logo">
                   <Link to="/"><img src="images/darkgreen.png" alt="logo" className="logo-picture"></img></Link>
               </div>
+              <div className="home-links">
+                    <Link to="/products/new"><h2 className="go-to-the-map">List a product</h2></Link>
+                    <Link to="/services/new"><h2 className="go-to-the-map">Offer a Service</h2></Link>
+                    <Link to="/map"><h2 className="go-to-the-map">Map</h2></Link>
+                    <Link to="/user"><h2 className="go-to-the-map">Profile</h2></Link>
+                    <Link to="/about"><h2 className="go-to-the-map">About Us</h2></Link>
+                </div>
               <nav className="links">
                 <ul>
                     {/* <input type="text" placeholder="Search GreenMarket..." className="search-bar" /> */}

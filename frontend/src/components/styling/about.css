@@ -54,6 +54,7 @@
   border: 10px double #395446;
   border-radius: 50px;
   padding: 5px;
+  margin-bottom: 10px;
 }
 
 .profile-links {
@@ -68,4 +69,10 @@
 .social-pic{
   width: 30px;
   height: auto;
+}
+
+.bio {
+  text-align: center;
+  font-family: 'Ovo', serif;
+  color: #395446;
 }

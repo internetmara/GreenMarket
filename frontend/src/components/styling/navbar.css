@@ -6,6 +6,7 @@
 
 .nav-container {
   display: flex; 
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   padding: 2px;
@@ -56,4 +57,29 @@ nav ul {
   margin-bottom: 5px;
   margin-top: 10px;
   margin-left: 15px;
+}
+
+
+.go-to-the-map {
+  opacity: 80%;
+  font-family: 'Ovo', serif;
+  color:#FFF;
+  font-size: 20px;
+  width: auto;
+  text-align: center;
+}
+
+.go-to-the-map:hover {
+  background-color: #395446;
+  color: #FFF;
+}
+
+.home-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 600px;
+  max-width: 100%;
+  align-items: flex-start;
+  color: #FFF;
 }
