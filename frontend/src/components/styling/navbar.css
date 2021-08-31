@@ -1,10 +1,3 @@
-/* body {
-    margin: 0;
-    background: white;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 200;
-} */
-
 .nav-box {
   position:fixed;
   top:0;
@@ -12,7 +5,6 @@
 }
 
 .nav-container {
-  /* background-color: rgb(255, 255, 255); */
   display: flex; 
   justify-content: space-between;
   align-items: center;
@@ -20,25 +12,18 @@
 }
 
 header {
-  /* background-color:white; */
   justify-content: center;
   align-items: center;
   background-color: #395446;
   opacity: 0.8;
 }
-/* 
-header::after {
- content: '';
- display: table;
- clear: both; 
-} */
+
 .logo {
   display: inline-block;
   margin: 0 5px;
   flex-direction: row;
   margin:0 -15px;
   padding:0 20px;
-  /* font-size: 16px; */
 }
 
 nav {
@@ -71,5 +56,4 @@ nav ul {
   margin-bottom: 5px;
   margin-top: 10px;
   margin-left: 15px;
-  /* padding: 10px; */
 }
