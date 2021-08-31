@@ -12,6 +12,7 @@ import IndexComponent from './index/index_container';
 import serviceShow from './item_show/service_item_container'
 import productShow from './item_show/product_item_container'
 import "./styling/reset.css"
+import About from './about/about';
 
 const App = () => (
     <div>
@@ -24,6 +25,7 @@ const App = () => (
             <Route exact path="/user" component={userShow} />
             <Route exact path="/service/:itemId" component={serviceShow} />
             <Route exact path="/product/:itemId" component={productShow} />
+            <Route exact path="/about" component={About} />
             <ProtectedRoute exact path="/products/new" component={UploadProduct} />
             <ProtectedRoute exact path="/services/new" component={UploadService} />
         </Switch>
