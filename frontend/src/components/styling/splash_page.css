@@ -20,3 +20,25 @@
   padding: 3px;
   color: green
 }
+
+.environment-container > * {
+    height: 100px;
+    width: 100%;
+}
+
+.splash-first-container2 {
+    display: flex;
+    flex-direction: row;
+     height: 100px;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 10px double #395446;
+    margin: auto;
+    width: 600px;
+    border-radius: 50px;
+    padding: 20px;
+}
+
+

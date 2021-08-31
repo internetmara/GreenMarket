@@ -7,18 +7,34 @@ import '../styling/splash_page.css'
 class Splash extends React.Component {
     render() {
         return (
-             <div className="home-container">
-                 <div className="home-links">
+            <div className="home-container">
+                <div className="home-links">
                     <Link to="/products/new"><h2 className="go-to-the-map">List a product</h2></Link>
                     <Link to="/services/new"><h2 className="go-to-the-map">Offer a Service</h2></Link>
                     <Link to="/map"><h2 className="go-to-the-map">Map</h2></Link>
                     <Link to="/user"><h2 className="go-to-the-map">Profile</h2></Link>
                 </div>
+                
                  <img className="home-logo" src="/images/Green-Market.png" alt="Logo"></img>
-                <div className="splash-first-container">
-                    <p>hello I am splash page ~wave~</p>
+
+                    <div className="splash-first-container">
+                        <p>hello I am greeting container ~wave~</p>
+                    </div>
+
+                        <br/>
+
+                         <div className="splash-first-container2"> 
+                                <div className="environment-container"><img src="/images/1.png"/></div>
+                                <div className="environment-container"><img src="/images/2.png"/> </div>
+                                <div className="environment-container"><img src="/images/3.png"/> </div>
+                                <div className="environment-container"><img src="/images/4.png"/> </div>
+                        </div>
+
+                        <br/>
+                            <div className="splash-first-container">
+                                <p>api will potentially go here</p>
+                            </div>
                 </div>
-            </div>
         )
     }
 }
