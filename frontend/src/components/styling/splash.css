@@ -133,13 +133,12 @@ body {
 
 .splash-first-container{
     height: auto;
-    width: 300px;
     display: flex;
     justify-content: center;
     align-items: center;
     border: 10px double #395446;
     margin: auto;
-    width: 600px;
+    width: 850px;
     border-radius: 50px;
     padding: 20px;
     background-color: rgba(255, 252, 252, 0.65);
@@ -156,13 +155,12 @@ body {
     display: flex;
     flex-direction: row;
     height: auto;
-    width: 300px;
     display: flex;
     justify-content: center;
     align-items: center;
     border: 10px double #395446;
     margin: auto;
-    width: 600px;
+    width: 850px;
     border-radius: 50px;
     padding: 20px;
     opacity: 95%;
