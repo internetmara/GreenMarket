@@ -59,6 +59,10 @@ h2 {
     padding: 3px;
     color: #395446;
     align-items: center;
+    width: 300px;
+    max-width: 100%;
+    height: 300px;
+    max-height: 100%;
 }
 
 .environment-container2 {
@@ -69,6 +73,10 @@ h2 {
     padding: 3px;
     color: #395446;
     align-items: center;
+    width: 300px;
+    max-width: 100%;
+    height: 300px;
+    max-height: 100%;
 }
 
 .environment-container3 {
@@ -79,6 +87,10 @@ h2 {
     padding: 3px;
     color: #395446;
     align-items: center;
+    width: 300px;
+    max-width: 100%;
+    height: 300px;
+    max-height: 100%;
 }
 
 .environment-container2-image {
