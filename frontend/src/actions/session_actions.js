@@ -72,11 +72,10 @@ export const logout = () => (dispatch) => {
     dispatch(logoutUser())
 }
 
-
 export const updateUser = (userData) => (dispatch) => {
     APIUtil.updateUser(userData)
     .then( res => {
-        () => dispatch(patchUser(res))
+        dispatch(patchUser(res))
     })
     .catch(err => {
         console.log(err)
