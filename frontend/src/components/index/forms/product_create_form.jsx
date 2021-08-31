@@ -108,7 +108,9 @@ class UploadProduct extends React.Component {
                 this.setState({["submissionErr"]: "Product is invalid!"})
             } else {
                 this.props.addProduct(formData)
-                this.props.history.push("/user")
+                setTimeout(() => {
+                    this.props.history.push("/user")
+                }, 500)
             }
         }
     }
