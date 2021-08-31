@@ -14,3 +14,9 @@
     border-radius: 50px;
     padding: 20px;
 }
+
+.splash-first-container p {
+  font-family: 'Ovo', serif;
+  padding: 3px;
+  color: green
+}

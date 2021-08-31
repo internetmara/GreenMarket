@@ -16,7 +16,7 @@ class Splash extends React.Component {
                 </div>
                  <img className="home-logo" src="/images/Green-Market.png" alt="Logo"></img>
                 <div className="splash-first-container">
-                    hello I am splash page ~wave~
+                    <p>hello I am splash page ~wave~</p>
                 </div>
             </div>
         )
