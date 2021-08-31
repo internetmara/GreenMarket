@@ -19,7 +19,7 @@
 .splash-first-container p {
   font-family: 'Ovo', serif;
   padding: 3px;
-  color: black;
+  color: #395446;
 }
 
 .environment-container1 > * {
@@ -54,13 +54,19 @@
     background-color: rgba(255,243,217,0.6);
 }
 
+h2 {
+    font-family: 'Ovo', serif;
+    color: #395446;
+    font-size: 18px;
+}
+
 .environment-container1 {
     display: flex;
     flex-direction: column;
     text-align: center;
     font-family: 'Ovo', serif;
     padding: 3px;
-    color: black;
+    color: #395446;
 }
 
 .environment-container2 {
@@ -69,7 +75,7 @@
     text-align: center;
     font-family: 'Ovo', serif;
     padding: 3px;
-    color: green
+    color: #395446;
 }
 
 .environment-container3 {
@@ -78,5 +84,5 @@
     text-align: center;
     font-family: 'Ovo', serif;
     padding: 3px;
-    color: green
+    color: #395446;
 }
