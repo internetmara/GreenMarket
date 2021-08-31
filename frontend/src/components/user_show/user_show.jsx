@@ -12,7 +12,6 @@ class userShow extends React.Component {
         this.props.getServices();
         this.props.getProducts();
         this.props.getUser(this.props.user.id);
-        // console.log("hi!")
     }
 
     render() {
@@ -23,23 +22,21 @@ class userShow extends React.Component {
         let servicesMap = []
             if (services.length > 0) {
               servicesMap = services.map (serviceId => {
-                return < ServiceIndexItem
-                key = { services.serviceId } 
-                picture = { this.props.services[serviceId].picture } 
-                name = { this.props.services[serviceId].name }
-                category = { this.props.services[serviceId].category }
-                rate = { this.props.services[serviceId].rate }
-                rateIncrement = { this.props.services[serviceId].rateIncrement }
-                description = { this.props.services[serviceId].description }
-                address = { this.props.services[serviceId].address }
-                /> 
+                  if (this.props.services[serviceId]) {
+                    return < ServiceIndexItem
+                    key = { services.serviceId } 
+                    picture = { this.props.services[serviceId].picture } 
+                    name = { this.props.services[serviceId].name }
+                    category = { this.props.services[serviceId].category }
+                    rate = { this.props.services[serviceId].rate }
+                    rateIncrement = { this.props.services[serviceId].rateIncrement }
+                    description = { this.props.services[serviceId].description }
+                    address = { this.props.services[serviceId].address }
+                /> }
               })};
             let productsMap = []
             if (products.length > 0) {
                 productsMap = products.map (productId => {
-                    console.log(productId)
-                    console.log(products)
-                    console.log(this.props.products)
                 if (this.props.products[productId]) {
                     return < ProductIndexItem
                     key = {products.productId}
