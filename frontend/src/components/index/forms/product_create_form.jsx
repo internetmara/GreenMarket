@@ -110,7 +110,7 @@ class UploadProduct extends React.Component {
                 this.props.addProduct(formData)
                 setTimeout(() => {
                     this.props.history.push("/user")
-                }, 500)
+                }, 600)
             }
         }
     }
