@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styling/splash.css'
 import '../styling/reset.css'
-import '../styling/splash_page.css'
+import '../styling/splash.css'
 
 class Splash extends React.Component {
     render() {
@@ -13,6 +13,7 @@ class Splash extends React.Component {
                     <Link to="/services/new"><h2 className="go-to-the-map">Offer a Service</h2></Link>
                     <Link to="/map"><h2 className="go-to-the-map">Map</h2></Link>
                     <Link to="/user"><h2 className="go-to-the-map">Profile</h2></Link>
+                    <Link to="/about"><h2 className="go-to-the-map">About Us</h2></Link>
                 </div>
                 
                  <img className="home-logo" src="/images/Green-Market.png" alt="Logo"></img>
@@ -43,7 +44,6 @@ class Splash extends React.Component {
                                         <br/>
                                     In an increasingly disconnected world, Green Market is here to help neighbors connect sustainably.
                                 </div>
-                                {/* <div className="environment-container"><img src="/images/4.png"/> </div> */}
                         </div>
 
                         <br/>
