@@ -29,6 +29,7 @@
 .filters p:hover {
   background-color: #395446;
   color: #FFF;
+  text-decoration: none;
 }
 
 .geo-filter {
@@ -112,6 +113,7 @@
   width: 5vw;
   height: auto;
   transition: .2s ease;
+  text-decoration: none;
 }
 
 .items-index {
