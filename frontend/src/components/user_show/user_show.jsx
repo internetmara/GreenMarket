@@ -85,15 +85,15 @@ class userShow extends React.Component {
                             <div>
                                 <h3>Profile: {this.props.user.username}</h3>
                                 <label >Username:
-                                    <input type="text" />
+                                    <input type="text" value={this.props.user.username}/>
                                 </label>
                                 <br />
                                 <label >Email:
-                                    <input type="text" />
+                                    <input type="text" value={this.props.user.email}/>
                                 </label>
                                 <br />
                                 <label >Address:
-                                    <input type="text" />
+                                    <input type="text" value={this.props.user.address}/>
                                 </label>
                                 <br />
                                 <button>Update Profile</button>
