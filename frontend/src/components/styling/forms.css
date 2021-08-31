@@ -3,6 +3,7 @@ body {
   color:#395446;
   background-image: url('./images/gold-hoop.png');
   background-size: cover;
+  background-color: rgba(255,243,217,0.6);
 }
 
 .upload-container {

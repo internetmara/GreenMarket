@@ -13,7 +13,8 @@
     /* flex-direction: column; */
     border-radius: 50px;
     padding: 20px;
-    background-color: rgba(255,243,217,0.6);
+    /* background-color: #F7F6F3; */
+    background-color: white;
 }
 
 .splash-first-container p {
@@ -51,7 +52,9 @@
     opacity: 95%;
     justify-content: space-around;
     background-color: #fff3d9;
-    background-color: rgba(255,243,217,0.6);
+    /* background-color: rgba(255,243,217,0.6); */
+    /* background-color: #F7F6F3; */
+    background-color: white;
 }
 
 h2 {
