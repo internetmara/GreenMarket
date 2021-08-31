@@ -18,7 +18,6 @@ class Navbar extends React.Component {
                 <ul>
                     {/* <input type="text" placeholder="Search GreenMarket..." className="search-bar" /> */}
                     <GreetingContainer/>
-                    
                 </ul>
               </nav>
             </div>

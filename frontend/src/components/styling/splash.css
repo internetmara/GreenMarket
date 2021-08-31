@@ -113,6 +113,7 @@ body {
   max-width: 100%;
   margin-bottom: 20px;
 }
+
 .go-to-the-map {
   opacity: 80%;
   font-family: 'Ovo', serif;
@@ -125,6 +126,7 @@ body {
   text-align: center;
   max-width: 100%;
   border: 1px solid #395446;
+  /* position:fixed; */
 }
 
 .go-to-the-map:hover {
