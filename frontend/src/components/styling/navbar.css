@@ -56,6 +56,7 @@ nav ul {
   margin: 0 15px;
   flex-direction: row;
   font-size: 17px;
+  border: 1px solid #395446;
 }
 
 .links {
