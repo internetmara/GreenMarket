@@ -22,14 +22,14 @@
 }
 
 .environment-container > * {
-    height: 100px;
-    width: 100%;
+    height: 130px;
+    width: 130px;
 }
 
 .splash-first-container2 {
     display: flex;
     flex-direction: row;
-     height: 100px;
+    height: 100px;
     width: 300px;
     display: flex;
     justify-content: center;
@@ -39,6 +39,7 @@
     width: 600px;
     border-radius: 50px;
     padding: 20px;
+    opacity: 95%;
 }
 
 

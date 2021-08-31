@@ -16,6 +16,7 @@ class Splash extends React.Component {
                 </div>
                 
                  <img className="home-logo" src="/images/Green-Market.png" alt="Logo"></img>
+                {/* <img src="/images/4.png"/> */}
 
                     <div className="splash-first-container">
                         <p>hello I am greeting container ~wave~</p>
@@ -27,7 +28,7 @@ class Splash extends React.Component {
                                 <div className="environment-container"><img src="/images/1.png"/></div>
                                 <div className="environment-container"><img src="/images/2.png"/> </div>
                                 <div className="environment-container"><img src="/images/3.png"/> </div>
-                                <div className="environment-container"><img src="/images/4.png"/> </div>
+                                {/* <div className="environment-container"><img src="/images/4.png"/> </div> */}
                         </div>
 
                         <br/>
