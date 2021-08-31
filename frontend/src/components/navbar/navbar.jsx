@@ -21,12 +21,9 @@ class Navbar extends React.Component {
                     <Link to="/user"><h2 className="go-to-the-map">Profile</h2></Link>
                     <Link to="/about"><h2 className="go-to-the-map">About Us</h2></Link>
                 </div>
-              <nav className="links">
-                <ul>
-                    {/* <input type="text" placeholder="Search GreenMarket..." className="search-bar" /> */}
+              <div className="greeting">
                     <GreetingContainer/>
-                </ul>
-              </nav>
+              </div>
             </div>
           </header>    
         )
