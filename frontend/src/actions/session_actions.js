@@ -74,12 +74,8 @@ export const logout = () => (dispatch) => {
 
 export const updateUser = (userData) => (dispatch) => {
     APIUtil.updateUser(userData)
-    .then( res => {
-        dispatch(patchUser(res))
-    })
-    .catch(err => {
-        console.log(err)
-    })
+    .then( res => { dispatch(patchUser(res)) })
+    .catch( err => { console.log(err) })
 }
 
 export const getUser = (userId) => (dispatch) => {

@@ -42,6 +42,7 @@ class About extends React.Component {
                 </div>
                 <p className="bio">Mara is an entrepreneur and business magnate. She is the founder, CEO, and Chief Engineer at PraxisX and Chesla, Inc.; and founder of The Interesting Company. A centibillionaire, Mara is one of the richest people in the world. She received bachelor's degrees in economics and physics. She moved to California in 1995 to attend Stanford University but decided instead to pursue a business career. The startup was acquired by Cumpaq for $307 million in 1999. Mara co-founded online dank X.com that same year, which merged with Profanity in 2000 to form SlayGal. The company was bought by eGirl in 2002 for $1.5 billion.</p>
                </div>
+          
                <div className="person">
                 <h2 className="profile-name">Veronika Pilipenko</h2>
                 <img src="/images/profilepics/Veronika.png" className="profile-pic" alt="Veronika Pilipenko"/>
