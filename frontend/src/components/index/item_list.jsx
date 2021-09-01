@@ -47,12 +47,11 @@ class ItemList extends React.Component {
                     <div className="item-show-root">
                             { this.state.showOwner === item.user ? 
                                 <div className="item-show-modal" >
-                                    <button className="modalbutton" onClick={() => this.hideOwner()}>Close</button>
                                     <center><ItemOwnerShow ownerId={item.user} hideOwner={this.hideOwner}/></center>
+                                    <button className="modalbutton" onClick={() => this.hideOwner()}>Close</button>
                                 </div>
                             :
                                 <div className="item-show-modal">
-                                <button className="modalbutton" onClick={() => this.hideItem(`item-show-${item._id}`)}>X</button>
                                 <img className="item-show-modal-img" src={item.picture}></img>
                                     <p>Name: {item.name}</p>
                                     <p>Category: {item.category}</p>
@@ -60,6 +59,7 @@ class ItemList extends React.Component {
                                     <p>Description: {item.description}</p>
                                     <p>Address: {item.address}</p>
                                     <div className="item-show-modal-button-box">
+                                        <button className="modalbutton" onClick={() => this.hideItem(`item-show-${item._id}`)}>Close</button>
                                         <button className="contact-button" onClick={() => this.showContactInfo(item.user)}>Contact Seller about this item</button>
                                         <button className="sellers-button" onClick={() => this.showOwner(item.user)}>See seller's products</button>
                                     </div>
