@@ -47,7 +47,6 @@ class ItemList extends React.Component {
                 <p>{item.rate}</p>
                 <div className={`item-show-${item._id}`} style={{ display: "none" }}>
                     <div className="item-show-root">
-                        {console.log(this.state.showOwner === item.user)}
                         { this.state.showOwner === item.user ? 
                             <div className="item-show-modal" >
                                 <center><ItemOwnerShow ownerId={item.user} /></center>

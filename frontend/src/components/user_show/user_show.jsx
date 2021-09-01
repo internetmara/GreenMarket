@@ -123,7 +123,7 @@ class userShow extends React.Component {
         }
         return (
             <div className="users-show-container">
-                <div className="users-show-header">All listings</div>
+                <div className="users-show-header">{this.props.user.username} listings</div>
                 <div className="services-and-products">
                     <div className="user-services-container">
                         <h1 className="user-services-header">Services</h1>
@@ -142,33 +142,33 @@ class userShow extends React.Component {
                 <div>
                     <div>
                         {this.state.userShow === 'show' ?
-                            <div>
-                                <h3>View Profile: {this.props.user.username}</h3>
+                            <div className="profile-show-container">
                                 <p>Username: {this.props.user.username}</p>
                                 <p>Email: {this.props.user.email}</p>
                                 <p>Address: {this.props.user.address}</p>
-                                <button onClick={() => this.setState({ userShow: 'edit' })}>Edit Profile</button>
+                                <button className="profile-edit-button" onClick={() => this.setState({ userShow: 'edit' })}>Edit Profile</button>
                             </div>
                             :
                             <div>
-                                <h3>Edit Profile: {this.props.user.username}</h3>
                                 {this.state.badAddress === 'y' ? <p>Invalid Address</p> : ''}
                                 <form onSubmit={(e) => this.handleUserSubmit(e)}>
-                                    <label >Username:
-                                        <input type="text" onChange={this.updateField('username')} value={this.state.username} />
-                                    </label>
+                                    <div className="profile-show-container2">
+                                        <label >Username:&nbsp;
+                                            <input type="text" onChange={this.updateField('username')} value={this.state.username} />
+                                        </label>
+                                        <br />
+                                        <label >Email:&nbsp;
+                                            <input type="text" onChange={this.updateField('email')} value= {this.state.email} />
+                                        </label>
+                                        <br />
+                                        <label >Address:&nbsp;
+                                            <input type="text" onChange={this.updateField('address')} value= {this.state.address} />
+                                        </label>
+                                        <br />
+                                    </div>
+                                    <button className="update-profile-button" type="submit" >Update Profile</button>
                                     <br />
-                                    <label >Email:
-                                        <input type="text" onChange={this.updateField('email')} value={this.state.email} />
-                                    </label>
-                                    <br />
-                                    <label >Address:
-                                        <input type="text" onChange={this.updateField('address')} value={this.state.address} />
-                                    </label>
-                                    <br />
-                                    <button type="submit" >Update Profile</button>
-                                    <br />
-                                    <button onClick={() => this.setState({ userShow: 'show' })} >Cancel</button>
+                                    <button className="update-profile-button" onClick={() => this.setState({ userShow: 'show' })} >Cancel</button>
                                 </form>
                             </div>
                         }
