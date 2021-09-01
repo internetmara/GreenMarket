@@ -60,7 +60,7 @@ class ItemList extends React.Component {
                                     <p>Address: {item.address}</p>
                                     <div className="item-show-modal-button-box">
                                         <button className="modalbutton" onClick={() => this.hideItem(`item-show-${item._id}`)}>Close</button>
-                                        <button className="contact-button" onClick={() => this.showContactInfo(item.user)}>Contact Seller about this item</button>
+                                        <button className="contact-button" onClick={() => this.showContactInfo(item.user)}>Contact Seller</button>
                                         <button className="sellers-button" onClick={() => this.showOwner(item.user)}>See seller's products</button>
                                     </div>
                                 </div>
