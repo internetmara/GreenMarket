@@ -59,11 +59,13 @@ class ItemList extends React.Component {
                             <button className="modalbutton-close" onClick={() => this.hideItem(`item-show-${item._id}`)}>X</button>
                                 <div className="item-show-modal">
                                     <img className="item-show-modal-img" src={item.picture}></img>
-                                    <p>Name: {item.name}</p>
-                                    <p>Category: {item.category}</p>
-                                    <p>Rate: {item.rate}</p>
-                                    <p>Description: {item.description}</p>
-                                    <p>Address: {item.address}</p>
+                                    <div className="item-show-modal-product-info">
+                                        <p>Name: {item.name}</p>
+                                        <p>Category: {item.category}</p>
+                                        <p>Rate: {item.rate}</p>
+                                        <p>Description: {item.description}</p>
+                                        <p>Address: {item.address}</p>
+                                    </div>
                                     <div className="item-show-modal-button-box">
                                         <button className="contact-button" onClick={() => this.showContactInfo(item.user)}>Contact Seller</button>
                                         <button className="sellers-button" onClick={() => this.showOwnerFunc(item.user)}>See seller's products</button>
