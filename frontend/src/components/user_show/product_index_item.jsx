@@ -20,6 +20,7 @@ class ProductIndexItem extends React.Component {
             productUrl: null,
             selectForm: 0
         }
+        
         this.handleFile = this.handleFile.bind(this);
         this.handleItemSubmit = this.handleItemSubmit.bind(this);
     }

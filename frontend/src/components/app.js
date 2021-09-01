@@ -18,7 +18,6 @@ const App = () => (
     <div>
         <Navbar/>
         <Switch>
-            <Route exact path="/" component={Splash} />
             <Route exact path="/about" component={About} />
             <AuthRoute exact path="/signup" component={SignupContainer} />
             <AuthRoute exact path="/login" component={LoginContainer} />
@@ -28,6 +27,7 @@ const App = () => (
             <ProtectedRoute exact path="/product/:itemId" component={productShow} />
             <ProtectedRoute exact path="/products/new" component={UploadProduct} />
             <ProtectedRoute exact path="/services/new" component={UploadService} />
+            <Route exact path="/" component={Splash} />
         </Switch>
     </div>
 )
