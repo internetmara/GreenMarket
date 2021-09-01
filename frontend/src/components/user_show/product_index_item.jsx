@@ -17,8 +17,11 @@ class ProductIndexItem extends React.Component {
             showUpdateForm: 'n',
             badAddress: 'n',
             productFile: null,
-            productUrl: null
+            productUrl: null,
+            selectForm: 0
         }
+        this.handleFile = this.handleFile.bind(this);
+        this.handleItemSubmit = this.handleItemSubmit.bind(this);
     }
 
     updateField(field) {
@@ -44,10 +47,8 @@ class ProductIndexItem extends React.Component {
     handleFile(e) {
         const file = e.target.files[0];
         const fileReader = new FileReader();
-        // debugger
         fileReader.onloadend = () => {
-            console.log(fileReader)
-            this.setState({ productUrl: fileReader.result});
+            this.setState({ productFile: file, productUrl: fileReader.result, selectForm: 1 });
         }
 
         if (file) {
