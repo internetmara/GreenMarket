@@ -194,3 +194,21 @@
 .item-show-modal-product-info {
   font-size: 20px;
 }
+
+.seller-contact > * {
+  font-family: 'ovo', serif;
+  font-size: 30px;
+  padding: 20px;
+  margin: 20px;
+  color: #23342c;
+  text-decoration: none;
+}
+
+
+.seller-contact {
+  margin-top: 15px;
+  border: 3px double #395446;
+  border-radius: 20px;
+  padding: 8px;
+  background-color: rgb(210, 208, 208);
+}
