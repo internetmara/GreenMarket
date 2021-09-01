@@ -29,7 +29,7 @@ class About extends React.Component {
                   <a href="https://www.linkedin.com/in/erik-ingebretson/"><img className="social-pic" src="/images/socials/linkedin.png"/></a>
                   <a href=""><img className="social-pic" src="/images/socials/userpic.png"/></a>
                 </div>
-                <p className="bio">Erik is from Flagstaff, AZ and likes hiking, camping and PB&J.</p>
+                <p className="bio">Erik is a software engineer living in Flagstaff, Az who enjoys rock climbing and PB&J sandwiches.</p>
               </div>
 
                <div className="person">
