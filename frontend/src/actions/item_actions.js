@@ -74,7 +74,6 @@ export const getService = (itemId) => (dispatch) => {
 }
 
 export const addProduct = (product) => (dispatch) => {
-    
     APIUtil.addProduct(product)
         .then(res => dispatch(receiveProduct(res))).catch(
             err => console.log(err)
@@ -82,7 +81,6 @@ export const addProduct = (product) => (dispatch) => {
 }
 
 export const addService = (service) => (dispatch) => {
-    
     APIUtil.addService(service)
         .then(res => dispatch(receiveService(res))).catch(
             err => console.log(err)
