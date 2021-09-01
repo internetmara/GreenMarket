@@ -22,9 +22,12 @@
 }
 
 .item-show-modal-img {
-    width: 5vw;
+    width: 250px;
     height: auto;
-    padding-bottom: 20px;
+    border: 5px solid #395446;
+    border-radius: 30px;
+    height: auto;
+    margin-bottom: 10px;
 }
 
 .show-owners-items {

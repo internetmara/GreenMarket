@@ -107,6 +107,8 @@
   transition: .2s ease;
   position: absolute;
   transform: translate(-50%, -50%);
+  border: 1px solid #395446;
+  border-radius: 30px;
 }
 
 .map-img:hover {
