@@ -53,9 +53,11 @@ class ItemList extends React.Component {
                                     <p>Rate: {item.rate}</p>
                                     <p>Description: {item.description}</p>
                                     <p>Address: {item.address}</p>
-                                    <button className="sellers-button" onClick={() => this.showOwner(item.user)}>See seller's products</button>
-                                    <br />
-                                    <button className="modalbutton" onClick={() => this.hideItem(`item-show-${item._id}`)}>Close</button>
+                                    <div className="item-show-modal-button-box">
+                                        <button className="contact-button">Contact Seller about this item</button>
+                                        <button className="sellers-button" onClick={() => this.showOwner(item.user)}>See seller's products</button>
+                                        <button className="modalbutton" onClick={() => this.hideItem(`item-show-${item._id}`)}>Close</button>
+                                    </div>
                                 </div>
                             }   
                     </div>
