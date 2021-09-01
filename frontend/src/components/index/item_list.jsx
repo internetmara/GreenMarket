@@ -13,16 +13,21 @@ class ItemList extends React.Component {
         let el = document.getElementsByClassName(id)
         Object.values(el)[0].style.display = 'flex'
     }
-
+    
     hideItem(id) {
         let el = document.getElementsByClassName(id)
         Object.values(el)[0].style.display = 'none'
         this.setState({ showOwner: 'n' })
     }
-
+    
     showOwner(ownerId) {
         this.props.getItemOwner(ownerId)
         this.setState({ showOwner: ownerId })
+    }
+    
+    showContactInfo(id) {
+        this.props.getItemOwner(id)
+        this.setState({ })
     }
 
     hideOwner() {
@@ -54,9 +59,9 @@ class ItemList extends React.Component {
                                     <p>Description: {item.description}</p>
                                     <p>Address: {item.address}</p>
                                     <div className="item-show-modal-button-box">
-                                        <button className="contact-button">Contact Seller about this item</button>
-                                        <button className="sellers-button" onClick={() => this.showOwner(item.user)}>See seller's products</button>
                                         <button className="modalbutton" onClick={() => this.hideItem(`item-show-${item._id}`)}>Close</button>
+                                        <button className="contact-button" onClick={() => this.showContactInfo(item.user)}>Contact Seller about this item</button>
+                                        <button className="sellers-button" onClick={() => this.showOwner(item.user)}>See seller's products</button>
                                     </div>
                                 </div>
                             }   
