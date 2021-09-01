@@ -88,7 +88,6 @@ export const addService = (service) => (dispatch) => {
 }
 
 export const updateProduct = (product) => (dispatch) => {
-    console.log(product)
     APIUtil.changeProduct(product)
         .then(res => dispatch(patchProduct(res))).catch(
             err => console.log(err)

@@ -15,7 +15,9 @@ class ProductIndexItem extends React.Component {
             picture: this.props.picture,
             address: this.props.address,
             showUpdateForm: 'n',
-            badAddress: 'n'
+            badAddress: 'n',
+            productFile: null,
+            productUrl: null
         }
     }
 
@@ -39,6 +41,22 @@ class ProductIndexItem extends React.Component {
         })
     }
 
+    handleFile(e) {
+        const file = e.target.files[0];
+        const fileReader = new FileReader();
+        // debugger
+        fileReader.onloadend = () => {
+            console.log(fileReader)
+            this.setState({ productUrl: fileReader.result});
+        }
+
+        if (file) {
+            fileReader.readAsDataURL(file);
+        } else {
+            this.setState({ imageUrl: "", imageFile: null });
+        }
+    }
+
     async handleItemSubmit(e) {
         this.setState({ badAddress: 'n', showUpdateForm: 'n' })
         e.preventDefault()
@@ -48,16 +66,16 @@ class ProductIndexItem extends React.Component {
             })
         }
         if (this.state.badAddress === 'y') return null;
-        // console.log(this.state)
+        console.log(this.state)
         this.props.updateProduct({
             id: this.props.id,
-            name: this.props.name,
+            name: this.state.name,
             category: this.state.category,
             rate: this.state.rate,
             description: this.state.description,
             coordsLat: this.state.coordsLat,
             coordsLng: this.state.coordsLng,
-            picture: this.state.picture,
+            picture: this.state.productUrl === null ? this.props.picture : this.state.productUrl ,
             address: this.state.address
         })
     }
@@ -112,10 +130,15 @@ class ProductIndexItem extends React.Component {
                             <input type="text" onChange={this.updateField('address')} value={this.state.address} />
                         </label>
                         <br />
+                        <div className="upload-button-box">
+                            <label id="uploading-here">
+                                <input type="file" onChange={this.handleFile} />
+                            </label>
+                        </div>
                         <button type="submit">Update Listing</button>
                     </form>
                     <button onClick={() => this.setState({ showUpdateForm: 'n' })}>View Listing</button>
-                </div>    
+                </div>
         )
     }
 }

@@ -25,7 +25,6 @@ export const addService = (servData) => {
 }
 
 export const changeProduct = (prodData) => {
-    console.log(prodData)
     return axios.patch(`/api/products/${prodData.id}/update`, prodData)
 }
 
