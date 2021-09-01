@@ -148,35 +148,21 @@
   text-decoration: underline;
 }
 
-.sellers-button {
+.sellers-button, .contact-button, .modalbutton { 
   font-family: 'Ovo', serif;
   color:whitesmoke;
-  font-size: 16px;
+  font-size: 15px;
   padding: 15px;
-  width: 180px;
+  width: 200px;
+  height: 50px;
   border-radius: 30px;
   text-align: center;
   max-width: 100%;
-  background-color: grey;
+  background-color: #395446;
 }
 
-
-.modalbutton {
-  display: flex;
-  flex: 50%;
-  align-items: initial;
-  align-items: flex-start;
-  justify-content: flex-start;
-  margin-left: 0;
-  font-size: 18px;  
-  width: auto;
-  height: auto;
-}
-
-
-button:hover {
-  color: #395446;
-  font-size: 150%;
+.sellers-button:hover, .contact-button:hover, .modalbutton:hover { 
+  font-size: 120%;
 }
 
 
@@ -185,5 +171,5 @@ button:hover {
   align-items: center;
   flex-direction: column;
   height: 200px;
-  margin-top: 50px;
+  margin-top: 40px;
 }

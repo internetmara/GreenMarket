@@ -6,7 +6,8 @@
     max-width: 100%;
     padding: 20px; 
     text-align: center;
-    margin-top: 10%;
+    height: 55vw;
+    /* margin-top: 10%; */
     /* border: 10px double #395446; */
     border-radius: 10px;
     /* height: 90vh; */
@@ -72,4 +73,19 @@
     align-items: center;
     justify-content: center;
     margin: auto;
+}
+
+.profile-show-container > * {
+    font-size: 20px;
+    color: #395446;
+}
+
+.profile-edit-button {
+    border-radius: 30px;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #395446;
+    color: antiquewhite;
+    font-family: "Ovo", serif;
+    width: 200px;
 }
