@@ -99,6 +99,7 @@ class userShow extends React.Component {
         if (products.length > 0) {
             productsMap = products.map( (productId, idx) => {
                 if (this.props.products[productId]) {
+                    
                     return < ProductIndexItem
                         key={idx}
                         id={this.props.products[productId]._id}

@@ -13,7 +13,7 @@ class ProductIndexItem extends React.Component {
                 <p>Rate: {rate}</p>
                 <p>Description: {description}</p>
                 <p>Address: {address}</p>
-                { this.props.user._id === this.props.owner ?
+                {this.props.user._id && this.props.user._id === this.props.owner ?
                     <div>
                         <button onClick={() => this.props.deleteProduct(this.props.id) }>Remove Listing</button>
                     </div>

@@ -39,14 +39,14 @@ export const patchService = (service) => ({
     service
 })
 
-export const removeProduct = (product) => ({
+export const removeProduct = (productId) => ({
     type: DELETE_PRODUCT,
-    product
+    productId
 })
 
-export const removeService = (service) => ({
+export const removeService = (serviceId) => ({
     type: DELETE_SERVICE,
-    service
+    serviceId
 })
 
 export const getProducts = () => (dispatch) => {
@@ -103,14 +103,14 @@ export const updateService = (service) => (dispatch) => {
 
 export const deleteProduct = (product) => (dispatch) => {
     APIUtil.deleteProduct(product)
-        .then(res => dispatch(removeProduct(res))).catch(
+        .then(() => dispatch(removeProduct(product))).catch(
             err => console.log(err)
         )
 }
 
 export const deleteService = (service) => (dispatch) => {
     APIUtil.deleteService(service)
-        .then(res => dispatch(removeService(res))).catch(
+        .then(() => dispatch(removeService(service))).catch(
             err => console.log(err)
         )
 }

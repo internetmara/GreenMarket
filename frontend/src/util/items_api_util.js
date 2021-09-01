@@ -32,10 +32,10 @@ export const changeService = (servData) => {
     return axios.patch('/api/services/edit', servData)
 }
 
-export const deleteProduct = () => {
-    return axios.post('/api/products/delete', )
+export const deleteProduct = (productId) => {
+    return axios.delete(`/api/products/delete/${productId}` )
 }
 
-export const deleteService = () => {
-    return axios.post('/api/services/delete', )
+export const deleteService = (serviceId) => {
+    return axios.delete(`/api/services/delete${serviceId}` )
 }
