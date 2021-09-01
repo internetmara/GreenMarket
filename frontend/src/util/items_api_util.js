@@ -25,17 +25,17 @@ export const addService = (servData) => {
 }
 
 export const changeProduct = (prodData) => {
-    return axios.patch('/api/products/edit', prodData)
+    return axios.patch(`/api/products/${prodData.id}/update`, prodData)
 }
 
 export const changeService = (servData) => {
-    return axios.patch('/api/services/edit', servData)
+    return axios.patch(`/api/services/${servData.id}/update`, servData)
 }
 
-export const deleteProduct = () => {
-    return axios.post('/api/products/delete', )
+export const deleteProduct = (productId) => {
+    return axios.delete(`/api/products/delete/${productId}` )
 }
 
-export const deleteService = () => {
-    return axios.post('/api/services/delete', )
+export const deleteService = (serviceId) => {
+    return axios.delete(`/api/services/delete${serviceId}` )
 }

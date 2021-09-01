@@ -49,7 +49,7 @@ class userShow extends React.Component {
     }
 
     async handleUserSubmit(e) {
-        this.setState({ badAddress: 'n' })
+        this.setState({ badAddress: 'n', userShow: 'show' })
         e.preventDefault()
         if (this.props.address !== this.state.address) {
             await this.getGeo(this.state.address).catch(res => {
@@ -57,7 +57,6 @@ class userShow extends React.Component {
             })
         }
         if (this.state.badAddress === 'y') return null;
-        console.log(this.state)
         this.props.updateUser({
             id: this.props.user._id,
             username: this.state.username,
@@ -66,6 +65,7 @@ class userShow extends React.Component {
             coordsLng: this.state.coordsLng,
             address: this.state.address
         })
+        // this.setState({ userShow: 'show' })
     }
 
     render() {
@@ -75,10 +75,11 @@ class userShow extends React.Component {
         let { services, products } = this.props.user;
         let servicesMap = []
         if (services.length > 0) {
-            servicesMap = services.map(serviceId => {
+            servicesMap = services.map( (serviceId, idx) => {
                 if (this.props.services[serviceId]) {
                     return < ServiceIndexItem
-                        key={services.serviceId}
+                        key={idx}
+                        id={this.props.services[serviceId]._id}
                         picture={this.props.services[serviceId].picture}
                         name={this.props.services[serviceId].name}
                         category={this.props.services[serviceId].category}
@@ -86,22 +87,36 @@ class userShow extends React.Component {
                         rateIncrement={this.props.services[serviceId].rateIncrement}
                         description={this.props.services[serviceId].description}
                         address={this.props.services[serviceId].address}
+                        coordsLat={this.props.services[serviceId].coordsLat}
+                        coordsLng={this.props.services[serviceId].coordsLng}
+                        owner={this.props.services[serviceId].user}
+                        updateService={this.props.updateService}
+                        deleteService={this.props.deleteService}
+                        user={this.props.user}
                     />
                 }
             })
         };
         let productsMap = []
         if (products.length > 0) {
-            productsMap = products.map(productId => {
+            productsMap = products.map( (productId, idx) => {
                 if (this.props.products[productId]) {
+                    
                     return < ProductIndexItem
-                        key={products.productId}
+                        key={idx}
+                        id={this.props.products[productId]._id}
                         picture={this.props.products[productId].picture}
                         name={this.props.products[productId].name}
                         category={this.props.products[productId].category}
                         rate={this.props.products[productId].rate}
                         description={this.props.products[productId].description}
                         address={this.props.products[productId].address}
+                        coordsLat={this.props.products[productId].coordsLat}
+                        coordsLng={this.props.products[productId].coordsLng}
+                        owner={this.props.products[productId].user}
+                        updateProduct={this.props.updateProduct}
+                        deleteProduct={this.props.deleteProduct}
+                        user={this.props.user}
                     />
                 }
             })

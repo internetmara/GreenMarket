@@ -3,6 +3,7 @@ import React from "react";
 class ServiceIndexItem extends React.Component {
 
 
+
     render() {
         const {name, category, rate, rateIncrement, description, address, picture} = this.props; 
         

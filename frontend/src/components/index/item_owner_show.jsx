@@ -5,10 +5,10 @@ import ProductIndexItem from '../user_show/product_index_item';
 class ItemOwnerShow extends React.Component {
 
     readProducts(userProducts) {
-        // console.log(this.props.products)
-        // console.log(userProducts)
-        return userProducts.map( productId => {
+        return userProducts.map( (productId, idx) => {
             return < ProductIndexItem
+                key={idx}
+                id={this.props.products[productId]._id}
                 picture={this.props.products[productId].picture}
                 name={this.props.products[productId].name}
                 category={this.props.products[productId].category}
@@ -16,14 +16,21 @@ class ItemOwnerShow extends React.Component {
                 rateIncrement={this.props.products[productId].rateIncrement}
                 description={this.props.products[productId].description}
                 address={this.props.products[productId].address}
+                coordsLat={this.props.products[productId].coordsLat}
+                coordsLng={this.props.products[productId].coordsLng}
+                owner={this.props.products[productId].user}
+                updateProduct={this.props.updateProduct}
+                deleteProduct={this.props.deleteProduct}
+                user={this.props.currentUser}
             />
         })
     }
 
     readServices(userServices) {
-        
-        return userServices.map( serviceId => (
+        return userServices.map( (serviceId, idx) => (
                 < ServiceIndexItem
+                    key={idx}
+                    id={this.props.services[serviceId]._id}
                     picture={this.props.services[serviceId].picture} 
                     name={this.props.services[serviceId].name}
                     category={this.props.services[serviceId].category}
@@ -31,6 +38,12 @@ class ItemOwnerShow extends React.Component {
                     rateIncrement={this.props.services[serviceId].rateIncrement}
                     description={this.props.services[serviceId].description}
                     address={this.props.services[serviceId].address}
+                    coordsLat={this.props.services[serviceId].coordsLat}
+                    coordsLng={this.props.services[serviceId].coordsLng}
+                    owner={this.props.services[serviceId].user}
+                    updateService={this.props.updateService}
+                    deleteService={this.props.deleteService}
+                    user={this.props.currentUser}
                 />
         ))
     }
