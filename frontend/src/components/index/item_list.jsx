@@ -6,8 +6,10 @@ class ItemList extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            showOwner: 'n'
+            showOwner: 'n',
+            showContactInfo: 'n'
         }
+        this.showOwnerFunc = this.showOwnerFunc.bind(this)
     }
     showItem(id) {
         let el = document.getElementsByClassName(id)
@@ -17,21 +19,21 @@ class ItemList extends React.Component {
     hideItem(id) {
         let el = document.getElementsByClassName(id)
         Object.values(el)[0].style.display = 'none'
-        this.setState({ showOwner: 'n' })
+        this.setState({ showOwner: 'n', showContactInfo: 'n' })
     }
     
-    showOwner(ownerId) {
+    showOwnerFunc(ownerId) {
         this.props.getItemOwner(ownerId)
         this.setState({ showOwner: ownerId })
     }
     
-    showContactInfo(id) {
-        this.props.getItemOwner(id)
-        this.setState({ })
+    showContactInfo(ownerId) {
+        this.props.getItemOwner(ownerId)
+        this.setState({ showContactInfo: 'y' })
     }
 
     hideOwner() {
-        this.setState({ showOwner: 'n' })
+        this.setState({ showOwner: 'n', showContactInfo: 'n' })
     }
 
     listAllItems() {
@@ -45,26 +47,28 @@ class ItemList extends React.Component {
                 <p>{item.rate}</p>
                 <div className={`item-show-${item._id}`} style={{ display: "none" }}>
                     <div className="item-show-root">
-                            { this.state.showOwner === item.user ? 
-                                <div className="item-show-modal" >
-                                    <center><ItemOwnerShow ownerId={item.user} hideOwner={this.hideOwner}/></center>
-                                    <button className="modalbutton" onClick={() => this.hideOwner()}>Close</button>
-                                </div>
-                            :
-                                <div className="item-show-modal">
+                        {console.log(this.state.showOwner === item.user)}
+                        { this.state.showOwner === item.user ? 
+                            <div className="item-show-modal" >
+                                <center><ItemOwnerShow ownerId={item.user} /></center>
+                                <button className="modalbutton" onClick={() => this.hideOwner()}>Close</button>
+                            </div>
+                        :
+                            <div className="item-show-modal">
                                 <img className="item-show-modal-img" src={item.picture}></img>
-                                    <p>Name: {item.name}</p>
-                                    <p>Category: {item.category}</p>
-                                    <p>Rate: {item.rate}</p>
-                                    <p>Description: {item.description}</p>
-                                    <p>Address: {item.address}</p>
-                                    <div className="item-show-modal-button-box">
-                                        <button className="modalbutton" onClick={() => this.hideItem(`item-show-${item._id}`)}>Close</button>
-                                        <button className="contact-button" onClick={() => this.showContactInfo(item.user)}>Contact Seller about this item</button>
-                                        <button className="sellers-button" onClick={() => this.showOwner(item.user)}>See seller's products</button>
-                                    </div>
+                                <p>Name: {item.name}</p>
+                                <p>Category: {item.category}</p>
+                                <p>Rate: {item.rate}</p>
+                                <p>Description: {item.description}</p>
+                                <p>Address: {item.address}</p>
+                                <div className="item-show-modal-button-box">
+                                    <button className="modalbutton" onClick={() => this.hideItem(`item-show-${item._id}`)}>Close</button>
+                                    <button className="contact-button" onClick={() => this.showContactInfo(item.user)}>Contact Seller about this item</button>
+                                    <button className="sellers-button" onClick={() => this.showOwnerFunc(item.user)}>See seller's products</button>
                                 </div>
-                            }   
+                                {this.state.showContactInfo === 'y' ? <p>Seller Contact: <a href={`mailto:${this.props.itemOwner.email}`}>{this.props.itemOwner.email}</a></p> : ''}
+                            </div> 
+                        }
                     </div>
                 </div>
             </div>

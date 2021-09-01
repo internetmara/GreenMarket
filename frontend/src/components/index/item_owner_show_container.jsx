@@ -4,7 +4,7 @@ import { updateProduct, updateService, deleteProduct, deleteService } from '../.
 
 const mSTP = (state, ownProps) => {
     return {
-        user: state.entities.users[ownProps.ownerId],
+        // user: state.entities.users,
         users: state.entities.users,
         products: state.entities.products,
         services: state.entities.services,

@@ -191,6 +191,7 @@ class IndexComponent extends React.Component {
                         products={ this.state.allGeoItems === 'yes' ? prods : localProds } 
                         services={ this.state.allGeoItems === 'yes' ? servs : localServs }
                         getItemOwner={this.props.getItemOwner}
+                        itemOwner={this.props.itemOwner}
                     />
     
                     <SimpleMap 
