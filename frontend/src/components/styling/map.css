@@ -161,10 +161,15 @@
   background-color: #395446;
 }
 
+.sellers-button:hover, .contact-button:hover, .modalbutton:hover { 
+  font-size: 120%;
+}
+
+
 .item-show-modal {
   display: flex;
   align-items: center;
   flex-direction: column;
   height: 200px;
-  margin-top: 50px;
+  margin-top: 40px;
 }
