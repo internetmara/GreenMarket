@@ -53,10 +53,37 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
-    width: 90%;
+    width: 100%;
     margin-top: 20px;
 }
 
 .item-show-modal-info > * {
     font-size: 20px;
+}
+
+.item-owner-show-modalbutton{
+    display: flex;
+    height: 25px;
+    justify-content: left;
+    align-items: center;
+    padding: 7px;
+    margin: 7px;
+    border-radius: 10px;
+    background-color: #395446;
+    color: antiquewhite;
+    text-decoration: none;
+}
+
+.modalbutton-close {
+    display: flex;
+    position: fixed;
+    height: 25px;
+    justify-content: left;
+    align-items: center;
+    padding: 7px;
+    margin: 7px;
+    border-radius: 10px;
+    background-color: #395446;
+    color: antiquewhite;
+    text-decoration: none;
 }
