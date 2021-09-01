@@ -87,6 +87,8 @@ class userShow extends React.Component {
                         rateIncrement={this.props.services[serviceId].rateIncrement}
                         description={this.props.services[serviceId].description}
                         address={this.props.services[serviceId].address}
+                        coordsLat={this.props.services[serviceId].coordsLat}
+                        coordsLng={this.props.services[serviceId].coordsLng}
                         owner={this.props.services[serviceId].user}
                         updateService={this.props.updateService}
                         deleteService={this.props.deleteService}
@@ -109,6 +111,8 @@ class userShow extends React.Component {
                         rate={this.props.products[productId].rate}
                         description={this.props.products[productId].description}
                         address={this.props.products[productId].address}
+                        coordsLat={this.props.products[productId].coordsLat}
+                        coordsLng={this.props.products[productId].coordsLng}
                         owner={this.props.products[productId].user}
                         updateProduct={this.props.updateProduct}
                         deleteProduct={this.props.deleteProduct}

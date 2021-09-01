@@ -4,7 +4,7 @@ export const ADD_PRODUCT = "ADD_PRODUCT";
 export const ADD_SERVICE = "ADD_SERVICE";
 export const RECEIVE_ALL_PRODUCTS = "RECEIVE_ALL_PRODUCTS";
 export const RECEIVE_ALL_SERVICES = "RECEIVE_ALL_SERVICES";
-export const UPDATE_PRODUCT = "UPDATE_USER_PRODUCT"
+export const UPDATE_PRODUCT = "UPDATE_PRODUCT"
 export const UPDATE_SERVICE = "UPDATE_SERVICE"
 export const DELETE_PRODUCT = "DELETE_PRODUCT"
 export const DELETE_SERVICE = "DELETE_SERVICE"
@@ -88,6 +88,7 @@ export const addService = (service) => (dispatch) => {
 }
 
 export const updateProduct = (product) => (dispatch) => {
+    console.log(product)
     APIUtil.changeProduct(product)
         .then(res => dispatch(patchProduct(res))).catch(
             err => console.log(err)
