@@ -71,7 +71,10 @@ class ItemList extends React.Component {
                                     </div>
                                     {this.state.showContactInfo === 'y' ? <div className="seller-contact"><a href={`mailto:${this.props.itemOwner.email}`}>{this.props.itemOwner.email}</a></div> : ''}
                                 </div>
-                            </div>
+                                {this.state.showContactInfo === 'y' ? <p>Seller Contact: <a 
+                                    href={`mailto:${this.props.itemOwner.email}?subject=Inquiring%20about%20your%20Green%20Market%20listing%20-%20re:%20${item.name}&`} rel="EMAIL">
+                                    {this.props.itemOwner.email}</a></p> : ''}
+                            </div> 
                         }
                     </div>
                 </div>
