@@ -152,21 +152,23 @@ class userShow extends React.Component {
                             <div>
                                 {this.state.badAddress === 'y' ? <p>Invalid Address</p> : ''}
                                 <form onSubmit={(e) => this.handleUserSubmit(e)}>
-                                    <label >Username:
-                                        <input type="text" onChange={this.updateField('username')} value={this.state.username} />
-                                    </label>
+                                    <div className="profile-show-container2">
+                                        <label >Username:&nbsp;
+                                            <input type="text" onChange={this.updateField('username')} value={this.state.username} />
+                                        </label>
+                                        <br />
+                                        <label >Email:&nbsp;
+                                            <input type="text" onChange={this.updateField('email')} value= {this.state.email} />
+                                        </label>
+                                        <br />
+                                        <label >Address:&nbsp;
+                                            <input type="text" onChange={this.updateField('address')} value= {this.state.address} />
+                                        </label>
+                                        <br />
+                                    </div>
+                                    <button className="update-profile-button" type="submit" >Update Profile</button>
                                     <br />
-                                    <label >Email:
-                                        <input type="text" onChange={this.updateField('email')} value={this.state.email} />
-                                    </label>
-                                    <br />
-                                    <label >Address:
-                                        <input type="text" onChange={this.updateField('address')} value={this.state.address} />
-                                    </label>
-                                    <br />
-                                    <button type="submit" >Update Profile</button>
-                                    <br />
-                                    <button onClick={() => this.setState({ userShow: 'show' })} >Cancel</button>
+                                    <button className="update-profile-button" onClick={() => this.setState({ userShow: 'show' })} >Cancel</button>
                                 </form>
                             </div>
                         }
