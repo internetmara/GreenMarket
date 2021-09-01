@@ -37,5 +37,5 @@ export const deleteProduct = (productId) => {
 }
 
 export const deleteService = (serviceId) => {
-    return axios.delete(`/api/services/delete${serviceId}` )
+    return axios.delete(`/api/services/delete/${serviceId}` )
 }
