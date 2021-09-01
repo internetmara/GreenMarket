@@ -50,14 +50,14 @@ class ItemOwnerShow extends React.Component {
 
 
     render() {
-        if (this.props.user === undefined) return null;
+        if (this.props.users === undefined) return null;
 
-        const userProducts = this.props.users[this.props.ownerId].products
-        const userServices = this.props.users[this.props.ownerId].services
-
+        const userProducts = this.props.users.products
+        const userServices = this.props.users.services
+        
         return (
             <div >
-                <p>{this.props.user.username}</p>
+                <p>{this.props.users.username}</p>
                 <div className="owner-lists" >
                     <div className="user-show-product-list" >
                         {this.readProducts(userProducts)}
