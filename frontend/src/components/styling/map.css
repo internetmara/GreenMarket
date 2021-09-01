@@ -162,16 +162,23 @@
 
 
 .modalbutton {
-  font-family: 'Ovo', serif;
-  color:whitesmoke;
-  font-size: 18px;
-  padding: 15px;
-  width: 180px;
-  border-radius: 30px;
-  text-align: center;
-  max-width: 100%;
-  background-color: #395446;
+  display: flex;
+  flex: 50%;
+  align-items: initial;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-left: 0;
+  font-size: 18px;  
+  width: auto;
+  height: auto;
 }
+
+
+button:hover {
+  color: #395446;
+  font-size: 150%;
+}
+
 
 .item-show-modal {
   display: flex;
