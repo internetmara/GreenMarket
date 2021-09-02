@@ -96,8 +96,8 @@ class ProductIndexItem extends React.Component {
                     <p>Address: {address}</p>
                     { this.props.user._id && this.props.user._id === this.props.owner ?
                         <div>
-                        <button onClick={() => this.props.deleteProduct(this.props.id) }>Remove Listing</button>
-                        <button onClick={() => this.setState({ showUpdateForm: 'y' })}>Update Listing</button>
+                        <button className="remove-listing" onClick={() => this.props.deleteProduct(this.props.id) }>Remove Listing</button>
+                        <button className="update-listing" onClick={() => this.setState({ showUpdateForm: 'y' })}>Update Listing</button>
                         </div>
                         : 
                         ''

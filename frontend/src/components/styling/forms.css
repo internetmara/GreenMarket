@@ -207,3 +207,58 @@ body {
 #photo-input {
     padding: auto;
 }
+
+.remove-listing, .update-listing {
+    padding: 10px;
+    border-radius: 20px;
+    color: whitesmoke;
+    background-color: #395446;
+    font-family: 'Ovo', serif;
+    width: 80%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    align-items: center;
+}
+
+.update-form-container > * {
+    padding-top: 10px;
+    font-family: 'Ovo', serif;
+    font-size: 15px
+}
+
+.update-form-container input {
+    padding: 10px; 
+    width: 90%;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.update-form-container label {
+    font-family: 'Ovo', serif;
+    padding: 10px;
+    margin-top: 20px;
+}
+.update-form-container select {
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 10px;
+}
+
+.update-form-container {
+    border: 3px solid #395446;
+    border-radius: 10px;
+    margin: 15px;
+    font-family: 'Ovo', serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.update-button-box {
+    display: flex;
+    flex-direction: row;
+}
+

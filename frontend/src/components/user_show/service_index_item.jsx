@@ -90,7 +90,9 @@ class ServiceIndexItem extends React.Component {
         return (
             this.state.showUpdateForm === 'n' ?
                 <div className="service-index-item">
-                    <img className="upload-form-preview" src={picture} alt="Service preview"></img>
+                    <div className="form-pic">
+                        <img className="upload-form-preview" src={picture} alt="Service preview"/>
+                    </div>
                     <p>Name: {name}</p>
                     <p>Category: {category}</p>
                     <p>Rate: {rate}</p>
@@ -99,61 +101,57 @@ class ServiceIndexItem extends React.Component {
                     <p>Address: {address}</p>
                     {this.props.user._id && this.props.user._id === this.props.owner ?
                         <div>
-                            <button onClick={() => this.props.deleteService(this.props.id)}>Remove Listing</button>
-                            <button onClick={() => this.setState({ showUpdateForm: 'y' })}>Update Listing</button>
+                            <button className="remove-listing" onClick={() => this.props.deleteService(this.props.id)}>Remove Listing</button>
+                            <button className="update-listing" onClick={() => this.setState({ showUpdateForm: 'y' })}>Update Listing</button>
                         </div>
                         :
                         ''
                     }
                 </div> 
             :
-                <div className="service-index-item">
-                    <form onSubmit={(e) => this.handleItemSubmit(e)}>
-                        <label >Name:
-                            <input type="text" onChange={this.updateField('name')} value={this.state.name} />
-                        </label>
-                        <br />
-                        <label className="product-or-service-inputs" onChange={this.updateField("category")}>Category:&nbsp;
-                            <select>
-                                <option></option>
-                                <option>Food</option>
-                                <option>Clothing</option>
-                                <option>Housing</option>
-                                <option>Misc</option>
-                            </select>
-                        </label>
-                        <br />
-                        <label >Rate:
-                            <input type="text" onChange={this.updateField('rate')} value={this.state.rate} />
-                        </label>
-                        <br />
-                        <label className="product-or-service-inputs" onChange={this.updateField("rateIncrement")}>Per:&nbsp;
-                            <select>
-                                <option></option>
-                                <option>Minute</option>
-                                <option>Hour</option>
-                                <option>Day</option>
-                                <option>Month</option>
-                                <option>Unit</option>
-                            </select>
-                        </label>
-                        <br />
-                        <label >Description:
-                            <input type="text" onChange={this.updateField('description')} value={this.state.description} />
-                        </label>
-                        <br />
-                        <label >Address:
-                            <input type="text" onChange={this.updateField('address')} value={this.state.address} />
-                        </label>
-                        <br />
-                        <div className="upload-button-box">
-                            <label id="uploading-here">
-                                <input type="file" onChange={this.handleFile} />
-                            </label>
+                <div className="update-form-container">
+                        <form onSubmit={(e) => this.handleItemSubmit(e)}>
+                                <label>Name:&nbsp;
+                                    <input type="text" onChange={this.updateField('name')} value={this.state.name} />
+                                </label>
+                                <label onChange={this.updateField("category")}>Category:&nbsp;
+                                    <select>
+                                        <option></option>
+                                        <option>Food</option>
+                                        <option>Clothing</option>
+                                        <option>Housing</option>
+                                        <option>Misc</option>
+                                    </select>
+                                </label>
+                                <label>Rate:&nbsp;
+                                    <input type="text" onChange={this.updateField('rate')} value={this.state.rate} />
+                                </label>
+                                <label onChange={this.updateField("rateIncrement")}>Per:&nbsp;
+                                    <select>
+                                        <option></option>
+                                        <option>Minute</option>
+                                        <option>Hour</option>
+                                        <option>Day</option>
+                                        <option>Month</option>
+                                        <option>Unit</option>
+                                    </select>
+                                </label>
+                                <label >Description:&nbsp;
+                                    <input type="text" onChange={this.updateField('description')} value={this.state.description} />
+                                </label>
+                                <label >Address:&nbsp;
+                                    <input type="text" onChange={this.updateField('address')} value={this.state.address} />
+                                </label>
+                                <div className="upload-button-box">
+                                    <label id="uploading-here">
+                                        <input type="file" onChange={this.handleFile} />
+                                    </label>
+                                </div>
+                        <div className="update-button-box">
+                            <button className="update-listing" type="submit">Update Listing</button>
+                            <button className="update-listing" onClick={() => this.setState({ showUpdateForm: 'n' })}>View Listing</button>
                         </div>
-                        <button type="submit">Update Listing</button>
                     </form>
-                    <button onClick={() => this.setState({ showUpdateForm: 'n' })}>View Listing</button>
                 </div>
         )
 
