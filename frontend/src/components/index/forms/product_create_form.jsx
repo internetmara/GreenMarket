@@ -23,7 +23,8 @@ class UploadProduct extends React.Component {
             productUrl: null,
             tError: false,
             selectForm: 0,
-            formSuccess: null
+            formSuccess: null,
+            badAddress: 'n'
         }
 
         this.handleFile = this.handleFile.bind(this);
@@ -78,7 +79,14 @@ class UploadProduct extends React.Component {
         if (!this.state.address) {
             return (this.setState({["submissionErr"]: "Please fill out the entire form!"}))
         }
-        await this.getGeo(this.state.address)
+
+        this.setState({ badAddress: 'n' })
+        await this.getGeo(this.state.address).catch(res => {
+            this.setState({ badAddress: 'y' })
+        })
+        if (this.state.badAddress === 'y') {
+            return (this.setState({ ["submissionErr"]: "Invalid Address" }))
+        }
         if (this.state.tError === false) {
             const formData = {};
             formData.picture = this.state.productUrl
