@@ -144,6 +144,7 @@ class UploadService extends React.Component {
                         </div>
 
                         <div className="product-or-service-links">
+                            <h6 className="photo-size-message">Image must be no bigger than 60kb</h6>
                             <h3 className="change-form">...or upload a&nbsp;<u className="navlink">{this.props.navLink}</u>&nbsp;instead!</h3>
                         </div>
                     </div>
