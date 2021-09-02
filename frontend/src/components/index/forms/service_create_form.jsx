@@ -111,7 +111,7 @@ class UploadService extends React.Component {
             } else if (!formData.service) {
                 this.setState({["submissionErr"]: "Service is invalid!"})
             } else {
-                this.props.addService(formData)
+                await this.props.addService(formData)
                 this.props.history.push("/user")
             }
         }

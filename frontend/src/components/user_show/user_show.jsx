@@ -17,15 +17,17 @@ class userShow extends React.Component {
             coordsLat: this.props.user.coordsLat,
             coordsLng: this.props.user.coordsLng,
             userShow: 'show',
-            badAddress: 'n'
+            badAddress: 'n',
+            products: this.props.products,
+            services: this.props.services
         }
         this.handleUserSubmit = this.handleUserSubmit.bind(this)
     }
 
     componentWillMount() {
-        this.props.getServices();
-        this.props.getProducts();
-        this.props.getUser(this.props.user.id);
+        this.props.getServices()
+        this.props.getProducts()
+        if (this.props.user.id !== undefined) this.props.getUser(this.props.user.id)
     }
 
     async getGeo(address) {
@@ -65,14 +67,13 @@ class userShow extends React.Component {
             coordsLng: this.state.coordsLng,
             address: this.state.address
         })
-        // this.setState({ userShow: 'show' })
     }
 
     render() {
         if (!this.props.user || Object.values(this.props.products).length === 0 || Object.values(this.props.services).length === 0) {
             return null
         };
-        console.log(this.props.products)
+
         let { services, products } = this.props.user;
         let servicesMap = []
         if (services.length > 0) {
