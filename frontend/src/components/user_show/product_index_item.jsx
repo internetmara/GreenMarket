@@ -58,7 +58,7 @@ class ProductIndexItem extends React.Component {
             this.setState({ imageUrl: "", imageFile: null });
         }
     }
-
+    
     async handleItemSubmit(e) {
         this.setState({ badAddress: 'n', showUpdateForm: 'n' })
         e.preventDefault()
@@ -136,6 +136,8 @@ class ProductIndexItem extends React.Component {
                             <label id="uploading-here">
                                 <input type="file" onChange={this.handleFile} />
                             </label>
+                            <br/>
+                            <h6 className="photo-size-message">Image must be no bigger than 60kb</h6>
                         </div>
                         <div className="update-button-box">
                             <button className="update-listing" type="submit">Update Listing</button>

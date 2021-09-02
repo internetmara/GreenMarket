@@ -45,12 +45,18 @@ body {
 
 .product-or-service-links {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;  
     font-family: 'Ovo', serif;
     /* margin: 10px; */
     font-size: 30px;
+}
+
+.photo-size-message {
+    font-family: 'Ovo', serif;
+    font-size: 15px;
+    margin-bottom: 10px;
 }
 
 .product-or-service-links > a {
@@ -133,6 +139,7 @@ body {
 .upload-button-box {
     align-items: center;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     margin-bottom: 40px;
 }
