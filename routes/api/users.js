@@ -128,6 +128,7 @@ router.get('/:id', (req, res) => {
 router.patch('/:id/update',
     passport.authenticate('jwt', { session: false }),
     (req, res) => {
+        
         const { errors, isValid } = validateUserInput(req.body);
 
         if (!isValid) {

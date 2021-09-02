@@ -1,8 +1,9 @@
 import { connect } from "react-redux";
 import { getProducts, getServices } from "../../actions/item_actions";
+import { updateProduct, updateService, deleteProduct, deleteService } from '../../actions/item_actions'
 import userShow from "./user_show";
 import '../styling/reset.css'
-import { getUser } from '../../actions/session_actions';
+import { getUser, updateUser } from '../../actions/session_actions';
 
 const mSTP = (state) => ({
     user: state.session.user,
@@ -13,7 +14,12 @@ const mSTP = (state) => ({
 const mDTP = (dispatch) => ({
     getProducts: () => dispatch(getProducts()),
     getServices: () => dispatch(getServices()),
-    getUser: (id) => dispatch(getUser(id))
+    getUser: (id) => dispatch(getUser(id)),
+    updateUser: (user) => dispatch(updateUser(user)),
+    updateProduct: (product) => dispatch(updateProduct(product)),
+    updateService: (service) => dispatch(updateService(service)),
+    deleteProduct: (productId) => dispatch(deleteProduct(productId)),
+    deleteService: (serviceId) => dispatch(deleteService(serviceId))
 })
 
 export default connect(mSTP, mDTP)(userShow);

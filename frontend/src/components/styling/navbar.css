@@ -1,10 +1,3 @@
-/* body {
-    margin: 0;
-    background: white;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 200;
-} */
-
 .nav-box {
   position:fixed;
   top:0;
@@ -12,33 +5,32 @@
 }
 
 .nav-container {
-  /* background-color: rgb(255, 255, 255); */
   display: flex; 
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   padding: 2px;
+  height: 90px;
 }
 
 header {
-  /* background-color:white; */
   justify-content: center;
   align-items: center;
   background-color: #395446;
   opacity: 0.8;
 }
-/* 
-header::after {
- content: '';
- display: table;
- clear: both; 
-} */
+
+.login-signup {
+  display: flex;
+  flex-direction: row;
+} 
+
 .logo {
   display: inline-block;
   margin: 0 5px;
   flex-direction: row;
   margin:0 -15px;
   padding:0 20px;
-  /* font-size: 16px; */
 }
 
 nav {
@@ -56,6 +48,8 @@ nav ul {
   margin: 0 15px;
   flex-direction: row;
   font-size: 17px;
+  border: 1px solid #395446;
+  width: 10vw;
 }
 
 .links {
@@ -70,5 +64,38 @@ nav ul {
   margin-bottom: 5px;
   margin-top: 10px;
   margin-left: 15px;
-  /* padding: 10px; */
+}
+
+.home-links div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.go-to-the-map {
+  opacity: 80%;
+  font-family: 'Ovo', serif;
+  color:#FFF;
+  font-size: 20px;
+  width: auto;
+  text-align: center;
+}
+
+.go-to-the-map:hover {
+  background-color: #395446;
+  color: rgb(236, 197, 55);
+  font-size: 150%;
+}
+
+.home-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 800px;
+  height: 100%;
+  max-width: 100%;
+  align-items: center;
+  color: #FFF;
 }

@@ -10,21 +10,24 @@
     position: fixed;
     z-index: 2;
     width: 50vw;
-    height: 60vh;
+    height: 67vh;
     left: 37vw;
-    bottom: 10vh;
-    border: 2px solid #395446;
+    bottom: 13vh;
+    border: 4px solid #395446;
     padding: 5px;
-    border-radius: 10px;
-    background-color: rgba(245, 245, 245, .95);
+    border-radius: 20px;
+    background-color: rgba(244, 239, 230, 0.9);
     box-shadow: -10px 0px 10000vw 10000vw  rgba(0, 0, 0, 0.5);
     overflow: scroll;
 }
 
 .item-show-modal-img {
-    width: 5vw;
+    width: 250px;
     height: auto;
-    padding-bottom: 20px;
+    border: 5px solid #395446;
+    border-radius: 30px;
+    height: auto;
+    margin-bottom: 10px;
 }
 
 .show-owners-items {
@@ -43,4 +46,44 @@
 .user-show-service-list, .user-show-product-list  {
     height: 100%;
     width: auto;
+}
+
+.item-show-modal-button-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.item-show-modal-info > * {
+    font-size: 20px;
+}
+
+.item-owner-show-modalbutton{
+    display: flex;
+    height: 25px;
+    justify-content: left;
+    align-items: center;
+    padding: 7px;
+    margin: 7px;
+    border-radius: 10px;
+    background-color: #395446;
+    color: antiquewhite;
+    text-decoration: none;
+}
+
+.modalbutton-close {
+    display: flex;
+    position: fixed;
+    height: 25px;
+    justify-content: left;
+    align-items: center;
+    padding: 7px;
+    margin: 7px;
+    border-radius: 10px;
+    background-color: #395446;
+    color: antiquewhite;
+    text-decoration: none;
 }

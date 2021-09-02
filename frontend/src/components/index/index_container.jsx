@@ -8,7 +8,8 @@ import '../styling/reset.css'
 const mSTP = (state) => ({
     products: state.entities.products,
     services: state.entities.services,
-    user: state.session.user
+    user: state.session.user,
+    itemOwner: state.entities.users
 })
 
 const mDTP = (dispatch) => ({

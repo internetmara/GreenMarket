@@ -18,12 +18,6 @@ class SignupForm extends React.Component {
                 coordsLat: 0,
                 coordsLng: 0,
                 badAddress: 'n'
-                // avatar: '',
-                // products: [],
-                // services: [],
-                // reviews: [],
-                // buyerPoints: 0,
-                // sellerPoints: 0
         }
         this.handleSubmit = this.handleSubmit.bind(this)
     }
@@ -65,7 +59,6 @@ class SignupForm extends React.Component {
                     address: ''
                 })
                 this.props.clearSessionErrors()
-                // this.props.history.push("/login")
             }
         })
     }
@@ -87,7 +80,7 @@ class SignupForm extends React.Component {
                 <div className="signup-form">
                     <h1 className="form-text">{this.props.formType}</h1> 
                     {this.props.errors ? this.readErrors() : ''}
-                    {this.state.badAddress === 'y' ? <p>Invalid Address Input</p> : '' }
+                    {this.state.badAddress === 'y' ? <p>Invalid Address</p> : '' }
                     <form onSubmit={(e) => this.handleSubmit(e)}>
                         <input type="email" className="login-input" onChange={this.updateField('email')} value={this.state.email} placeholder="Email" />
                         <br />
@@ -97,8 +90,6 @@ class SignupForm extends React.Component {
                         <br />
                         <input type="text" className="login-input" onChange={this.updateField('address')} value={this.state.address} placeholder="Address"/>
                         <br />
-                        {/* <input type="submit" className="login-submit" value={this.props.formType} /> */}
-                        {/* <button type="submit"  className="login-submit"><Link to="/login">{this.props.formType}</Link></button> */}
                         <button type="submit"  className="login-submit">{this.props.formType}</button>
                     </form>
                     <h3 className="change-form">{this.props.navLink}</h3>

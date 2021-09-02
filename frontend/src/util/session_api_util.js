@@ -16,6 +16,11 @@ export const login = (userData) => {
     return axios.post('/api/users/login', userData)
 }
 
+export const updateUser = (userData) => {
+    // console.log(userData)
+    return axios.patch(`/api/users/${userData.id}/update`, userData)
+}
+
 export const getUser = (userId) => {
     return axios.get(`/api/users/${userId}` )
 }

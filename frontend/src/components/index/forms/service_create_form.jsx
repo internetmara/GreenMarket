@@ -24,6 +24,7 @@ class UploadService extends React.Component {
             serviceUrl: null,
             tError: false,
             selectForm: 0,
+            badAddress: 'n'
         }
 
         this.handleFile = this.handleFile.bind(this);
@@ -78,7 +79,14 @@ class UploadService extends React.Component {
         if (!this.state.address) {
             return (this.setState({["submissionErr"]: "Please fill out the entire form!"}))
         }
-        await this.getGeo(this.state.address)
+
+        this.setState({ badAddress: 'n' })
+        await this.getGeo(this.state.address).catch(res => {
+            this.setState({ badAddress: 'y' })
+        })
+        if (this.state.badAddress === 'y') {
+            return (this.setState({ ["submissionErr"]: "Invalid Address" }))
+        }
         if (this.state.tError === false) {
             const formData = {};
             formData.picture = this.state.serviceUrl
@@ -111,7 +119,7 @@ class UploadService extends React.Component {
             } else if (!formData.service) {
                 this.setState({["submissionErr"]: "Service is invalid!"})
             } else {
-                this.props.addService(formData)
+                await this.props.addService(formData)
                 this.props.history.push("/user")
             }
         }

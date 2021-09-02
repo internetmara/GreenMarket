@@ -29,6 +29,7 @@
 .filters p:hover {
   background-color: #395446;
   color: #FFF;
+  text-decoration: none;
 }
 
 .geo-filter {
@@ -80,8 +81,8 @@
   color: #395446;
   font-size: 40px;
   align-items: center;
-  padding-top: 90px;
-  margin-top: 80px;
+  padding-top: 100px;
+  margin-top: 90px;
   padding: 10px;
 }
 
@@ -89,7 +90,7 @@
   display: flex;
   position: relative;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-evenly;
   margin-top: 20px;
 }
 
@@ -106,17 +107,20 @@
   transition: .2s ease;
   position: absolute;
   transform: translate(-50%, -50%);
+  border: 1px solid #395446;
+  border-radius: 30px;
 }
 
 .map-img:hover {
   width: 5vw;
   height: auto;
   transition: .2s ease;
+  text-decoration: none;
 }
 
 .items-index {
-  width: 20vw;
-  height: 65vh;
+  width: 25vw;
+  height: 70vh;
   border-radius: 10px;
   border: 10px double #395446;
   overflow: auto;
@@ -125,11 +129,14 @@
 }
 
 .item {
+  text-align: center;
   border-top: 2px double #395446;
   display: flex;
   position: relative;
   overflow: unset;
   flex-direction: column;
+  padding: 20px;
+  font-size: 25px;
   background-color: rgba(245, 245, 245, .95);
 }
 
@@ -138,26 +145,71 @@
 }
 
 .item p:nth-child(1) {
-  font-size: 24px;
+  font-size: 35px;
   text-decoration: underline;
 }
 
-.modalbutton {
+/* .modalbutton, .item-ownwer-show-modalbutton { 
   font-family: 'Ovo', serif;
-  color:whitesmoke;
-  font-size: 22px;
+  color: antiquewhite;
+  font-size: 15px;
   padding: 15px;
-  width: 180px;
+  width: 200px;
+  height: 50px;
+  border-radius: 30px;
+  text-align: center;
+  max-width: 100%;
+  background-color: #395446;
+} */
+
+.sellers-button, .contact-button, .modalbutton, .item-ownwer-show-modalbutton { 
+  font-family: 'Ovo', serif;
+  color: antiquewhite;
+  font-size: 20px;
+  padding: 20px;
+  width: 250px;
+  height: 70px;
   border-radius: 30px;
   text-align: center;
   max-width: 100%;
   background-color: #395446;
 }
 
+
+.sellers-button:hover, .contact-button:hover, .modalbutton:hover { 
+  font-size: 110%;
+  border: 4px solid #23342c;
+}
+
+
 .item-show-modal {
   display: flex;
   align-items: center;
   flex-direction: column;
   height: 200px;
-  margin-top: 100px;
+  margin-top: 40px;
+  width: 100%;
+  /* margin-bottom: 20px; */
+}
+
+.item-show-modal-product-info {
+  font-size: 20px;
+}
+
+.seller-contact > * {
+  font-family: 'ovo', serif;
+  font-size: 30px;
+  padding: 20px;
+  margin: 20px;
+  color: #23342c;
+  text-decoration: none;
+}
+
+
+.seller-contact {
+  margin-top: 15px;
+  border: 3px double #395446;
+  border-radius: 20px;
+  padding: 8px;
+  background-color: rgb(210, 208, 208);
 }

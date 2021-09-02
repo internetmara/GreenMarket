@@ -1,0 +1,79 @@
+.about-container {
+  height: 80vw;
+  width: 100%;
+  max-width: 90vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 10px double #395446;
+  margin: auto;
+  height: auto;
+  margin-top: 10%;
+  flex-direction: column;
+  border-radius: 50px;
+  padding: 20px;
+  background-color: rgba(255, 252, 252, 0.65);
+}
+
+.creators {
+  font-family: 'Ovo', serif;
+  color: #395446;
+  font-size: 60px;
+  padding: 10px;
+  margin-bottom: 20px;;
+}
+
+.profile-name {
+  font-family: 'Ovo', serif;
+  color: #395446;
+  font-size: 22px;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+}
+
+.creator-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.person {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 250px;
+  justify-content: space-between;
+}
+
+.profile-pic {
+  height: 200px;
+  width: auto;
+  border-radius: 30px;
+  border: 10px double #395446;
+  border-radius: 50px;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+.profile-links {
+  display: flex;
+  flex-direction: row;
+  /* padding: 10px; */
+  justify-content: space-around;
+  width: 70%;
+  align-items: center;
+}
+
+.social-pic{
+  width: 30px;
+  height: auto;
+}
+
+.bio {
+  text-align: center;
+  font-family: 'Ovo', serif;
+  color: #395446;
+  margin-top: 20px;
+}
