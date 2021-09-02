@@ -69,7 +69,7 @@ class ServiceIndexItem extends React.Component {
             })
         }
         if (this.state.badAddress === 'y') return null;
-        console.log(this.state)
+        
         this.props.updateService({
             id: this.props.id,
             name: this.state.name,

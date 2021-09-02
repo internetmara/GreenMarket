@@ -24,7 +24,8 @@ class UploadProduct extends React.Component {
             tError: false,
             selectForm: 0,
             formSuccess: null,
-            badAddress: 'n'
+            badAddress: 'n',
+            submitted: 'n'
         }
 
         this.handleFile = this.handleFile.bind(this);
@@ -75,17 +76,18 @@ class UploadProduct extends React.Component {
     }
 
     async handleSubmit(e) {
+        if (this.state.submitted === 'y') return null;
         e.preventDefault();
         if (!this.state.address) {
-            return (this.setState({["submissionErr"]: "Please fill out the entire form!"}))
+            return (this.setState({ ["submissionErr"]: "Please fill out the entire form!", submitted: 'n'}))
         }
 
-        this.setState({ badAddress: 'n' })
+        this.setState({ badAddress: 'n', submitted: 'y' })
         await this.getGeo(this.state.address).catch(res => {
             this.setState({ badAddress: 'y' })
         })
         if (this.state.badAddress === 'y') {
-            return (this.setState({ ["submissionErr"]: "Invalid Address" }))
+            return (this.setState({ ["submissionErr"]: "Invalid Address", submitted: 'n' }))
         }
         if (this.state.tError === false) {
             const formData = {};
@@ -100,21 +102,21 @@ class UploadProduct extends React.Component {
             formData.user = this.state.user
             formData.product = this.state.product
             if (!formData.picture) {
-                this.setState({["submissionErr"]: "Please add a picture!"})
+                this.setState({ ["submissionErr"]: "Please add a picture!", submitted: 'n'})
             } else if (!formData.name) {
-                this.setState({["submissionErr"]: "Name cannot be blank!"})
+                this.setState({ ["submissionErr"]: "Name cannot be blank!", submitted: 'n'})
             } else if (!formData.category) {
-                this.setState({["submissionErr"]: "Please select a category!"})
+                this.setState({ ["submissionErr"]: "Please select a category!", submitted: 'n'})
             } else if (!formData.rate) {
-                this.setState({["submissionErr"]: "Please add a rate!"})
+                this.setState({ ["submissionErr"]: "Please add a rate!", submitted: 'n'})
             } else if (!formData.description) {
-                this.setState({["submissionErr"]: "Description cannot be blank!"})
+                this.setState({ ["submissionErr"]: "Description cannot be blank!", submitted: 'n'})
             } else if (!formData.address || !formData.coordsLat || !formData.coordsLng) {
-                this.setState({["submissionErr"]: "Address is invalid!"})
+                this.setState({ ["submissionErr"]: "Address is invalid!", submitted: 'n'})
             } else if (!formData.user) {
-                this.setState({["submissionErr"]: "User is invalid!"})
+                this.setState({ ["submissionErr"]: "User is invalid!", submitted: 'n'})
             } else if (!formData.product) {
-                this.setState({["submissionErr"]: "Product is invalid!"})
+                this.setState({ ["submissionErr"]: "Product is invalid!", submitted: 'n'})
             } else {
                 await this.props.addProduct(formData)
                 this.props.history.push("/user")
