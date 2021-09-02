@@ -223,13 +223,15 @@ body {
 
 .remove-listing:hover, .update-listing:hover {
     width: auto;
+    border: 3px solid white;
     font-size: 110%;
+    height: auto;
 }
 
 .update-form-container > * {
     padding-top: 10px;
     font-family: 'Ovo', serif;
-    font-size: 15px
+    font-size: 15px;
 }
 
 .update-form-container input {
