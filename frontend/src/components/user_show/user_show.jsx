@@ -24,9 +24,11 @@ class userShow extends React.Component {
         this.handleUserSubmit = this.handleUserSubmit.bind(this)
     }
 
-    componentWillMount() {
+    componentDidMount() {
+        console.log(this.props)
         this.props.getServices()
         this.props.getProducts()
+        if (this.props.user._id !== undefined) this.props.getUser(this.props.user._id)
         if (this.props.user.id !== undefined) this.props.getUser(this.props.user.id)
     }
 
