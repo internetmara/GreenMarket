@@ -178,6 +178,7 @@
 
 .sellers-button:hover, .contact-button:hover, .modalbutton:hover { 
   font-size: 110%;
+  width: auto;
   border: 4px solid #23342c;
 }
 
