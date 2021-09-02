@@ -18,12 +18,6 @@ class SignupForm extends React.Component {
                 coordsLat: 0,
                 coordsLng: 0,
                 badAddress: 'n'
-                // avatar: '',
-                // products: [],
-                // services: [],
-                // reviews: [],
-                // buyerPoints: 0,
-                // sellerPoints: 0
         }
         this.handleSubmit = this.handleSubmit.bind(this)
     }
