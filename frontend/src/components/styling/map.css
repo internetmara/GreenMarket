@@ -30,6 +30,7 @@
   background-color: #395446;
   color: #FFF;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .geo-filter {
@@ -64,6 +65,7 @@
   background-color: #395446;
   color: #FFF;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .GM-icon {
@@ -116,6 +118,7 @@
   height: auto;
   transition: .2s ease;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .items-index {
@@ -181,6 +184,7 @@
   font-size: 110%;
   width: auto;
   border: 4px solid #23342c;
+  cursor: pointer;
 }
 
 
