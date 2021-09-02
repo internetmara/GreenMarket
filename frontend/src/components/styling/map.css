@@ -144,6 +144,10 @@
   background-color: rgb(245, 245, 245);
 }
 
+.item:hover {
+  cursor: pointer;
+}
+
 .item p {
   color: #395446;
 }
