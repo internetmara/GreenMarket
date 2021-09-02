@@ -68,7 +68,7 @@ class ProductIndexItem extends React.Component {
             })
         }
         if (this.state.badAddress === 'y') return null;
-        console.log(this.state)
+        // console.log(this.state)
         this.props.updateProduct({
             id: this.props.id,
             name: this.state.name,
@@ -96,12 +96,15 @@ class ProductIndexItem extends React.Component {
                     <p>Rate: {rate}</p>
                     <p>Description: {description}</p>
                     <p>Address: {address}</p>
-                    { this.props.user._id && this.props.user._id === this.props.owner ?
-                        <div className="update-button-box">
-                        <button className="remove-listing" onClick={() => this.props.deleteProduct(this.props.id) }>Remove Listing</button>
-                        <button className="update-listing" onClick={() => this.setState({ showUpdateForm: 'y' })}>Update Listing</button>
-                        </div>
+                    { this.props.noButtons !== 'y' ?
+                        this.props.user._id && this.props.user._id === this.props.owner ?
+                            <div className="update-button-box">
+                                <button className="remove-listing" onClick={() => this.props.deleteProduct(this.props.id) }>Remove Listing</button>
+                                <button className="update-listing" onClick={() => this.setState({ showUpdateForm: 'y' })}>Update Listing</button>
+                            </div>
                         : 
+                            ''
+                    :
                         ''
                     }
                 </div> 
