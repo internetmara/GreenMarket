@@ -161,6 +161,8 @@ class UploadService extends React.Component {
                         <label id="uploading-here">
                             <input type="file" onChange={this.handleFile} style={{ display: "none" }} />
                         </label>
+                        <br/>
+                        <h6 className="photo-size-message">Image must be no bigger than 60kb</h6>
                         <div className="upload-form-preview-img">
                             {PreviewService}
                         </div>

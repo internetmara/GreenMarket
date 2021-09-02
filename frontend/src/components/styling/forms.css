@@ -139,6 +139,7 @@ body {
 .upload-button-box {
     align-items: center;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     margin-bottom: 40px;
 }
