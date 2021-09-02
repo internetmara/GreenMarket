@@ -23,6 +23,7 @@ class UploadProduct extends React.Component {
             productUrl: null,
             tError: false,
             selectForm: 0,
+            formSuccess: null
         }
 
         this.handleFile = this.handleFile.bind(this);
@@ -108,10 +109,7 @@ class UploadProduct extends React.Component {
                 this.setState({["submissionErr"]: "Product is invalid!"})
             } else {
                 this.props.addProduct(formData)
-                    .then(this.props.history.push("/user"))
-                // setTimeout(() => {
-                //     this.props.history.push("/user")
-                // }, 600)
+                this.props.history.push("/user")
             }
         }
     }

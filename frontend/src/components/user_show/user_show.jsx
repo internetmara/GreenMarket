@@ -22,7 +22,7 @@ class userShow extends React.Component {
         this.handleUserSubmit = this.handleUserSubmit.bind(this)
     }
 
-    componentDidMount() {
+    componentWillMount() {
         this.props.getServices();
         this.props.getProducts();
         this.props.getUser(this.props.user.id);
@@ -72,6 +72,7 @@ class userShow extends React.Component {
         if (!this.props.user || Object.values(this.props.products).length === 0 || Object.values(this.props.services).length === 0) {
             return null
         };
+        console.log(this.props.products)
         let { services, products } = this.props.user;
         let servicesMap = []
         if (services.length > 0) {
