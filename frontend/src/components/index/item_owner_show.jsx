@@ -23,6 +23,7 @@ class ItemOwnerShow extends React.Component {
                 updateProduct={this.props.updateProduct}
                 deleteProduct={this.props.deleteProduct}
                 user={this.props.currentUser}
+                noButtons={'y'}
             />
         })
     }
@@ -46,6 +47,7 @@ class ItemOwnerShow extends React.Component {
                     updateService={this.props.updateService}
                     deleteService={this.props.deleteService}
                     user={this.props.currentUser}
+                    noButtons={'y'}
                 />
         ))
     }
