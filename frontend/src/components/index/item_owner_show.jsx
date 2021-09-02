@@ -5,6 +5,7 @@ import ProductIndexItem from '../user_show/product_index_item';
 class ItemOwnerShow extends React.Component {
 
     readProducts(userProducts) {
+        
         return userProducts.map( (productId, idx) => {
             return < ProductIndexItem
                 key={idx}
@@ -27,6 +28,7 @@ class ItemOwnerShow extends React.Component {
     }
 
     readServices(userServices) {
+        
         return userServices.map( (serviceId, idx) => (
                 < ServiceIndexItem
                     key={idx}
@@ -50,8 +52,8 @@ class ItemOwnerShow extends React.Component {
 
 
     render() {
-        if (this.props.users === undefined) return null;
-
+        if (this.props.users.products === undefined || this.props.users.services === undefined) return null;
+        
         const userProducts = this.props.users.products
         const userServices = this.props.users.services
         
