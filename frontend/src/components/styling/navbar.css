@@ -87,6 +87,7 @@ nav ul {
   background-color: #395446;
   color: rgb(236, 197, 55);
   font-size: 150%;
+  cursor: pointer;
 }
 
 .home-links {

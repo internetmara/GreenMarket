@@ -210,6 +210,7 @@ body {
 #upload-button:hover {
     padding: 10px;
     font-size: 150%;
+    cursor: pointer;
 }
 
 #photo-input {
@@ -234,6 +235,7 @@ body {
     border: 3px solid white;
     font-size: 110%;
     height: auto;
+    cursor: pointer;
 }
 
 .update-form-container > * {

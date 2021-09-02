@@ -80,5 +80,6 @@
 
 .logout-header-button:hover {
   font-size: 120%;
-  background-color:#dbba42
+  background-color:#dbba42;
+  cursor: pointer;
 }
