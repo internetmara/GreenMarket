@@ -100,7 +100,7 @@ class ServiceIndexItem extends React.Component {
                     <p>Description: {description}</p>
                     <p>Address: {address}</p>
                     {this.props.user._id && this.props.user._id === this.props.owner ?
-                        <div>
+                        <div className="update-button-box">
                             <button className="remove-listing" onClick={() => this.props.deleteService(this.props.id)}>Remove Listing</button>
                             <button className="update-listing" onClick={() => this.setState({ showUpdateForm: 'y' })}>Update Listing</button>
                         </div>
