@@ -52,10 +52,11 @@ class UploadService extends React.Component {
             this.setState({ serviceFile: file, serviceUrl: fileReader.result, selectForm: 1 });
         }
 
-        if (file) {
+        if (file && file.size < 60000) {
             fileReader.readAsDataURL(file);
         } else {
             this.setState({ imageUrl: "", imageFile: null });
+            alert("File is too big! Image must be no bigger than 60kb")
         }
     }
 
