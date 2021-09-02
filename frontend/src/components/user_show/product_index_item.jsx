@@ -104,13 +104,12 @@ class ProductIndexItem extends React.Component {
                     }
                 </div> 
             :
-                <div className="service-index-item">
+                <div className="update-form-container">
                     <form onSubmit={(e) => this.handleItemSubmit(e)}>
-                        <label >Name:
+                        <label>Name:&nbsp;
                             <input type="text" onChange={this.updateField('name')} value={this.state.name} />
                         </label>
-                        <br />
-                            <label className="product-or-service-inputs" onChange={this.updateField("category")}>Category:&nbsp;
+                        <label onChange={this.updateField("category")}>Category:&nbsp;
                             <select>
                                 <option></option>
                                 <option>Food</option>
@@ -119,27 +118,25 @@ class ProductIndexItem extends React.Component {
                                 <option>Misc</option>
                             </select>
                         </label>
-                        <br />
-                        <label >Rate:
+                        <label>Rate:&nbsp;
                             <input type="text" onChange={this.updateField('rate')} value={this.state.rate} />
                         </label>
-                        <br />
-                        <label >Description:
+                        <label>Description:&nbsp;
                             <input type="text" onChange={this.updateField('description')} value={this.state.description} />
                         </label>
-                        <br />
-                        <label >Address:
+                        <label>Address:&nbsp;
                             <input type="text" onChange={this.updateField('address')} value={this.state.address} />
                         </label>
-                        <br />
                         <div className="upload-button-box">
                             <label id="uploading-here">
                                 <input type="file" onChange={this.handleFile} />
                             </label>
                         </div>
-                        <button type="submit">Update Listing</button>
+                        <div className="update-button-box">
+                            <button className="update-listing" type="submit">Update Listing</button>
+                            <button className="update-listing" onClick={() => this.setState({ showUpdateForm: 'n' })}>View Listing</button>
+                        </div>
                     </form>
-                    <button onClick={() => this.setState({ showUpdateForm: 'n' })}>View Listing</button>
                 </div>
         )
     }
