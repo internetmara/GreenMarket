@@ -12,7 +12,8 @@
   flex-direction: column;
   border-radius: 50px;
   padding: 20px;
-  background-color: rgba(255, 252, 252, 0.65);
+  /* background-color: rgba(255, 252, 252, 0.65); */
+  background-color: rgb(255, 252, 252);
 }
 
 .creators {

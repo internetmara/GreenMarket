@@ -17,7 +17,7 @@ header {
   justify-content: center;
   align-items: center;
   background-color: #395446;
-  opacity: 0.8;
+  /* opacity: 0.8; */
 }
 
 .login-signup {
@@ -75,7 +75,7 @@ nav ul {
 }
 
 .go-to-the-map {
-  opacity: 80%;
+  /* opacity: 80%; */
   font-family: 'Ovo', serif;
   color:#FFF;
   font-size: 20px;

@@ -141,7 +141,8 @@ body {
     width: 850px;
     border-radius: 50px;
     padding: 20px;
-    background-color: rgba(255, 252, 252, 0.65);
+    /* background-color: rgba(255, 252, 252, 0.65); */
+    background-color: rgb(255, 252, 252);
 }
 
 .splash-first-container p {
@@ -163,9 +164,10 @@ body {
     width: 850px;
     border-radius: 50px;
     padding: 20px;
-    opacity: 95%;
+    /* opacity: 95%; */
     justify-content: space-around;
-    background-color: rgba(255, 252, 252, 0.65);
+    /* background-color: rgba(255, 252, 252, 0.65); */
+    background-color: rgb(255, 252, 252);
 }
 
 h2 {

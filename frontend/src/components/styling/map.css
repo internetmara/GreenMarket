@@ -137,7 +137,8 @@
   flex-direction: column;
   padding: 20px;
   font-size: 25px;
-  background-color: rgba(245, 245, 245, .95);
+  /* background-color: rgba(245, 245, 245, .95); */
+  background-color: rgb(245, 245, 245);
 }
 
 .item p {
