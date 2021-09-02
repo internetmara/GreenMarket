@@ -150,3 +150,4 @@ class ProductIndexItem extends React.Component {
 }
 
 export default ProductIndexItem; 
+
