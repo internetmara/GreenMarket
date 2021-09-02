@@ -58,7 +58,7 @@ class ProductIndexItem extends React.Component {
             this.setState({ imageUrl: "", imageFile: null });
         }
     }
-
+    
     async handleItemSubmit(e) {
         this.setState({ badAddress: 'n', showUpdateForm: 'n' })
         e.preventDefault()
