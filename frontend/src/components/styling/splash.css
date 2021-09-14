@@ -43,6 +43,7 @@ body {
   text-decoration: none;
   align-items: stretch;
   border: none;
+  cursor: pointer;
 }
 
 
@@ -56,6 +57,7 @@ body {
   text-decoration: none;
   align-items: stretch;
   border: none;
+  cursor: pointer;
 }
 
 
@@ -129,6 +131,7 @@ body {
   margin-top: -30px;
   margin-bottom: 20px;
   font-size: 20px;
+  cursor: pointer;
 }
 
 .splash-first-container{
