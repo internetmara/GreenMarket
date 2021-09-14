@@ -106,22 +106,29 @@ class UploadProduct extends React.Component {
             formData.user = this.state.user
             formData.product = this.state.product
 
-            console.log(formData.picture)
             if (!formData.picture) {
+                console.log('picture fail')
                 this.setState({ ["submissionErr"]: "Please add a picture!", submitted: 'n'})
             } else if (!formData.name) {
+                console.log('name fail')
                 this.setState({ ["submissionErr"]: "Name cannot be blank!", submitted: 'n'})
             } else if (!formData.category) {
+                console.log('category fail')
                 this.setState({ ["submissionErr"]: "Please select a category!", submitted: 'n'})
             } else if (!formData.rate) {
+                console.log('rate fail')
                 this.setState({ ["submissionErr"]: "Please add a rate!", submitted: 'n'})
             } else if (!formData.description) {
+                console.log('description fail')
                 this.setState({ ["submissionErr"]: "Description cannot be blank!", submitted: 'n'})
             } else if (!formData.address || !formData.coordsLat || !formData.coordsLng) {
+                console.log('address fail')
                 this.setState({ ["submissionErr"]: "Address is invalid!", submitted: 'n'})
             } else if (!formData.user) {
+                console.log('user fail')
                 this.setState({ ["submissionErr"]: "User is invalid!", submitted: 'n'})
             } else if (!formData.product) {
+                console.log('product fail')
                 this.setState({ ["submissionErr"]: "Product is invalid!", submitted: 'n'})
             } else {
                 this.props.addProduct(formData)
