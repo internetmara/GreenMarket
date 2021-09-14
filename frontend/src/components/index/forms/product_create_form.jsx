@@ -77,6 +77,7 @@ class UploadProduct extends React.Component {
     }
 
     async handleSubmit(e) {
+        console.log('submit log 1')
         if (this.state.submitted === 'y') return null;
         e.preventDefault();
         if (!this.state.address) {
@@ -91,6 +92,7 @@ class UploadProduct extends React.Component {
             return (this.setState({ ["submissionErr"]: "Invalid Address", submitted: 'n' }))
         }
         if (this.state.tError === false) {
+            console.log('submit log 2')
             const formData = {};
             formData.picture = this.state.productUrl
             formData.name = this.state.name
@@ -123,6 +125,7 @@ class UploadProduct extends React.Component {
                     .then(() => {
                         this.props.history.push("/user")
                     })
+                console.log('success submit log')
             }
         }
     }

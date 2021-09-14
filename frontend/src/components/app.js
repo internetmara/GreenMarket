@@ -1,7 +1,7 @@
 import Splash from './splash/splash';
 import React from 'react';
 import { AuthRoute, ProtectedRoute } from "../util/route_util"
-import { Switch, Route } from 'react-router';
+import { Switch, Route, Redirect } from 'react-router';
 import Navbar from './navbar/navbar';
 import SignupContainer from './splash/signup_container';
 import LoginContainer from './splash/login_container';
@@ -28,6 +28,7 @@ const App = () => (
             <ProtectedRoute exact path="/products/new" component={UploadProduct} />
             <ProtectedRoute exact path="/services/new" component={UploadService} />
             <Route exact path="/" component={Splash} />
+            <Redirect to='/' />
         </Switch>
     </div>
 )
