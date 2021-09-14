@@ -24,6 +24,7 @@
   width: 100%;
   background-color: #395446;
   color: white;
+  cursor: pointer;
 }
 
 .login-submit > * {
