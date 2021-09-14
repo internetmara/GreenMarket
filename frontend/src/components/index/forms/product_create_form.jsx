@@ -92,6 +92,7 @@ class UploadProduct extends React.Component {
         }
         if (this.state.tError === false) {
             console.log('submit log 2')
+            
             const formData = {};
             formData.picture = this.state.productUrl
             formData.name = this.state.name
@@ -103,6 +104,8 @@ class UploadProduct extends React.Component {
             formData.coordsLng = this.state.coordsLng
             formData.user = this.state.user
             formData.product = this.state.product
+
+            console.log(formData.picture)
             if (!formData.picture) {
                 this.setState({ ["submissionErr"]: "Please add a picture!", submitted: 'n'})
             } else if (!formData.name) {
