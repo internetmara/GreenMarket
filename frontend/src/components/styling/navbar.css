@@ -50,6 +50,7 @@ nav ul {
   font-size: 17px;
   border: 1px solid #395446;
   width: 10vw;
+  cursor: pointer;
 }
 
 .links {

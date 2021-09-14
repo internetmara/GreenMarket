@@ -97,6 +97,7 @@
     color: antiquewhite;
     font-family: "Ovo", serif;
     width: 200px;
+    cursor: pointer;
 }
 
 .profile-edit-button:hover, .update-profile-button:hover {

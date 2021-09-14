@@ -73,6 +73,7 @@
     background-color: #395446;
     color: antiquewhite;
     text-decoration: none;
+    cursor: pointer;
 }
 
 .modalbutton-close {
@@ -87,4 +88,5 @@
     background-color: #395446;
     color: antiquewhite;
     text-decoration: none;
+    cursor: pointer;
 }

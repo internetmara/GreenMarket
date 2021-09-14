@@ -59,6 +59,7 @@
   transition: .1s ease;
   background-color: transparent;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .geo-filter button:hover {
@@ -181,6 +182,7 @@
   text-align: center;
   max-width: 100%;
   background-color: #395446;
+  cursor: pointer;
 }
 
 

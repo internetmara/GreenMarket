@@ -194,6 +194,7 @@ body {
     color: white;
     margin: 20px;
     text-align: center;
+    cursor: pointer;
 }
 
 .form-buttons-box {
