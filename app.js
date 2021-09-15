@@ -41,6 +41,13 @@ app.use("/api/services", services)
 app.use("/api/reviews", reviews)
 
 
-const port = process.env.PORT || 5000;
+// pre-existing setup here
+// const port = process.env.PORT || 5000;
+// app.listen( port, () => console.log(`Server is running on port ${port}`) );
 
-app.listen(port, () => console.log(`Server is running on port ${port}`));
+
+// testing setup below
+const server = app.listen(process.env.PORT || 5000, () => {
+    const port = server.address().port;
+    console.log(`Server is running on port ${port}`)
+});
