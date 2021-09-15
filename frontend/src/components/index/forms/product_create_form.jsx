@@ -77,7 +77,7 @@ class UploadProduct extends React.Component {
     }
 
     async handleSubmit(e) {
-        console.log('submit log 1')
+        
         if (this.state.submitted === 'y') return null;
         e.preventDefault();
         if (!this.state.address) {
@@ -92,7 +92,6 @@ class UploadProduct extends React.Component {
             return (this.setState({ ["submissionErr"]: "Invalid Address", submitted: 'n' }))
         }
         if (this.state.tError === false) {
-            console.log('submit log 2')
             
             const formData = {};
             formData.picture = this.state.productUrl
@@ -107,35 +106,25 @@ class UploadProduct extends React.Component {
             formData.product = this.state.product
 
             if (!formData.picture) {
-                console.log('picture fail')
                 this.setState({ ["submissionErr"]: "Please add a picture!", submitted: 'n'})
             } else if (!formData.name) {
-                console.log('name fail')
                 this.setState({ ["submissionErr"]: "Name cannot be blank!", submitted: 'n'})
             } else if (!formData.category) {
-                console.log('category fail')
                 this.setState({ ["submissionErr"]: "Please select a category!", submitted: 'n'})
             } else if (!formData.rate) {
-                console.log('rate fail')
                 this.setState({ ["submissionErr"]: "Please add a rate!", submitted: 'n'})
             } else if (!formData.description) {
-                console.log('description fail')
                 this.setState({ ["submissionErr"]: "Description cannot be blank!", submitted: 'n'})
             } else if (!formData.address || !formData.coordsLat || !formData.coordsLng) {
-                console.log('address fail')
                 this.setState({ ["submissionErr"]: "Address is invalid!", submitted: 'n'})
             } else if (!formData.user) {
-                console.log('user fail')
                 this.setState({ ["submissionErr"]: "User is invalid!", submitted: 'n'})
             } else if (!formData.product) {
-                console.log('product fail')
                 this.setState({ ["submissionErr"]: "Product is invalid!", submitted: 'n'})
             } else {
-                console.log(formData)
                 this.props.addProduct(formData)
                 // await this.props.addProduct(formData)
-                    .then( (res) => {
-                        console.log('.then submit log', res)
+                    .then( () => {
                         this.props.history.push("/user")
                     })
             }
@@ -185,7 +174,7 @@ class UploadProduct extends React.Component {
                         </div>
                     </div>
 
-                    <form className="upload-form" onSubmit={(e) => this.handleSubmit(e).catch( err => {console.log(err)}) }>
+                    <form className="upload-form" onSubmit={(e) => this.handleSubmit(e)}>
                         <h3> Tell us more about your product: </h3>
                             <input className="product-or-service-inputs" placeholder="Name" type="text" value={this.state.name} onChange={this.update("name")} />
                             {this.state.tError ? <p className="errors">Name can not be empty</p> : null}
@@ -219,3 +208,4 @@ class UploadProduct extends React.Component {
         
 
 export default UploadProduct;
+
