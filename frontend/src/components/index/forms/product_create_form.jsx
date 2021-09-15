@@ -185,7 +185,7 @@ class UploadProduct extends React.Component {
                         </div>
                     </div>
 
-                    <form className="upload-form" onSubmit={this.handleSubmit.catch( e => {console.log(e)}) }>
+                    <form className="upload-form" onSubmit={(e) => this.handleSubmit(e).catch( err => {console.log(err)}) }>
                         <h3> Tell us more about your product: </h3>
                             <input className="product-or-service-inputs" placeholder="Name" type="text" value={this.state.name} onChange={this.update("name")} />
                             {this.state.tError ? <p className="errors">Name can not be empty</p> : null}
