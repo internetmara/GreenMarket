@@ -19,12 +19,6 @@ export const getService = (id) => {
 export const addProduct = (prodData) => {
     return axios.post('/api/products/create', prodData )
 }
-// unsuccessful test below to log - undefined is sent as err
-// export const addProduct = (prodData) => (
-//     axios.post('/api/products/create', prodData )
-//     .then( (res) => console.log(res))
-//     .catch( (err) => console.log(err))
-// )
 
 export const addService = (servData) => {
     return axios.post('/api/services/create', servData)
