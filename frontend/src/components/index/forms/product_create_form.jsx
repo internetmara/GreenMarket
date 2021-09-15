@@ -133,8 +133,8 @@ class UploadProduct extends React.Component {
                 console.log(formData)
                 this.props.addProduct(formData)
                 // await this.props.addProduct(formData)
-                    .then(() => {
-                        console.log('success submit log')
+                    .then( (res) => {
+                        console.log('.then submit log', res)
                         this.props.history.push("/user")
                     })
             }
