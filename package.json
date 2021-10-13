@@ -33,11 +33,13 @@
     "google-map-react": "^2.1.10",
     "google-maps-react": "^2.0.6",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.13.7",
+    "mongoose": "^6.0.9",
     "node-geocoder": "^3.27.0",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
+    "react": "^17.0.2",
     "react-geocode": "^0.2.3",
+    "react-scripts": "^4.0.3",
     "validator": "^13.6.0"
   },
   "devDependencies": {

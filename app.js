@@ -21,7 +21,7 @@ mongoose
     .then(() => console.log("Connected to MongoDB successfully"))
     .catch(err => console.log(err));
 
-mongoose.set('useFindAndModify', false);
+// mongoose.set('useFindAndModify', false);
 app.use(bodyParser.urlencoded({
     extended: false
 }));

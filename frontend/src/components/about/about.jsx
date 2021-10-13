@@ -16,7 +16,7 @@ class About extends React.Component {
                 <div className="profile-links">
                   <a href="https://github.com/cdellacqua123"><img className="social-pic" src="/images/socials/github.png"/></a>
                   <a href="https://www.linkedin.com/in/christopher-dell-acqua-b6765995/"><img className="social-pic" src="/images/socials/linkedin.png"/></a>
-                  <a href="https://www.linkedin.com/in/christopher-dell-acqua-b6765995/" target="_blank"><img className="social-pic" src="/images/socials/userpic.png"/></a>
+                  <a href="https://cdellacqua123.github.io/personal-site/"><img className="social-pic" src="/images/socials/userpic.png"/></a>
                 </div>
                   <p className="bio">Chris is from San Diego and is a former equity and equity derivatives trader. </p>
               </div>
