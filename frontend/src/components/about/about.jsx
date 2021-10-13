@@ -16,7 +16,7 @@ class About extends React.Component {
                 <div className="profile-links">
                   <a href="https://github.com/cdellacqua123"><img className="social-pic" src="/images/socials/github.png"/></a>
                   <a href="https://www.linkedin.com/in/christopher-dell-acqua-b6765995/"><img className="social-pic" src="/images/socials/linkedin.png"/></a>
-                  <a href=""><img className="social-pic" src="/images/socials/userpic.png"/></a>
+                  <a href="https://www.linkedin.com/in/christopher-dell-acqua-b6765995/" target="_blank"><img className="social-pic" src="/images/socials/userpic.png"/></a>
                 </div>
                   <p className="bio">Chris is from San Diego and is a former equity and equity derivatives trader. </p>
               </div>
@@ -27,7 +27,7 @@ class About extends React.Component {
                 <div className="profile-links">
                   <a href="https://github.com/erikingebretson"><img className="social-pic" src="/images/socials/github.png"/></a>
                   <a href="https://www.linkedin.com/in/erik-ingebretson/"><img className="social-pic" src="/images/socials/linkedin.png"/></a>
-                  <a href=""><img className="social-pic" src="/images/socials/userpic.png"/></a>
+                  <a href="http://www.erikingebretson.com/" target="_blank"><img className="social-pic" src="/images/socials/userpic.png"/></a>
                 </div>
                 <p className="bio">Erik is a software engineer living in Flagstaff, Az who enjoys rock climbing and PB&J sandwiches.</p>
               </div>
@@ -38,7 +38,7 @@ class About extends React.Component {
                 <div className="profile-links">
                   <a href="https://github.com/internetmara"><img className="social-pic" src="/images/socials/github.png"/></a>
                   <a href="https://www.linkedin.com/in/marafinkel"><img className="social-pic" src="/images/socials/linkedin.png"/></a>
-                  <a href=""><img className="social-pic" src="/images/socials/userpic.png"/></a>
+                  <a href="https://internetmara.github.io/" target="_blank"><img className="social-pic" src="/images/socials/userpic.png"/></a>
                 </div>
                 <p className="bio">Mara is a former educator and lives in Oakland, CA with her dog Jellybean.</p>
                </div>
@@ -49,7 +49,7 @@ class About extends React.Component {
                 <div className="profile-links">
                   <a href="https://github.com/VPilipenko334"><img className="social-pic" src="/images/socials/github.png"/></a>
                   <a href="https://www.linkedin.com/in/veronikapilipenko/"><img className="social-pic" src="/images/socials/linkedin.png"/></a>
-                  <a href=""><img className="social-pic" src="/images/socials/userpic.png"/></a>
+                  <a href="https://vpilipenko334.github.io/portfolio-website/#intro" target="_blank"><img className="social-pic" src="/images/socials/userpic.png"/></a>
                 </div>
                 <p className="bio">Veronika is from NYC and owns her own swimming business.</p>
               </div>
