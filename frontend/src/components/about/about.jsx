@@ -49,7 +49,7 @@ class About extends React.Component {
                 <div className="profile-links">
                   <a href="https://github.com/VPilipenko334"><img className="social-pic" src="/images/socials/github.png"/></a>
                   <a href="https://www.linkedin.com/in/veronikapilipenko/"><img className="social-pic" src="/images/socials/linkedin.png"/></a>
-                  <a href="https://vpilipenko334.github.io/portfolio-website/#intro" target="_blank"><img className="social-pic" src="/images/socials/userpic.png"/></a>
+                  <a href="https://vpilipenko334.github.io/portfolio-website/" target="_blank"><img className="social-pic" src="/images/socials/userpic.png"/></a>
                 </div>
                 <p className="bio">Veronika is from NYC and owns her own swimming business.</p>
               </div>
